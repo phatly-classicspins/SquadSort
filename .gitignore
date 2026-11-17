@@ -1,0 +1,53 @@
+# >>> PrototypeFramework agent-doc sync (PrototypeFramework 0.9.0) — edits inside this block are overwritten by Framework/Agent Docs/Sync (editor) or Tools/Build/pf-build.sh agentdocs.
+# Output the framework's Tools/pf/ gates write inside the repo — regenerated on every run, never source.
+# UiGate captures differ by GPU and are rewritten by the capture harness; Tools/UiGate/probes/ IS source.
+Tools/UiGate/captures/
+# `dotnet test` TRX and --blame-hang sequence XML: one machine's run of the engine-free suite.
+SkuHeadlessTests/TestResults/
+# CPython bytecode from importing a Tools/pf/ or Tools/bmad/ script to unit-test it.
+__pycache__/
+*.pyc
+# <<< PrototypeFramework agent-doc sync
+
+# =============== #
+# Unity generated #
+# =============== #
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/ProfilerCaptures/
+/ServerData/
+/.utmp/
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+crashlytics-build.properties
+Assets/AddressableAssetsData/ProfileDataSourceSettings.asset
+Assets/AddressableAssetsData/ProfileDataSourceSettings.asset.meta
+ProjectSettings/ScriptableBuildPipeline.json
+
+# ===================================== #
+# IDE generated (Rider / Visual Studio) #
+# ===================================== #
+.vs/
+.idea/
+*.csproj
+*.sln
+*.user
+*.suo
+*.userprefs
+*.DotSettings.user
+# Headless SKU test project: keep the hand-authored project file, ignore build output.
+!SkuHeadlessTests/*.csproj
+SkuHeadlessTests/bin/
+SkuHeadlessTests/obj/
+
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store
+Thumbs.db
