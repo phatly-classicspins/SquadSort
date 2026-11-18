@@ -1,0 +1,10 @@
+name: Tight Squeeze
+difficulty: hard
+plaza:
+###
+###
+tube 0 -1 up 4 : R G B R
+tube 2 -1 up 4 : G B R G
+tube 0 2 down 4 : B R G B
+tube 2 2 down 4 :
+spare 1 -1 up

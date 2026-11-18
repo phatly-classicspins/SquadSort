@@ -1,0 +1,8 @@
+// Tutorial: one tap sends the whole front group home.
+name: First Squad
+difficulty: normal
+plaza:
+####
+####
+tube 1 -1 up 4 : R R R
+tube 2 -1 up 4 : R
