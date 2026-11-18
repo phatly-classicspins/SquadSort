@@ -4,6 +4,8 @@
       "name": "package.openupm.com",
       "url": "https://package.openupm.com",
       "scopes": [
+        "com.ivanmurzak",
+        "extensions.unity",
         "jp.hadashikick.vcontainer",
         "com.cysharp.unitask",
         "com.cysharp.messagepipe",
@@ -14,6 +16,7 @@
   ],
   "dependencies": {
     "com.classicspins.prototype-framework": "https://github.com/FoxCubGames/ai_prototype_framework.git?path=/Packages/com.classicspins.prototype-framework#v0.9.0",
+    "com.ivanmurzak.unity.mcp": "1.12.0",
     "com.unity.ai.navigation": "2.0.12",
     "com.unity.collab-proxy": "2.12.4",
     "com.unity.ide.rider": "3.0.39",
