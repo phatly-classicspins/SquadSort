@@ -7,7 +7,7 @@
 > tham chiếu; tên, nhân vật, art và level của sản phẩm phải là **của mình** (xem §9).
 >
 > Ký hiệu độ tin cậy: **[Q]** = quan sát trực tiếp trong video/store · **[C]** = đã kiểm chứng khi
-> chơi thử game gốc trên MuMu (level 1–15, 2026-11-17) · **[S]** = suy luận, chưa kiểm chứng ·
+> chơi thử game gốc trên MuMu (level 1–25, 2026-11-17/18) · **[S]** = suy luận, chưa kiểm chứng ·
 > **[Đ]** = đề xuất thiết kế của mình.
 
 ---
@@ -73,6 +73,12 @@ Mỗi ô chứa tối đa **1 nhân vật**. Nhân vật có **màu** (video: t�
     tự vào một ống rỗng nào đó (level 7).
 11. **Nhân vật ẩn (Hidden, mở ở level 8).** Hiện khối xám có dấu "?" (đang ngủ). Lộ màu khi trở thành
     nhân vật **đầu ống**. Có popup giới thiệu "Hidden Unlocked!" lần đầu.
+12. **Nhà (House, mở ở level 20).** Một khối "nhà" màu X chiếm chỗ một ống (cửa quay về quảng
+    trường), bên trong là các nhân vật bị nhốt — không thấy, không chạm được, và **chắn đường**.
+    Khi một **đội màu X hoàn thành**, **mọi** nhà màu X trên bàn cùng mở và biến thành ống thường chứa
+    các nhân vật bên trong (thứ tự đã cố định; có thể có cả nhân vật ẩn "?"). Ví dụ level 25: 5 nhà
+    xanh dương mở cùng lúc khi gom đủ 4 xanh dương. Màu nhà và màu nhân vật bên trong khác nhau.
+    Popup "House Unlocked!": "Complete the matching color to open the house and free the characters inside."
 
 ### 2.3 Thao tác — một chạm, như game gốc (đã chốt 2026-11-17)
 Một bước đi = **một lần chạm**. Không có bước chọn đích; game tự quyết theo §2.2b.
@@ -105,8 +111,9 @@ Sau khi nhóm vào ống, nhân vật cùng màu trên quảng trường tự đ
 - **Thắng**: mọi đội hoàn thành → màn logo + pháo hoa "Tap to Skip!" **[C]** → popup
   "Level N · **PERFECT!** · Rewards: **20** coin · Continue" (có nút ✕) **[C]**. Level 1–3 (tutorial)
   chuyển thẳng sang level sau, không có popup **[C]**. Vẫn là "PERFECT!" kể cả khi đã dùng Undo/Shuffle (level 12) **[C]**.
-- **Level Hard** (ví dụ level 14): nút Play màu tím có nhãn "Hard" và "x3" (thưởng ×3). Popup thắng
-  màu tím, 60 coin, có thêm nút **"x2 Coins"** (xem quảng cáo) bên cạnh Continue **[C]**.
+- **Độ khó level** **[C]**: Normal (nút xanh lá, 20 coin) · **Hard** (nút tím, "Hard x3", 60 coin; ví dụ
+  level 14, 24) · **Super Hard** (nút + HUD đỏ sẫm, "Super Hard x5", 100 coin; level 19). Popup thắng đổi
+  màu theo độ khó. Từ level 14 mọi popup thắng có thêm nút **"x2 Coins"** (xem quảng cáo).
 - **Thua — "Out of Space!"** **[C]** (level 14): khi quảng trường **đầy kín**, popup hiện ngay (kể cả
   khi vẫn còn nước đi từ ống sang ống):
   1. "Out of Space!" + hình quảng trường đầy + nút **Add Space (900 coin)** + "Hold to see the board" + ✕.
@@ -135,7 +142,9 @@ Thanh booster 3 ô ở đáy màn hình **[Q]**; ô mở dần theo level (ô kh
 | **Add Container** (khung có dấu "+") | Level 15 — "Tap to add an extra container" | Thêm **1 ống rỗng** gắn vào quảng trường, đến hết level | **[C]** |
 
 - Mỗi booster có **3 lượt** ban đầu (badge số đỏ). Lần dùng trong tutorial **không trừ lượt**; dùng
-  thật thì trừ 1 (Undo 3→2, Shuffle 3→2 ở level 12) **[C]**.
+  thật thì trừ 1 (Undo 3→2, Shuffle 3→2 ở level 12, Add Container 3→2 ở level 15) **[C]**.
+- Hết lượt → badge đổi thành dấu **"+"** xanh (mua thêm) **[C]**.
+- Mốc Adventure cũng tặng booster (level 25: +1 Undo) **[C]**.
 - Ô khóa hiện tooltip "Unlocks at Level N!" **[C]**.
 - Hết lượt → mua trong Shop (bundle có kèm booster) **[C]**; mua lẻ bằng coin / rewarded **[S]**.
 - Nút **Restart** ở góc trên trái **[Q]** — chưa thử xem có mất tim không **[S]**.
@@ -165,9 +174,15 @@ Thanh booster 3 ô ở đáy màn hình **[Q]**; ô mở dần theo level (ô kh
 | 13 | Màu xanh ngọc |
 | 14 | Level **Hard** đầu tiên (×3 thưởng), quảng trường rất nhỏ → lần đầu gặp Out of Space |
 | 15 | Booster Add Container; mốc Adventure: tim vô hạn 15 phút |
-| 20 | Leaderboard; chương 2 "Oops, Wrong Mix!" (level 20–49) |
+| 16 | Màu **xanh lá đậm** (đeo băng đô) — gần màu xanh lá thường, tăng độ khó nhận diện |
+| 17 | Popup **Edit Profile** bắt buộc nhập tên (chọn avatar/khung) |
+| 18 | Bàn 9 ống (6 trên + 3 dưới) |
+| 19 | Level **Super Hard** đầu tiên (×5) |
+| 20 | **House**; "Episode Unlocked!" chương 2 "Oops, Wrong Mix!" (level 20–49), Home đổi cảnh nền; **Weekly Contest** + Leaderboard; bắt đầu **interstitial sau mỗi level** |
+| 21–25 | House nhiều màu, nhiều nhà cùng màu, nhà chứa nhân vật ẩn (level 24) |
+| 25 | Mốc Adventure: +1 Undo |
 
-Ống thường chứa 4; quảng trường từ 5–6 ô (level Hard) tới ~15 ô.
+Ống thường chứa 4; quảng trường từ 5–7 ô (level Hard/Super Hard) tới ~15 ô. Tới level 25 chỉ có **2 element**: Hidden (lv8) và House (lv20).
 
 ### 4.2 Đường cong độ khó **[Đ]**
 | Dải level | Màu | Ống | Quảng trường | Cơ chế mới |
@@ -182,8 +197,8 @@ Mỗi level phải **giải được** — kiểm bằng solver engine-free (BFS
 đưa vào game. Độ khó đo bằng: số bước tối thiểu, độ rộng nhánh, số "bẫy" (nước đi dẫn tới kẹt).
 
 ### 4.3 Cơ chế mở rộng (backlog) **[Đ]**
-Nhân vật ẩn đã có trong game gốc từ level 8 (§2.2b-11). Ứng viên khác cho bản của mình:
-- **Ống khóa** — mở khi một đội màu X hoàn thành.
+Game gốc đã có Hidden (lv8) và House (lv20, gần giống "ống khóa mở khi đội màu X hoàn thành").
+Ứng viên khác cho bản của mình:
 - **Ô đá** — ô quảng trường không đi được.
 - **Nhân vật đôi** — chiếm 2 ô, cần đường rộng.
 
@@ -195,12 +210,14 @@ Nhân vật ẩn đã có trong game gốc từ level 8 (§2.2b-11). Ứng viên
 |---|---|
 | Splash / Loading | Logo, tải dữ liệu |
 | Home **[C]** (từ sau level 9) | Avatar, coin (có nút +), tim "5 · Full", Settings; cảnh nền phòng thí nghiệm với 3 nhân vật lớn; nút Play "Level N" (tím + "Hard x3" ở level khó) |
-| Thanh tab dưới **[C]** | Shop · Leaderboard · Home · Adventure · (tab khóa chưa rõ) |
-| Adventure **[C]** | Đường tiến trình dọc theo level, mốc thưởng (lv10: 50 coin, lv15: tim vô hạn 15 phút), thẻ chương có ảnh ("Lab Squad", "Oops, Wrong Mix! — Level 20–49") |
+| Thanh tab dưới **[C]** | Shop · Leaderboard · Home · Adventure · (tab khóa, vẫn khóa ở level 25) |
+| Edit Profile **[C]** (level 17) | Bắt buộc nhập tên (không có nút đóng tới khi nhập), tab Avatar (các nhân vật) · Frame (6 khung màu) · Name; nút Save |
+| Adventure **[C]** | Đường tiến trình dọc theo level, mốc thưởng mỗi 5 level (lv10: 50 coin · lv15: tim vô hạn 15 phút · lv25: 1 Undo · lv30: tim vô hạn 30 phút · lv35: 150 coin), thẻ chương có ảnh ("Lab Squad", "Oops, Wrong Mix! — Level 20–49"); qua chương có màn "Episode Unlocked! — Tap to Claim" và Home đổi cảnh nền |
 | Shop **[C]** | Special Offer (Starter Bundle), các Bundle (coin + bỏ quảng cáo + tim vô hạn + 3 loại booster), gói coin lẻ |
-| Leaderboard **[C]** | "Unlocks at Level 20" |
+| Leaderboard **[C]** (level 20) | Popup giới thiệu **Weekly Contest** (qua level → leo hạng → rương thưởng). Tab **Weekly**: đếm ngược, bục top 3 có rương, điểm tuần. Tab **Players**: World/Country, xếp theo level cao nhất (top thấy level 1186) |
 | Out of Space / Continue? **[C]** | Xem §2.4 |
-| Hidden Unlocked! **[C]** | Popup giới thiệu cơ chế mới, có hình + một câu mô tả |
+| Hidden / House Unlocked! **[C]** | Popup giới thiệu element mới, có hình + một câu mô tả, nút ✕ |
+| Xin quyền thông báo **[C]** | Hộp thoại Android "Allow Squad Sort to send you notifications?" sau khi mở lại app ở level 21 |
 | Gameplay | HUD trên: Restart (trái), "Level N" (giữa), Settings (phải) **[Q]**; bàn chơi giữa; thanh booster đáy **[Q]** |
 | Level Complete | Logo + pháo hoa "Tap to Skip!", rồi popup PERFECT! + 20 coin + Continue **[C]**; nhân đôi thưởng bằng rewarded **[Đ]** |
 | Settings (popup trong level) | 3 toggle Sound · Haptic · Music, nút Resume (xanh) và Quit (đỏ), nút ✕ **[C]** |
@@ -231,14 +248,14 @@ Nền là một **khung cảnh công viên nhìn từ trên** (gạch lát, bồ
 | Mục | Giá trị quan sát |
 |---|---|
 | Coin | 1 230 ở lần đầu thấy Home (sau level 9), +20 mỗi level |
-| Thưởng thắng | 20 coin; level Hard 60 coin (×3), có nút x2 bằng quảng cáo |
-| Mốc Adventure | Level 10: 50 coin · Level 15: tim vô hạn 15 phút |
+| Thưởng thắng | Normal 20 · Hard 60 (×3) · Super Hard 100 (×5) coin; nút x2 bằng quảng cáo |
+| Mốc Adventure | Mỗi 5 level: lv10 50 coin · lv15 tim vô hạn 15 phút · lv25 +1 Undo · lv30 tim vô hạn 30 phút · lv35 150 coin |
 | Tim | Tối đa 5; mất 1 tim khi bỏ cuộc ở popup thua |
 | Add Space / Play On | 900 coin cho +1 ô quảng trường |
 | Booster | 3 lượt mỗi loại lúc mở khóa |
 | IAP (giá store VN) | Starter Bundle ₫26 000 (1 000 coin + tim 1h + 1 mỗi booster) · Mini ₫129 000 (2 000 coin, bỏ quảng cáo, tim 3h, 1 mỗi booster) · Mega ₫1 300 000 (20 000 coin, tim 36h, ×12 booster) · Ultimate ₫2 600 000 (60 000 coin, tim 72h, ×25 booster) · Coin lẻ 1 000 → 100 000 (₫52 000 → ₫2 600 000) |
 
-Không thấy interstitial trong level 1–15 khi chơi thử **[C]**.
+**Interstitial**: không có ở level 1–19; từ **sau level 20 thì có sau mỗi level thắng** **[C]**. Gặp cả quảng cáo video có nút Skip, quảng cáo playable (AppLovin) **không có nút đóng trên giả lập** (phải tắt app), và quảng cáo mở thẳng Google Play khi chạm nhầm.
 
 ### 7.2 Đề xuất cho bản của mình **[Đ]**
 | Nguồn | Chi tiết |
@@ -266,7 +283,7 @@ Các con số là `ConfigKey` (tunable), không phải hằng số trong code.
 | Win / Out of Space / Continue? / Settings / Unlock popup | Dialog qua manifest + `Scaffold.Sync` (rule #13) | |
 | Home / Adventure / Shop / Leaderboard | Screen qua `game.scenes.json` (rule #13) | Thanh tab là widget |
 | Tim, coin, booster inventory | `Game.Application` + save | Hồi tim theo giờ thực: thời gian lấy từ một clock port, không `Time.*` trong model (rule #15) |
-| Sự kiện | `SquadCompleted`, `LevelWon`, `PlazaFilled`, `LevelAbandoned`, `BoosterUsed`, `HiddenRevealed` | Thì quá khứ |
+| Sự kiện | `SquadCompleted`, `HouseOpened`, `LevelWon`, `PlazaFilled`, `LevelAbandoned`, `BoosterUsed`, `HiddenRevealed`, `EpisodeUnlocked` | Thì quá khứ |
 | Text | `LocKey` | rule #4 |
 
 Animation đi bộ chạy theo tick cố định qua `GameplayTickDriver` (rule #15); model chỉ biết bước rời rạc.
@@ -288,7 +305,7 @@ và một **cơ chế ký tên** riêng từ §4.3.
 2. ~~Nhân vật có tự trượt~~ — **không**; dồn về đầu kín (§2.2b-1).
 3. ~~Điều kiện thua~~ — **quảng trường đầy = Out of Space** (§2.4). Còn chưa rõ: từ level nào luật này bật (level 6 không có).
 4. ~~Booster 2/3~~ — **Shuffle** (lv11) và **Add Container** (lv15) (§3).
-4b. Tab thứ 5 (khóa) và nội dung chương 2 (level 20+) chưa xem.
+4b. Tab thứ 5 vẫn khóa ở level 25; element sau House (level 26+) chưa biết.
 4c. Thứ tự ưu tiên khi có nhiều ống hợp lệ cùng lúc (§2.3) chưa kiểm chứng.
 5. Tên game, bối cảnh và bộ nhân vật riêng (§9).
 6. Có meta (trang trí công viên/sưu tập nhân vật) ở bản prototype hay để sau?
