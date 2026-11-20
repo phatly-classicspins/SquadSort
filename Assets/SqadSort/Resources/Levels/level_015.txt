@@ -1,0 +1,12 @@
+// Add Container unlocks.
+name: Extra Room
+difficulty: normal
+plaza:
+####
+####
+tube 0 -1 up 4 : R G B P
+tube 1 -1 up 4 : G B P R
+tube 3 -1 up 4 : B P R G
+tube 0 2 down 4 : P R G B
+tube 3 2 down 4 :
+spare 1 2 down

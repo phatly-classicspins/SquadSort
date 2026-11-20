@@ -1,0 +1,14 @@
+// Shuffle unlocks: a row of mixed tubes.
+name: Mix Up
+difficulty: normal
+plaza:
+######
+######
+tube 0 -1 up 4 : R Y K B
+tube 1 -1 up 4 : Y K B G
+tube 2 -1 up 4 : K B G R
+tube 3 -1 up 4 : B G R Y
+tube 4 -1 up 4 : G R Y K
+tube 5 -1 up 4 :
+tube 1 2 down 4 :
+spare 4 2 down

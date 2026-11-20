@@ -1,0 +1,15 @@
+// Two houses, two colours: one opens the way to the other.
+name: Neighbours
+difficulty: normal
+plaza:
+######
+######
+tube 0 -1 up 4 : Y R R R
+house R 1 -1 up 4 : B B Y G
+tube 2 -1 up 4 : P G Y R
+tube 3 -1 up 4 : G P P
+tube 5 -1 up 4 :
+tube 0 2 down 4 : B B
+tube 2 2 down 4 :
+house B 4 2 down 4 : Y P G
+spare 5 2 down
