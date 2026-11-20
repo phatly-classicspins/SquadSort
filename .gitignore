@@ -51,3 +51,10 @@ SkuHeadlessTests/obj/
 # ============ #
 .DS_Store
 Thumbs.db
+
+# ======================================================================= #
+# Firebase writes this from Assets/google-services.json on every import,  #
+# re-minting the .meta GUID each time. Generated, so never tracked.       #
+# ======================================================================= #
+/Assets/StreamingAssets/google-services-desktop.json
+/Assets/StreamingAssets/google-services-desktop.json.meta
