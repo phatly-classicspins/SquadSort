@@ -3,3 +3,27 @@
 # each, unreadable in review. Kept out of TEXT diffs only — `git diff --stat` still lists them.
 *SDF.asset -diff
 # <<< PrototypeFramework
+
+# SqadSort: Unity writes LF. Keep every text file LF in every working tree — with core.autocrlf=true a checkout
+# turns them into CRLF, and the locale bake (Content/Localization/loc.csv -> Resources/Localization/*.json) then
+# carries "\r" into every multi-line string.
+* text=auto eol=lf
+
+# Binary payloads: never converted.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.psd binary
+*.fbx binary
+*.mp3 binary
+*.wav binary
+*.ogg binary
+*.ttf binary
+*.otf binary
+*.zip binary
+*.tgz binary
+*.dll binary
+*.so binary
+*.aar binary
+*.jar binary
+*.a binary
