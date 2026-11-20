@@ -8,5 +8,7 @@ namespace Game.Application
     /// setters). Engine-free by construction — that is what puts it inside the headless gate.
     /// Scaffolded by Scaffold.Sync (generate-once) — replace the placeholder field with the real params.
     /// </summary>
-    public sealed record MainParam(bool ColdBoot);
+    /// <param name="OutOfLives">Money Sort: the last life went on leaving a level — Home opens with Out of Lives, this being what
+    /// asked for it (<c>lose_restart</c>, <c>manual_restart</c>, <c>exit_home</c>); null otherwise.</param>
+    public sealed record MainParam(bool ColdBoot, string OutOfLives = null);
 }

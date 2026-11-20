@@ -1,0 +1,13 @@
+{
+  "name": "com.classicspins.pf-iap-unity",
+  "version": "0.1.0",
+  "displayName": "PrototypeFramework — Unity IAP",
+  "description": "An optional PrototypeFramework service module: the framework's IPurchaseService backed by Unity IAP 5 (com.unity.purchasing — App Store and Google Play), plus the Unity IAP replacement for the IapInit boot node. Grants go through the framework's GrantInterpreter once per store transaction; restore replays entitlement grants. Unity IAP is not a dependency here — it is declared in pf-module.json and installed through Framework/Setup Wizard ▸ Modules. Without it the module still compiles and refuses every purchase, logging pf-iap-unity, instead of falling back to the free-granting fake.",
+  "unity": "6000.3",
+  "dependencies": {
+    "com.classicspins.prototype-framework": "0.9.0"
+  },
+  "author": {
+    "name": "ClassicSpins"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schema": "pf-module/1",
+  "id": "com.classicspins.pf-iap-unity",
+  "displayName": "IAP — Unity IAP",
+  "summary": "IPurchaseService backed by Unity IAP 5 (App Store, Google Play). Replaces FakePurchaseService.",
+  "frameworkRange": ">=0.8.4 <0.10.0",
+  "source": { "kind": "git",
+              "url": "https://github.com/FoxCubGames/ai_prototype_framework.git?path=/Packages/com.classicspins.pf-iap-unity#iap-unity/v0.1.0" },
+  "port": {
+    "interface": "ClassicSpins.PrototypeFramework.Application.IPurchaseService",
+    "mode": "replacement",
+    "replacesBootNode": "IapInit"
+  },
+  "requires": {
+    "scopedRegistries": [],
+    "dependencies": { "com.unity.purchasing": "5.4.3" }
+  },
+  "define": "PF_UNITY_IAP",
+  "installer": {
+    "type": "ClassicSpins.PrototypeFramework.Iap.Unity.UnityIapInstaller",
+    "menu": "PrototypeFramework/IAP/Unity IAP Installer",
+    "assetPath": "Assets/{sku}/Installers/UnityIapInstaller.asset"
+  },
+  "manualSteps": [
+    "Link the project to a Unity Cloud project (Edit ▸ Project Settings ▸ Services) — Unity IAP 5 initializes Unity Gaming Services before it connects the store",
+    "Give every sellable product in Resources/Config/products.json a \"type\": \"Consumable\" or \"NonConsumable\" (absent ⇒ Consumable). A product that must survive a restore (remove-ads, a starter pack) is NonConsumable AND grants an entitlement",
+    "App Store Connect → In-App Purchases: create one product per products.json id (the id is the Product ID, verbatim), with the matching type (Consumable / Non-Consumable), price and localization; sign the Paid Applications agreement",
+    "Google Play Console → Monetize ▸ In-app products: create one product per products.json id (the id is the Product ID, verbatim) and activate it; upload a build to a testing track with the BILLING permission and add license testers",
+    "Drag UnityIapInstaller.asset into the game-installer slot on RootLifetimeScope (Master Scene)",
+    "iOS only: draw a Restore Purchases button that calls IPurchaseService.RestoreAsync (App Review requires one for non-consumables)"
+  ],
+  "docs": "recipes/add-service-module.md"
+}

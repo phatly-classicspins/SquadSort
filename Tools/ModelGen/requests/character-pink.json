@@ -1,0 +1,76 @@
+{
+  "schema": "model-gen-request/v1",
+  "id": "character-pink",
+  "subject": "pink variant derived from the approved shared body and family mockup.",
+  "size": {
+    "width": 1.0,
+    "height": 0.963,
+    "length": 0.8
+  },
+  "palette": {
+    "purple": "B63AF2",
+    "blue": "168DFA",
+    "green": "80DF0B",
+    "orange": "FF8A10",
+    "yellow": "FFE134",
+    "red": "F12C36",
+    "pink": "FF67C5",
+    "brown": "A95D36",
+    "cyan": "29D9EB",
+    "hidden": "A5A4AE",
+    "white": "F5F0F7",
+    "ink": "251F35",
+    "tray_rim": "EFEAF2",
+    "tray_floor": "B8B6C2",
+    "waiting_rim": "F2CEDD",
+    "gold": "FFD23F"
+  },
+  "max_tris": 6000,
+  "parts": [
+    {
+      "name": "Body",
+      "note": "Keep named part separate; pivot at its motion anchor."
+    },
+    {
+      "name": "Eye_L",
+      "note": "Keep named part separate; pivot at its motion anchor."
+    },
+    {
+      "name": "Eye_R",
+      "note": "Keep named part separate; pivot at its motion anchor."
+    },
+    {
+      "name": "Mouth",
+      "note": "Keep named part separate; pivot at its motion anchor."
+    },
+    {
+      "name": "Arm_L",
+      "note": "Keep named part separate; pivot at its motion anchor."
+    },
+    {
+      "name": "Arm_R",
+      "note": "Keep named part separate; pivot at its motion anchor."
+    },
+    {
+      "name": "Foot_L",
+      "note": "Keep named part separate; pivot at its motion anchor."
+    },
+    {
+      "name": "Foot_R",
+      "note": "Keep named part separate; pivot at its motion anchor."
+    },
+    {
+      "name": "Accessory",
+      "note": "Keep named part separate; pivot at its motion anchor."
+    }
+  ],
+  "references": [
+    {
+      "path": "docs/art/mockup-assets-20261119/reference/mockup.png",
+      "role": "style"
+    }
+  ],
+  "out": "docs/art/mockup-assets-20261119/models/character-pink",
+  "notes": "Family derivative. Shared approved body; dedicated accessory and expression. No rig or clips.",
+  "consumer": "Future Unity import, outside this art-only handoff."
+}

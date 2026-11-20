@@ -5,8 +5,9 @@ using ClassicSpins.PrototypeFramework.Domain;
 namespace Game.Domain
 {
     /// <summary>
-    /// The rules core of one level (GDD §2.2b / §2.3). One tap is one action; the board picks the
-    /// destination itself. Pure and deterministic: randomness only enters through
+    /// The rules core of one level (GDD §2.2b / §2.3). The player picks a group, then where it goes
+    /// (<see cref="MoveTubeToTube"/>, <see cref="MoveTubeToPlaza"/>, <see cref="MovePlazaToTube"/>);
+    /// <see cref="TapTube"/> / <see cref="TapPlaza"/> pick the destination themselves (the solver's moves). Pure and deterministic: randomness only enters through
     /// <see cref="Shuffle"/>'s <see cref="IRandom"/>, and nothing here reads time.
     /// </summary>
     public sealed class Board
@@ -96,6 +97,92 @@ namespace Game.Domain
             return Finish(moves, null);
         }
 
+        // ------------------------------------------------------------------ select, then drop
+
+        /// <summary>A tube can be picked up from: it is open and its front buddy is revealed.</summary>
+        public bool CanPickTube(int tubeIndex)
+            => State == BoardState.Playing && tubeIndex >= 0 && tubeIndex < _tubes.Count && _tubes[tubeIndex].IsActive && _tubes[tubeIndex].TopRunLength() > 0;
+
+        /// <summary>A plaza cell can be picked up from: someone stands on it.</summary>
+        public bool CanPickPlaza(int cellIndex)
+            => State == BoardState.Playing && cellIndex >= 0 && cellIndex < _plaza.Count && !_plaza[cellIndex].IsFree;
+
+        /// <summary>
+        /// The front group of tube <paramref name="from"/> walks into tube <paramref name="to"/> as far as
+        /// it has room, then plaza buddies of the colour follow (GDD §2.2b-10). The destination must be
+        /// open and empty, or show the same colour at its front.
+        /// </summary>
+        public MoveResult MoveTubeToTube(int from, int to)
+        {
+            if (State != BoardState.Playing) return new MoveResult(RejectReason.NotPlaying, State);
+            if (!CanPickTube(from)) return new MoveResult(RejectReason.NotTappable, State);
+            Tube source = _tubes[from];
+            SquadColor color = source.Top.Color;
+            if (to < 0 || to >= _tubes.Count || to == from || !Accepts(_tubes[to], color))
+                return new MoveResult(RejectReason.WrongDestination, State);
+
+            Tube dest = _tubes[to];
+            var moves = new List<BuddyMove>();
+            int n = Math.Min(source.TopRunLength(), dest.Free);
+            for (int i = 0; i < n; i++) MoveTubeToTube(source, dest, moves);
+            GatherFromPlaza(dest, color, moves);
+            return Finish(moves, dest);
+        }
+
+        /// <summary>
+        /// The front group of tube <paramref name="from"/> steps out onto the plaza: the first onto
+        /// <paramref name="cellIndex"/> if it is free, the rest onto the free cells nearest it.
+        /// </summary>
+        public MoveResult MoveTubeToPlaza(int from, int cellIndex)
+        {
+            if (State != BoardState.Playing) return new MoveResult(RejectReason.NotPlaying, State);
+            if (!CanPickTube(from)) return new MoveResult(RejectReason.NotTappable, State);
+            if (cellIndex < 0 || cellIndex >= _plaza.Count) return new MoveResult(RejectReason.WrongDestination, State);
+            int free = PlazaFree;
+            if (free == 0) return new MoveResult(RejectReason.NoSpace, State);
+
+            Tube source = _tubes[from];
+            GridPos target = _plaza[cellIndex].Pos;
+            var moves = new List<BuddyMove>();
+            int count = Math.Min(source.TopRunLength(), free);
+            for (int i = 0; i < count; i++)
+            {
+                int slot = source.Count - 1;
+                Buddy b = source.Pop();
+                PlazaCell cell = NearestFreeCell(target);
+                cell.Occupant = b;
+                moves.Add(new BuddyMove(b.Id, BuddyLocation.InTube(source.Index, slot), BuddyLocation.OnPlaza(cell.Index)));
+            }
+
+            return Finish(moves, null);
+        }
+
+        /// <summary>
+        /// The plaza buddy on <paramref name="cellIndex"/> walks into tube <paramref name="to"/>; plaza
+        /// buddies of its colour follow while there is room.
+        /// </summary>
+        public MoveResult MovePlazaToTube(int cellIndex, int to)
+        {
+            if (State != BoardState.Playing) return new MoveResult(RejectReason.NotPlaying, State);
+            if (!CanPickPlaza(cellIndex)) return new MoveResult(RejectReason.NotTappable, State);
+            PlazaCell start = _plaza[cellIndex];
+            SquadColor color = start.Occupant.Color;
+            if (to < 0 || to >= _tubes.Count || !Accepts(_tubes[to], color))
+                return new MoveResult(RejectReason.WrongDestination, State);
+
+            Tube dest = _tubes[to];
+            Buddy first = start.Occupant;
+            start.Occupant = null;
+            dest.Push(first);
+            var moves = new List<BuddyMove> { new BuddyMove(first.Id, BuddyLocation.OnPlaza(start.Index), BuddyLocation.InTube(dest.Index, dest.Count - 1)) };
+            GatherFromPlaza(dest, color, moves);
+            return Finish(moves, dest);
+        }
+
+        /// <summary>An open tube with room that is empty or shows <paramref name="color"/> at its front.</summary>
+        public bool Accepts(Tube tube, SquadColor color)
+            => tube != null && tube.IsActive && tube.Free > 0 && (tube.IsEmpty || (!tube.Top.Hidden && tube.Top.Color == color));
+
         /// <summary>Tap a buddy on the plaza: every plaza buddy of its colour goes to the best tube (GDD §2.2b-4).</summary>
         public MoveResult TapPlaza(int cellIndex)
         {
@@ -142,6 +229,7 @@ namespace Game.Domain
             if (!CanAddSpareTube || State == BoardState.Won) return -1;
             var tube = new Tube(_tubes.Count, _spareMouth.Value, _spareDirection, capacity, houseColor: null, isSpare: true);
             _tubes.Add(tube);
+            if (State == BoardState.OutOfSpace) State = BoardState.Playing;   // an empty tube is somewhere to go again
             return tube.Index;
         }
 
@@ -153,6 +241,37 @@ namespace Game.Domain
             _plaza.Add(cell);
             if (State == BoardState.OutOfSpace) State = BoardState.Playing;
             return cell.Index;
+        }
+
+        /// <summary>
+        /// Where Add Space (the Out of Space continue) puts its cell: a free grid cell next to the plaza that no tube — nor the
+        /// level's spare tube — uses; the lowest row first, then the one nearest the plaza's middle. Null when none is left.
+        /// </summary>
+        public GridPos? NextPlazaCell()
+        {
+            var used = new HashSet<GridPos>();
+            foreach (PlazaCell c in _plaza) used.Add(c.Pos);
+            foreach (Tube t in _tubes)
+                for (int s = 0; s < t.Capacity; s++) used.Add(t.CellOf(s));
+            if (_spareMouth.HasValue && CanAddSpareTube)
+                for (int s = 0; s < SquadSize; s++) used.Add(_spareMouth.Value.Step(_spareDirection, s));
+
+            double midX = 0;
+            foreach (PlazaCell c in _plaza) midX += c.Pos.X;
+            midX = _plaza.Count > 0 ? midX / _plaza.Count : 0;
+
+            GridPos? best = null;
+            foreach (PlazaCell c in _plaza)
+            foreach (TubeDirection d in new[] { TubeDirection.Down, TubeDirection.Left, TubeDirection.Right, TubeDirection.Up })
+            {
+                GridPos n = c.Pos.Step(d, 1);
+                if (used.Contains(n)) continue;
+                if (best == null || n.Y > best.Value.Y
+                    || (n.Y == best.Value.Y && Math.Abs(n.X - midX) < Math.Abs(best.Value.X - midX)))
+                    best = n;
+            }
+
+            return best;
         }
 
         // ------------------------------------------------------------------ undo

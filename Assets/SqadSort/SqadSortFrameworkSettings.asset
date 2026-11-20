@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78b3f32cebd8479f836a6da74d453c8a, type: 3}
   m_Name: SqadSortFrameworkSettings
   m_EditorClassIdentifier: Game.Composition::Game.Composition.SqadSortFrameworkSettings
-  _referenceResolution: {x: 1080, y: 1920}
+  _referenceResolution: {x: 720, y: 1280}
   _pixelsPerMeter: 100
   _androidApplicationId: 
   _referenceRenderRig: {fileID: 0}
   _servesNoConsentRegion: 0
   _frameworkConfigText: {fileID: 0}
+  _audioMixer: {fileID: 24100000, guid: 19ed0e787c6d1b746b33019f9464b4ea, type: 2}

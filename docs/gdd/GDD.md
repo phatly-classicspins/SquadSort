@@ -55,11 +55,11 @@ Mỗi ô chứa tối đa **1 nhân vật**. Nhân vật có **màu** (video: t�
    còn ô trống. Khi nhóm đầu rời đi, phần còn lại **không trượt** ra phía đầu mở.
 2. **Nhóm đầu ống** = chuỗi liên tiếp cùng màu tính từ phía đầu mở. Chạm **bất kỳ** nhân vật nào
    trong nhóm → **cả nhóm** đi cùng nhau.
-3. **Một chạm, game tự chọn đích** (không có bước chọn đích):
-   1. Ống có nhóm đầu **cùng màu** và còn chỗ, hoặc **ống rỗng** → cả nhóm đi vào ống đó.
-   2. Không có ống hợp lệ → nhóm ra **quảng trường**, ưu tiên ô gần đầu ống.
-4. **Chạm nhân vật trên quảng trường** → **mọi** nhân vật cùng màu đang ở quảng trường (kể cả không
-   đứng cạnh nhau) cùng đi vào ống hợp lệ. Không có ống hợp lệ → không xảy ra gì.
+3. **Chọn rồi thả** (prototype, §2.3): chạm nhóm để nhấc lên, rồi chạm đích. Đích là **ống hợp lệ**
+   (rỗng, hoặc nhóm đầu cùng màu và còn chỗ) hoặc **ô trống trên quảng trường**.
+   *Game gốc:* một chạm, game tự chọn đích (ống cùng màu → ống rỗng → quảng trường gần đầu ống).
+4. **Nhân vật trên quảng trường** được nhấc từng con; thả vào ống hợp lệ thì các nhân vật cùng màu
+   khác trên quảng trường tự đi theo (§2.2b-10). Quảng trường → quảng trường không phải một bước.
 5. **Đi một phần.** Nếu đích chỉ đủ chỗ cho một phần nhóm, chỉ số vừa đủ chỗ đi; phần còn lại ở yên.
 6. **Nhường đường.** Nhân vật trên quảng trường **tự né** sang ô trống khác để nhóm đang đi lọt qua — người chơi không bị chặn bởi việc ai đứng chắn trên quảng trường.
 7. **Hoàn thành đội.** Ống có đủ 4 nhân vật cùng màu → ăn mừng → **cả ống biến mất** khỏi bàn.
@@ -80,31 +80,32 @@ Mỗi ô chứa tối đa **1 nhân vật**. Nhân vật có **màu** (video: t�
     xanh dương mở cùng lúc khi gom đủ 4 xanh dương. Màu nhà và màu nhân vật bên trong khác nhau.
     Popup "House Unlocked!": "Complete the matching color to open the house and free the characters inside."
 
-### 2.3 Thao tác — một chạm, như game gốc (đã chốt 2026-11-17)
-Một bước đi = **một lần chạm**. Không có bước chọn đích; game tự quyết theo §2.2b.
+### 2.3 Thao tác — chọn rồi thả (đổi 2026-11-19)
+Đã thử một chạm như game gốc (chốt 2026-11-17); sau khi chơi prototype, đổi sang **hai chạm**: chạm nhóm
+để nhấc lên, chạm đích để thả. Người chơi tự quyết đích, game không chọn hộ.
 
-| Chạm vào | Kết quả |
-|---|---|
-| Nhân vật tỉnh trong ống | Cả **nhóm đầu ống** (chuỗi cùng màu liên tiếp) đi tới đích tốt nhất |
-| Nhân vật trên quảng trường | **Mọi** nhân vật cùng màu trên quảng trường đi vào ống hợp lệ |
-| Nhân vật ngủ | Không có gì (có thể cựa mình) |
-| Không có đích | Viền quảng trường nháy đỏ, nhân vật nhăn mặt; không tính bước |
+| Đang cầm | Chạm vào | Kết quả |
+|---|---|---|
+| Không | Ống có nhóm đầu tỉnh (chạm nhân vật nào trong ống hay khoảng trống của ống đều được) | Nhấc **nhóm đầu ống** lên |
+| Không | Nhân vật trên quảng trường | Nhấc nhân vật đó lên |
+| Không | Ống không có gì để nhấc (rỗng, nhà, đầu ống còn ẩn) / ô trống | Không có gì |
+| Nhóm | Chính chỗ đang nhấc | Đặt xuống, bỏ chọn |
+| Nhóm từ ống / quảng trường | **Ống hợp lệ** | Nhóm đi vào (đi một phần nếu thiếu chỗ), rồi nhân vật cùng màu trên quảng trường tự đi theo |
+| Nhóm từ ống | **Ô trống** trên quảng trường | Con đầu đứng đúng ô đã chạm, các con sau đứng ô trống gần ô đó nhất |
+| Nhóm | Ống không hợp lệ nhưng có nhóm nhấc được | **Đổi chọn** sang nhóm của ống đó |
+| Nhóm | Nhân vật khác trên quảng trường | Đổi chọn sang nhân vật đó |
+| Nhóm | Ống không hợp lệ và không nhấc được | Nhóm đang cầm lắc đầu, đặt xuống; không tính bước |
+| Nhóm từ quảng trường | Ô trống | Đặt xuống (quảng trường → quảng trường không phải một bước) |
 
-**Thứ tự chọn đích** (cho nhóm từ ống):
-1. Ống có nhóm đầu **cùng màu** và còn chỗ → ưu tiên ống đó.
-2. **Ống rỗng**.
-3. **Quảng trường** — ô trống gần đầu ống nhất.
-
-**Ống hợp lệ** = còn chỗ **và** (rỗng **hoặc** nhân vật gần đầu mở nhất cùng màu).
-Không đủ chỗ cho cả nhóm → chỉ phần vừa đủ đi (§2.2b-5).
-Sau khi nhóm vào ống, nhân vật cùng màu trên quảng trường tự đi theo vào ống đó (§2.2b-10).
+**Ống hợp lệ** = mở, còn chỗ **và** (rỗng **hoặc** nhân vật gần đầu mở nhất cùng màu, đã lộ).
 
 **Quy tắc**
-- Mỗi chạm có kết quả = một bước, vào stack Undo.
-- Model cập nhật tức thì khi chạm; View chỉ diễn hoạt đi bộ và nhường đường. Chạm tiếp trong lúc
-  nhân vật đang đi vẫn được nhận và tính trên trạng thái model mới.
-- Thứ tự ưu tiên khi có **nhiều** ống hợp lệ cùng lúc chưa kiểm chứng **[S]** — đề xuất: ống có nhóm
-  cùng màu dài nhất, hòa thì ống gần nhất.
+- Mỗi lần thả thành công = một bước, vào stack Undo. Nhấc lên / đổi chọn không tính bước.
+- Nhóm được nhấc nổi lên một chút để báo đang được chọn.
+- Model cập nhật tức thì khi thả; View chỉ diễn hoạt đi bộ. Chạm tiếp trong lúc nhân vật đang đi vẫn
+  được nhận và tính trên trạng thái model mới.
+- Bộ giải (solver) kiểm tra level vẫn dùng luật một chạm; mọi nước một chạm đều làm được bằng chọn rồi
+  thả, nên level giải được theo solver thì cũng giải được khi chơi.
 
 ### 2.4 Hoàn thành đội & thắng/thua
 - **Đội hoàn thành**: một ống chứa đủ `capacity` nhân vật cùng màu → ăn mừng ~1 s → cả ống (ống + đội) rời bàn **[Q]**, giải phóng không gian.
@@ -301,7 +302,7 @@ và một **cơ chế ký tên** riêng từ §4.3.
 
 ## 10. Câu hỏi mở
 
-1. ~~Luật chạm~~ — **đã chốt: một chạm như game gốc** (§2.3, 2026-11-17).
+1. ~~Luật chạm~~ — **đã chốt: chọn rồi thả** (§2.3, đổi 2026-11-19 sau khi chơi prototype; trước đó là một chạm như game gốc).
 2. ~~Nhân vật có tự trượt~~ — **không**; dồn về đầu kín (§2.2b-1).
 3. ~~Điều kiện thua~~ — **quảng trường đầy = Out of Space** (§2.4). Còn chưa rõ: từ level nào luật này bật (level 6 không có).
 4. ~~Booster 2/3~~ — **Shuffle** (lv11) và **Add Container** (lv15) (§3).

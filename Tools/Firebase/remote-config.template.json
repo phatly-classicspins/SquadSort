@@ -1,0 +1,538 @@
+{
+  "version": {
+    "versionNumber": "2",
+    "updateTime": "2026-10-29T11:18:41.614828Z",
+    "updateOrigin": "CONSOLE",
+    "updateType": "INCREMENTAL_UPDATE"
+  },
+  "parameterGroups": {
+    "economy": {
+      "parameters": {
+        "economy_start_coins": {
+          "defaultValue": {
+            "value": "100"
+          },
+          "description": "SqadSort config key economy.start_coins",
+          "valueType": "NUMBER"
+        },
+        "level_win_coin": {
+          "defaultValue": {
+            "value": "40"
+          },
+          "description": "SqadSort config key level_win_coin",
+          "valueType": "NUMBER"
+        },
+        "level_win_ad_multiplier": {
+          "defaultValue": {
+            "value": "2"
+          },
+          "description": "SqadSort config key level_win_ad_multiplier",
+          "valueType": "NUMBER"
+        },
+        "level_win_ad_multipliers": {
+          "defaultValue": {
+            "value": "2,3,5,3,2"
+          },
+          "description": "SqadSort config key level_win_ad_multipliers (D-076: win bonus needle segments, left to right)",
+          "valueType": "STRING"
+        },
+        "level_win_needle_arc": {
+          "defaultValue": {
+            "value": "84"
+          },
+          "description": "SqadSort config key level_win_needle_arc",
+          "valueType": "NUMBER"
+        },
+        "level_win_needle_speed": {
+          "defaultValue": {
+            "value": "0.8"
+          },
+          "description": "SqadSort config key level_win_needle_speed",
+          "valueType": "NUMBER"
+        },
+        "level_win_needle_ad_delay": {
+          "defaultValue": {
+            "value": "1"
+          },
+          "description": "SqadSort config key level_win_needle_ad_delay",
+          "valueType": "NUMBER"
+        }
+      }
+    },
+    "revive": {
+      "parameters": {
+        "revive_base_cost": {
+          "defaultValue": {
+            "value": "900"
+          },
+          "description": "SqadSort config key revive_base_cost",
+          "valueType": "NUMBER"
+        },
+        "revive_cost_growth": {
+          "defaultValue": {
+            "value": "1"
+          },
+          "description": "SqadSort config key revive_cost_growth",
+          "valueType": "NUMBER"
+        },
+        "revive_removes": {
+          "defaultValue": {
+            "value": "2"
+          },
+          "description": "SqadSort config key revive.removes",
+          "valueType": "NUMBER"
+        },
+        "revive_max_per_level": {
+          "defaultValue": {
+            "value": "3"
+          },
+          "description": "SqadSort config key revive.max_per_level",
+          "valueType": "NUMBER"
+        },
+        "revive_max_ads_per_attempt": {
+          "defaultValue": {
+            "value": "1"
+          },
+          "description": "SqadSort config key revive_max_ads_per_attempt",
+          "valueType": "NUMBER"
+        }
+      }
+    },
+    "rv_slot": {
+      "parameters": {
+        "rv_slot_amount": {
+          "defaultValue": {
+            "value": "5"
+          },
+          "description": "SqadSort config key rv_slot.amount",
+          "valueType": "NUMBER"
+        },
+        "rv_slot_max_per_attempt": {
+          "defaultValue": {
+            "value": "2"
+          },
+          "description": "SqadSort config key rv_slot.max_per_attempt",
+          "valueType": "NUMBER"
+        },
+        "rv_slot_free_up_to_level": {
+          "defaultValue": {
+            "value": "3"
+          },
+          "description": "SqadSort config key rv_slot.free_up_to_level",
+          "valueType": "NUMBER"
+        },
+        "lose_booster_hint_seconds": {
+          "defaultValue": {
+            "value": "3"
+          },
+          "description": "SqadSort config key lose_booster_hint_seconds",
+          "valueType": "NUMBER"
+        },
+        "rv_nudge_free_slots": {
+          "defaultValue": {
+            "value": "2"
+          },
+          "description": "SqadSort config key rv_nudge_free_slots",
+          "valueType": "NUMBER"
+        },
+        "rv_nudge_bubble_seconds": {
+          "defaultValue": {
+            "value": "5"
+          },
+          "description": "SqadSort config key rv_nudge_bubble_seconds",
+          "valueType": "NUMBER"
+        },
+        "rv_nudge_bubble_cooldown_seconds": {
+          "defaultValue": {
+            "value": "30"
+          },
+          "description": "SqadSort config key rv_nudge_bubble_cooldown_seconds",
+          "valueType": "NUMBER"
+        },
+        "rv_nudge_bubble_max_per_attempt": {
+          "defaultValue": {
+            "value": "2"
+          },
+          "description": "SqadSort config key rv_nudge_bubble_max_per_attempt",
+          "valueType": "NUMBER"
+        },
+        "rv_nudge_ignore_streak": {
+          "defaultValue": {
+            "value": "3"
+          },
+          "description": "SqadSort config key rv_nudge_ignore_streak",
+          "valueType": "NUMBER"
+        }
+      }
+    },
+    "booster": {
+      "parameters": {
+        "booster_undo_unlock_level": {
+          "defaultValue": {
+            "value": "5"
+          },
+          "description": "SqadSort config key booster.undo.unlock_level",
+          "valueType": "NUMBER"
+        },
+        "booster_shuffle_unlock_level": {
+          "defaultValue": {
+            "value": "11"
+          },
+          "description": "SqadSort config key booster.shuffle.unlock_level",
+          "valueType": "NUMBER"
+        },
+        "booster_add_container_unlock_level": {
+          "defaultValue": {
+            "value": "15"
+          },
+          "description": "SqadSort config key booster.add_container.unlock_level",
+          "valueType": "NUMBER"
+        },
+        "booster_undo_coin_price": {
+          "defaultValue": {
+            "value": "100"
+          },
+          "description": "SqadSort config key booster_undo_coin_price",
+          "valueType": "NUMBER"
+        },
+        "booster_shuffle_coin_price": {
+          "defaultValue": {
+            "value": "80"
+          },
+          "description": "SqadSort config key booster_shuffle_coin_price",
+          "valueType": "NUMBER"
+        },
+        "booster_add_container_coin_price": {
+          "defaultValue": {
+            "value": "120"
+          },
+          "description": "SqadSort config key booster_add_container_coin_price",
+          "valueType": "NUMBER"
+        },
+        "booster_undo_coin_amount": {
+          "defaultValue": {
+            "value": "3"
+          },
+          "description": "SqadSort config key booster_undo_coin_amount",
+          "valueType": "NUMBER"
+        },
+        "booster_shuffle_coin_amount": {
+          "defaultValue": {
+            "value": "3"
+          },
+          "description": "SqadSort config key booster_shuffle_coin_amount",
+          "valueType": "NUMBER"
+        },
+        "booster_add_container_coin_amount": {
+          "defaultValue": {
+            "value": "3"
+          },
+          "description": "SqadSort config key booster_add_container_coin_amount",
+          "valueType": "NUMBER"
+        },
+        "booster_undo_ad_amount": {
+          "defaultValue": {
+            "value": "1"
+          },
+          "description": "SqadSort config key booster_undo_ad_amount",
+          "valueType": "NUMBER"
+        },
+        "booster_shuffle_ad_amount": {
+          "defaultValue": {
+            "value": "1"
+          },
+          "description": "SqadSort config key booster_shuffle_ad_amount",
+          "valueType": "NUMBER"
+        },
+        "booster_add_container_ad_amount": {
+          "defaultValue": {
+            "value": "1"
+          },
+          "description": "SqadSort config key booster_add_container_ad_amount",
+          "valueType": "NUMBER"
+        },
+        "booster_unlock_gift": {
+          "defaultValue": {
+            "value": "3"
+          },
+          "description": "SqadSort config key booster.unlock_gift",
+          "valueType": "NUMBER"
+        },
+        "retry_booster_max_per_day": {
+          "defaultValue": {
+            "value": "3"
+          },
+          "description": "SqadSort config key retry_booster_max_per_day",
+          "valueType": "NUMBER"
+        }
+      }
+    },
+    "element": {
+      "parameters": {
+        "element_hidden_level": {
+          "defaultValue": {
+            "value": "8"
+          },
+          "description": "SqadSort config key element.hidden.level",
+          "valueType": "NUMBER"
+        },
+        "element_house_level": {
+          "defaultValue": {
+            "value": "20"
+          },
+          "description": "SqadSort config key element.house.level",
+          "valueType": "NUMBER"
+        }
+      }
+    },
+    "lives": {
+      "parameters": {
+        "lives_max": {
+          "defaultValue": {
+            "value": "5"
+          },
+          "description": "SqadSort config key lives_max",
+          "valueType": "NUMBER"
+        },
+        "life_refill_minutes": {
+          "defaultValue": {
+            "value": "20"
+          },
+          "description": "SqadSort config key life_refill_minutes",
+          "valueType": "NUMBER"
+        },
+        "lives_refill_coin_cost": {
+          "defaultValue": {
+            "value": "900"
+          },
+          "description": "SqadSort config key lives_refill_coin_cost",
+          "valueType": "NUMBER"
+        },
+        "lives_refill_coin_amount": {
+          "defaultValue": {
+            "value": "5"
+          },
+          "description": "SqadSort config key lives_refill_coin_amount",
+          "valueType": "NUMBER"
+        },
+        "lives_refill_ad_amount": {
+          "defaultValue": {
+            "value": "1"
+          },
+          "description": "SqadSort config key lives_refill_ad_amount",
+          "valueType": "NUMBER"
+        }
+      }
+    },
+    "legal": {
+      "parameters": {
+        "legal_terms_url": {
+          "defaultValue": {
+            "value": "https://example.com/terms"
+          },
+          "description": "SqadSort config key legal.terms_url",
+          "valueType": "STRING"
+        },
+        "legal_privacy_url": {
+          "defaultValue": {
+            "value": "https://example.com/privacy"
+          },
+          "description": "SqadSort config key legal.privacy_url",
+          "valueType": "STRING"
+        }
+      }
+    },
+    "ads": {
+      "parameters": {
+        "ads_interstitial_first_level": {
+          "defaultValue": {
+            "value": "12"
+          },
+          "description": "SqadSort config key ads.interstitial.first_level",
+          "valueType": "NUMBER"
+        },
+        "ads_interstitial_every_n_wins": {
+          "defaultValue": {
+            "value": "1"
+          },
+          "description": "SqadSort config key ads.interstitial.every_n_wins",
+          "valueType": "NUMBER"
+        },
+        "ads_interstitial_min_interval_seconds": {
+          "defaultValue": {
+            "value": "180"
+          },
+          "description": "SqadSort config key ads.interstitial.min_interval_seconds",
+          "valueType": "NUMBER"
+        },
+        "ads_banner_first_level": {
+          "defaultValue": {
+            "value": "3"
+          },
+          "description": "SqadSort config key ads.banner.first_level",
+          "valueType": "NUMBER"
+        }
+      }
+    },
+    "online": {
+      "parameters": {
+        "require_internet": {
+          "defaultValue": {
+            "value": "true"
+          },
+          "description": "SqadSort config key require_internet",
+          "valueType": "BOOLEAN"
+        },
+        "internet_check_seconds": {
+          "defaultValue": {
+            "value": "3"
+          },
+          "description": "SqadSort config key internet_check_seconds",
+          "valueType": "NUMBER"
+        }
+      }
+    },
+    "skip_level": {
+      "parameters": {
+        "skip_level_unlock_level": {
+          "defaultValue": {
+            "value": "5"
+          },
+          "description": "SqadSort config key skip_level_unlock_level",
+          "valueType": "NUMBER"
+        },
+        "skip_level_fail_count": {
+          "defaultValue": {
+            "value": "3"
+          },
+          "description": "SqadSort config key skip_level_fail_count",
+          "valueType": "NUMBER"
+        },
+        "skip_level_max_per_day": {
+          "defaultValue": {
+            "value": "3"
+          },
+          "description": "SqadSort config key skip_level_max_per_day",
+          "valueType": "NUMBER"
+        },
+        "skip_level_coin_cost": {
+          "defaultValue": {
+            "value": "900"
+          },
+          "description": "SqadSort config key skip_level_coin_cost",
+          "valueType": "NUMBER"
+        }
+      }
+    },
+    "shop": {
+      "parameters": {
+        "starter_pack_unlock_level": {
+          "defaultValue": {
+            "value": "12"
+          },
+          "description": "SqadSort config key starter_pack_unlock_level",
+          "valueType": "NUMBER"
+        },
+        "starter_pack_duration_hours": {
+          "defaultValue": {
+            "value": "72"
+          },
+          "description": "SqadSort config key starter_pack_duration_hours",
+          "valueType": "NUMBER"
+        },
+        "remove_ads_unlock_level": {
+          "defaultValue": {
+            "value": "15"
+          },
+          "description": "SqadSort config key remove_ads_unlock_level",
+          "valueType": "NUMBER"
+        },
+        "garage_gift_unlock_level": {
+          "defaultValue": {
+            "value": "10"
+          },
+          "description": "SqadSort config key garage_gift_unlock_level",
+          "valueType": "NUMBER"
+        },
+        "gold_brick_coins": {
+          "defaultValue": {
+            "value": "200"
+          },
+          "description": "SqadSort config key gold_brick_coins",
+          "valueType": "NUMBER"
+        },
+        "gold_brick_active_minutes": {
+          "defaultValue": {
+            "value": "10"
+          },
+          "description": "SqadSort config key gold_brick_active_minutes",
+          "valueType": "NUMBER"
+        },
+        "gold_brick_cooldown_hours": {
+          "defaultValue": {
+            "value": "4"
+          },
+          "description": "SqadSort config key gold_brick_cooldown_hours",
+          "valueType": "NUMBER"
+        }
+      }
+    },
+    "rating": {
+      "parameters": {
+        "rating_prompt_level": {
+          "defaultValue": {
+            "value": "15"
+          },
+          "description": "SqadSort config key rating.prompt_level",
+          "valueType": "NUMBER"
+        },
+        "rating_store_min_stars": {
+          "defaultValue": {
+            "value": "4"
+          },
+          "description": "SqadSort config key rating.store_min_stars",
+          "valueType": "NUMBER"
+        },
+        "rating_ios_app_id": {
+          "defaultValue": {
+            "value": "6827467015"
+          },
+          "description": "SqadSort config key rating.ios_app_id",
+          "valueType": "STRING"
+        },
+        "rating_android_package": {
+          "defaultValue": {
+            "value": ""
+          },
+          "description": "SqadSort config key rating.android_package",
+          "valueType": "STRING"
+        },
+        "rating_feedback_url": {
+          "defaultValue": {
+            "value": "https://brainbucks.com/contact"
+          },
+          "description": "SqadSort config key rating.feedback_url",
+          "valueType": "STRING"
+        }
+      }
+    },
+    "level": {
+      "parameters": {
+        "level_loop_last_level": {
+          "defaultValue": {
+            "value": "40"
+          },
+          "description": "SqadSort config key level_loop_last_level",
+          "valueType": "NUMBER"
+        },
+        "level_loop_start_level": {
+          "defaultValue": {
+            "value": "21"
+          },
+          "description": "SqadSort config key level_loop_start_level",
+          "valueType": "NUMBER"
+        }
+      }
+    }
+  }
+}

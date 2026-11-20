@@ -5,7 +5,7 @@ using Game.Domain;
 
 namespace Game.Application
 {
-    public enum Booster : byte
+    public enum Booster
     {
         Undo,
         Shuffle,
@@ -46,6 +46,12 @@ namespace Game.Application
         public MoveResult TapTube(int tube) => Record(() => Board.TapTube(tube));
 
         public MoveResult TapPlaza(int cell) => Record(() => Board.TapPlaza(cell));
+
+        public MoveResult MoveTubeToTube(int from, int to) => Record(() => Board.MoveTubeToTube(from, to));
+
+        public MoveResult MoveTubeToPlaza(int from, int cell) => Record(() => Board.MoveTubeToPlaza(from, cell));
+
+        public MoveResult MovePlazaToTube(int cell, int to) => Record(() => Board.MovePlazaToTube(cell, to));
 
         /// <summary>Undo the last accepted move. Spends a charge. Returns false if nothing was undone.</summary>
         public bool Undo()

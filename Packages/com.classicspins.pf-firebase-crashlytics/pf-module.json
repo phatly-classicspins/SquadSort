@@ -1,0 +1,49 @@
+{
+  "schema": "pf-module/1",
+  "id": "com.classicspins.pf-firebase-crashlytics",
+  "displayName": "Crash reporting — Firebase Crashlytics",
+  "summary": "Firebase Crashlytics in place of the framework's CrashLog boot node: same id and capabilities, Crashlytics started in the background.",
+  "frameworkRange": ">=0.9.0 <0.10.0",
+  "port": {
+    "interface": "ClassicSpins.PrototypeFramework.Application.IBootNode",
+    "mode": "replacement",
+    "replacesBootNode": "CrashLog"
+  },
+  "requires": {
+    "scopedRegistries": [
+      {
+        "name": "package.openupm.com",
+        "url": "https://package.openupm.com",
+        "scopes": [
+          "com.google.external-dependency-manager"
+        ]
+      }
+    ],
+    "dependencies": {
+      "com.google.external-dependency-manager": "1.2.190"
+    },
+    "manualPackages": [
+      {
+        "package": "com.google.firebase.app",
+        "version": "14.1.0"
+      },
+      {
+        "package": "com.google.firebase.crashlytics",
+        "version": "14.1.0"
+      }
+    ]
+  },
+  "define": "PF_FIREBASE_CRASHLYTICS",
+  "installer": {
+    "type": "ClassicSpins.PrototypeFramework.FirebaseCrashlytics.FirebaseCrashlyticsInstaller",
+    "menu": "PrototypeFramework/Crash Reporting/Firebase Crashlytics Installer",
+    "assetPath": "Assets/{sku}/Installers/FirebaseCrashlyticsInstaller.asset"
+  },
+  "manualSteps": [
+    "Firebase is not on a package registry: download com.google.firebase.app-14.1.0.tgz and com.google.firebase.crashlytics-14.1.0.tgz from the official Firebase Unity SDK distribution into Packages/ManualSdk/, and add both as file:ManualSdk/<file>.tgz lines to Packages/manifest.json.",
+    "Enable Crashlytics for the app in the Firebase console; GoogleService-Info.plist / google-services.json are the ones pf-firebase-rc already checks.",
+    "Create the installer asset (Assets ▸ Create ▸ PrototypeFramework ▸ Crash Reporting ▸ Firebase Crashlytics Installer) and drop it into RootLifetimeScope ▸ SKU game installers in the Master Scene.",
+    "Verify on a device: force a test crash, relaunch the app, and check the Crashlytics dashboard (the first report can take a few minutes)."
+  ],
+  "docs": "recipes/add-service-module.md"
+}

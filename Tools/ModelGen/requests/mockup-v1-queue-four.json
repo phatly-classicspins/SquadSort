@@ -1,0 +1,48 @@
+{
+  "schema": "model-gen-request/v1",
+  "id": "mockup-v1-queue-four",
+  "subject": "Open-entry four-character tray, ivory rounded U-shaped rim and inset gray floor.",
+  "size": {
+    "width": 1.28,
+    "height": 0.26,
+    "length": 4.6
+  },
+  "palette": {
+    "purple": "B63AF2",
+    "blue": "168DFA",
+    "green": "80DF0B",
+    "orange": "FF8A10",
+    "yellow": "FFE134",
+    "red": "F12C36",
+    "pink": "FF67C5",
+    "brown": "A95D36",
+    "cyan": "29D9EB",
+    "hidden": "A5A4AE",
+    "white": "F5F0F7",
+    "ink": "251F35",
+    "tray_rim": "EFEAF2",
+    "tray_floor": "B8B6C2",
+    "waiting_rim": "F2CEDD",
+    "gold": "FFD23F"
+  },
+  "max_tris": 2500,
+  "parts": [
+    {
+      "name": "Floor",
+      "note": "Keep named part separate; pivot at its motion anchor."
+    },
+    {
+      "name": "Rim",
+      "note": "Keep named part separate; pivot at its motion anchor."
+    }
+  ],
+  "references": [
+    {
+      "path": "docs/art/mockup-assets-20261119/reference/mockup.png",
+      "role": "style"
+    }
+  ],
+  "out": "docs/art/mockup-assets-20261119/models/queue-four",
+  "notes": "USER APPROVED blueprint. This is a genuine hollow open-entry tray: X width 1.28, Y length 4.6, Z height .26, front OPEN at Y=-2.3. Floor at z=.04; continuous U-shaped ivory rim left/right and closed curved back, rim thickness .12, rounded bevel .06, gray inset floor. Absolutely no wall across front mouth. Do not make a solid box with a painted cavity. Build a continuous inner and outer rim with coherent normals using profile cross sections/mesh as needed. Ground z=0. Floor and Rim separate mesh parts. Keep 2500 tris. Pink accents only on exterior mouth tips. FRONT/BACK blueprint has stylized perspective; numeric dimensions win. Match plan silhouette and softly rounded finish.",
+  "consumer": "Future Unity import, outside this art-only handoff."
+}

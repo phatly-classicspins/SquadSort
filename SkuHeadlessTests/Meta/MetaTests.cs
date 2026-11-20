@@ -1,0 +1,306 @@
+using System;
+using System.Linq;
+using ClassicSpins.PrototypeFramework.Application;
+using Game.Application;
+using ClassicSpins.PrototypeFramework.Domain;
+using Game.Domain;
+using NUnit.Framework;
+
+namespace SqadSort.SkuHeadlessTests.Meta
+{
+    /// <summary>In-memory save port that can be told to fail, to prove G18 rollbacks.</summary>
+    sealed class TestStore : IProgressStore
+    {
+        public ProgressModel Progress { get; } = new ProgressModel();
+        public SettingsModel Settings { get; } = new SettingsModel();
+        public int Saves;
+        public bool Fail;
+        public void Save() { if (Fail) throw new System.IO.IOException("disk full"); Saves++; }
+    }
+
+    /// <summary>In-memory wallet: the framework port without its save / publish side effects.</summary>
+    sealed class TestWallet : IWalletService
+    {
+        readonly System.Collections.Generic.Dictionary<ResourceKey, long> _b = new System.Collections.Generic.Dictionary<ResourceKey, long>();
+        public long Balance(ResourceKey res) => _b.TryGetValue(res, out var v) ? v : 0;
+        public bool CanAfford(ResourceKey res, long amount) => Balance(res) >= amount;
+        public bool TrySpend(ResourceKey res, long amount, GrantSource sink) { if (!CanAfford(res, amount)) return false; _b[res] = Balance(res) - amount; return true; }
+        public void Grant(ResourceKey res, long amount, GrantSource source) => _b[res] = Balance(res) + amount;
+        public bool TryExchange(ResourceKey spend, long cost, Action<IWalletGrant> grant, GrantSource source) => throw new NotSupportedException();
+    }
+
+    /// <summary>Records the progression facts (D-057, D-061).</summary>
+    sealed class TestFacts : IProgressFacts
+    {
+        public readonly System.Collections.Generic.List<int> FirstClears = new System.Collections.Generic.List<int>();
+        /// <summary>"earn coins 40 level_up", "spend ap_booster_undo 1 action_phase", "unlock ap_booster_undo" …</summary>
+        public readonly System.Collections.Generic.List<string> Log = new System.Collections.Generic.List<string>();
+        public void FirstClear(int level) => FirstClears.Add(level);
+        public void Earned(string currency, long value, string placement) => Log.Add($"earn {currency} {value} {placement}");
+        public void Spent(string currency, long value, string placement) => Log.Add($"spend {currency} {value} {placement}");
+        public void FeatureUnlocked(string feature) => Log.Add($"unlock {feature}");
+    }
+
+    public class LevelProgressTests
+    {
+        TestStore store; TestWallet wallet; EconomyTuning tuning; LevelProgressService svc;
+
+        [SetUp]
+        public void SetUp()
+        {
+            store = new TestStore(); wallet = new TestWallet(); tuning = new EconomyTuning();
+            svc = new LevelProgressService(store, wallet, tuning, new TestFacts());
+        }
+
+        [Test]
+        public void Win_advances_and_a_replay_never_lowers_progress()
+        {
+            var w = svc.CompleteLevel(1);
+            Assert.That((w.Saved, w.NextLevel, w.Replay), Is.EqualTo((true, 2, false)));
+            svc.CompleteLevel(5);
+            Assert.That(store.Progress.HighestCleared, Is.EqualTo(5));
+            w = svc.CompleteLevel(3);
+            Assert.That(w.Replay, Is.True);
+            Assert.That(store.Progress.HighestCleared, Is.EqualTo(5), "a replay never lowers progress");
+        }
+
+        [Test]
+        public void Last_level_advances_to_the_first_loop_display_level()
+        {
+            var first = svc.CompleteLevel(40);
+            Assert.That((first.NextLevel, first.Final, first.Replay), Is.EqualTo((41, false, false)));
+            var again = svc.CompleteLevel(40);
+            Assert.That(again.Replay, Is.True);
+        }
+
+        [Test]
+        public void Replaying_an_old_level_never_moves_the_current_level_back()
+        {
+            svc.CompleteLevel(5);
+            Assert.That(store.Progress.CurrentLevel, Is.EqualTo(6));
+            var w = svc.CompleteLevel(2);
+            Assert.That(w.NextLevel, Is.EqualTo(3), "Next after a replay is the following level");
+            Assert.That(store.Progress.CurrentLevel, Is.EqualTo(6), "but the saved progress stays where it was");
+        }
+
+        [Test]
+        public void The_catalog_count_bounds_next_and_final()
+        {
+            var w = svc.CompleteLevel(12, levelCount: 12);
+            Assert.That((w.NextLevel, w.Final), Is.EqualTo((12, true)), "a 12-level catalog ends at 12 whatever the tuning says");
+            Assert.That(store.Progress.CurrentLevel, Is.EqualTo(12));
+            w = svc.CompleteLevel(12);
+            Assert.That((w.NextLevel, w.Final), Is.EqualTo((13, false)), "no catalog count: the tuning's fallback");
+        }
+
+        [Test]
+        public void A_bad_remote_price_never_makes_a_paid_revive_free()
+        {
+            var t = new EconomyTuning { RevivePrice = 0, RevivePriceGrowth = -3, LivesMax = 0, RvSlotAmount = -8, UndoPrice = -1, AddContainerBuyAmount = 0 }.Sanitize();
+            Assert.That(t.RevivePriceAfter(0), Is.EqualTo(1));
+            Assert.That(t.RevivePriceAfter(3), Is.EqualTo(1));
+            Assert.That((t.LivesMax, t.RvSlotAmount, t.UndoPrice, t.AddContainerBuyAmount), Is.EqualTo((1, 0, 1, 1)));
+            Assert.That(new EconomyTuning { RevivePriceGrowth = double.NaN }.Sanitize().RevivePriceAfter(2), Is.EqualTo(900));
+            Assert.That(new EconomyTuning { RevivePrice = 100, RevivePriceGrowth = 1000 }.RevivePriceAfter(20), Is.EqualTo(long.MaxValue),
+                "saturates instead of overflowing negative");
+        }
+
+        [Test]
+        public void Attempts_count_starts_and_reset_on_win()
+        {
+            Assert.That(svc.BeginLevel(1).AttemptNo, Is.EqualTo(1));
+            Assert.That(svc.BeginLevel(1).AttemptNo, Is.EqualTo(2));
+            svc.CompleteLevel(1);
+            Assert.That(store.Progress.Attempts, Is.EqualTo(0));
+        }
+
+        [Test]
+        public void G18_a_failed_save_on_win_rolls_back_progress()
+        {
+            store.Fail = true;
+            var w = svc.CompleteLevel(1);
+            Assert.That(w.Saved, Is.False);
+            Assert.That(w.NextLevel, Is.EqualTo(1), "the dialog must not show unsaved progress (G19)");
+            Assert.That(store.Progress.CurrentLevel, Is.EqualTo(1));
+            Assert.That(store.Progress.HighestCleared, Is.EqualTo(0));
+        }
+
+        // ── coins (CR-012 C1, GDD v2.0 §7) ──────────────────────────────────────────────────────────────
+        [Test]
+        public void Start_coins_are_granted_once_per_install()
+        {
+            svc.EnsureStartCoins(); svc.EnsureStartCoins();
+            Assert.That((svc.Coins, store.Progress.StartCoinsGranted), Is.EqualTo((100L, true)));
+        }
+
+        [Test]
+        public void A_win_pays_the_reward_and_claim_x2_pays_it_once_more()
+        {
+            var w = svc.CompleteLevel(1);
+            Assert.That((w.Reward, svc.Coins), Is.EqualTo((40, 40L)), "CR-013: level_win_coin = 40");
+            Assert.That(svc.GrantWinBonus(w.Reward), Is.True);
+            Assert.That(svc.Coins, Is.EqualTo(80L), "×2 = the reward once more");
+        }
+
+        [Test]
+        public void D076_the_win_bonus_pays_the_multiplier_the_needle_stopped_on()
+        {
+            var w = svc.CompleteLevel(1);
+            Assert.That(svc.GrantWinBonus(w.Reward, 5), Is.True);
+            Assert.That(svc.Coins, Is.EqualTo(200L), "×5 on 40: 40 at the win, 160 more for the ad");
+        }
+
+        [Test]
+        public void G18_a_failed_save_takes_the_win_reward_back()
+        {
+            store.Fail = true;
+            var w = svc.CompleteLevel(1);
+            Assert.That((w.Saved, w.Reward, svc.Coins), Is.EqualTo((false, 0, 0L)));
+        }
+
+        [Test]
+        public void Spending_coins_needs_the_balance_and_refunds_a_failed_save()
+        {
+            svc.EnsureStartCoins();
+            Assert.That(svc.TrySpendCoins(150, TrackingNames.Revive), Is.False, "100 coins cannot pay 150");
+            Assert.That(svc.Coins, Is.EqualTo(100L));
+            store.Fail = true;
+            Assert.That(svc.TrySpendCoins(100, TrackingNames.Revive), Is.False);
+            Assert.That(svc.Coins, Is.EqualTo(100L), "a failed save gives the coins back");
+            store.Fail = false;
+            Assert.That((svc.TrySpendCoins(100, TrackingNames.Revive), svc.Coins), Is.EqualTo((true, 0L)));
+        }
+
+        [Test]
+        public void Revive_price_starts_at_900_and_grows_by_the_configured_factor()
+        {
+            Assert.That(new[] { 0, 1, 2 }.Select(tuning.RevivePriceAfter), Is.EqualTo(new long[] { 900, 900, 900 }), "CR-013: growth 1.00");
+            var doubling = new EconomyTuning { RevivePrice = 100, RevivePriceGrowth = 2 };
+            Assert.That(new[] { 0, 1, 2 }.Select(doubling.RevivePriceAfter), Is.EqualTo(new long[] { 100, 200, 400 }));
+            var half = new EconomyTuning { RevivePrice = 900, RevivePriceGrowth = 1.5 };
+            Assert.That(new[] { 0, 1, 2 }.Select(half.RevivePriceAfter), Is.EqualTo(new long[] { 900, 1350, 2025 }));
+        }
+
+        // ── C2 boosters ────────────────────────────────────────────────────────────────────────────────
+        [Test]
+        public void Boosters_unlock_at_levels_5_11_15_with_a_gift_of_3_once()
+        {
+            Assert.That(svc.UnlockBoostersFor(4), Is.Empty);
+            Assert.That(svc.UnlockBoostersFor(5), Is.EqualTo(new[] { Booster.Undo }));
+            Assert.That(svc.UnlockBoostersFor(5), Is.Empty, "once");
+            Assert.That(svc.Boosters(Booster.Undo), Is.EqualTo(3));
+            Assert.That(svc.UnlockBoostersFor(16), Is.EqualTo(new[] { Booster.Shuffle, Booster.AddContainer }), "a save already past them catches up");
+            Assert.That((svc.Boosters(Booster.Shuffle), svc.Boosters(Booster.AddContainer)), Is.EqualTo((3, 3)));
+        }
+
+        [Test]
+        public void G18_a_failed_save_unlocks_nothing_and_gives_nothing()
+        {
+            store.Fail = true;
+            Assert.That(svc.UnlockBoostersFor(5), Is.Empty);
+            Assert.That((svc.IsUnlocked(Booster.Undo), svc.Boosters(Booster.Undo)), Is.EqualTo((false, 0)));
+        }
+
+        [Test]
+        public void Using_a_booster_needs_one_and_a_failed_save_keeps_it()
+        {
+            Assert.That(svc.TryUseBooster(Booster.AddContainer), Is.False, "none owned");
+            svc.UnlockBoostersFor(15);
+            Assert.That(svc.TryUseBooster(Booster.AddContainer), Is.True);
+            Assert.That(svc.Boosters(Booster.AddContainer), Is.EqualTo(2));
+            store.Fail = true;
+            Assert.That(svc.TryUseBooster(Booster.AddContainer), Is.False);
+            Assert.That(svc.Boosters(Booster.AddContainer), Is.EqualTo(2));
+        }
+
+        [Test]
+        public void Buying_a_booster_spends_its_price_and_a_failed_save_refunds_and_takes_it_back()
+        {
+            wallet.Grant(SqadSortResources.Coin, 100, GrantSource.Reward);
+            Assert.That(svc.TryBuyBooster(Booster.AddContainer), Is.False, "120 > 100");
+            Assert.That((svc.Coins, svc.Boosters(Booster.AddContainer)), Is.EqualTo((100L, 0)));
+            Assert.That(svc.TryBuyBooster(Booster.Shuffle), Is.True);
+            Assert.That((svc.Coins, svc.Boosters(Booster.Shuffle)), Is.EqualTo((20L, 3)), "CR-013: one purchase gives 3");
+            wallet.Grant(SqadSortResources.Coin, 200, GrantSource.Reward);
+            store.Fail = true;
+            Assert.That(svc.TryBuyBooster(Booster.Undo), Is.False);
+            Assert.That((svc.Coins, svc.Boosters(Booster.Undo)), Is.EqualTo((220L, 0)), "G18: coins and booster both restored");
+        }
+
+        [Test]
+        public void An_ad_gives_one_booster()
+        {
+            Assert.That(svc.GrantBoosterFromAd(Booster.Undo), Is.True);
+            Assert.That(svc.Boosters(Booster.Undo), Is.EqualTo(1));
+        }
+
+        [Test]
+        public void Ftue_steps_are_recorded_once()
+        {
+            Assert.That(svc.IsFtueDone("ftue.l1.step1"), Is.False);
+            svc.MarkFtueDone("ftue.l1.step1");
+            svc.MarkFtueDone("ftue.l1.step1");
+            Assert.That(store.Progress.FtueCompleted, Is.EqualTo(new[] { "ftue.l1.step1" }));
+        }
+    }
+
+    public class AdPacingTests
+    {
+        // D-115 defaults (P9 tech doc): from level 12, every win, 180 s between two interstitials
+        [TestCase(11, 5, 999.0, false, TestName = "before the first level")]
+        [TestCase(12, 0, 999.0, false, TestName = "not enough wins")]
+        [TestCase(12, 1, 179.0, false, TestName = "too soon after the last interstitial")]
+        [TestCase(12, 1, 180.0, true, TestName = "all three conditions hold")]
+        public void Interstitial_rule(int level, int wins, double seconds, bool expected)
+        {
+            Assert.That(AdPacing.ShouldShow(level, wins, seconds, new EconomyTuning()), Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void Showing_resets_the_win_counter()
+        {
+            var store = new TestStore();
+            store.Progress.WinsSinceInterstitial = 3;
+            new AdPacing(store, new EconomyTuning()).RecordInterstitialShown(DateTimeOffset.UnixEpoch);
+            Assert.That(store.Progress.WinsSinceInterstitial, Is.EqualTo(0));
+        }
+
+        [Test]
+        public void The_interval_counts_from_the_last_interstitial_of_the_session()
+        {
+            var store = new TestStore();
+            store.Progress.WinsSinceInterstitial = 5;
+            var pacing = new AdPacing(store, new EconomyTuning());   // 180 s interval, level ≥ 12, every win
+            var t0 = DateTimeOffset.UnixEpoch;
+            Assert.That(pacing.ShouldShowAfterWin(13, t0), Is.True, "no interstitial yet this session: no wait");
+            pacing.RecordInterstitialShown(t0);
+            store.Progress.WinsSinceInterstitial = 1;
+            Assert.That(pacing.ShouldShowAfterWin(13, t0.AddSeconds(90)), Is.False);
+            Assert.That(pacing.ShouldShowAfterWin(13, t0.AddSeconds(180)), Is.True);
+            Assert.That(pacing.ShouldShowAfterWin(13, t0.AddSeconds(-10)), Is.False, "a clock that went back counts as no time");
+        }
+
+        // D-131 (Blockery / Money Sort a4464bc): the lose interstitial has the win rule without the win count
+        [TestCase(11, 999.0, false, TestName = "lose: before the first level")]
+        [TestCase(12, 179.0, false, TestName = "lose: too soon after the last full-screen ad")]
+        [TestCase(12, 180.0, true, TestName = "lose: start level and break hold")]
+        public void Lose_interstitial_rule(int level, double seconds, bool expected)
+        {
+            Assert.That(AdPacing.ShouldShowOnLose(level, seconds, new EconomyTuning()), Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void A_closed_rewarded_ad_restarts_the_break_but_keeps_the_win_count()
+        {
+            var store = new TestStore();
+            store.Progress.WinsSinceInterstitial = 2;
+            var pacing = new AdPacing(store, new EconomyTuning());
+            var t0 = DateTimeOffset.UnixEpoch;
+            pacing.RecordRewardedClosed(t0);
+            Assert.That(pacing.ShouldShowAfterLose(13, t0.AddSeconds(60)), Is.False, "two full-screen ads never back to back");
+            Assert.That(pacing.ShouldShowAfterWin(13, t0.AddSeconds(60)), Is.False);
+            Assert.That(pacing.ShouldShowAfterLose(13, t0.AddSeconds(180)), Is.True);
+            Assert.That(store.Progress.WinsSinceInterstitial, Is.EqualTo(2));
+        }
+    }
+}

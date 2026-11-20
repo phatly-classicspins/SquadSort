@@ -1,0 +1,29 @@
+[gate] === leg 1/4: source greps ===
+[sku-grep] root: /d/Work/SqadSort
+[sku-grep] PASS  input-poll (no Input.GetTouch / OnMouse* / Touchscreen.current in a Views asmdef)
+[sku-grep] PASS  lifecycle (no OnApplicationPause/Focus/Quit in SKU code)
+[sku-grep] PASS  messagepipe (no MessagePipe registration outside Installers/)
+[font-check] PASS  4 TMP font asset(s), every source font static
+[sku-grep] PASS  variable-font (no TMP font asset built from a variable font)
+[sku-grep] ALL SOURCE GREPS CLEAN
+[gate] PASS  greps
+[gate] === leg 2/4: headless type-check (Game.Domain, Game.Application, Game.Gen) ===
+OK    Game.Domain  (2s)
+OK    Game.Application  (1s)
+OK    Game.Gen  (1s)
+---   3 asm in 5s, 0 failed
+[gate] PASS  typecheck
+[gate] === leg 3/4: dotnet test SkuHeadlessTests/SqadSort.SkuHeadlessTests.csproj --filter "TestCategory!=Slow" ===
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  SqadSort.SkuHeadlessTests -> D:\Work\SqadSort\SkuHeadlessTests\bin\Debug\net10.0\SqadSort.SkuHeadlessTests.dll
+Test run for D:\Work\SqadSort\SkuHeadlessTests\bin\Debug\net10.0\SqadSort.SkuHeadlessTests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+Results File: D:/Work/SqadSort/Logs/gate/gate-last.trx
+
+Passed!  - Failed:     0, Passed:   266, Skipped:     0, Total:   266, Duration: 340 ms - SqadSort.SkuHeadlessTests.dll (net10.0)
+[gate] PASS  test  (5s elapsed)
+[gate] === leg 4/4: keyed Slow test ===
+[gate] SKIP  keyed: Tools/ModelGen/.runtime/gate-project-override.sh names no KEYED_TEST
+[gate] ALL LEGS PASS  (gate 18s, test leg 5s, keyed skipped)
+[gate] full log: Logs/gate/gate-last.log  — grep it for anything cut above; never re-run to see more.

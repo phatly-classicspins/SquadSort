@@ -1,0 +1,26 @@
+{
+    "name": "ClassicSpins.PrototypeFramework.FirebaseCrashlytics.Editor",
+    "rootNamespace": "ClassicSpins.PrototypeFramework.FirebaseCrashlytics.Editor",
+    "references": [
+        "ClassicSpins.PrototypeFramework.FirebaseCrashlytics.Core",
+        "ClassicSpins.PrototypeFramework.FirebaseCrashlytics",
+        "ClassicSpins.PrototypeFramework.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.google.firebase.crashlytics",
+            "expression": "13.0.0",
+            "define": "PF_FIREBASE_CRASHLYTICS"
+        }
+    ],
+    "noEngineReferences": false
+}

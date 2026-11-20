@@ -5,7 +5,9 @@
         "ClassicSpins.PrototypeFramework.Views",
         "Unity.TextMeshPro",
         "LitMotion",
-        "UniTask"
+        "UniTask",
+        "spine-unity",
+        "spine-csharp"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

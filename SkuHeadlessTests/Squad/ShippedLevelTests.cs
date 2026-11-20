@@ -11,12 +11,12 @@ namespace SqadSort.SkuHeadlessTests.Squad
     {
         private static IEnumerable<string> LevelFiles()
         {
-            string dir = RepoLayout.Path("Assets", "SqadSort", "Content", "Levels");
+            string dir = RepoLayout.Path("Assets", "SqadSort", "Resources", "Levels");
             return Directory.GetFiles(dir, "level_*.txt").OrderBy(f => f).Select(Path.GetFileName);
         }
 
         private static LevelDefinition Load(string file)
-            => LevelParser.Parse(File.ReadAllText(RepoLayout.Path("Assets", "SqadSort", "Content", "Levels", file)));
+            => LevelParser.Parse(File.ReadAllText(RepoLayout.Path("Assets", "SqadSort", "Resources", "Levels", file)));
 
         [Test]
         public void ThereAreLevels() => Assert.That(LevelFiles().Count(), Is.GreaterThanOrEqualTo(8));

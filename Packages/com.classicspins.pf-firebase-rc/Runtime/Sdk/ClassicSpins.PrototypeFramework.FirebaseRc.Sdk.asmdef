@@ -1,0 +1,25 @@
+{
+    "name": "ClassicSpins.PrototypeFramework.FirebaseRc.Sdk",
+    "rootNamespace": "ClassicSpins.PrototypeFramework.FirebaseRc.Sdk",
+    "references": [
+        "ClassicSpins.PrototypeFramework.FirebaseRc.Core",
+        "UniTask"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "PF_FIREBASE_RC"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.google.firebase.remote-config",
+            "expression": "13.0.0",
+            "define": "PF_FIREBASE_RC"
+        }
+    ],
+    "noEngineReferences": false
+}

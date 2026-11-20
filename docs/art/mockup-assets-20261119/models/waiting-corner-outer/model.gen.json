@@ -1,0 +1,103 @@
+{
+  "schema": "model-gen-derivative/v1",
+  "status": "pending-user-review",
+  "source_design": "models/waiting-board/blueprint.png",
+  "author": "Codex, derived from approved tray geometry",
+  "facts": {
+    "ok": true,
+    "size": {
+      "width": 0.2292,
+      "height": 0.26,
+      "length": 0.2292
+    },
+    "bounds": {
+      "min": [
+        -0.115,
+        -0.115,
+        0.0
+      ],
+      "max": [
+        0.1142,
+        0.1142,
+        0.26
+      ]
+    },
+    "tris": 372,
+    "materials": [
+      "M_waiting_rim"
+    ],
+    "empties": [],
+    "checks": [
+      {
+        "id": "meshes",
+        "ok": true,
+        "detail": "1 mesh object(s)"
+      },
+      {
+        "id": "size.width",
+        "ok": true,
+        "detail": "0.229 m, want 0.230 \u00b1 0.007"
+      },
+      {
+        "id": "size.height",
+        "ok": true,
+        "detail": "0.260 m, want 0.260 \u00b1 0.008"
+      },
+      {
+        "id": "size.length",
+        "ok": true,
+        "detail": "0.229 m, want 0.230 \u00b1 0.007"
+      },
+      {
+        "id": "pivot.ground",
+        "ok": true,
+        "detail": "lowest point z = 0.000, want 0 \u00b1 0.005"
+      },
+      {
+        "id": "pivot.centre",
+        "ok": true,
+        "detail": "bounding-box centre x = -0.000, y = -0.000, want 0, 0"
+      },
+      {
+        "id": "tris",
+        "ok": true,
+        "detail": "372 triangles, budget 2500"
+      },
+      {
+        "id": "parts",
+        "ok": true,
+        "detail": "all present"
+      },
+      {
+        "id": "materials",
+        "ok": true,
+        "detail": "every face carries an M_<key> palette material"
+      },
+      {
+        "id": "object_types",
+        "ok": true,
+        "detail": "meshes and empties only"
+      },
+      {
+        "id": "transforms",
+        "ok": true,
+        "detail": "no negative scale"
+      }
+    ],
+    "objects": [
+      {
+        "name": "Rim",
+        "tris": 372,
+        "parent": null
+      }
+    ]
+  },
+  "script": {
+    "path": "docs/art/mockup-assets-20261119/models/waiting-corner-outer/build.py",
+    "sha256": "9a24466ad8bd6ca1a156122dbeccf12494db4eb083c851e2655dbc8484282ada"
+  },
+  "fbx": {
+    "path": "docs/art/mockup-assets-20261119/models/waiting-corner-outer/waiting-corner-outer.fbx",
+    "sha256": "278bd0c6d5a6b1b4db3565d6c17a1870217d0f69a81f9504aa46d9e081b24ea8"
+  }
+}

@@ -57,6 +57,7 @@ namespace SqadSort.SkuHeadlessTests.Gate
                 "ClassicSpins.PrototypeFramework.Application",
                 "ClassicSpins.PrototypeFramework.Domain",
                 "UniTask",
+                "ClassicSpins.Rating",      // CardSlot D-056, ported: the rating flow package (engine-free core only)
             }),
             new Row("Assets/SqadSort/Infrastructure/Game.Infrastructure.asmdef", new string[]
             {
@@ -88,6 +89,10 @@ namespace SqadSort.SkuHeadlessTests.Gate
                 "ClassicSpins.PrototypeFramework.Views",
                 "ClassicSpins.PrototypeFramework.Application",
                 "ClassicSpins.PrototypeFramework.Domain",
+                "ClassicSpins.Cheats",      // CardSlot D-048, ported: tester menu package; only Composition sees it
+                "ClassicSpins.Cheats.UI",   // CardSlot D-048
+                "ClassicSpins.Rating",      // CardSlot D-056, ported
+                "ClassicSpins.Rating.Unity", // CardSlot D-056: UnityRatingHost, registered at Root
                 "UniTask",
                 "VContainer",
             }),
@@ -97,6 +102,8 @@ namespace SqadSort.SkuHeadlessTests.Gate
                 "Unity.TextMeshPro",
                 "LitMotion",
                 "UniTask",
+                "spine-unity",   // CardSlot precedent, ported: the Spine tutorial hand in the Money Sort HUD (ElementTutorialUI)
+                "spine-csharp",
             }),
             new Row("Assets/SqadSort/Gen/Game.Gen.asmdef", new string[]
             {

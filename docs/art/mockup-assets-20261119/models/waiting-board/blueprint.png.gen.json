@@ -1,0 +1,15 @@
+{
+  "status": "approved",
+  "generator": "built-in image_gen",
+  "purpose": "3D visual design reference; not a mesh",
+  "source_mockup": "../../reference/mockup.png",
+  "validation": "Visually inspected. Harness proportions/silhouette checks not executed.",
+  "notes": "Some elevations retain stylized perspective. Numeric request dimensions win over the picture.",
+  "approved_by": "user",
+  "approval_text": "duyệt nha",
+  "approved_at": "2026-11-19T08:54:33.992330+00:00",
+  "output": {
+    "path": "docs/art/mockup-assets-20261119/models/waiting-board/blueprint.png",
+    "sha256": "1bc33eeef317a5393954e6b86626d1ec60db8689b9ffc5d0d5198f962fcfe9d8"
+  }
+}

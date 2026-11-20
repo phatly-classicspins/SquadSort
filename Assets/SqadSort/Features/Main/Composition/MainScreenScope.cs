@@ -1,6 +1,11 @@
-using VContainer;
+using System;
+using System.Linq;
 using ClassicSpins.PrototypeFramework.Composition;
+using ClassicSpins.PrototypeFramework.Domain;
+using Game.Application;
+using Game.Infrastructure;
 using Game.Presentation;
+using VContainer;
 
 namespace Game.Composition
 {
@@ -16,6 +21,8 @@ namespace Game.Composition
     {
         protected override void Configure(IContainerBuilder builder)
         {
+            builder.Register<ResourcesLevelCatalog>(Lifetime.Singleton).As<ILevelCatalog>();
+            builder.Register<LifeGate>(Lifetime.Scoped);   // Out of Lives on Home (Play with no life, or the last one just went)
             builder.RegisterEntryScreen<MainScreen>();
         }
     }

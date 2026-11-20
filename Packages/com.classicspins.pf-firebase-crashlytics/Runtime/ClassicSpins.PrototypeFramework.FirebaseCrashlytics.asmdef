@@ -1,0 +1,26 @@
+{
+    "name": "ClassicSpins.PrototypeFramework.FirebaseCrashlytics",
+    "rootNamespace": "ClassicSpins.PrototypeFramework.FirebaseCrashlytics",
+    "references": [
+        "ClassicSpins.PrototypeFramework.FirebaseCrashlytics.Core",
+        "ClassicSpins.PrototypeFramework.FirebaseCrashlytics.Sdk",
+        "ClassicSpins.PrototypeFramework.Application",
+        "ClassicSpins.PrototypeFramework.Domain",
+        "VContainer"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.google.firebase.crashlytics",
+            "expression": "13.0.0",
+            "define": "PF_FIREBASE_CRASHLYTICS"
+        }
+    ],
+    "noEngineReferences": false
+}

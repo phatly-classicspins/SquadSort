@@ -1,0 +1,15 @@
+{
+  "products": [
+    { "id": "squad.sort.remove_ads", "type": "NonConsumable", "grants": [ { "kind": "entitlement", "id": "remove_ads" }, { "kind": "coin", "id": "coin", "amount": 1500 } ] },
+    { "id": "squad.sort.starter_pack", "type": "Consumable", "grants": [ { "kind": "coin", "id": "coin", "amount": 2500 } ] },
+    { "id": "squad.sort.pack_small", "type": "Consumable", "grants": [ { "kind": "coin", "id": "coin", "amount": 2500 } ] },
+    { "id": "squad.sort.pack_medium", "type": "Consumable", "grants": [ { "kind": "coin", "id": "coin", "amount": 10000 } ] },
+    { "id": "squad.sort.pack_ultra", "type": "Consumable", "grants": [ { "kind": "coin", "id": "coin", "amount": 25000 } ] },
+    { "id": "squad.sort.coins_1K", "type": "Consumable", "grants": [ { "kind": "coin", "id": "coin", "amount": 1000 } ] },
+    { "id": "squad.sort.coins_5K", "type": "Consumable", "grants": [ { "kind": "coin", "id": "coin", "amount": 5000 } ] },
+    { "id": "squad.sort.coins_10K", "type": "Consumable", "grants": [ { "kind": "coin", "id": "coin", "amount": 10000 } ] },
+    { "id": "squad.sort.coins_25K", "type": "Consumable", "grants": [ { "kind": "coin", "id": "coin", "amount": 25000 } ] },
+    { "id": "squad.sort.coins_50K", "type": "Consumable", "grants": [ { "kind": "coin", "id": "coin", "amount": 50000 } ] },
+    { "id": "squad.sort.coins_100K", "type": "Consumable", "grants": [ { "kind": "coin", "id": "coin", "amount": 100000 } ] }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schema": "model-gen-request/v1",
+  "id": "mockup-v1-waiting-board",
+  "subject": "Seven-cell stepped waiting tray; modular floor, perimeter and open queue ports.",
+  "size": {
+    "width": 4.6,
+    "height": 0.26,
+    "length": 2.3
+  },
+  "palette": {
+    "purple": "B63AF2",
+    "blue": "168DFA",
+    "green": "80DF0B",
+    "orange": "FF8A10",
+    "yellow": "FFE134",
+    "red": "F12C36",
+    "pink": "FF67C5",
+    "brown": "A95D36",
+    "cyan": "29D9EB",
+    "hidden": "A5A4AE",
+    "white": "F5F0F7",
+    "ink": "251F35",
+    "tray_rim": "EFEAF2",
+    "tray_floor": "B8B6C2",
+    "waiting_rim": "F2CEDD",
+    "gold": "FFD23F"
+  },
+  "max_tris": 5000,
+  "parts": [
+    {
+      "name": "Floor",
+      "note": "Keep named part separate; pivot at its motion anchor."
+    },
+    {
+      "name": "Rim",
+      "note": "Keep named part separate; pivot at its motion anchor."
+    }
+  ],
+  "references": [
+    {
+      "path": "docs/art/mockup-assets-20261119/reference/mockup.png",
+      "role": "style"
+    }
+  ],
+  "out": "docs/art/mockup-assets-20261119/models/waiting-board",
+  "notes": "USER APPROVED blueprint. Stepped 7-cell tray: top row (back +Y) has three cells in columns 0,1,2; bottom row (front -Y) four cells columns 0,1,2,3. Cell pitch 1.15; overall X=4.6,Y=2.3,Z=.26. Exact silhouette is a single contiguous step on right. Rounded blush pink continuous perimeter .12 thick, gray inset flat floor, very shallow dark seams between cells (no raised obstacles). Floor and Rim separate. Numeric dimension wins over drawing perspective. Use continuous watertight mesh and beveled edge finish, no overlapping boxes or full internal walls. Produce visual sample whole tray; modular open-port kit is separate followup within this asset package.",
+  "consumer": "Future Unity import, outside this art-only handoff."
+}

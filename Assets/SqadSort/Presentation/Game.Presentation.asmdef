@@ -10,7 +10,8 @@
         "ClassicSpins.PrototypeFramework.Views",
         "ClassicSpins.PrototypeFramework.Application",
         "ClassicSpins.PrototypeFramework.Domain",
-        "UniTask"
+        "UniTask",
+        "ClassicSpins.Rating"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

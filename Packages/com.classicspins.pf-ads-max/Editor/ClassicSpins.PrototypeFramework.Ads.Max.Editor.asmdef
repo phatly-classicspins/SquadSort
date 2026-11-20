@@ -1,0 +1,26 @@
+{
+    "name": "ClassicSpins.PrototypeFramework.Ads.Max.Editor",
+    "rootNamespace": "ClassicSpins.PrototypeFramework.Ads.Max.Editor",
+    "references": [
+        "ClassicSpins.PrototypeFramework.Ads.Max.Core",
+        "ClassicSpins.PrototypeFramework.Editor",
+        "MaxSdk.Scripts.IntegrationManager.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.applovin.mediation.ads",
+            "expression": "8.0.0",
+            "define": "PF_MAX"
+        }
+    ],
+    "noEngineReferences": false
+}

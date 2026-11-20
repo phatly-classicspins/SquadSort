@@ -14,6 +14,16 @@ using Game.Gen;
 
 namespace Game.Composition
 {
+    /// <summary>Starts the No Internet watcher's loop with the Root scope and stops it with the scope (CardSlot D-063).</summary>
+    public sealed class OfflineWatcherEntry : IAsyncStartable
+    {
+        private readonly Game.Presentation.OfflineWatcher _watcher;
+
+        public OfflineWatcherEntry(Game.Presentation.OfflineWatcher watcher) => _watcher = watcher;
+
+        public UniTask StartAsync(System.Threading.CancellationToken cancellation) => _watcher.RunAsync(cancellation);
+    }
+
     /// <summary>
     /// The SqadSort SKU's concrete FrameworkSettings — the SINGLE registrant of the SKU-owned config the
     /// package cannot know: the real FirstSceneConfig target and the bundled ConfigDefaults. Emitted
@@ -22,8 +32,14 @@ namespace Game.Composition
     [CreateAssetMenu(fileName = "SqadSortFrameworkSettings", menuName = "SqadSort/Framework Settings")]
     public sealed class SqadSortFrameworkSettings : FrameworkSettings
     {
+        [Tooltip("Master / Music / Sfx / UI buses with MasterVolume / MusicVolume / SfxVolume / UiVolume exposed: the Sound and Music toggles act on it.")]
+        [SerializeField] private UnityEngine.Audio.AudioMixer _audioMixer;
+
         protected override void InstallGameConfig(IContainerBuilder builder)
         {
+            // Mobile defaults to 30 FPS when targetFrameRate is -1; request 60 from startup (CardSlot does the same).
+            UnityEngine.Application.targetFrameRate = 60;
+
             // The real FirstSceneConfig (the framework registered FirstSceneConfig.None; this wins by
             // later registration): boot lands on the scaffolded Main screen with its typed MainParam.
             builder.RegisterInstance(new FirstSceneConfig(
@@ -33,9 +49,89 @@ namespace Game.Composition
 
             // The SKU owns the single ConfigDefaults registration (the framework registers none —
             // zero registrants means every Get falls back to 0; two is a VContainer duplicate conflict).
-            builder.RegisterInstance(ConfigDefaults.Empty);
+            // Every balance number is a GameConfigKeys entry (EconomyTuning's initializers are the defaults), plus the
+            // pf-ads-max unit ids and rewarded flags — the same bundle CardSlot ships.
+            builder.RegisterInstance(AdUnitConfig.With(EconomyConfig.Defaults()));
 
             InstallBoot(builder);
+            InstallGame(builder);
+            InstallAudio(builder);
+        }
+
+        /// <summary>
+        /// The framework's FeelInstaller builds AudioService with no mixer, so the Sound / Music toggles would only be saved. The
+        /// same AudioService with the SKU mixer wins by later registration (CardSlot's InstallAudio), as the IAudioService contract.
+        /// </summary>
+        private void InstallAudio(IContainerBuilder builder)
+        {
+            if (_audioMixer == null) return;   // no mixer assigned: keep the framework's mixer-less service
+            var mixer = _audioMixer;
+            builder.Register<IAudioService>(resolver => new AudioService(
+                    resolver.Resolve<IAssetService>(),
+                    resolver.Resolve<IUserData>(),
+                    new ClassicSpins.PrototypeFramework.Application.BusSettingsCore(),
+                    new ClassicSpins.PrototypeFramework.Application.DuckCore(),
+                    resolver.Resolve<ILog>(),
+                    mixer),
+                Lifetime.Singleton);
+        }
+
+        /// <summary>
+        /// Session-long meta shared by Home and Gameplay, ported from CardSlot: progress and settings persist through the
+        /// framework's <c>IUserData</c>; coins through its wallet; lives, boosters, elements, offers and ad pacing through
+        /// <see cref="LevelProgressService"/> and friends. The popups open directly on the Popup layer (<see cref="Game.Presentation.PopupUi"/>,
+        /// Money Sort's way — no framework dialog), and the dim behind any framework dialog takes the token scrim (rule #17).
+        /// Shop / IAP and the rating prompt join later.
+        /// </summary>
+        private static void InstallGame(IContainerBuilder builder)
+        {
+            // read once, after boot's RemoteFetch node merged the remote layer
+            builder.Register(c => EconomyConfig.Read(c.Resolve<IGameConfig>()), Lifetime.Singleton);
+            // save models: defaults the framework's FileUserData loads into
+            builder.Register<ProgressModel>(Lifetime.Singleton).As<IUserModel>();
+            builder.Register<SettingsModel>(Lifetime.Singleton).As<IUserModel>();
+            builder.Register<UserDataProgressStore>(Lifetime.Singleton).As<IProgressStore>();
+            // progression facts and gameplay's reports → the tracking plan; one instance holds the open attempt.
+            // isTest marks Editor / development-build ads as test ads; retained_days reads the framework clock.
+            builder.Register(c =>
+                {
+                    var clock = c.Resolve<IClock>();
+                    return new GameTracking(c.Resolve<IAnalytics>(), c.Resolve<IWalletService>(), c.Resolve<IProgressStore>(), Debug.isDebugBuild,
+                        () => clock.UtcNow.UtcDateTime);
+                },
+                Lifetime.Singleton).As<IGameTracking>().As<IProgressFacts>();
+            builder.Register<LevelProgressService>(Lifetime.Singleton);
+            builder.Register<TrackingLifecycle>(Lifetime.Singleton).As<IAppPhaseHandler>();   // app_backgrounded, quit = abandoned
+            builder.Register<AdPacing>(Lifetime.Singleton);
+            builder.Register<GameplayBanner>(Lifetime.Singleton);   // the bottom banner during play (IBannerAds: framework fake or pf-ads-max)
+            builder.Register<OfferSchedule>(Lifetime.Singleton);   // when the offer popups show (session state: Root)
+            // offline players without Remove Ads wait behind the No Internet popup (Root: it covers every screen)
+            builder.Register<UnityNetworkStatus>(Lifetime.Singleton).AsSelf().As<INetworkStatus>();
+            builder.Register<OnlineGate>(Lifetime.Singleton);
+            builder.Register<Game.Presentation.PopupUi>(Lifetime.Singleton);   // the direct Money Sort popups and their Back
+            var scrim = Game.Views.DesignTokens.Scrim;
+            builder.RegisterInstance(new DialogDimStyle(scrim.r, scrim.g, scrim.b, opacity: scrim.a));
+            // haptics with Money Sort's strengths: the framework's HapticService on the SKU's device backend (wins by later registration)
+            builder.Register<SqadSortHapticService>(Lifetime.Singleton).As<IHapticService>();
+            builder.Register<Game.Presentation.GameFeedback>(Lifetime.Singleton);   // session-long, so the music carries across screens
+            // the store's catalog: the bundled products.json, ids normalized for the platform's store before the IAP module fetches them
+            builder.Register<PlatformProductCatalog>(c => new PlatformProductCatalog(
+                new BakedCatalogSource(c.Resolve<ILog>()), ShopCatalog.AndroidStore), Lifetime.Singleton).As<ICatalogSource>();
+            // the rating prompt — the engine side of com.classicspins.rating, and focus from the kernel's lifecycle hook
+            builder.Register<ClassicSpins.Rating.UnityRatingHost>(Lifetime.Singleton).As<ClassicSpins.Rating.IRatingHost>();
+            builder.Register<Game.Presentation.RatingFocus>(Lifetime.Singleton).AsSelf().As<IAppPhaseHandler>();
+            builder.Register<Game.Presentation.NoAdsPopup>(Lifetime.Singleton);    // Money Sort's ErrorUI: over Gameplay and the Root popups
+            builder.Register<Game.Presentation.SettingsPopup>(Lifetime.Singleton);
+            builder.Register<Game.Presentation.OfflineWatcher>(Lifetime.Singleton).AsSelf().As<IAppPhaseHandler>();
+            builder.RegisterEntryPoint<OfflineWatcherEntry>(Lifetime.Singleton);
+            // the Store and its popups (Root: opened over Home and Gameplay); the store itself is the framework's IPurchaseService
+            builder.Register<Game.Presentation.ShopPurchases>(Lifetime.Singleton);
+            builder.Register<Game.Presentation.GoldBrickFlow>(Lifetime.Singleton);
+            builder.Register<Game.Presentation.StarterPackPopup>(Lifetime.Singleton);
+            builder.Register<Game.Presentation.RemoveAdsPopup>(Lifetime.Singleton);
+            // the level catalog at Root too: the tester menu's "Go to level" reads its count (the screens keep their own)
+            builder.Register<ResourcesLevelCatalog>(Lifetime.Singleton).As<ILevelCatalog>();
+            CheatsInstaller.Install(builder);   // tester menu (Editor / development build / CS_CHEATS only), as CardSlot D-048
         }
 
         /// <summary>

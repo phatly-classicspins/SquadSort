@@ -1,0 +1,50 @@
+[
+  {
+    "id": "waiting-cell",
+    "ok": true,
+    "tris": 188,
+    "size": {
+      "width": 1.15,
+      "height": 0.04,
+      "length": 1.15
+    },
+    "failed": [],
+    "error": null
+  },
+  {
+    "id": "waiting-edge",
+    "ok": true,
+    "tris": 300,
+    "size": {
+      "width": 1.15,
+      "height": 0.26,
+      "length": 0.12
+    },
+    "failed": [],
+    "error": null
+  },
+  {
+    "id": "waiting-corner-outer",
+    "ok": true,
+    "tris": 372,
+    "size": {
+      "width": 0.2292,
+      "height": 0.26,
+      "length": 0.2292
+    },
+    "failed": [],
+    "error": null
+  },
+  {
+    "id": "waiting-corner-inner",
+    "ok": true,
+    "tris": 372,
+    "size": {
+      "width": 0.3492,
+      "height": 0.26,
+      "length": 0.3492
+    },
+    "failed": [],
+    "error": null
+  }
+]

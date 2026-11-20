@@ -15,8 +15,203 @@ MonoBehaviour:
   m_GroupName: Local
   m_GUID: c65a90a501d153d48a481476cd27f539
   m_SerializeEntries:
+  - m_GUID: 13ad36038f9623548834293250e48ac3
+    m_Address: UI/Shop/ShopGoldTile
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 16ba9b58b35551b488b0399c09eb953a
+    m_Address: UI/HomeLevelNodeUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 227304f09562ccf4493c40ce85e6e75d
+    m_Address: UI/LevelUpUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2e79f16be10fbd14f8d5ef191f8db4aa
+    m_Address: Confetti/Confetti_blast_multicolor
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2e92c753c50c88348858aeebaa7201ba
+    m_Address: VFX/LevelBadgeBurst
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 33eeebfe04f937d4a8bf58aad09ffcbd
+    m_Address: VFX/ProgressStar
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 37e95bbad152cf744bb6597ef940bd56
+    m_Address: character_purple
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 42e04e4f9169571428355713b68ad18d
+    m_Address: character_green
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4c99f2e1bd6e54a4a93a5b4a78ba3150
+    m_Address: queue_four
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 50c2f87383566994b8b5d1834198d5ad
+    m_Address: UI/PurchaseFailedUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 522b15195debc8849ab1ea3f1faa1e90
+    m_Address: UI/GarageGiftUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 56259266f25960d42b53e4a547aa4762
+    m_Address: UI/RotatingGlowUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 599c28b7c8f250f448076382f3a138c9
+    m_Address: waiting_cell
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5a135ebc8b37a6e4fbaeb385dbef67bf
+    m_Address: HiddenStackIllustration
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5aacc6defa7d3cb40a0c4d352fd1d25b
+    m_Address: HiddenPoleIllustration
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5f581658dc45a054bb221770030be8c8
+    m_Address: UI/RestorePurchaseUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 61301cd74c35d784996f98de46546b06
+    m_Address: character_yellow
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 61c8f1c769e91c94d9a73ad4aceb36cb
+    m_Address: UI/ResoureGroup
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 637d4ff81d744e04d8bc3cb24d9e4140
+    m_Address: Gameplay/HardLevelUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 63c9f28c1e9ff0b4c8228a927a74094c
+    m_Address: Board
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 64cc4ed957c6d3e428e023ad96098771
+    m_Address: UI/Shop/ShopPackCard
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6a8d430123e18e14f92c94cc80f0a351
+    m_Address: UI/SkipLevelUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6c25accb319c64b5a97b19668f16b0b9
     m_Address: PF/DialogDim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6c62ae4dbd0cb0b4995962a0e239481f
+    m_Address: character_hidden
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 73c882519999a784bacd1d9a159754f5
+    m_Address: character_darkgreen
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7af468260e18ef64d8a83ba66a3c0aac
+    m_Address: Gameplay/GameplayHud
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7b671bb2ac0c963438a970c480764dc6
+    m_Address: waiting_corner_outer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7d86e42f5dae9f64aa7d13e10fa8f79c
+    m_Address: character_pink
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7ebe63d7ac701e3458d4436dea297cfc
+    m_Address: UI/LoseUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 832d209d3d6298a4080b37e71ec89136
+    m_Address: UI/PurchaseRewardUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 84995f453665e33459a66a6ea05e5e3a
+    m_Address: UI/BoosterUnlockUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 87bbe36ea12063d49a8626ef6cd728a7
+    m_Address: Home/HomeView
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8a858b7dfd25ee3469f3babe24d490c8
+    m_Address: UI/Shop/ShopPackCard_Starter
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8ac36d71da81b82489ebe5993e9604ab
+    m_Address: character_brown
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8cf0586c5d6552843ad698cebd70af20
+    m_Address: UI/RatingUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8e09601f8a14f0e49b9121e29145eaf4
+    m_Address: UI/BoosterPurchaseUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8eaf6e97e9446474fa43e0d22cc980e2
+    m_Address: UI/NoInternetUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 90a8f99c2edb5ed429faac8686dda749
+    m_Address: UI/WinPopup
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 91b20224892ad91469dccf5f4975f817
+    m_Address: waiting_edge
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 91cd47a42978a1942b9d6e1046536379
+    m_Address: UI/ShopUI
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -30,13 +225,143 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a11b492c9b7d0ac4caeb1d97a47e59a0
+    m_Address: character_red
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a6a7ee990fc14ac45bd5849add20cb50
+    m_Address: UI/LoadingUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a86ca7c163119dc429ac7ad83bb3d3c7
+    m_Address: UI/GameplayCheatUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a8cd8ee076ed27946a482dedf7f702cd
+    m_Address: UI/RemoveAdsUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a91610847a95ca44bb2f52876ffbc6ac
     m_Address: Scenes/Loading
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ab1ac4d789d46b5429db37ecb9ad9676
+    m_Address: waiting_board
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: abaa411e138250a45ab16427af83c428
+    m_Address: UI/NotificationPermissionUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ad1fae4606ae2284f8cf4d7c16312b4e
+    m_Address: UI/RentSlotUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ad68fa625fd0d4a498a45b3bf64c4a7a
+    m_Address: UI/FlickSortFTUE
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ba701ce7a7ee8e34fade4a692be1793f
+    m_Address: UI/OutOfSpaceUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c2a71dbd648873442bf581588442842f
+    m_Address: SettingsUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c6708e27f3b5f5c47a30c2929c0a363f
+    m_Address: character_cyan
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c7bf4fbd40b3ee542840cab35646859e
+    m_Address: Gameplay/ElementTutorialUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d69d0c90fbd441044b6ac8a66b77f7e0
+    m_Address: UI/OutOfLivesUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: debc08b4931e6f646ac7440956f528a7
+    m_Address: character_orange
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e1e042e42da113541826ef9fc87adaef
+    m_Address: UI/ElementUnlockUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e1e2fe244354fd148aa2d0d79779a6e0
+    m_Address: UI/GameplayUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e41730d737151ca4d958547798a390de
+    m_Address: UI/HomeUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e6bcb423d665c31408d598f37613b2af
+    m_Address: character_blue
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e6c7d05f4fce33b4d8e0cb25148747ca
+    m_Address: UI/StarterBundleUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ef786f73413c7bf4dbee8743172c2b2f
+    m_Address: LockedChipIllustration
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f243032adedab6a4994b3b6d86d10590
+    m_Address: UI/BoosterButtonUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f5dc8a7453070c34d84c5ddb4e7175b0
+    m_Address: waiting_corner_inner
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f6f6a778ffb4641e29fd60b4389a8046
     m_Address: PF/LoadingOverlay
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f764e14ccfb4d0141b157fdab348c86c
+    m_Address: Gameplay/BoosterHelperUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f7d79ec6c4738e94c9dfe5719bdeae6a
+    m_Address: Scenes/Gameplay
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f82b4c29d12f2134486b82888c674c4a
+    m_Address: UI/ErrorUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fba87977ad40fda4aab49846cac6719c
+    m_Address: UI/RestartBoosterUI
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

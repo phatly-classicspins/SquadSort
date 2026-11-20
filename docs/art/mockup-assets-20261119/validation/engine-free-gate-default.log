@@ -1,0 +1,17 @@
+[gate] === leg 1/4: source greps ===
+[sku-grep] root: /d/Work/SqadSort
+[sku-grep] PASS  input-poll (no Input.GetTouch / OnMouse* / Touchscreen.current in a Views asmdef)
+[sku-grep] PASS  lifecycle (no OnApplicationPause/Focus/Quit in SKU code)
+[sku-grep] PASS  messagepipe (no MessagePipe registration outside Installers/)
+[font-check] PASS  4 TMP font asset(s), every source font static
+[sku-grep] PASS  variable-font (no TMP font asset built from a variable font)
+[sku-grep] ALL SOURCE GREPS CLEAN
+[gate] PASS  greps
+[gate] === leg 2/4: headless type-check (Game.Domain, Game.Application, Game.Gen) ===
+OK    Game.Domain  (4s)
+OK    Game.Application  (1s)
+OK    Game.Gen  (2s)
+---   3 asm in 7s, 0 failed
+[gate] PASS  typecheck
+[gate] === leg 3/4: dotnet test SkuHeadlessTests/MyGame.SkuHeadlessTests.csproj --filter "TestCategory!=Slow" ===
+[gate] ERROR: test project not found at /d/Work/SqadSort/SkuHeadlessTests/MyGame.SkuHeadlessTests.csproj.

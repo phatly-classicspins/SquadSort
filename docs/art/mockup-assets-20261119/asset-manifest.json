@@ -1,0 +1,370 @@
+{
+  "status": "3d-meshes-exported-and-validated",
+  "generation_mode": "built-in image_gen",
+  "files": [
+    {
+      "path": "reference/mockup.png",
+      "size": [
+        941,
+        1672
+      ],
+      "mode": "RGB",
+      "alpha_extrema": null,
+      "sha256": "1ef1bc53232bc12eb02571caa65c2a853525160d38c599033743a5428ccd6212"
+    },
+    {
+      "path": "models/character-purple/blueprint.png",
+      "size": [
+        1171,
+        1343
+      ],
+      "mode": "RGB",
+      "alpha_extrema": null,
+      "sha256": "a7905a4ef31e99f3ca1e202b59ee2ea5626a2ee3890d6559738790001f355ec3"
+    },
+    {
+      "path": "models/queue-four/blueprint.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "alpha_extrema": null,
+      "sha256": "6b64a12488c857277bc55ff300d030a2e46638d5a39e28cd585379e0edb1491d"
+    },
+    {
+      "path": "models/waiting-board/blueprint.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "alpha_extrema": null,
+      "sha256": "1bc33eeef317a5393954e6b86626d1ec60db8689b9ffc5d0d5198f962fcfe9d8"
+    },
+    {
+      "path": "textures/courtyard-background.png",
+      "size": [
+        941,
+        1672
+      ],
+      "mode": "RGB",
+      "alpha_extrema": null,
+      "sha256": "8ba3b08bcb12f6ef6b404bbd37bbf20724d238f9c192162d94ce59d26f232847"
+    },
+    {
+      "path": "ui/ui-atlas.png",
+      "size": [
+        887,
+        1774
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "46400d2afe17ce9bd05b8843e3243d0e675d1fde3da98098d2d229b294756881"
+    }
+  ],
+  "models_delivered": [
+    {
+      "id": "character-blue",
+      "fbx": "models/character-blue/character-blue.fbx",
+      "sha256": "8b0737ee459c78113cd682e73385d33fbc6bcb46a6f5cdf33868673e440ad8e7",
+      "source": "models/character-blue/build.py",
+      "hero": "models/character-blue/hero.png",
+      "views": "models/character-blue/views.png",
+      "triangles": 4856,
+      "size_m": {
+        "width": 1.02505,
+        "height": 0.846,
+        "length": 0.817
+      },
+      "validation": "geometry-pass-and-fbx-roundtrip-pass",
+      "visual_status": "pending-user-review",
+      "rigged": false,
+      "clips": []
+    },
+    {
+      "id": "character-brown",
+      "fbx": "models/character-brown/character-brown.fbx",
+      "sha256": "a78bb5d0ed75593e6870238f97589f84954912c69e7ca58426c1ea11c2bad161",
+      "source": "models/character-brown/build.py",
+      "hero": "models/character-brown/hero.png",
+      "views": "models/character-brown/views.png",
+      "triangles": 4088,
+      "size_m": {
+        "width": 1.02505,
+        "height": 1.02574,
+        "length": 0.78782
+      },
+      "validation": "geometry-pass-and-fbx-roundtrip-pass",
+      "visual_status": "pending-user-review",
+      "rigged": false,
+      "clips": []
+    },
+    {
+      "id": "character-cyan",
+      "fbx": "models/character-cyan/character-cyan.fbx",
+      "sha256": "f3c5404cf50f04510daf9e1f371259f50ead6c4f82d1edd50f5d4775ddf018b9",
+      "source": "models/character-cyan/build.py",
+      "hero": "models/character-cyan/hero.png",
+      "views": "models/character-cyan/views.png",
+      "triangles": 4040,
+      "size_m": {
+        "width": 1.02505,
+        "height": 1.0496,
+        "length": 0.78782
+      },
+      "validation": "geometry-pass-and-fbx-roundtrip-pass",
+      "visual_status": "pending-user-review",
+      "rigged": false,
+      "clips": []
+    },
+    {
+      "id": "character-green",
+      "fbx": "models/character-green/character-green.fbx",
+      "sha256": "5a6f9d30344e1d5ef48164733d7e0bfec281373cf4c4b06177d09df34c3804a7",
+      "source": "models/character-green/build.py",
+      "hero": "models/character-green/hero.png",
+      "views": "models/character-green/views.png",
+      "triangles": 4808,
+      "size_m": {
+        "width": 1.02505,
+        "height": 1.00218,
+        "length": 0.78782
+      },
+      "validation": "geometry-pass-and-fbx-roundtrip-pass",
+      "visual_status": "pending-user-review",
+      "rigged": false,
+      "clips": []
+    },
+    {
+      "id": "character-hidden",
+      "fbx": "models/character-hidden/character-hidden.fbx",
+      "sha256": "7bc771e2dfbf6c53334287d3a207197a1048cddd4f5fdfaff6432ef1e43a0004",
+      "source": "models/character-hidden/build.py",
+      "hero": "models/character-hidden/hero.png",
+      "views": "models/character-hidden/views.png",
+      "triangles": 2408,
+      "size_m": {
+        "width": 1.02505,
+        "height": 0.846,
+        "length": 0.72548
+      },
+      "validation": "geometry-pass-and-fbx-roundtrip-pass",
+      "visual_status": "pending-user-review",
+      "rigged": false,
+      "clips": []
+    },
+    {
+      "id": "character-orange",
+      "fbx": "models/character-orange/character-orange.fbx",
+      "sha256": "39f8c1a29ea9cd3e9a7df3b2930f2a094f8d42684dcd68a6a858ac05f00824d3",
+      "source": "models/character-orange/build.py",
+      "hero": "models/character-orange/hero.png",
+      "views": "models/character-orange/views.png",
+      "triangles": 4196,
+      "size_m": {
+        "width": 1.02505,
+        "height": 1.07778,
+        "length": 0.78782
+      },
+      "validation": "geometry-pass-and-fbx-roundtrip-pass",
+      "visual_status": "pending-user-review",
+      "rigged": false,
+      "clips": []
+    },
+    {
+      "id": "character-pink",
+      "fbx": "models/character-pink/character-pink.fbx",
+      "sha256": "060880c37f19af49094b4bb2651283a2c4568035ebbe56f0bcf8d82a855c6d26",
+      "source": "models/character-pink/build.py",
+      "hero": "models/character-pink/hero.png",
+      "views": "models/character-pink/views.png",
+      "triangles": 4640,
+      "size_m": {
+        "width": 1.02505,
+        "height": 0.9625,
+        "length": 0.78782
+      },
+      "validation": "geometry-pass-and-fbx-roundtrip-pass",
+      "visual_status": "pending-user-review",
+      "rigged": false,
+      "clips": []
+    },
+    {
+      "id": "character-purple",
+      "fbx": "models/character-purple/mockup-v1-character-purple.fbx",
+      "sha256": "fb00c739f6fafbb684ff7c32fa34a46939163282afe93223b1d631880cb1b4bb",
+      "source": "models/character-purple/build.py",
+      "hero": "models/character-purple/hero.png",
+      "views": "models/character-purple/views.png",
+      "triangles": 5972,
+      "size_m": {
+        "width": 1.02505,
+        "height": 1.1486,
+        "length": 0.78782
+      },
+      "validation": "geometry-pass-and-fbx-roundtrip-pass",
+      "visual_status": "pending-user-review",
+      "rigged": false,
+      "clips": []
+    },
+    {
+      "id": "character-red",
+      "fbx": "models/character-red/character-red.fbx",
+      "sha256": "4292cb8b24ab4b7acd0ff40fb6235fe34dafc6bcf5e983fb423bd8a6e477018a",
+      "source": "models/character-red/build.py",
+      "hero": "models/character-red/hero.png",
+      "views": "models/character-red/views.png",
+      "triangles": 3668,
+      "size_m": {
+        "width": 1.02505,
+        "height": 0.846,
+        "length": 0.78782
+      },
+      "validation": "geometry-pass-and-fbx-roundtrip-pass",
+      "visual_status": "pending-user-review",
+      "rigged": false,
+      "clips": []
+    },
+    {
+      "id": "character-yellow",
+      "fbx": "models/character-yellow/character-yellow.fbx",
+      "sha256": "fce299b101aeced496e2fca17890e3afba62d1296ab9287a78ad5e7d21588c3c",
+      "source": "models/character-yellow/build.py",
+      "hero": "models/character-yellow/hero.png",
+      "views": "models/character-yellow/views.png",
+      "triangles": 3908,
+      "size_m": {
+        "width": 1.02505,
+        "height": 1.05892,
+        "length": 0.78782
+      },
+      "validation": "geometry-pass-and-fbx-roundtrip-pass",
+      "visual_status": "pending-user-review",
+      "rigged": false,
+      "clips": []
+    },
+    {
+      "id": "queue-four",
+      "fbx": "models/queue-four/mockup-v1-queue-four.fbx",
+      "sha256": "c48c028e42e62edd28fa5b399293a82855aa0238f07a7f44d35f74ee2b643bd4",
+      "source": "models/queue-four/build.py",
+      "hero": "models/queue-four/hero.png",
+      "views": "models/queue-four/views.png",
+      "triangles": 2208,
+      "size_m": {
+        "width": 1.28,
+        "height": 0.26,
+        "length": 4.6
+      },
+      "validation": "geometry-pass-and-fbx-roundtrip-pass",
+      "visual_status": "pending-user-review",
+      "rigged": false,
+      "clips": []
+    },
+    {
+      "id": "waiting-board",
+      "fbx": "models/waiting-board/mockup-v1-waiting-board.fbx",
+      "sha256": "f4bf252c9970e050a225314497614b33779004b59bf7d31a4c7a8dcbe3486115",
+      "source": "models/waiting-board/build.py",
+      "hero": "models/waiting-board/hero.png",
+      "views": "models/waiting-board/views.png",
+      "triangles": 3426,
+      "size_m": {
+        "width": 4.6,
+        "height": 0.26,
+        "length": 2.3
+      },
+      "validation": "geometry-pass-and-fbx-roundtrip-pass",
+      "visual_status": "pending-user-review",
+      "rigged": false,
+      "clips": []
+    },
+    {
+      "id": "waiting-cell",
+      "fbx": "models/waiting-cell/waiting-cell.fbx",
+      "sha256": "be29abbb9963d435e6d4b8b6359eacf05cdec3eece34b4e0ebdf440b1524d41b",
+      "source": "models/waiting-cell/build.py",
+      "hero": "models/waiting-cell/hero.png",
+      "views": "models/waiting-cell/views.png",
+      "triangles": 188,
+      "size_m": {
+        "width": 1.15,
+        "height": 0.04,
+        "length": 1.15
+      },
+      "validation": "geometry-pass-and-fbx-roundtrip-pass",
+      "visual_status": "pending-user-review",
+      "rigged": false,
+      "clips": []
+    },
+    {
+      "id": "waiting-corner-inner",
+      "fbx": "models/waiting-corner-inner/waiting-corner-inner.fbx",
+      "sha256": "f20163bf9996a4cb478baca4a04c14a8c14d9d83d6df42e3bc69ed1f57cf04d8",
+      "source": "models/waiting-corner-inner/build.py",
+      "hero": "models/waiting-corner-inner/hero.png",
+      "views": "models/waiting-corner-inner/views.png",
+      "triangles": 372,
+      "size_m": {
+        "width": 0.34922,
+        "height": 0.26,
+        "length": 0.34922
+      },
+      "validation": "geometry-pass-and-fbx-roundtrip-pass",
+      "visual_status": "pending-user-review",
+      "rigged": false,
+      "clips": []
+    },
+    {
+      "id": "waiting-corner-outer",
+      "fbx": "models/waiting-corner-outer/waiting-corner-outer.fbx",
+      "sha256": "278bd0c6d5a6b1b4db3565d6c17a1870217d0f69a81f9504aa46d9e081b24ea8",
+      "source": "models/waiting-corner-outer/build.py",
+      "hero": "models/waiting-corner-outer/hero.png",
+      "views": "models/waiting-corner-outer/views.png",
+      "triangles": 372,
+      "size_m": {
+        "width": 0.22922,
+        "height": 0.26,
+        "length": 0.22922
+      },
+      "validation": "geometry-pass-and-fbx-roundtrip-pass",
+      "visual_status": "pending-user-review",
+      "rigged": false,
+      "clips": []
+    },
+    {
+      "id": "waiting-edge",
+      "fbx": "models/waiting-edge/waiting-edge.fbx",
+      "sha256": "be6c1231052a75912639af4fde7d62380a5a84fc2e825e98b1e04702ee36d358",
+      "source": "models/waiting-edge/build.py",
+      "hero": "models/waiting-edge/hero.png",
+      "views": "models/waiting-edge/views.png",
+      "triangles": 300,
+      "size_m": {
+        "width": 1.15,
+        "height": 0.26,
+        "length": 0.12
+      },
+      "validation": "geometry-pass-and-fbx-roundtrip-pass",
+      "visual_status": "pending-user-review",
+      "rigged": false,
+      "clips": []
+    }
+  ],
+  "models_pending": [],
+  "unity_import_performed": false,
+  "validations": {
+    "geometry_pass": 16,
+    "fbx_roundtrip_pass": 16,
+    "engine_free_gate_exit": 0
+  },
+  "source_units": "metres",
+  "unity_front": "+Z",
+  "unity_up": "+Y",
+  "import_scale": 1
+}

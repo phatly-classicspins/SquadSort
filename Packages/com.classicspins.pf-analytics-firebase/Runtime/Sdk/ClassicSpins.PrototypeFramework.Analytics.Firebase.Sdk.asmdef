@@ -1,0 +1,29 @@
+{
+  "name": "ClassicSpins.PrototypeFramework.Analytics.Firebase.Sdk",
+  "rootNamespace": "ClassicSpins.PrototypeFramework.Analytics.Firebase.Sdk",
+  "references": [
+    "ClassicSpins.PrototypeFramework.Analytics.Firebase.Core",
+    "UniTask"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": true,
+  "precompiledReferences": [
+    "Firebase.App.dll",
+    "Firebase.Analytics.dll",
+    "Firebase.Platform.dll"
+  ],
+  "autoReferenced": false,
+  "defineConstraints": [
+    "PF_FIREBASE"
+  ],
+  "versionDefines": [
+    {
+      "name": "com.google.firebase.analytics",
+      "expression": "14.1.0",
+      "define": "PF_FIREBASE"
+    }
+  ],
+  "noEngineReferences": false
+}

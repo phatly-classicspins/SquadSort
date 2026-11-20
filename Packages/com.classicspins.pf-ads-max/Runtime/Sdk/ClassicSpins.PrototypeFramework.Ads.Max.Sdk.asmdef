@@ -1,0 +1,26 @@
+{
+    "name": "ClassicSpins.PrototypeFramework.Ads.Max.Sdk",
+    "rootNamespace": "ClassicSpins.PrototypeFramework.Ads.Max.Sdk",
+    "references": [
+        "ClassicSpins.PrototypeFramework.Ads.Max.Core",
+        "UniTask",
+        "MaxSdk.Scripts"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "PF_MAX"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.applovin.mediation.ads",
+            "expression": "8.0.0",
+            "define": "PF_MAX"
+        }
+    ],
+    "noEngineReferences": false
+}

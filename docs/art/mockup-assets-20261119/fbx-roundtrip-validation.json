@@ -1,0 +1,588 @@
+[
+  {
+    "asset": "character-blue",
+    "path": "models/character-blue/character-blue.fbx",
+    "ok": true,
+    "checks": {
+      "meshes_present": true,
+      "dimensions_match_export": true,
+      "triangles_match_export": true,
+      "parts_preserved": true,
+      "ground_pivot": true,
+      "palette_materials": true
+    },
+    "meshes": 9,
+    "tris": 4856,
+    "size": {
+      "width": 1.02505,
+      "height": 0.846,
+      "length": 0.817
+    },
+    "root_transforms": [
+      {
+        "name": "Body",
+        "rotation_xyz": [
+          1.5708,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "asset": "character-brown",
+    "path": "models/character-brown/character-brown.fbx",
+    "ok": true,
+    "checks": {
+      "meshes_present": true,
+      "dimensions_match_export": true,
+      "triangles_match_export": true,
+      "parts_preserved": true,
+      "ground_pivot": true,
+      "palette_materials": true
+    },
+    "meshes": 9,
+    "tris": 4088,
+    "size": {
+      "width": 1.02505,
+      "height": 1.02574,
+      "length": 0.78782
+    },
+    "root_transforms": [
+      {
+        "name": "Body",
+        "rotation_xyz": [
+          1.5708,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "asset": "character-cyan",
+    "path": "models/character-cyan/character-cyan.fbx",
+    "ok": true,
+    "checks": {
+      "meshes_present": true,
+      "dimensions_match_export": true,
+      "triangles_match_export": true,
+      "parts_preserved": true,
+      "ground_pivot": true,
+      "palette_materials": true
+    },
+    "meshes": 9,
+    "tris": 4040,
+    "size": {
+      "width": 1.02505,
+      "height": 1.0496,
+      "length": 0.78782
+    },
+    "root_transforms": [
+      {
+        "name": "Body",
+        "rotation_xyz": [
+          1.5708,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "asset": "character-green",
+    "path": "models/character-green/character-green.fbx",
+    "ok": true,
+    "checks": {
+      "meshes_present": true,
+      "dimensions_match_export": true,
+      "triangles_match_export": true,
+      "parts_preserved": true,
+      "ground_pivot": true,
+      "palette_materials": true
+    },
+    "meshes": 9,
+    "tris": 4808,
+    "size": {
+      "width": 1.02505,
+      "height": 1.00218,
+      "length": 0.78782
+    },
+    "root_transforms": [
+      {
+        "name": "Body",
+        "rotation_xyz": [
+          1.5708,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "asset": "character-hidden",
+    "path": "models/character-hidden/character-hidden.fbx",
+    "ok": true,
+    "checks": {
+      "meshes_present": true,
+      "dimensions_match_export": true,
+      "triangles_match_export": true,
+      "parts_preserved": true,
+      "ground_pivot": true,
+      "palette_materials": true
+    },
+    "meshes": 9,
+    "tris": 2408,
+    "size": {
+      "width": 1.02505,
+      "height": 0.846,
+      "length": 0.72548
+    },
+    "root_transforms": [
+      {
+        "name": "Body",
+        "rotation_xyz": [
+          1.5708,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "asset": "character-orange",
+    "path": "models/character-orange/character-orange.fbx",
+    "ok": true,
+    "checks": {
+      "meshes_present": true,
+      "dimensions_match_export": true,
+      "triangles_match_export": true,
+      "parts_preserved": true,
+      "ground_pivot": true,
+      "palette_materials": true
+    },
+    "meshes": 9,
+    "tris": 4196,
+    "size": {
+      "width": 1.02505,
+      "height": 1.07778,
+      "length": 0.78782
+    },
+    "root_transforms": [
+      {
+        "name": "Body",
+        "rotation_xyz": [
+          1.5708,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "asset": "character-pink",
+    "path": "models/character-pink/character-pink.fbx",
+    "ok": true,
+    "checks": {
+      "meshes_present": true,
+      "dimensions_match_export": true,
+      "triangles_match_export": true,
+      "parts_preserved": true,
+      "ground_pivot": true,
+      "palette_materials": true
+    },
+    "meshes": 9,
+    "tris": 4640,
+    "size": {
+      "width": 1.02505,
+      "height": 0.9625,
+      "length": 0.78782
+    },
+    "root_transforms": [
+      {
+        "name": "Body",
+        "rotation_xyz": [
+          1.5708,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "asset": "character-purple",
+    "path": "models/character-purple/mockup-v1-character-purple.fbx",
+    "ok": true,
+    "checks": {
+      "meshes_present": true,
+      "dimensions_match_export": true,
+      "triangles_match_export": true,
+      "parts_preserved": true,
+      "ground_pivot": true,
+      "palette_materials": true
+    },
+    "meshes": 9,
+    "tris": 5972,
+    "size": {
+      "width": 1.02505,
+      "height": 1.1486,
+      "length": 0.78782
+    },
+    "root_transforms": [
+      {
+        "name": "Body",
+        "rotation_xyz": [
+          1.5708,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "asset": "character-red",
+    "path": "models/character-red/character-red.fbx",
+    "ok": true,
+    "checks": {
+      "meshes_present": true,
+      "dimensions_match_export": true,
+      "triangles_match_export": true,
+      "parts_preserved": true,
+      "ground_pivot": true,
+      "palette_materials": true
+    },
+    "meshes": 8,
+    "tris": 3668,
+    "size": {
+      "width": 1.02505,
+      "height": 0.846,
+      "length": 0.78782
+    },
+    "root_transforms": [
+      {
+        "name": "Body",
+        "rotation_xyz": [
+          1.5708,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "asset": "character-yellow",
+    "path": "models/character-yellow/character-yellow.fbx",
+    "ok": true,
+    "checks": {
+      "meshes_present": true,
+      "dimensions_match_export": true,
+      "triangles_match_export": true,
+      "parts_preserved": true,
+      "ground_pivot": true,
+      "palette_materials": true
+    },
+    "meshes": 9,
+    "tris": 3908,
+    "size": {
+      "width": 1.02505,
+      "height": 1.05892,
+      "length": 0.78782
+    },
+    "root_transforms": [
+      {
+        "name": "Body",
+        "rotation_xyz": [
+          1.5708,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "asset": "queue-four",
+    "path": "models/queue-four/mockup-v1-queue-four.fbx",
+    "ok": true,
+    "checks": {
+      "meshes_present": true,
+      "dimensions_match_export": true,
+      "triangles_match_export": true,
+      "parts_preserved": true,
+      "ground_pivot": true,
+      "palette_materials": true
+    },
+    "meshes": 2,
+    "tris": 2208,
+    "size": {
+      "width": 1.28,
+      "height": 0.26,
+      "length": 4.6
+    },
+    "root_transforms": [
+      {
+        "name": "Floor",
+        "rotation_xyz": [
+          1.5708,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Rim",
+        "rotation_xyz": [
+          1.5708,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "asset": "waiting-board",
+    "path": "models/waiting-board/mockup-v1-waiting-board.fbx",
+    "ok": true,
+    "checks": {
+      "meshes_present": true,
+      "dimensions_match_export": true,
+      "triangles_match_export": true,
+      "parts_preserved": true,
+      "ground_pivot": true,
+      "palette_materials": true
+    },
+    "meshes": 2,
+    "tris": 3426,
+    "size": {
+      "width": 4.6,
+      "height": 0.26,
+      "length": 2.3
+    },
+    "root_transforms": [
+      {
+        "name": "Floor",
+        "rotation_xyz": [
+          1.5708,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Rim",
+        "rotation_xyz": [
+          1.5708,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "asset": "waiting-cell",
+    "path": "models/waiting-cell/waiting-cell.fbx",
+    "ok": true,
+    "checks": {
+      "meshes_present": true,
+      "dimensions_match_export": true,
+      "triangles_match_export": true,
+      "parts_preserved": true,
+      "ground_pivot": true,
+      "palette_materials": true
+    },
+    "meshes": 1,
+    "tris": 188,
+    "size": {
+      "width": 1.15,
+      "height": 0.04,
+      "length": 1.15
+    },
+    "root_transforms": [
+      {
+        "name": "Floor",
+        "rotation_xyz": [
+          1.5708,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "asset": "waiting-corner-inner",
+    "path": "models/waiting-corner-inner/waiting-corner-inner.fbx",
+    "ok": true,
+    "checks": {
+      "meshes_present": true,
+      "dimensions_match_export": true,
+      "triangles_match_export": true,
+      "parts_preserved": true,
+      "ground_pivot": true,
+      "palette_materials": true
+    },
+    "meshes": 1,
+    "tris": 372,
+    "size": {
+      "width": 0.34922,
+      "height": 0.26,
+      "length": 0.34922
+    },
+    "root_transforms": [
+      {
+        "name": "Rim",
+        "rotation_xyz": [
+          1.5708,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "asset": "waiting-corner-outer",
+    "path": "models/waiting-corner-outer/waiting-corner-outer.fbx",
+    "ok": true,
+    "checks": {
+      "meshes_present": true,
+      "dimensions_match_export": true,
+      "triangles_match_export": true,
+      "parts_preserved": true,
+      "ground_pivot": true,
+      "palette_materials": true
+    },
+    "meshes": 1,
+    "tris": 372,
+    "size": {
+      "width": 0.22922,
+      "height": 0.26,
+      "length": 0.22922
+    },
+    "root_transforms": [
+      {
+        "name": "Rim",
+        "rotation_xyz": [
+          1.5708,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "asset": "waiting-edge",
+    "path": "models/waiting-edge/waiting-edge.fbx",
+    "ok": true,
+    "checks": {
+      "meshes_present": true,
+      "dimensions_match_export": true,
+      "triangles_match_export": true,
+      "parts_preserved": true,
+      "ground_pivot": true,
+      "palette_materials": true
+    },
+    "meshes": 1,
+    "tris": 300,
+    "size": {
+      "width": 1.15,
+      "height": 0.26,
+      "length": 0.12
+    },
+    "root_transforms": [
+      {
+        "name": "Rim",
+        "rotation_xyz": [
+          1.5708,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ]
+  }
+]

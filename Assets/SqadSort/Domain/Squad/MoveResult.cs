@@ -25,6 +25,9 @@ namespace Game.Domain
         /// <summary>A plaza buddy has no tube to go to.</summary>
         NoDestination,
 
+        /// <summary>The chosen destination cannot take the selected group (full, other colour, locked, same place).</summary>
+        WrongDestination,
+
         /// <summary>The board is not in <see cref="BoardState.Playing"/>.</summary>
         NotPlaying,
     }

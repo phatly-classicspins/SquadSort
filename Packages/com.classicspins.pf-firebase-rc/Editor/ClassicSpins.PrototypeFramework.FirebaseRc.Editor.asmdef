@@ -1,0 +1,26 @@
+{
+    "name": "ClassicSpins.PrototypeFramework.FirebaseRc.Editor",
+    "rootNamespace": "ClassicSpins.PrototypeFramework.FirebaseRc.Editor",
+    "references": [
+        "ClassicSpins.PrototypeFramework.FirebaseRc.Core",
+        "ClassicSpins.PrototypeFramework.FirebaseRc",
+        "ClassicSpins.PrototypeFramework.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.google.firebase.remote-config",
+            "expression": "13.0.0",
+            "define": "PF_FIREBASE_RC"
+        }
+    ],
+    "noEngineReferences": false
+}

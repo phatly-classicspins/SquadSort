@@ -1,0 +1,49 @@
+{
+  "schema": "pf-module/1",
+  "id": "com.classicspins.pf-firebase-rc",
+  "displayName": "Remote config — Firebase",
+  "summary": "Firebase Remote Config behind IRemoteConfigSource. Game key '.' maps to Firebase '_'.",
+  "frameworkRange": ">=0.9.0 <0.10.0",
+  "port": {
+    "interface": "ClassicSpins.PrototypeFramework.Application.IRemoteConfigSource",
+    "mode": "replacement",
+    "replacesBootNode": null
+  },
+  "requires": {
+    "scopedRegistries": [
+      {
+        "name": "package.openupm.com",
+        "url": "https://package.openupm.com",
+        "scopes": [
+          "com.google.external-dependency-manager"
+        ]
+      }
+    ],
+    "dependencies": {
+      "com.google.external-dependency-manager": "1.2.190"
+    },
+    "manualPackages": [
+      {
+        "package": "com.google.firebase.app",
+        "version": "14.1.0"
+      },
+      {
+        "package": "com.google.firebase.remote-config",
+        "version": "14.1.0"
+      }
+    ]
+  },
+  "define": "PF_FIREBASE_RC",
+  "installer": {
+    "type": "ClassicSpins.PrototypeFramework.FirebaseRc.FirebaseRemoteConfigInstaller",
+    "menu": "PrototypeFramework/Config/Firebase Remote Config Installer",
+    "assetPath": "Assets/{sku}/Installers/FirebaseRemoteConfigInstaller.asset"
+  },
+  "manualSteps": [
+    "Firebase is not on a package registry: download com.google.firebase.app-14.1.0.tgz and com.google.firebase.remote-config-14.1.0.tgz from the official Firebase Unity SDK distribution into Packages/ManualSdk/, and add both as file:ManualSdk/<file>.tgz lines to Packages/manifest.json.",
+    "Download GoogleService-Info.plist (iOS) / google-services.json (Android) from the Firebase console into Assets/; the bundle id / package must match Player Settings.",
+    "Create the installer asset (Assets ▸ Create ▸ PrototypeFramework ▸ Config ▸ Firebase Remote Config Installer) and drop it into RootLifetimeScope ▸ SKU game installers in the Master Scene.",
+    "Publish every config key to the Firebase console with '.' written as '_'."
+  ],
+  "docs": "recipes/add-service-module.md"
+}
