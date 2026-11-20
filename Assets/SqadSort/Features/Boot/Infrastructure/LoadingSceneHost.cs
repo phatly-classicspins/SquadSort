@@ -6,6 +6,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 using ClassicSpins.PrototypeFramework.Application;
+using Game.Views;
 
 namespace Game.Infrastructure
 {
@@ -89,6 +90,19 @@ namespace Game.Infrastructure
             if (!_scene.HasValue) return;
             var scene = _scene.Value;
             _scene = null;
+            try
+            {
+                // D-083: let the bar ease to 100 % first (Money Sort's LoadingUI); bounded, cosmetic.
+                foreach (var root in scene.Scene.GetRootGameObjects())
+                {
+                    var view = root.GetComponentInChildren<LoadingScreenView>();
+                    if (view != null) { await view.CompleteAsync(); break; }
+                }
+            }
+            catch (Exception ex)
+            {
+                _log.Warn("[LoadingScene] bar completion issue: " + ex.Message);
+            }
             try
             {
                 await Addressables.UnloadSceneAsync(scene).Task.AsUniTask();
