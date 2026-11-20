@@ -83,7 +83,7 @@ namespace SqadSort.SkuHeadlessTests.Gate
                 "Addressables entry has nothing to point at.");
 
             var guid = Regex.Match(
-                File.ReadAllText(metaPath), "^guid: *([0-9a-fA-F]{32}) *$", RegexOptions.Multiline);
+                File.ReadAllText(metaPath), "^guid: *([0-9a-fA-F]{32}) *\r?$", RegexOptions.Multiline);   // CRLF after a checkout with core.autocrlf
 
             Assert.That(guid.Success, Is.True, metaPath + " declares no guid.");
             return guid.Groups[1].Value;

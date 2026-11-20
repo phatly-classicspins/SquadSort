@@ -14,12 +14,16 @@ namespace Game.Application
     /// </summary>
     public static class AdUnitConfig
     {
-        // SqadSort's own MAX ad units go here (AppLovin dashboard ▸ MAX ▸ Ad Units). Empty until the app exists in MAX: the
-        // pf-ads-max build preflight then fails the build (AllowMissingUnitIds = 0), so no build ships with another game's units.
+        // SqadSort's own MAX ad units go here (AppLovin dashboard ▸ MAX ▸ Ad Units). Empty until the app exists in MAX — never
+        // another game's units. TODO(sdk-ids): fill them, then set AllowMissingUnitIds back to 0 (docs/sdk-placeholders.md).
         private const string AndroidRewarded = "", AndroidInter = "", AndroidBanner = "";
         private const string IosRewarded = "", IosInter = "", IosBanner = "";
-        // pf-ads-max's unit-id preflight stays a build failure (0); set 1 only to ship with a unit left empty.
-        private const int AllowMissingUnitIds = 0;
+        // 1 = pf-ads-max's unit-id preflight is waived (logged as a warning) so builds pass before the MAX app exists; every show
+        // of an empty unit resolves Failed ("No ads available"). Set 0 once the unit ids above are real.
+        private const int AllowMissingUnitIds = 1;
+        // TODO(sdk-ids): SqadSort's Adjust app token (Adjust dashboard ▸ app ▸ App Token). A 12-character placeholder until the
+        // app exists in Adjust: pf-analytics-adjust's preflight needs a well-formed bundled token; this one tracks nothing.
+        private const string AdjustAppToken = "sqadsorttodo";
         // D-124 (Chipsaway feedback 5): MAX pauses Unity while a fullscreen ad is up (iOS UnityPause in didDisplayAd, Android
         // onPause), so the module's display signal is only delivered after the ad closes — by then its realtime display timeout
         // (default 10 s) has expired and a watched rewarded ad reads Failed ("No ads available", no reward). Until pf-ads-max
@@ -45,7 +49,7 @@ namespace Game.Application
             ["ads.max.ios.banner.unitId"] = IosBanner,
         };
 
-        /// <summary>The single bundled <see cref="ConfigDefaults"/>: the economy keys plus the ad unit keys.</summary>
+        /// <summary>The single bundled <see cref="ConfigDefaults"/>: the economy keys, the ad unit keys and the Adjust app token.</summary>
         public static ConfigDefaults With(ConfigDefaults economy)
         {
             var all = new Dictionary<string, object>();
@@ -54,6 +58,7 @@ namespace Game.Application
             foreach (var p in Rewarded) all["ads." + p.Value + ".rewarded"] = 1;
             all["ads.max.allowMissingUnitIds"] = AllowMissingUnitIds;
             all["ads.max.displayTimeoutSeconds"] = DisplayTimeoutSeconds;
+            all["analytics.adjust.appToken"] = AdjustAppToken;
             return new ConfigDefaults(all);
         }
     }

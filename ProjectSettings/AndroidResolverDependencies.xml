@@ -1,0 +1,34 @@
+<dependencies>
+  <packages>
+    <package>com.adjust.sdk:adjust-android:5.8.1</package>
+    <package>com.android.installreferrer:installreferrer:2.2</package>
+    <package>com.applovin:applovin-sdk:13.6.4</package>
+    <package>com.google.android.gms:play-services-base:18.11.1</package>
+    <package>com.google.firebase:firebase-analytics:24.0.0</package>
+    <package>com.google.firebase:firebase-analytics-unity:14.1.0</package>
+    <package>com.google.firebase:firebase-app-unity:14.1.0</package>
+    <package>com.google.firebase:firebase-common:23.0.0</package>
+    <package>com.google.firebase:firebase-config:24.0.1</package>
+    <package>com.google.firebase:firebase-config-unity:14.1.0</package>
+    <package>com.google.firebase:firebase-crashlytics-ndk:21.0.1</package>
+    <package>com.google.firebase:firebase-crashlytics-unity:14.1.0</package>
+  </packages>
+  <files />
+  <settings>
+    <setting name="androidAbis" value="arm64-v8a" />
+    <setting name="bundleId" value="com.UnityTechnologies.com.unity.template.urpblank" />
+    <setting name="explodeAars" value="True" />
+    <setting name="gradleBuildEnabled" value="True" />
+    <setting name="gradlePropertiesTemplateEnabled" value="False" />
+    <setting name="gradleTemplateEnabled" value="False" />
+    <setting name="installAndroidPackages" value="True" />
+    <setting name="localMavenRepoDir" value="Assets/GeneratedLocalRepo" />
+    <setting name="packageDir" value="Assets/Plugins/Android" />
+    <setting name="patchAndroidManifest" value="True" />
+    <setting name="patchMainTemplateGradle" value="True" />
+    <setting name="projectExportEnabled" value="False" />
+    <setting name="useFullCustomMavenRepoPathWhenExport" value="True" />
+    <setting name="useFullCustomMavenRepoPathWhenNotExport" value="False" />
+    <setting name="useJetifier" value="True" />
+  </settings>
+</dependencies>
