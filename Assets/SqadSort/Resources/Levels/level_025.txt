@@ -1,0 +1,16 @@
+// Three blue houses open at once.
+name: Blue Street
+difficulty: normal
+plaza:
+#######
+#######
+#######
+tube 0 -1 up 4 : R B B
+house B 1 -1 up 4 : ?R Y O O
+tube 3 -1 up 4 : G R B
+house B 5 -1 up 4 : ?G Y O O
+tube 6 -1 up 4 : Y G B
+tube 0 3 down 4 :
+house B 3 3 down 4 : ?Y R G
+tube 6 3 down 4 :
+spare 1 3 down

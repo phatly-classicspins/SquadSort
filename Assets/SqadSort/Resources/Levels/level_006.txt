@@ -1,0 +1,12 @@
+// Four colours around an L-shaped plaza.
+name: Corner Shop
+difficulty: normal
+plaza:
+###.
+###.
+####
+tube 0 -1 up 4 : R B G Y
+tube 1 -1 up 4 : Y G B R
+tube 2 -1 up 4 : G R Y B
+tube 4 2 right 4 : B Y R G
+tube 0 3 down 4 :

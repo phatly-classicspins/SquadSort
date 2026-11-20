@@ -1,0 +1,9 @@
+// Tutorial: the plaza is a place to wait.
+name: Make Room
+difficulty: normal
+plaza:
+####
+####
+tube 0 -1 up 4 : G G B B
+tube 1 -1 up 4 : B B
+tube 3 -1 up 4 : G G

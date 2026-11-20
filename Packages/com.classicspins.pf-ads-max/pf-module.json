@@ -1,0 +1,47 @@
+{
+  "schema": "pf-module/1",
+  "id": "com.classicspins.pf-ads-max",
+  "displayName": "Ads — AppLovin MAX",
+  "summary": "IAdsService backed by AppLovin MAX, plus its IBannerAds banner. Replaces FakeAdsService and FakeBannerAds.",
+  "frameworkRange": ">=0.9.0 <0.10.0",
+  "source": { "kind": "git",
+              "url": "https://github.com/FoxCubGames/ai_prototype_framework.git?path=/Packages/com.classicspins.pf-ads-max#ads-max/v0.1.0" },
+  "port": {
+    "interface": "ClassicSpins.PrototypeFramework.Application.IAdsService",
+    "mode": "replacement",
+    "replacesBootNode": "AdsInit"
+  },
+  "ports": [
+    { "interface": "ClassicSpins.PrototypeFramework.Application.IDevTool", "mode": "additive" },
+    { "interface": "ClassicSpins.PrototypeFramework.Application.IAdsPrivacyOptions", "mode": "replacement" },
+    { "interface": "ClassicSpins.PrototypeFramework.Application.IBannerAds", "mode": "replacement" }
+  ],
+  "requires": {
+    "scopedRegistries": [
+      { "name": "AppLovin MAX Unity",
+        "url": "https://unity.packages.applovin.com/",
+        "scopes": ["com.applovin.mediation.ads",
+                   "com.applovin.mediation.adapters",
+                   "com.applovin.mediation.dsp"] },
+      { "name": "package.openupm.com",
+        "url": "https://package.openupm.com",
+        "scopes": ["com.google.external-dependency-manager"] }
+    ],
+    "dependencies": { "com.applovin.mediation.ads": "8.6.5" }
+  },
+  "define": "PF_MAX",
+  "installer": {
+    "type": "ClassicSpins.PrototypeFramework.Ads.Max.MaxAdsInstaller",
+    "menu": "PrototypeFramework/Ads/AppLovin MAX Installer",
+    "assetPath": "Assets/{sku}/Installers/MaxAdsInstaller.asset"
+  },
+  "manualSteps": [
+    "AppLovin ▸ Integration Manager → paste the SDK Key",
+    "Integration Manager → enable MAX's consent flow (Terms and Privacy Policy) and fill the privacy-policy URL",
+    "Tick the ad networks you want — each adds a com.applovin.mediation.adapters.* pair",
+    "Drag MaxAdsInstaller.asset into the game-installer slot on RootLifetimeScope (Master Scene)",
+    "Fill the ad units in the bundled config defaults (Resources/Config): ads.max.<placement>.unitId per placement (or ads.max.android.<placement>.unitId / ads.max.ios.<placement>.unitId per platform), or one format default ads.max.rewarded.unitId / ads.max.interstitial.unitId (platform form ads.max.android.rewarded.unitId …); set ads.<placement>.rewarded = 1 on each rewarded placement (absent ⇒ interstitial). Optional keys (display timeout, auto-log, dev logging / test devices): README",
+    "Banners: mark each banner placement with ads.<placement>.banner = 1 and give it a unit id — the per-placement keys above, or one banner default ads.max.banner.unitId / ads.max.android.banner.unitId / ads.max.ios.banner.unitId. A banner never falls back to an interstitial or rewarded unit"
+  ],
+  "docs": "recipes/add-service-module.md"
+}

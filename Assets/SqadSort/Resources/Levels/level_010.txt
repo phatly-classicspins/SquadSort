@@ -1,0 +1,15 @@
+// Five colours, tubes on four sides.
+name: Four Ways
+difficulty: normal
+plaza:
+.###.
+#####
+#####
+.###.
+tube 1 -1 up 4 : R O G B
+tube 2 -1 up 4 : O G B P
+tube 3 -1 up 4 : G B P R
+tube -1 1 left 4 : B P R O
+tube 5 2 right 4 : P R O G
+tube 1 4 down 4 :
+tube 3 4 down 4 :

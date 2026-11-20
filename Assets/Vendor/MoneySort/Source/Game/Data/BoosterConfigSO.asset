@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c6a8887c3bad3347954c951dbeee369, type: 3}
+  m_Name: BoosterConfigSO
+  m_EditorClassIdentifier: FlickSort.Runtime::FlickSort.Data.BoosterConfigSO
+  shuffleIcon: {fileID: 21300000, guid: 403e23966b2c0954eac2c89085bf56bf, type: 3}
+  hammerIcon: {fileID: 21300000, guid: 4d99347e8b72619469207646a89c0cbd, type: 3}
+  freeMoveIcon: {fileID: 21300000, guid: 1caadaae0ad2a1a48ad909652494bbd2, type: 3}
+  shuffleClip: {fileID: 32900000, guid: 5c87992af0f0a5640b7eb393b089dd4f, type: 3}
+  hammerClip: {fileID: 32900000, guid: 1e2b21fe597162c4a8573ee05c351328, type: 3}
+  freeMoveClip: {fileID: 32900000, guid: 6667b3039eb04974f9e819b867f5c7f7, type: 3}

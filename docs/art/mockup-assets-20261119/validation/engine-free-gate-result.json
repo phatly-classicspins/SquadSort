@@ -1,0 +1,6 @@
+{
+  "exit_code": 0,
+  "temporary_override": "SkuHeadlessTests/SqadSort.SkuHeadlessTests.csproj",
+  "default_gate_issue": "Configured MyGame.SkuHeadlessTests.csproj does not exist",
+  "original_config_modified": false
+}

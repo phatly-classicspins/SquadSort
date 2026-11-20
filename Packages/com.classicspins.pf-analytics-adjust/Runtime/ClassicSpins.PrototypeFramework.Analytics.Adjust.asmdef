@@ -1,0 +1,27 @@
+{
+  "name": "ClassicSpins.PrototypeFramework.Analytics.Adjust",
+  "rootNamespace": "ClassicSpins.PrototypeFramework.Analytics.Adjust",
+  "references": [
+    "ClassicSpins.PrototypeFramework.Analytics.Adjust.Core",
+    "ClassicSpins.PrototypeFramework.Analytics.Adjust.Sdk",
+    "ClassicSpins.PrototypeFramework.Application",
+    "ClassicSpins.PrototypeFramework.Domain",
+    "VContainer",
+    "UniTask"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "versionDefines": [
+    {
+      "name": "com.adjust.sdk",
+      "expression": "5.8.2",
+      "define": "PF_ADJUST"
+    }
+  ],
+  "noEngineReferences": false
+}

@@ -1,0 +1,122 @@
+{
+  "palette_srgb": {
+    "purple": "B63AF2",
+    "blue": "168DFA",
+    "green": "80DF0B",
+    "orange": "FF8A10",
+    "yellow": "FFE134",
+    "red": "F12C36",
+    "pink": "FF67C5",
+    "brown": "A95D36",
+    "cyan": "29D9EB",
+    "hidden": "A5A4AE",
+    "white": "F5F0F7",
+    "ink": "251F35",
+    "tray-rim": "EFEAF2",
+    "tray-floor": "B8B6C2",
+    "waiting-rim": "F2CEDD",
+    "gold": "FFD23F"
+  },
+  "character_variants": [
+    {
+      "id": "purple",
+      "color": "B63AF2",
+      "design": "Curled antennae; eyelashes; confident smile",
+      "status": "mesh-exported",
+      "fbx": "models/character-purple/mockup-v1-character-purple.fbx"
+    },
+    {
+      "id": "blue",
+      "color": "168DFA",
+      "design": "Round dark glasses; thoughtful expression",
+      "status": "mesh-exported",
+      "fbx": "models/character-blue/character-blue.fbx"
+    },
+    {
+      "id": "green",
+      "color": "80DF0B",
+      "design": "White daisy crown; cheerful expression",
+      "status": "mesh-exported",
+      "fbx": "models/character-green/character-green.fbx"
+    },
+    {
+      "id": "orange",
+      "color": "FF8A10",
+      "design": "Spiky quiff; arched eyebrows; mischievous smile",
+      "status": "mesh-exported",
+      "fbx": "models/character-orange/character-orange.fbx"
+    },
+    {
+      "id": "yellow",
+      "color": "FFE134",
+      "design": "Small quiff; worried eyebrows",
+      "status": "mesh-exported",
+      "fbx": "models/character-yellow/character-yellow.fbx"
+    },
+    {
+      "id": "red",
+      "color": "F12C36",
+      "design": "Heavy angled brows; angry expression",
+      "status": "mesh-exported",
+      "fbx": "models/character-red/character-red.fbx"
+    },
+    {
+      "id": "pink",
+      "color": "FF67C5",
+      "design": "Pink bow; eyelashes; friendly smile",
+      "status": "mesh-exported",
+      "fbx": "models/character-pink/character-pink.fbx"
+    },
+    {
+      "id": "brown",
+      "color": "A95D36",
+      "design": "Curled quiff; friendly expression",
+      "status": "mesh-exported",
+      "fbx": "models/character-brown/character-brown.fbx"
+    },
+    {
+      "id": "cyan",
+      "color": "29D9EB",
+      "design": "Small tuft; relaxed cheeky expression",
+      "status": "mesh-exported",
+      "fbx": "models/character-cyan/character-cyan.fbx"
+    },
+    {
+      "id": "hidden",
+      "color": "A5A4AE",
+      "design": "Gray body; sleeping eyes; question-mark face marking",
+      "status": "mesh-exported",
+      "fbx": "models/character-hidden/character-hidden.fbx"
+    }
+  ],
+  "model_contract": {
+    "format": "FBX",
+    "units": "metres at scale 1",
+    "unity_front": "+Z",
+    "unity_up": "+Y",
+    "pivot": "bottom centre",
+    "mesh_not_sprite": true,
+    "animation_clips": "not authored",
+    "character_budget_triangles": 6000,
+    "queue_budget_triangles": 2500,
+    "rig_world_scale": "Integration decision; not baked into metre-scale source models"
+  },
+  "shared_character_parts": [
+    "Body",
+    "Eye_L",
+    "Eye_R",
+    "Mouth",
+    "Arm_L",
+    "Arm_R",
+    "Foot_L",
+    "Foot_R",
+    "Accessory"
+  ],
+  "material_finish": {
+    "roughness": 0.35,
+    "metallic": 0,
+    "palette_space": "sRGB hex converted to linear in source"
+  },
+  "module_pitch_m": 1.15,
+  "standing_floor_m": 0.04
+}

@@ -1,0 +1,11 @@
+{
+  "name": "com.classicspins.pf-firebase-crashlytics",
+  "version": "0.1.0",
+  "displayName": "PF Module — Firebase Crashlytics",
+  "description": "PrototypeFramework service module: Firebase Crashlytics in place of the framework's CrashLog boot node. The replacement keeps the node's id, capabilities and unhandled-exception hooks, then starts Crashlytics in the background without holding boot. Native crashes and uncaught C# exceptions (reported as fatal) reach the Crashlytics console. Without the Firebase Crashlytics SDK installed the start is refused and logged; nothing falls back.",
+  "unity": "2022.3",
+  "dependencies": {},
+  "author": {
+    "name": "ClassicSpins"
+  }
+}

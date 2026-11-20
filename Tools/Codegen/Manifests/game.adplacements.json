@@ -1,0 +1,22 @@
+{
+  "namespace": "Game.Gen",
+  "container": "AdPlacements",
+  "valueType": "AdPlacement",
+  "usings": [
+    "ClassicSpins.PrototypeFramework.Domain"
+  ],
+  "summary": "Typed AdPlacement values for the SKU (features/ads.md; D-115: AppLovin MAX through pf-ads-max). Codegen-owned; never hand-edit the generated file.",
+  "outputPath": "Assets/SqadSort/Gen/AdPlacements.gen.cs",
+  "entries": [
+    { "id": "RewardedRevive", "value": "rewarded_revive", "order": 0 },
+    { "id": "InterstitialLevelEnd", "value": "interstitial_level_end", "order": 1 },
+    { "id": "RewardedRvSlot", "value": "rewarded_rv_slot", "order": 2 },
+    { "id": "RewardedWinDouble", "value": "rewarded_win_double", "order": 3 },
+    { "id": "RewardedBooster", "value": "rewarded_booster", "order": 4 },
+    { "id": "RewardedLife", "value": "rewarded_life", "order": 5 },
+    { "id": "RewardedSkipLevel", "value": "rewarded_skip_level", "order": 6 },
+    { "id": "RewardedGoldBrick", "value": "rewarded_gold_brick", "order": 7 },
+    { "id": "BannerGameplay", "value": "banner_gameplay", "order": 8 },
+    { "id": "InterstitialLevelFail", "value": "interstitial_level_fail", "order": 9 }
+  ]
+}

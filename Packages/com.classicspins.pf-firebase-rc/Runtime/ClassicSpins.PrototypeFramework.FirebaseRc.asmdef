@@ -1,0 +1,27 @@
+{
+    "name": "ClassicSpins.PrototypeFramework.FirebaseRc",
+    "rootNamespace": "ClassicSpins.PrototypeFramework.FirebaseRc",
+    "references": [
+        "ClassicSpins.PrototypeFramework.FirebaseRc.Core",
+        "ClassicSpins.PrototypeFramework.FirebaseRc.Sdk",
+        "ClassicSpins.PrototypeFramework.Application",
+        "ClassicSpins.PrototypeFramework.Domain",
+        "VContainer",
+        "UniTask"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.google.firebase.remote-config",
+            "expression": "13.0.0",
+            "define": "PF_FIREBASE_RC"
+        }
+    ],
+    "noEngineReferences": false
+}

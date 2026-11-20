@@ -1,0 +1,90 @@
+# Geometry-only appendix to the approved shared character body.
+parts = []
+
+def blob(name, radius, loc, scale, color):
+    obj = mg.sphere(name, radius, loc=loc, scale=scale, segments=8, rings=4,
+                    color=color, parent=body)
+    mg.smooth(obj, angle=75)
+    parts.append(obj)
+    return obj
+
+def strand(name, controls, color):
+    obj = tube_part(name, controls, 8, 3, (0, 0, .84), color, body, cap_steps=1)
+    parts.append(obj)
+
+if VARIANT == 'blue':
+    vertices, faces = [], []
+    for side, height in ((1,.501),(-1,.487)):
+        first = len(vertices)
+        for i in range(24):
+            a = TAU*i/24
+            for j in range(6):
+                b = TAU*j/6
+                rr = .127 + .013*math.cos(b)
+                vertices.append((side*.164+rr*math.cos(a), -.399-.013*math.sin(b),
+                                 height+rr*math.sin(a)))
+        for i in range(24):
+            for j in range(6):
+                faces.append((first+i*6+j, first+((i+1)%24)*6+j,
+                              first+((i+1)%24)*6+(j+1)%6, first+i*6+(j+1)%6))
+    obj=mg.mesh('GlassesFrames',vertices,faces,color='ink',parent=body)
+    mg.smooth(obj,angle=75)
+    parts.append(obj)
+    strand('GlassesBridge',[(-.043,-.405,.50,.012),(0,-.410,.52,.012),(.043,-.405,.51,.012)],'ink')
+    for side in (-1,1):
+        strand('GlassesTemple',[(side*.29,-.398,.51,.012),(side*.35,-.30,.53,.011),
+                               (side*.38,-.13,.53,.008)],'ink')
+elif VARIANT == 'green':
+    for index,(cx,cz) in enumerate(((-.23,.86),(0,.925),(.23,.86))):
+        for i in range(5):
+            a=TAU*i/5
+            obj=blob('DaisyPetal',.029,(cx+.042*math.cos(a),-.16,cz+.042*math.sin(a)),
+                     (.75,.40,1.35),'white')
+            obj.rotation_euler.y=math.pi/2-a
+        blob('DaisyCentre',.031,(cx,-.179,cz),(1,.48,1),'gold')
+    for side in (-1,1):
+        blob('CrownLeaf',.075,(side*.31,-.05,.855),(1,.35,.42),'green')
+elif VARIANT == 'orange':
+    for i,(x,top) in enumerate(((-.12,1.00),(0,1.075),(.12,1.015))):
+        strand('Quiff',[(x*.65,.015,.82,.048),(x,-.005,.92,.037),
+                       (x+.055,-.025,top,.003)],'orange')
+elif VARIANT == 'yellow':
+    strand('WorriedQuiff',[(0,.015,.82,.034),(.025,-.01,.96,.034),
+                          (-.015,-.03,1.035,.026),(-.075,-.04,1.015,.015),
+                          (-.055,-.04,.98,.002)],'yellow')
+elif VARIANT == 'pink':
+    blob('BowLeft',.075,(.115,-.015,.88),(1.0,.65,1.1),'pink')
+    blob('BowRight',.075,(.265,-.015,.88),(1.0,.65,1.1),'pink')
+    blob('BowKnot',.044,(.19,-.063,.88),(.9,.6,1.0),'pink')
+elif VARIANT == 'brown':
+    strand('CurledQuiff',[(0,.015,.82,.045),(-.045,-.01,.94,.038),
+                          (.015,-.035,.995,.031),(.075,-.045,.965,.021),
+                          (.045,-.045,.93,.002)],'brown')
+elif VARIANT == 'cyan':
+    strand('WaveQuiff',[(-.09,.01,.82,.04),(-.04,-.015,.95,.035),
+                       (.045,-.035,1.025,.025),(.115,-.04,.99,.002)],'cyan')
+elif VARIANT == 'hidden':
+    strand('QuestionMark',[(-.075,-.31,.68,.014),(-.055,-.315,.735,.015),
+                           (.015,-.315,.748,.015),(.067,-.315,.707,.014),
+                           (.042,-.315,.66,.014),(0,-.315,.635,.014),
+                           (0,-.315,.60,.014)],'ink')
+    blob('QuestionDot',.019,(0,-.315,.557),(1,.65,1),'ink')
+
+if parts:
+    mg.join('Accessory',parts)
+else:
+    mg.empty('Accessory',loc=(0,0,.84),parent=body)
+
+# Re-centre the full silhouette without changing the approved proportions.
+bpy.context.view_layer.update()
+coords=[obj.matrix_world @ v.co for obj in bpy.context.scene.objects
+        if obj.type=='MESH' for v in obj.data.vertices]
+lo=Vector((min(v.x for v in coords),min(v.y for v in coords),min(v.z for v in coords)))
+hi=Vector((max(v.x for v in coords),max(v.y for v in coords),max(v.z for v in coords)))
+offset=Vector((-(lo.x+hi.x)/2,-(lo.y+hi.y)/2,-lo.z))
+body.location += offset
+
+for material in mg.materials.values():
+    shader = material.node_tree.nodes.get('Principled BSDF')
+    if shader:
+        shader.inputs['Roughness'].default_value=.35

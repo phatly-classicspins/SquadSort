@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e01e21d31d798b84b9283e3534e7f92d, type: 3}
+  m_Name: ElementUnlockVideoConfigSO
+  m_EditorClassIdentifier: FlickSort.Runtime::FlickSort.Data.ElementUnlockVideoConfigSO
+  rainbowIcon: {fileID: 21300000, guid: 2f9021c4c07ad4447afeb3ea89a15cb9, type: 3}
+  hiddenMoneyIcon: {fileID: 21300000, guid: 0afc0bbe48bc9464cab32208aa444e2f, type: 3}
+  rainbowClip: {fileID: 32900000, guid: 6ae5277b9e5d67f4fb78689bd7a36289, type: 3}
+  hiddenMoneyClip: {fileID: 32900000, guid: 9350e7cc0f70d934d992c9a0185b9ab5, type: 3}

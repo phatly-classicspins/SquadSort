@@ -1,0 +1,25 @@
+{
+  "name": "ClassicSpins.PrototypeFramework.Analytics.Adjust.Editor",
+  "rootNamespace": "ClassicSpins.PrototypeFramework.Analytics.Adjust.Editor",
+  "references": [
+    "ClassicSpins.PrototypeFramework.Analytics.Adjust.Core",
+    "ClassicSpins.PrototypeFramework.Editor"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "versionDefines": [
+    {
+      "name": "com.adjust.sdk",
+      "expression": "5.8.2",
+      "define": "PF_ADJUST"
+    }
+  ],
+  "noEngineReferences": false
+}

@@ -1,0 +1,61 @@
+{
+  "schema": "pf-module/1",
+  "id": "com.classicspins.pf-analytics-firebase",
+  "displayName": "Analytics — Firebase",
+  "summary": "Shared analytics wire events, user properties and ad impressions backed by Firebase Analytics.",
+  "frameworkRange": ">=0.9.0 <0.10.0",
+  "source": {
+    "kind": "git",
+    "url": "https://github.com/FoxCubGames/ai_prototype_framework.git?path=/Packages/com.classicspins.pf-analytics-firebase#analytics-firebase/v0.1.0"
+  },
+  "port": {
+    "interface": "ClassicSpins.PrototypeFramework.Application.IAnalyticsProvider",
+    "mode": "additive",
+    "replacesBootNode": null
+  },
+  "ports": [
+    {
+      "interface": "ClassicSpins.PrototypeFramework.Application.IAnalyticsCommandTarget",
+      "mode": "additive"
+    }
+  ],
+  "requires": {
+    "scopedRegistries": [
+      {
+        "name": "OpenUPM",
+        "url": "https://package.openupm.com",
+        "scopes": [
+          "com.google.external-dependency-manager"
+        ]
+      }
+    ],
+    "dependencies": {
+      "com.google.external-dependency-manager": "1.2.190"
+    },
+    "manualPackages": [
+      {
+        "package": "com.google.firebase.app",
+        "version": "14.1.0"
+      },
+      {
+        "package": "com.google.firebase.analytics",
+        "version": "14.1.0"
+      }
+    ]
+  },
+  "define": "PF_FIREBASE",
+  "installer": {
+    "type": "ClassicSpins.PrototypeFramework.Analytics.Firebase.FirebaseAnalyticsInstaller",
+    "menu": "PrototypeFramework/Analytics/Firebase Analytics Installer",
+    "assetPath": "Assets/{sku}/Installers/FirebaseAnalyticsInstaller.asset"
+  },
+  "manualSteps": [
+    "In the consuming SKU only, download the Firebase Unity SDK 14.1.0 UPM tarballs com.google.firebase.app-14.1.0.tgz and com.google.firebase.analytics-14.1.0.tgz from the official Firebase Unity SDK distribution. Commit them under Packages/ManualSdk/ (Git LFS recommended). Do not import the unitypackage distribution as well.",
+    "Manually add com.google.firebase.app: file:ManualSdk/com.google.firebase.app-14.1.0.tgz and com.google.firebase.analytics: file:ManualSdk/com.google.firebase.analytics-14.1.0.tgz to the SKU Packages/manifest.json. Wizard Install writes the OpenUPM EDM4U 1.2.190 dependency only; it never downloads or adds tarballs.",
+    "Register matching Android/iOS app identifiers in Firebase Console. Download google-services.json (Android) and GoogleService-Info.plist (iOS) into Assets/ in the consuming SKU. Never use another project's service files.",
+    "Use Android minSdk 24 or later. Keep firebase_analytics_collection_enabled false and FIREBASE_ANALYTICS_COLLECTION_ENABLED NO; remove conflicting collection-on flags and do not set the permanent collection-deactivated flags.",
+    "Create FirebaseAnalyticsInstaller.asset through Framework/Modules/Create Installer Assets or the asset Create menu, then slot it on RootLifetimeScope in the Master Scene through the live Unity Editor.",
+    "For ad signals to be denied, configure analytics.firebase.adSignals = numeric 0 or string \"0\" before the first analytics work (numeric/string 1 enables it). Absent means granted. Native collection and dashboard delivery require device verification."
+  ],
+  "docs": "README.md"
+}

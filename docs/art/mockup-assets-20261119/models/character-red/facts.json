@@ -1,0 +1,164 @@
+{
+  "harness": 1,
+  "blender": "5.0.1",
+  "ok": true,
+  "checks": [
+    {
+      "id": "meshes",
+      "ok": true,
+      "detail": "8 mesh object(s)"
+    },
+    {
+      "id": "size.width",
+      "ok": true,
+      "detail": "1.025 m, want 1.000 \u00b1 0.030"
+    },
+    {
+      "id": "size.height",
+      "ok": true,
+      "detail": "0.846 m, want 0.846 \u00b1 0.025"
+    },
+    {
+      "id": "size.length",
+      "ok": true,
+      "detail": "0.788 m, want 0.800 \u00b1 0.024"
+    },
+    {
+      "id": "pivot.ground",
+      "ok": true,
+      "detail": "lowest point z = 0.000, want 0 \u00b1 0.008"
+    },
+    {
+      "id": "pivot.centre",
+      "ok": true,
+      "detail": "bounding-box centre x = 0.000, y = 0.000, want 0, 0"
+    },
+    {
+      "id": "tris",
+      "ok": true,
+      "detail": "3668 triangles, budget 6000"
+    },
+    {
+      "id": "parts",
+      "ok": true,
+      "detail": "all present"
+    },
+    {
+      "id": "materials",
+      "ok": true,
+      "detail": "every face carries an M_<key> palette material"
+    },
+    {
+      "id": "object_types",
+      "ok": true,
+      "detail": "meshes and empties only"
+    },
+    {
+      "id": "transforms",
+      "ok": true,
+      "detail": "no negative scale"
+    }
+  ],
+  "objects": [
+    {
+      "name": "Body",
+      "tris": 300,
+      "parent": null,
+      "materials": [
+        "M_red"
+      ]
+    },
+    {
+      "name": "Arm_L",
+      "tris": 324,
+      "parent": "Body",
+      "materials": [
+        "M_red"
+      ]
+    },
+    {
+      "name": "Foot_L",
+      "tris": 324,
+      "parent": "Body",
+      "materials": [
+        "M_red"
+      ]
+    },
+    {
+      "name": "Arm_R",
+      "tris": 324,
+      "parent": "Body",
+      "materials": [
+        "M_red"
+      ]
+    },
+    {
+      "name": "Foot_R",
+      "tris": 324,
+      "parent": "Body",
+      "materials": [
+        "M_red"
+      ]
+    },
+    {
+      "name": "Eye_L",
+      "tris": 900,
+      "parent": "Body",
+      "materials": [
+        "M_white",
+        "M_ink"
+      ]
+    },
+    {
+      "name": "Eye_R",
+      "tris": 900,
+      "parent": "Body",
+      "materials": [
+        "M_white",
+        "M_ink"
+      ]
+    },
+    {
+      "name": "Mouth",
+      "tris": 272,
+      "parent": "Body",
+      "materials": [
+        "M_ink"
+      ]
+    }
+  ],
+  "empties": [
+    "Accessory"
+  ],
+  "tris": 3668,
+  "materials": [
+    "M_ink",
+    "M_red",
+    "M_white"
+  ],
+  "size": {
+    "width": 1.025,
+    "height": 0.846,
+    "length": 0.7878
+  },
+  "bounds": {
+    "min": [
+      -0.5125,
+      -0.3939,
+      0.0
+    ],
+    "max": [
+      0.5125,
+      0.3939,
+      0.846
+    ]
+  },
+  "fbx": "model.fbx",
+  "views": {
+    "front": "view_front.png",
+    "right": "view_right.png",
+    "back": "view_back.png",
+    "top": "view_top.png"
+  },
+  "hero": "hero.png"
+}

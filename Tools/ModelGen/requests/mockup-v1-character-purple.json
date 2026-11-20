@@ -1,0 +1,76 @@
+{
+  "schema": "model-gen-request/v1",
+  "id": "mockup-v1-character-purple",
+  "subject": "Purple cube creature; separate eyes, arms, feet and curled antennae.",
+  "size": {
+    "width": 1.0,
+    "height": 1.15,
+    "length": 0.8
+  },
+  "palette": {
+    "purple": "B63AF2",
+    "blue": "168DFA",
+    "green": "80DF0B",
+    "orange": "FF8A10",
+    "yellow": "FFE134",
+    "red": "F12C36",
+    "pink": "FF67C5",
+    "brown": "A95D36",
+    "cyan": "29D9EB",
+    "hidden": "A5A4AE",
+    "white": "F5F0F7",
+    "ink": "251F35",
+    "tray_rim": "EFEAF2",
+    "tray_floor": "B8B6C2",
+    "waiting_rim": "F2CEDD",
+    "gold": "FFD23F"
+  },
+  "max_tris": 6000,
+  "parts": [
+    {
+      "name": "Body",
+      "note": "Keep named part separate; pivot at its motion anchor."
+    },
+    {
+      "name": "Eye_L",
+      "note": "Keep named part separate; pivot at its motion anchor."
+    },
+    {
+      "name": "Eye_R",
+      "note": "Keep named part separate; pivot at its motion anchor."
+    },
+    {
+      "name": "Mouth",
+      "note": "Keep named part separate; pivot at its motion anchor."
+    },
+    {
+      "name": "Arm_L",
+      "note": "Keep named part separate; pivot at its motion anchor."
+    },
+    {
+      "name": "Arm_R",
+      "note": "Keep named part separate; pivot at its motion anchor."
+    },
+    {
+      "name": "Foot_L",
+      "note": "Keep named part separate; pivot at its motion anchor."
+    },
+    {
+      "name": "Foot_R",
+      "note": "Keep named part separate; pivot at its motion anchor."
+    },
+    {
+      "name": "Accessory",
+      "note": "Keep named part separate; pivot at its motion anchor."
+    }
+  ],
+  "references": [
+    {
+      "path": "docs/art/mockup-assets-20261119/reference/mockup.png",
+      "role": "style"
+    }
+  ],
+  "out": "docs/art/mockup-assets-20261119/models/character-purple",
+  "notes": "USER APPROVED blueprint. Match the compact purple rounded-cube creature, tiny side arms and oval feet, two curled antennae, confident eyelashed eyes. All actual geometry, no billboard textures. Model front -Y in Blender. Overall X=1 Z=1.15 Y=.8. Keep Body main rounded cube near .78 wide, .66 deep and .75 tall, feet on ground and curls above. Eye whites, dark pupils, highlights, eyelash strips and curved smile must be real low-poly mesh. Main rounded edges should have 4 bevel segments, smooth normals. Use low-sided tubes for curls/smile to fit 6000 triangles. Use named separate mesh parts; static details may be parented to the corresponding named part. No rig/clips needed. Palette body purple; white sclera; ink pupils and smile. All side/back details coherent, back plain. Build a finished attractive model; not wireframe primitives.",
+  "consumer": "Future Unity import, outside this art-only handoff."
+}

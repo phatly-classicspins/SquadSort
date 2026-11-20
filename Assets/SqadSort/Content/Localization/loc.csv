@@ -1,0 +1,189 @@
+key,en,vi
+home.title,CardSlot,CardSlot
+home.tagline,Tap. Match. Clear!,Tap. Match. Clear!
+home.play,Level {0},Level {0}
+home.more_soon,More levels coming soon,More levels coming soon
+home.tab.shop,Shop,Shop
+home.tab.home,Home,Home
+gameplay.level,Level {0},Level {0}
+gameplay.count,{0}/{1},{0}/{1}
+gameplay.holding_area,Holding area,Holding area
+gameplay.buffer_count,{0} / {1},{0} / {1}
+gameplay.next,next,next
+gameplay.stack_count,{0},{0}
+win.title,Level Complete!,Level Complete!
+win.subtitle,Level {0},Level {0}
+win.next,Next Level,Next Level
+win.bonus,Bonus,Bonus
+win.home,Home,Home
+win.play_again,Play again,Play again
+lose.title,Out of space!,Out of space!
+lose.no_slots,Oops! No more slots available,Oops! No more slots available
+lose.countdown,{0},{0}
+lose.play_on,Play on,Play on
+lose.play_on_message,You are out of space.\nClear some slots to keep playing,You are out of space.\nClear some slots to keep playing
+lose.play_on_free,Free,Free
+lose.subtitle,Level {0},Level {0}
+lose.retry,Retry,Retry
+lose.home,Home,Home
+lose.no_thanks,No thanks,No thanks
+lose.failed_title,Level failed,Level failed
+pause.title,Paused,Paused
+pause.resume,Resume,Resume
+pause.restart,Restart,Restart
+pause.home,Home,Home
+settings.title,Setting,Setting
+settings.sound,SFX,SFX
+settings.music,Music,Music
+settings.haptics,Vibration,Vibration
+settings.on,ON,ON
+settings.off,OFF,OFF
+settings.terms,Terms of Service,Terms of Service
+settings.privacy,Privacy Policy,Privacy Policy
+ads.not_available,No ads available,No ads available
+ads.error.title,ERROR!,ERROR!
+ads.error.body,"No ads available at this time.
+Please try again later.","No ads available at this time.
+Please try again later."
+gameplay.restart.confirm,Restart level?,Restart level?
+gameplay.restart.note,Boosters used won't come back.,Boosters used won't come back.
+gameplay.restart.yes,Yes,Yes
+gameplay.restart.no,No,No
+lose.title_stuck,No moves left!,No moves left!
+lose.revive,Revive,Revive
+lose.revive_note,Clears {0} poles,Clears {0} poles
+lose.rv_slot,+{0} slots,+{0} slots
+gameplay.rv_slot,+{0} Slots,+{0} Slots
+gameplay.rv_nudge,+{0} slots,+{0} slots
+hud.coins,"{0:#,0}","{0:#,0}"
+win.reward,+{0},+{0}
+win.claim,Claim ×{0},Claim ×{0}
+lose.revive_price,"{0:#,0}","{0:#,0}"
+booster.hand.name,Hand,Hand
+booster.shuffle.name,Shuffle,Shuffle
+booster.remove.name,Magnet,Magnet
+booster.hand.tip,Pick up any chip stack,Pick up any chip stack
+booster.shuffle.tip,Shuffle all poles!,Shuffle all poles!
+booster.remove.tip,Clear any pole instantly!,Clear any pole instantly!
+booster.locked,Lv {0},Lv {0}
+booster.count,{0},{0}
+booster.price,"{0:#,0}","{0:#,0}"
+booster.buy.title,Need a boost?,Need a boost?
+booster.buy.ad,Free,Free
+booster.buy.not_enough,Not enough coins,Not enough coins
+booster.unlock.title,New Booster,New Booster
+booster.unlock.gift,×{0},×{0}
+booster.unlock.ok,Got it,Got it
+booster.unlock.claim,OK,OK
+unlock.unlocked,Unlocked!,Unlocked!
+booster.pick.hand,Select a chip stack to send up,Select a chip stack to send up
+booster.pick.remove,Select a pole to clear,Select a pole to clear
+lose.use_booster,or use a booster ▼,or use a booster ▼
+element.unlock.title,New Element,New Element
+element.unlock.ok,OK,OK
+element.hidden_stack.name,Hidden Stack,Hidden Stack
+element.hidden_pole.name,Hidden Pole,Hidden Pole
+element.locked.name,Locked Stack,Locked Stack
+element.hidden_stack.tip,Unblock the stack to reveal its color.,Unblock the stack to reveal its color.
+element.hidden_pole.tip,Move pole to the bottom to reveal its color.,Move pole to the bottom to reveal its color.
+element.locked.tip,Send chips up to unlock the stack.,Send chips up to unlock the stack.
+element.lock_count,{0},{0}
+element.hidden_mark,?,?
+element.hidden_stack.tutorial,Remove the top stack to reveal the hidden one!,Remove the top stack to reveal the hidden one!
+element.hidden_pole.tutorial,Push the hidden pole down to reveal its color!,Push the hidden pole down to reveal its color!
+element.locked.tutorial,Send the other stack up to unlock the locked chip,Send the other stack up to unlock the locked chip
+win.progress,{0}/{1},{0}/{1}
+lives.full,Full,Full
+lives.count,{0},{0}
+lives.timer,{0:00}:{1:00},{0:00}:{1:00}
+lives.out.title,Out of lives!,Out of lives!
+lives.out.next,Next life in {0:00}:{1:00},Next life in {0:00}:{1:00}
+lives.out.hint,Refill your lives to keep playing,Refill your lives to keep playing
+lives.out.ad,+1 life,+1 life
+lives.out.refill,+{0},+{0}
+lives.out.amount,x{0},x{0}
+lives.lose_warning,You will lose a life,You will lose a life
+lives.cost,−1,−1
+lives.unlimited,∞,∞
+lives.unlimited_days,{0}d,{0}d
+lives.unlimited_hours,{0}h {1:00}m,{0}h {1:00}m
+lose.confirm_title,Are you sure?,Are you sure?
+lose.confirm_body,Your progress will be lost,Your progress will be lost
+lose.restart,Restart,Restart
+lose.return_home,Return Home,Return Home
+gameplay.home.confirm,Go home?,Go home?
+ftue.l1.tap,Tap to send chip stack,Tap to send chip stack
+ftue.l1.goal,Stack up all poles to win!,Stack up all poles to win!
+rating.title,We'd like to hear from you,We'd like to hear from you
+rating.question,How was your experience with the game so far?,How was your experience with the game so far?
+rating.submit,Submit,Submit
+rating.thanks_title,Rating Submitted!,Rating Submitted!
+rating.thanks_positive,Thanks for the love! Your support helps us bring you more great updates!,Thanks for the love! Your support helps us bring you more great updates!
+rating.thanks_negative,Thank you for helping us improve! We're working hard to make the game even better!,Thank you for helping us improve! We're working hard to make the game even better!
+rating.continue,Continue,Continue
+offline.title,No Internet,No Internet
+offline.body,"No Internet, please check
+and try again!","No Internet, please check
+and try again!"
+offline.hint,Check your Wi-Fi or mobile data,Check your Wi-Fi or mobile data
+offline.retry,Retry,Retry
+offline.connecting,Reconnecting,Reconnecting
+lose.skip_hint,or skip this level · {0} left today,or skip this level · {0} left today
+lose.skip,Skip,Skip
+shop.title,Shop,Shop
+shop.section.special,Special Pack,Special Pack
+shop.section.gold,Gold Pack,Gold Pack
+shop.restore,Restore,Restore
+shop.tag.best,BEST VALUE,BEST VALUE
+shop.booster,{0},{0}
+shop.lives,{0}h,{0}h
+shop.noads.label,Remove Ads,Remove Ads
+shop.noads.benefit1,Remove all interstitial & banner ads!,Remove all interstitial & banner ads!
+shop.noads.benefit2,Play without internet connection,Play without internet connection
+shop.noads.benefit3,Keep optional ads for rewards,Keep optional ads for rewards
+shop.noads.coins,"Plus {0:#,0} coins & boosters","Plus {0:#,0} coins & boosters"
+pack.remove_ads,Remove Ads Pack,Remove Ads Pack
+pack.starter_pack,Starter Pack,Starter Pack
+pack.pack_small,Small Pack,Small Pack
+pack.pack_medium,Medium Pack,Medium Pack
+pack.pack_ultra,Ultra Pack,Ultra Pack
+offer.limited,Limited time offer:,Limited time offer:
+offer.limited_card,Limited Time Offer,Limited Time Offer
+offer.timer,{0:00}:{1:00}:{2:00},{0:00}:{1:00}:{2:00}
+purchase.rewards,REWARDS!,REWARDS!
+purchase.continue,Continue,Continue
+purchase.restore.title,Restore Purchase,Restore Purchase
+purchase.restore.body,Your purchase has been successfully restored.,Your purchase has been successfully restored.
+purchase.restore.ok,OK,OK
+purchase.failed.title,Purchase Failed,Purchase Failed
+purchase.failed.body,Your account wasn’t charged!,Your account wasn’t charged!
+goldbrick.desc,Grab your ultimate reward before they're gone!,Grab your ultimate reward before they're gone!
+goldbrick.no,No thanks,No thanks
+goldbrick.get,Get Reward,Get Reward
+goldbrick.timer,{0}:{1:00},{0}:{1:00}
+win.reward_label,Reward,Reward
+win.new_feature,New Feature,New Feature
+win.segment,x{0},x{0}
+restart_booster.title,Need a help?,Need a help?
+restart_booster.body,"Retry the level
+with a Magnet booster.","Retry the level
+with a Magnet booster."
+restart_booster.get,Get Booster,Get Booster
+skip.title,Skip this level?,Skip this level?
+skip.body,"Skip through this level
+and continue with the game","Skip through this level
+and continue with the game"
+skip.action,Skip level,Skip level
+booster.guide.magnet.tap,Tap on Magnet booster,Tap on Magnet booster
+booster.guide.magnet.pole,"Magnet let you select any pole
+to clear it immediately","Magnet let you select any pole
+to clear it immediately"
+booster.guide.hand.body,Pick up any chip stack,Pick up any chip stack
+booster.guide.hand.tap,Tap on Hand booster,Tap on Hand booster
+booster.guide.hand.stack,"Tap on any chip stack
+to send them up","Tap on any chip stack
+to send them up"
+booster.guide.shuffle.body,Shuffle all poles!,Shuffle all poles!
+booster.guide.shuffle.tap,Tap on Shuffle booster,Tap on Shuffle booster
+hud.level,Level {0},Màn {0}
+hud.count,{0},{0}

@@ -1,0 +1,13 @@
+{
+  "name": "com.classicspins.cheats",
+  "version": "0.1.1",
+  "displayName": "ClassicSpins Cheats",
+  "description": "A drop-in tester cheat menu: a game registers buttons, number fields, toggles and read-outs; the package draws the panel (uGUI, built in code, no prefab) and an in-game log viewer. Available in the Editor, in development builds, and in any build with the CS_CHEATS define. No dependency on PrototypeFramework.",
+  "unity": "2022.3",
+  "dependencies": {
+    "com.unity.ugui": "1.0.0"
+  },
+  "author": {
+    "name": "ClassicSpins"
+  }
+}

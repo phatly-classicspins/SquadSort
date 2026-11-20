@@ -1,0 +1,16 @@
+// Nine tubes: six above, three below.
+name: Grand Stand
+difficulty: normal
+plaza:
+######
+######
+tube 0 -1 up 4 : R O Y G
+tube 1 -1 up 4 : O Y G B
+tube 2 -1 up 4 : Y G B P
+tube 3 -1 up 4 : G B P R
+tube 4 -1 up 4 : B P R O
+tube 5 -1 up 4 : P R O Y
+tube 0 2 down 4 :
+tube 2 2 down 4 :
+tube 4 2 down 4 :
+spare 5 2 down

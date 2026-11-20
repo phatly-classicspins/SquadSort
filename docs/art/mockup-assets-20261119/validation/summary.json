@@ -1,0 +1,14 @@
+{
+  "fbx_files": 16,
+  "geometry_pass": 16,
+  "fbx_roundtrip_pass": 16,
+  "engine_free_gate_exit": 0,
+  "engine_free_gate_used_temporary_project_override": true,
+  "default_gate_configuration_issue": "MyGame.SkuHeadlessTests.csproj is configured but absent; actual project is SqadSort.SkuHeadlessTests.csproj",
+  "unity_import": "not run",
+  "unity_editmode": "not run",
+  "unity_playmode": "not run",
+  "unity_batchmode": "not run",
+  "rigging": "not authored",
+  "animation_clips": "not authored"
+}

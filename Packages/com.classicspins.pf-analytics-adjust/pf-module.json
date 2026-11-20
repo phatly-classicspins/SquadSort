@@ -1,0 +1,53 @@
+{
+  "schema": "pf-module/1",
+  "id": "com.classicspins.pf-analytics-adjust",
+  "displayName": "Analytics \u2014 Adjust",
+  "summary": "Shared analytics wire events mapped to Adjust tokens and AppLovin MAX ad revenue.",
+  "frameworkRange": ">=0.9.0 <0.10.0",
+  "source": {
+    "kind": "git",
+    "url": "https://github.com/FoxCubGames/ai_prototype_framework.git?path=/Packages/com.classicspins.pf-analytics-adjust#analytics-adjust/v0.1.0"
+  },
+  "port": {
+    "interface": "ClassicSpins.PrototypeFramework.Application.IAnalyticsProvider",
+    "mode": "additive",
+    "replacesBootNode": null
+  },
+  "ports": [
+    {
+      "interface": "ClassicSpins.PrototypeFramework.Application.IAnalyticsCommandTarget",
+      "mode": "additive"
+    }
+  ],
+  "requires": {
+    "scopedRegistries": [
+      {
+        "name": "OpenUPM",
+        "url": "https://package.openupm.com",
+        "scopes": [
+          "com.adjust",
+          "com.google.external-dependency-manager"
+        ]
+      }
+    ],
+    "dependencies": {
+      "com.adjust.sdk": "5.8.2",
+      "com.google.external-dependency-manager": "1.2.190"
+    }
+  },
+  "define": "PF_ADJUST",
+  "installer": {
+    "type": "ClassicSpins.PrototypeFramework.Analytics.Adjust.AdjustAnalyticsInstaller",
+    "menu": "PrototypeFramework/Analytics/Adjust Analytics Installer",
+    "assetPath": "Assets/{sku}/Installers/AdjustAnalyticsInstaller.asset"
+  },
+  "manualSteps": [
+    "Use Wizard Install to add Adjust SDK 5.8.2 and EDM4U 1.2.190 through OpenUPM; allow Unity package resolution to complete. Do not import another vendor copy.",
+    "Configure analytics.adjust.appToken as a nonblank 12-character string in bundled ConfigDefaults and analytics.adjust.environment as sandbox (default when absent) or production. Preflight rejects invalid token/environment. Map analytics.adjust.token.<wire_name> to Adjust event tokens.",
+    "Create AdjustAnalyticsInstaller.asset through Framework/Modules/Create Installer Assets or the Create menu, then slot it on RootLifetimeScope in the Master Scene through the live Unity Editor. Do not add an auto-starting Adjust component or initialize Adjust elsewhere.",
+    "For ad signals to be denied, configure analytics.adjust.adSignals = numeric 0 or string \"0\" before first analytics work. Absent means granted; this module never asserts eea.",
+    "Resolve EDM4U native dependencies and verify consent persistence, attribution, ad revenue and dashboard delivery on Android/iOS devices. SDK/native checks are not supplied by the headless suite.",
+    "privacy.forget_me is unsupported while Analytics is denied or the SDK is disabled/unstarted: false, with no start/re-enable for privacy. Active/granted bridge acceptance terminally refuses ordinary work/re-enables in this provider instance only; it is not proof of server deletion or acceptance across instances/native SDK/devices."
+  ],
+  "docs": "README.md"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "com.classicspins.pf-firebase-rc",
+  "version": "0.1.0",
+  "displayName": "PF Module — Firebase Remote Config",
+  "description": "PrototypeFramework service module: Firebase Remote Config behind IRemoteConfigSource (replaces the framework's fake source). The framework's RemoteFetch boot node calls it; the values land in the framework's config layer and its cache. Firebase keys cannot hold a dot, so a game key 'a.b_c' is read from the Firebase parameter 'a_b_c'. Without the Firebase SDK installed every fetch is refused and logged; the bundled defaults stay.",
+  "unity": "2022.3",
+  "dependencies": {},
+  "author": {
+    "name": "ClassicSpins"
+  }
+}

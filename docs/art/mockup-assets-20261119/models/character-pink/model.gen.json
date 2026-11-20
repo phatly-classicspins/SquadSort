@@ -1,0 +1,147 @@
+{
+  "schema": "model-gen-derivative/v1",
+  "status": "pending-user-review",
+  "source_base": "models/character-purple/build.py",
+  "design_reference": "reference/mockup.png",
+  "approval_text": "duy\u1ec7t nha",
+  "author": "Codex, geometry-only shared-body derivative",
+  "facts": {
+    "ok": true,
+    "size": {
+      "width": 1.025,
+      "height": 0.9625,
+      "length": 0.7878
+    },
+    "bounds": {
+      "min": [
+        -0.5125,
+        -0.3939,
+        0.0
+      ],
+      "max": [
+        0.5125,
+        0.3939,
+        0.9625
+      ]
+    },
+    "tris": 4640,
+    "materials": [
+      "M_ink",
+      "M_pink",
+      "M_white"
+    ],
+    "empties": [],
+    "checks": [
+      {
+        "id": "meshes",
+        "ok": true,
+        "detail": "9 mesh object(s)"
+      },
+      {
+        "id": "size.width",
+        "ok": true,
+        "detail": "1.025 m, want 1.000 \u00b1 0.030"
+      },
+      {
+        "id": "size.height",
+        "ok": true,
+        "detail": "0.962 m, want 0.963 \u00b1 0.029"
+      },
+      {
+        "id": "size.length",
+        "ok": true,
+        "detail": "0.788 m, want 0.800 \u00b1 0.024"
+      },
+      {
+        "id": "pivot.ground",
+        "ok": true,
+        "detail": "lowest point z = 0.000, want 0 \u00b1 0.010"
+      },
+      {
+        "id": "pivot.centre",
+        "ok": true,
+        "detail": "bounding-box centre x = 0.000, y = 0.000, want 0, 0"
+      },
+      {
+        "id": "tris",
+        "ok": true,
+        "detail": "4640 triangles, budget 6000"
+      },
+      {
+        "id": "parts",
+        "ok": true,
+        "detail": "all present"
+      },
+      {
+        "id": "materials",
+        "ok": true,
+        "detail": "every face carries an M_<key> palette material"
+      },
+      {
+        "id": "object_types",
+        "ok": true,
+        "detail": "meshes and empties only"
+      },
+      {
+        "id": "transforms",
+        "ok": true,
+        "detail": "no negative scale"
+      }
+    ],
+    "objects": [
+      {
+        "name": "Body",
+        "tris": 300,
+        "parent": null
+      },
+      {
+        "name": "Arm_L",
+        "tris": 324,
+        "parent": "Body"
+      },
+      {
+        "name": "Foot_L",
+        "tris": 324,
+        "parent": "Body"
+      },
+      {
+        "name": "Arm_R",
+        "tris": 324,
+        "parent": "Body"
+      },
+      {
+        "name": "Foot_R",
+        "tris": 324,
+        "parent": "Body"
+      },
+      {
+        "name": "Eye_L",
+        "tris": 1266,
+        "parent": "Body"
+      },
+      {
+        "name": "Eye_R",
+        "tris": 1266,
+        "parent": "Body"
+      },
+      {
+        "name": "Mouth",
+        "tris": 368,
+        "parent": "Body"
+      },
+      {
+        "name": "Accessory",
+        "tris": 144,
+        "parent": "Body"
+      }
+    ]
+  },
+  "script": {
+    "path": "docs/art/mockup-assets-20261119/models/character-pink/build.py",
+    "sha256": "e68c29945792e3d8dd728ef495e0112e2a7da6295ca4f378fee82d021ae2a406"
+  },
+  "fbx": {
+    "path": "docs/art/mockup-assets-20261119/models/character-pink/character-pink.fbx",
+    "sha256": "060880c37f19af49094b4bb2651283a2c4568035ebbe56f0bcf8d82a855c6d26"
+  }
+}

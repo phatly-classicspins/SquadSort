@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef45a001b2a0eb84691800fc358fb5de, type: 3}
+  m_Name: LookLibrary
+  m_EditorClassIdentifier: Game.Views::Game.Views.LookLibrary
+  _squadColors:
+  - {r: 0.94509804, g: 0.17254902, b: 0.21176471, a: 1}
+  - {r: 1, g: 0.5411765, b: 0.0627451, a: 1}
+  - {r: 1, g: 0.88235295, b: 0.20392157, a: 1}
+  - {r: 0.5019608, g: 0.8745098, b: 0.043137256, a: 1}
+  - {r: 0.18039216, g: 0.54509807, b: 0.34117648, a: 1}
+  - {r: 0.16078432, g: 0.8509804, b: 0.92156863, a: 1}
+  - {r: 0.08627451, g: 0.5529412, b: 0.98039216, a: 1}
+  - {r: 0.7137255, g: 0.22745098, b: 0.9490196, a: 1}
+  - {r: 1, g: 0.40392157, b: 0.77254903, a: 1}
+  - {r: 0.6627451, g: 0.3647059, b: 0.21176471, a: 1}
+  _hiddenBuddy: {r: 0.64705884, g: 0.6431373, b: 0.68235296, a: 1}
+  _buddyModels:
+  - {fileID: 2817620460771095828, guid: a11b492c9b7d0ac4caeb1d97a47e59a0, type: 3}
+  - {fileID: 401876597799351485, guid: debc08b4931e6f646ac7440956f528a7, type: 3}
+  - {fileID: 8504866449711928831, guid: 61301cd74c35d784996f98de46546b06, type: 3}
+  - {fileID: 7127249811433784923, guid: 42e04e4f9169571428355713b68ad18d, type: 3}
+  - {fileID: 2525754731925797359, guid: 73c882519999a784bacd1d9a159754f5, type: 3}
+  - {fileID: 3118781102190806737, guid: c6708e27f3b5f5c47a30c2929c0a363f, type: 3}
+  - {fileID: 5166995017432836229, guid: e6bcb423d665c31408d598f37613b2af, type: 3}
+  - {fileID: 3357889633541519725, guid: 37e95bbad152cf744bb6597ef940bd56, type: 3}
+  - {fileID: 4852645776978246198, guid: 7d86e42f5dae9f64aa7d13e10fa8f79c, type: 3}
+  - {fileID: 2593122774805985548, guid: 8ac36d71da81b82489ebe5993e9604ab, type: 3}
+  _hiddenBuddyModel: {fileID: 6901198673509934132, guid: 6c62ae4dbd0cb0b4995962a0e239481f, type: 3}

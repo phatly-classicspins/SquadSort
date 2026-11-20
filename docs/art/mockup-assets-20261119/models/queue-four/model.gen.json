@@ -1,0 +1,162 @@
+{
+ "schema": "model-gen-provenance/v1",
+ "id": "mockup-v1-queue-four",
+ "status": "pending-user-review",
+ "request": "Tools\\ModelGen\\requests\\mockup-v1-queue-four.json",
+ "consumer": "Future Unity import, outside this art-only handoff.",
+ "blueprint": {
+  "path": "docs\\art\\mockup-assets-20261119\\models\\queue-four\\blueprint.png",
+  "sha256": "6b64a12488c857277bc55ff300d030a2e46638d5a39e28cd585379e0edb1491d"
+ },
+ "author": {
+  "tool": "codex exec",
+  "model": "codex default",
+  "effort": "medium",
+  "thread_id": "01a1f6ae-7efe-7633-899a-c32f7e82d8bb"
+ },
+ "harness": {
+  "version": 1,
+  "blender": "5.0.1"
+ },
+ "variant": 1,
+ "round": 1,
+ "rounds": [
+  {
+   "round": 1,
+   "ok": true,
+   "failed": [],
+   "iou_mean": 0.606,
+   "tris": 2208
+  },
+  {
+   "round": 2,
+   "ok": true,
+   "failed": [],
+   "iou_mean": 0.606,
+   "tris": 2396
+  },
+  {
+   "round": 3,
+   "ok": true,
+   "failed": [],
+   "iou_mean": 0.606,
+   "tris": 2360
+  }
+ ],
+ "forced": false,
+ "script": {
+  "path": "docs\\art\\mockup-assets-20261119\\models\\queue-four\\build.py",
+  "sha256": "caebaf6ad82c96d41e3f9c89a4966893f38eb4d87debc0ec353f73dd6e9ad61d",
+  "selected_sha256": "ba51fc1fb9e3fb4b2879ac5768f3c045811944b205ef7922c3d3ad9bcc06f876",
+  "edited": true
+ },
+ "fbx": {
+  "path": "docs\\art\\mockup-assets-20261119\\models\\queue-four\\mockup-v1-queue-four.fbx",
+  "sha256": "c48c028e42e62edd28fa5b399293a82855aa0238f07a7f44d35f74ee2b643bd4"
+ },
+ "facts": {
+  "ok": true,
+  "size": {
+   "width": 1.28,
+   "height": 0.26,
+   "length": 4.6
+  },
+  "bounds": {
+   "min": [
+    -0.64,
+    -2.3,
+    0.0
+   ],
+   "max": [
+    0.64,
+    2.3,
+    0.26
+   ]
+  },
+  "tris": 2208,
+  "materials": [
+   "M_tray_floor",
+   "M_tray_rim",
+   "M_waiting_rim"
+  ],
+  "empties": [],
+  "iou": {
+   "front": 0.812,
+   "right": 0.473,
+   "back": 0.391,
+   "top": 0.747
+  },
+  "iou_mean": 0.606,
+  "checks": [
+   {
+    "id": "meshes",
+    "ok": true,
+    "detail": "2 mesh object(s)"
+   },
+   {
+    "id": "size.width",
+    "ok": true,
+    "detail": "1.280 m, want 1.280 \u00b1 0.038"
+   },
+   {
+    "id": "size.height",
+    "ok": true,
+    "detail": "0.260 m, want 0.260 \u00b1 0.008"
+   },
+   {
+    "id": "size.length",
+    "ok": true,
+    "detail": "4.600 m, want 4.600 \u00b1 0.138"
+   },
+   {
+    "id": "pivot.ground",
+    "ok": true,
+    "detail": "lowest point z = 0.000, want 0 \u00b1 0.005"
+   },
+   {
+    "id": "pivot.centre",
+    "ok": true,
+    "detail": "bounding-box centre x = 0.000, y = 0.000, want 0, 0"
+   },
+   {
+    "id": "tris",
+    "ok": true,
+    "detail": "2208 triangles, budget 2500"
+   },
+   {
+    "id": "parts",
+    "ok": true,
+    "detail": "all present"
+   },
+   {
+    "id": "materials",
+    "ok": true,
+    "detail": "every face carries an M_<key> palette material"
+   },
+   {
+    "id": "object_types",
+    "ok": true,
+    "detail": "meshes and empties only"
+   },
+   {
+    "id": "transforms",
+    "ok": true,
+    "detail": "no negative scale"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Rim",
+    "tris": 1876,
+    "parent": null
+   },
+   {
+    "name": "Floor",
+    "tris": 332,
+    "parent": null
+   }
+  ]
+ },
+ "selected_at": "2026-11-20T02:05:17Z",
+ "rebuilt_at": "2026-11-20T02:09:37Z"
+}

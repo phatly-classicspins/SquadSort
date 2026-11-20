@@ -1,0 +1,13 @@
+{
+  "name": "com.classicspins.rating",
+  "version": "0.1.0",
+  "displayName": "ClassicSpins Rating",
+  "description": "A drop-in \"rate this game\" prompt, taken from the Money Sort prototype: after the player wins a chosen level (once per install) a 5-star popup asks how the game is; 4-5 stars opens the store's write-a-review page, fewer stars opens a feedback link, and a thank-you shows when the player comes back. The flow is engine-free and unit-testable; a code-built default popup (no prefab, no TMP) works out of the box, or a game draws its own. No dependency on PrototypeFramework.",
+  "unity": "2022.3",
+  "dependencies": {
+    "com.unity.ugui": "1.0.0"
+  },
+  "author": {
+    "name": "ClassicSpins"
+  }
+}

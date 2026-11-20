@@ -1,0 +1,29 @@
+{
+    "name": "ClassicSpins.PrototypeFramework.Iap.Unity.Sdk",
+    "rootNamespace": "ClassicSpins.PrototypeFramework.Iap.Unity.Sdk",
+    "references": [
+        "ClassicSpins.PrototypeFramework.Iap.Unity.Core",
+        "UniTask",
+        "Unity.Purchasing",
+        "UnityEngine.Purchasing",
+        "UnityEngine.Purchasing.Stores",
+        "Unity.Services.Core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "PF_UNITY_IAP"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.unity.purchasing",
+            "expression": "5.0.0",
+            "define": "PF_UNITY_IAP"
+        }
+    ],
+    "noEngineReferences": false
+}

@@ -1,0 +1,15 @@
+// Two yellow houses open together.
+name: Twin Houses
+difficulty: normal
+plaza:
+#######
+#######
+tube 0 -1 up 4 : B Y Y
+house Y 1 -1 up 4 : O O R K
+tube 2 -1 up 4 : R B Y
+tube 4 -1 up 4 : K R Y
+tube 6 -1 up 4 :
+tube 1 2 down 4 : B R K
+tube 3 2 down 4 :
+house Y 5 2 down 4 : O O B K
+spare 6 2 down

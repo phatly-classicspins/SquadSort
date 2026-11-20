@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.adjust.sdk": {
+      "version": "5.8.2",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
     "com.annulusgames.lit-motion": {
       "version": "2.0.2",
       "depth": 1,
@@ -10,6 +17,67 @@
         "com.unity.mathematics": "1.0.1"
       },
       "url": "https://package.openupm.com"
+    },
+    "com.applovin.mediation.ads": {
+      "version": "8.6.5",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.google.external-dependency-manager": "1.2.182"
+      },
+      "url": "https://unity.packages.applovin.com"
+    },
+    "com.classicspins.cheats": {
+      "version": "file:com.classicspins.cheats",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0"
+      }
+    },
+    "com.classicspins.pf-ads-max": {
+      "version": "file:com.classicspins.pf-ads-max",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.classicspins.prototype-framework": "0.9.0"
+      }
+    },
+    "com.classicspins.pf-analytics-adjust": {
+      "version": "file:com.classicspins.pf-analytics-adjust",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.classicspins.prototype-framework": "0.9.0"
+      }
+    },
+    "com.classicspins.pf-analytics-firebase": {
+      "version": "file:com.classicspins.pf-analytics-firebase",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.classicspins.prototype-framework": "0.9.0"
+      }
+    },
+    "com.classicspins.pf-firebase-crashlytics": {
+      "version": "file:com.classicspins.pf-firebase-crashlytics",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "com.classicspins.pf-firebase-rc": {
+      "version": "file:com.classicspins.pf-firebase-rc",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "com.classicspins.pf-iap-unity": {
+      "version": "file:com.classicspins.pf-iap-unity",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.classicspins.prototype-framework": "0.9.0"
+      }
     },
     "com.classicspins.prototype-framework": {
       "version": "https://github.com/FoxCubGames/ai_prototype_framework.git?path=/Packages/com.classicspins.prototype-framework#v0.9.0",
@@ -31,6 +99,14 @@
       },
       "hash": "158ed2677743197512bb884b959f6c870de8a6a4"
     },
+    "com.classicspins.rating": {
+      "version": "file:com.classicspins.rating",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0"
+      }
+    },
     "com.cysharp.messagepipe": {
       "version": "1.8.2",
       "depth": 1,
@@ -50,6 +126,56 @@
       "depth": 1,
       "source": "registry",
       "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
+    "com.google.external-dependency-manager": {
+      "version": "1.2.190",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
+    "com.google.firebase.analytics": {
+      "version": "file:ManualSdk/com.google.firebase.analytics-14.1.0.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {
+        "com.google.firebase.app": "14.1.0"
+      }
+    },
+    "com.google.firebase.app": {
+      "version": "file:ManualSdk/com.google.firebase.app-14.1.0.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {
+        "com.google.external-dependency-manager": "1.2.190"
+      }
+    },
+    "com.google.firebase.crashlytics": {
+      "version": "file:ManualSdk/com.google.firebase.crashlytics-14.1.0.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {
+        "com.google.firebase.app": "14.1.0"
+      }
+    },
+    "com.google.firebase.remote-config": {
+      "version": "file:ManualSdk/com.google.firebase.remote-config-14.1.0.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {
+        "com.google.firebase.app": "14.1.0"
+      }
+    },
+    "com.ivanmurzak.unity.mcp": {
+      "version": "1.12.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.test-framework": "1.1.33",
+        "com.unity.modules.uielements": "1.0.0",
+        "extensions.unity.playerprefsex": "2.1.5"
+      },
       "url": "https://package.openupm.com"
     },
     "com.unity.addressables": {
@@ -176,6 +302,19 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.purchasing": {
+      "version": "5.4.3",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0",
+        "com.unity.services.core": "1.18.0",
+        "com.unity.modules.androidjni": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0",
+        "com.unity.modules.unitywebrequest": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.render-pipelines.core": {
       "version": "17.3.0",
       "depth": 1,
@@ -223,6 +362,17 @@
       "depth": 2,
       "source": "registry",
       "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.services.core": {
+      "version": "1.18.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.androidjni": "1.0.0",
+        "com.unity.nuget.newtonsoft-json": "3.2.2",
+        "com.unity.modules.unitywebrequest": "1.0.0"
+      },
       "url": "https://packages.unity.com"
     },
     "com.unity.shadergraph": {
@@ -284,6 +434,13 @@
         "com.unity.modules.jsonserialize": "1.0.0"
       },
       "url": "https://packages.unity.com"
+    },
+    "extensions.unity.playerprefsex": {
+      "version": "2.1.5",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
     },
     "jp.hadashikick.vcontainer": {
       "version": "1.19.0",

@@ -1,0 +1,183 @@
+{
+ "schema": "model-gen-provenance/v1",
+ "id": "mockup-v1-character-purple",
+ "status": "pending-user-review",
+ "request": "Tools\\ModelGen\\requests\\mockup-v1-character-purple.json",
+ "consumer": "Future Unity import, outside this art-only handoff.",
+ "blueprint": {
+  "path": "docs\\art\\mockup-assets-20261119\\models\\character-purple\\blueprint.png",
+  "sha256": "a7905a4ef31e99f3ca1e202b59ee2ea5626a2ee3890d6559738790001f355ec3"
+ },
+ "author": {
+  "tool": "codex exec",
+  "model": "codex default",
+  "effort": "medium",
+  "thread_id": "01a1f6ae-7f01-7521-ba08-cd2928725cd0"
+ },
+ "harness": {
+  "version": 1,
+  "blender": "5.0.1"
+ },
+ "variant": 1,
+ "round": 1,
+ "rounds": [
+  {
+   "round": 1,
+   "ok": true,
+   "failed": [],
+   "iou_mean": 0.892,
+   "tris": 5972
+  }
+ ],
+ "forced": false,
+ "script": {
+  "path": "docs\\art\\mockup-assets-20261119\\models\\character-purple\\build.py",
+  "sha256": "81e182f9638029c4821ac297633d6972705b396a8eea948140c1a10080eb9bb1",
+  "selected_sha256": "490556f4a262795c4fc6a22acd081000b529e1fe8de2f2035ef77563fb4f6cb5",
+  "edited": true
+ },
+ "fbx": {
+  "path": "docs\\art\\mockup-assets-20261119\\models\\character-purple\\mockup-v1-character-purple.fbx",
+  "sha256": "fb00c739f6fafbb684ff7c32fa34a46939163282afe93223b1d631880cb1b4bb"
+ },
+ "facts": {
+  "ok": true,
+  "size": {
+   "width": 1.025,
+   "height": 1.1486,
+   "length": 0.7878
+  },
+  "bounds": {
+   "min": [
+    -0.5125,
+    -0.3928,
+    0.0
+   ],
+   "max": [
+    0.5125,
+    0.395,
+    1.1486
+   ]
+  },
+  "tris": 5972,
+  "materials": [
+   "M_ink",
+   "M_purple",
+   "M_white"
+  ],
+  "empties": [],
+  "iou": {
+   "front": 0.899,
+   "right": 0.866,
+   "back": 0.903,
+   "top": 0.9
+  },
+  "iou_mean": 0.892,
+  "checks": [
+   {
+    "id": "meshes",
+    "ok": true,
+    "detail": "9 mesh object(s)"
+   },
+   {
+    "id": "size.width",
+    "ok": true,
+    "detail": "1.025 m, want 1.000 \u00b1 0.030"
+   },
+   {
+    "id": "size.height",
+    "ok": true,
+    "detail": "1.149 m, want 1.150 \u00b1 0.034"
+   },
+   {
+    "id": "size.length",
+    "ok": true,
+    "detail": "0.788 m, want 0.800 \u00b1 0.024"
+   },
+   {
+    "id": "pivot.ground",
+    "ok": true,
+    "detail": "lowest point z = 0.000, want 0 \u00b1 0.011"
+   },
+   {
+    "id": "pivot.centre",
+    "ok": true,
+    "detail": "bounding-box centre x = 0.000, y = 0.001, want 0, 0"
+   },
+   {
+    "id": "tris",
+    "ok": true,
+    "detail": "5972 triangles, budget 6000"
+   },
+   {
+    "id": "parts",
+    "ok": true,
+    "detail": "all present"
+   },
+   {
+    "id": "materials",
+    "ok": true,
+    "detail": "every face carries an M_<key> palette material"
+   },
+   {
+    "id": "object_types",
+    "ok": true,
+    "detail": "meshes and empties only"
+   },
+   {
+    "id": "transforms",
+    "ok": true,
+    "detail": "no negative scale"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Body",
+    "tris": 300,
+    "parent": null
+   },
+   {
+    "name": "Arm_L",
+    "tris": 324,
+    "parent": "Body"
+   },
+   {
+    "name": "Foot_L",
+    "tris": 324,
+    "parent": "Body"
+   },
+   {
+    "name": "Arm_R",
+    "tris": 324,
+    "parent": "Body"
+   },
+   {
+    "name": "Foot_R",
+    "tris": 324,
+    "parent": "Body"
+   },
+   {
+    "name": "Accessory",
+    "tris": 1476,
+    "parent": "Body"
+   },
+   {
+    "name": "Eye_L",
+    "tris": 1266,
+    "parent": "Body"
+   },
+   {
+    "name": "Eye_R",
+    "tris": 1266,
+    "parent": "Body"
+   },
+   {
+    "name": "Mouth",
+    "tris": 368,
+    "parent": "Body"
+   }
+  ]
+ },
+ "selected_at": "2026-11-20T02:05:17Z",
+ "rebuilt_at": "2026-11-20T02:09:37Z"
+}

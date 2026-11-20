@@ -1,0 +1,163 @@
+{
+  "texture": "ui-atlas.png",
+  "size": [
+    887,
+    1774
+  ],
+  "pixels_per_unit": 1,
+  "sprites": [
+    {
+      "id": "undo",
+      "rect_top_left": [
+        0,
+        0,
+        444,
+        444
+      ],
+      "rect_unity_bottom_left": [
+        0,
+        1330,
+        444,
+        444
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "shuffle",
+      "rect_top_left": [
+        444,
+        0,
+        443,
+        444
+      ],
+      "rect_unity_bottom_left": [
+        444,
+        1330,
+        443,
+        444
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "add-slot",
+      "rect_top_left": [
+        0,
+        444,
+        444,
+        443
+      ],
+      "rect_unity_bottom_left": [
+        0,
+        887,
+        444,
+        443
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "restart",
+      "rect_top_left": [
+        444,
+        444,
+        443,
+        443
+      ],
+      "rect_unity_bottom_left": [
+        444,
+        887,
+        443,
+        443
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "settings",
+      "rect_top_left": [
+        0,
+        887,
+        444,
+        443
+      ],
+      "rect_unity_bottom_left": [
+        0,
+        444,
+        444,
+        443
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "button-empty",
+      "rect_top_left": [
+        444,
+        887,
+        443,
+        443
+      ],
+      "rect_unity_bottom_left": [
+        444,
+        444,
+        443,
+        443
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "level-plate",
+      "rect_top_left": [
+        0,
+        1330,
+        603,
+        444
+      ],
+      "rect_unity_bottom_left": [
+        0,
+        0,
+        603,
+        444
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "count-badge",
+      "rect_top_left": [
+        603,
+        1330,
+        284,
+        444
+      ],
+      "rect_unity_bottom_left": [
+        603,
+        0,
+        284,
+        444
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    }
+  ],
+  "notes": "Atlas source art only. Rectangles are coarse slice windows; retain alpha. No Unity importer run."
+}
