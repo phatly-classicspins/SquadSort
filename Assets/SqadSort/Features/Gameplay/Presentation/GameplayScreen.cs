@@ -93,6 +93,14 @@ namespace Game.Presentation
         private UniTaskCompletionSource<int> _countdownPick;
         private double? _hintLeft;               // seconds the paused lose countdown still had while its booster plays
 
+        // CardSlot's first-use booster guide, on the level that unlocks the booster: the spot on its tile, then (Shuffle) on a tube
+        private enum BoosterGuideStep { None, Booster, Tube }
+        private Booster _guidedBooster;
+        private BoosterGuideStep _boosterGuideStep;
+        private ElementTutorialUI _boosterTutorial;
+        private int _boosterGuideTarget = -1;
+        private bool _undoGuidePending;          // Undo has nothing to undo at the start: its guide waits for the first move
+
         /// <summary>The session's own count never limits a booster: the saved boosters do (CardSlot's bar).</summary>
         private const int SessionCharges = int.MaxValue / 2;
         private const float DialogBeat = 0.3f;   // the beat between the last move landing and a result popup (CardSlot)
@@ -171,6 +179,7 @@ namespace Game.Presentation
                 _presenter.Dispose();
             }
 
+            HideBoosterTutorial();   // it lives on the shared Popup host, not under this screen
             if (_hudInstance != null) Object.Destroy(_hudInstance);
             if (_hudPrefab != null) _assets.Release(_hudPrefab);
             if (_boardInstance != null) Object.Destroy(_boardInstance);
@@ -213,6 +222,7 @@ namespace Game.Presentation
             _session = new LevelSession(level, _data, _random, charges);
             _shuffleChargesArmed = -1;
             _hintLeft = null;
+            EndBoosterGuide();
             _paidRevives = 0;
             _reviveAds = 0;
             var start = _progress.BeginLevel(level);   // GDD §1.3: starting costs no life — leaving the attempt does (LeaveAttempt)
@@ -248,6 +258,13 @@ namespace Game.Presentation
             }
 
             Draw();
+            foreach (var id in new[] { Booster.Shuffle, Booster.AddContainer })
+            {
+                if (!CanGuideBooster(id)) continue;
+                StartBoosterGuide(id);
+                return;
+            }
+            _undoGuidePending = CanGuideBooster(Booster.Undo, needTarget: false);
         }
 
         private async UniTask ShowHardLevelIntro(CancellationToken ct)
@@ -282,6 +299,11 @@ namespace Game.Presentation
             _hud.SetHud(_loc.Get(LocKeys.GameplayLevel, _level), Coins());
             ShowLives();
             _hud.SetBoosters(Tiles());
+            if (_undoGuidePending && !_busy && _boosterGuideStep == BoosterGuideStep.None && CanGuideBooster(Booster.Undo))
+            {
+                _undoGuidePending = false;
+                StartBoosterGuide(Booster.Undo);
+            }
         }
 
         private string Coins() => _loc.Get(LocKeys.HudCoins, _progress.Coins);
@@ -843,27 +865,40 @@ namespace Game.Presentation
             }
 
             if (_session == null || index < 0 || index > 2) return;
+            // the guide takes only its own tile, and only while it points at it
+            if (_boosterGuideStep != BoosterGuideStep.None
+                && (_boosterGuideStep != BoosterGuideStep.Booster || index != (int)_guidedBooster)) return;
             if (_presenter.IsShufflePicking) { _presenter.CancelShufflePick(); return; }   // the active tile again = cancel
             if (_busy || _session.Board.State != BoardState.Playing) return;
             var id = (Booster)index;
             if (!_progress.IsUnlocked(id)) return;                                         // a locked tile does nothing
             if (_progress.Boosters(id) == 0) { Guard(() => Buy(id)); return; }
+            bool guided = _boosterGuideStep == BoosterGuideStep.Booster;
 
+            bool used = false;
             switch (id)
             {
                 case Booster.Undo:
-                    if (_session.Undo() && _progress.TryUseBooster(id)) _presenter.Show(_session);   // rebuild from the restored state
+                    used = _session.Undo() && _progress.TryUseBooster(id);
+                    if (used) _presenter.Show(_session);   // rebuild from the restored state
                     break;
                 case Booster.Shuffle:
                     // armed until a tube is tapped; the saved booster is spent when the shuffle happens (OnShuffleDone)
                     _shuffleChargesArmed = _session.Charges(Booster.Shuffle);
                     _presenter.BeginShufflePick();
+                    used = true;
                     break;
                 case Booster.AddContainer:
-                    if (_session.AddContainer() >= 0 && _progress.TryUseBooster(id)) _presenter.Show(_session);
+                    used = _session.AddContainer() >= 0 && _progress.TryUseBooster(id);
+                    if (used) _presenter.Show(_session);
                     break;
             }
 
+            if (guided && used)
+            {
+                if (id == Booster.Shuffle) { _boosterGuideStep = BoosterGuideStep.Tube; ShowShuffleTubeGuide(); }
+                else CompleteBoosterGuide();
+            }
             Draw();
         }
 
@@ -873,7 +908,118 @@ namespace Game.Presentation
             bool used = _session != null && _shuffleChargesArmed >= 0 && _session.Charges(Booster.Shuffle) < _shuffleChargesArmed;
             _shuffleChargesArmed = -1;
             if (used) _progress.TryUseBooster(Booster.Shuffle);
+            if (_boosterGuideStep == BoosterGuideStep.Tube)
+            {
+                if (used) CompleteBoosterGuide();
+                else { _boosterGuideStep = BoosterGuideStep.Booster; ShowBoosterTileGuide(); }   // cancelled: back to the tile
+            }
             Draw();
+        }
+
+        // ------------------------------------------------------------------ first-use booster guide (CardSlot)
+
+        private static string BoosterGuideKey(Booster id) => "booster.guide." + id.ToString().ToLowerInvariant();
+
+        /// <param name="needTarget">false: only whether the guide belongs to this level (Undo asks again after a move).</param>
+        private bool CanGuideBooster(Booster id, bool needTarget = true)
+        {
+            if (_hud == null || _hud.ElementTutorial == null || _session == null || _progress.IsFtueDone(BoosterGuideKey(id))
+                || !_progress.IsUnlocked(id) || _progress.Boosters(id) <= 0 || _level != _tuning.UnlockLevel(id)) return false;
+            if (!needTarget) return true;
+            var board = _session.Board;
+            if (board.State != BoardState.Playing) return false;
+            switch (id)
+            {
+                case Booster.Undo: return _session.CanUndo;
+                case Booster.AddContainer: return board.CanAddSpareTube;
+                default: return ShuffleTarget() >= 0;
+            }
+        }
+
+        // the first open tube with two buddies or more to reorder
+        private int ShuffleTarget()
+        {
+            var tubes = _session.Board.Tubes;
+            for (int i = 0; i < tubes.Count; i++) if (tubes[i].IsActive && tubes[i].Count >= 2) return i;
+            return -1;
+        }
+
+        private void StartBoosterGuide(Booster id)
+        {
+            _guidedBooster = id;
+            _boosterGuideStep = BoosterGuideStep.Booster;
+            ShowBoosterTileGuide();
+        }
+
+        private void CompleteBoosterGuide()
+        {
+            _progress.MarkFtueDone(BoosterGuideKey(_guidedBooster));
+            _boosterGuideStep = BoosterGuideStep.None;
+            HideBoosterTutorial();
+        }
+
+        // a level start or end drops a guide that was not finished; it comes back the next time this level is played
+        private void EndBoosterGuide()
+        {
+            _boosterGuideStep = BoosterGuideStep.None;
+            _undoGuidePending = false;
+            _boosterGuideTarget = -1;
+            HideBoosterTutorial();
+        }
+
+        private void ShowBoosterTileGuide()
+        {
+            var tile = _hud.BoosterTile((int)_guidedBooster);
+            if (tile == null) return;
+            var corners = new Vector3[4];
+            tile.GetWorldCorners(corners);
+            var cam = _layers.GetCamera(RenderLayers.Ui);
+            var hint = _guidedBooster == Booster.Undo ? LocKeys.BoosterGuideHandTap
+                : _guidedBooster == Booster.Shuffle ? LocKeys.BoosterGuideShuffleTap : LocKeys.BoosterGuideMagnetTap;
+            ShowBoosterGuideTarget(PopupRect(cam.WorldToScreenPoint(corners[0]), cam.WorldToScreenPoint(corners[2])),
+                _loc.Get(hint), topPanel: true, pointDown: true);
+        }
+
+        private void ShowShuffleTubeGuide()
+        {
+            _boosterGuideTarget = ShuffleTarget();
+            if (_boosterGuideTarget < 0) return;
+            // the tube's tap area (screen-aligned, on the board's own layer) is what the spot must uncover
+            var hit = _boardInstance.GetComponentsInChildren<Collider2D>()
+                .FirstOrDefault(c => c.transform.parent != null && c.transform.parent.name == $"Tube {_boosterGuideTarget}");
+            if (hit == null) return;
+            var cam = _layers.GetCamera(RenderLayers.GamePlay);
+            var b = hit.bounds;
+            ShowBoosterGuideTarget(PopupRect(cam.WorldToScreenPoint(b.min), cam.WorldToScreenPoint(b.max)),
+                _loc.Get(LocKeys.BoosterGuideShuffleBody), topPanel: false);
+        }
+
+        // two screen points as a world rectangle on the Popup layer, where the guide is drawn
+        private Rect PopupRect(Vector2 screenA, Vector2 screenB)
+        {
+            var host = (RectTransform)_layers.GetHost(RenderLayers.Popup);
+            var cam = _layers.GetCamera(RenderLayers.Popup);
+            RectTransformUtility.ScreenPointToWorldPointInRectangle(host, screenA, cam, out var a);
+            RectTransformUtility.ScreenPointToWorldPointInRectangle(host, screenB, cam, out var b);
+            return Rect.MinMaxRect(Mathf.Min(a.x, b.x), Mathf.Min(a.y, b.y), Mathf.Max(a.x, b.x), Mathf.Max(a.y, b.y));
+        }
+
+        private void ShowBoosterGuideTarget(Rect target, string text, bool topPanel, bool pointDown = false)
+        {
+            HideBoosterTutorial();
+            _boosterTutorial = Object.Instantiate(_hud.ElementTutorial, _layers.GetHost(RenderLayers.Popup), false);
+            _layers.Stamp(_boosterTutorial.gameObject, RenderLayers.Popup);
+            _boosterTutorial.Init(null);
+            _boosterTutorial.SetGuidedTarget(target, text, topPanel, pointDown);
+            _boosterTutorial.Show();
+        }
+
+        private void HideBoosterTutorial()
+        {
+            if (_boosterTutorial == null) return;
+            _boosterTutorial.ReleaseInput();
+            Object.Destroy(_boosterTutorial.gameObject);
+            _boosterTutorial = null;
         }
 
         private async UniTask OpenShopForCoins(string placement)
