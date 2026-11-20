@@ -70,6 +70,16 @@ namespace Game.Views
                     DrawHole(vh, Rect.MinMaxRect(outer.xMin, split, outer.xMax, outer.yMax), high);
                     return;
                 }
+                // side by side (two tubes on one row): the same split, left and right
+                if (_hole.xMax <= _secondHole.xMin || _secondHole.xMax <= _hole.xMin)
+                {
+                    var left = _hole.center.x < _secondHole.center.x ? _hole : _secondHole;
+                    var right = _hole.center.x < _secondHole.center.x ? _secondHole : _hole;
+                    float split = (left.xMax + right.xMin) / 2f;
+                    DrawHole(vh, Rect.MinMaxRect(outer.xMin, outer.yMin, split, outer.yMax), left);
+                    DrawHole(vh, Rect.MinMaxRect(split, outer.yMin, outer.xMax, outer.yMax), right);
+                    return;
+                }
             }
             DrawHole(vh, outer, _hole);
         }

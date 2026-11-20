@@ -100,6 +100,8 @@ namespace Game.Presentation
         private ElementTutorialUI _boosterTutorial;
         private int _boosterGuideTarget = -1;
         private bool _undoGuidePending;          // Undo has nothing to undo at the start: its guide waits for the first move
+        private ElementTutorialUI _elementTutorial;   // CardSlot: the spot after a new element's popup, up until the first move
+        private int _elementTutorialMoves;
 
         /// <summary>The session's own count never limits a booster: the saved boosters do (CardSlot's bar).</summary>
         private const int SessionCharges = int.MaxValue / 2;
@@ -179,7 +181,8 @@ namespace Game.Presentation
                 _presenter.Dispose();
             }
 
-            HideBoosterTutorial();   // it lives on the shared Popup host, not under this screen
+            HideBoosterTutorial();   // they live on the shared Popup host, not under this screen
+            HideElementTutorial();
             if (_hudInstance != null) Object.Destroy(_hudInstance);
             if (_hudPrefab != null) _assets.Release(_hudPrefab);
             if (_boardInstance != null) Object.Destroy(_boardInstance);
@@ -251,10 +254,12 @@ namespace Game.Presentation
                 if (!await ShowUnlock(id)) return;
             }
 
+            ElementId? introduced = null;
             foreach (var id in _progress.UnlockElementsFor(_level))
             {
                 Draw();
                 await ShowElementUnlockAsync(id, _cts.Token);
+                introduced = id;
             }
 
             Draw();
@@ -265,6 +270,7 @@ namespace Game.Presentation
                 return;
             }
             _undoGuidePending = CanGuideBooster(Booster.Undo, needTarget: false);
+            if (introduced.HasValue) ShowElementTutorial(introduced.Value);
         }
 
         private async UniTask ShowHardLevelIntro(CancellationToken ct)
@@ -299,6 +305,7 @@ namespace Game.Presentation
             _hud.SetHud(_loc.Get(LocKeys.GameplayLevel, _level), Coins());
             ShowLives();
             _hud.SetBoosters(Tiles());
+            if (_elementTutorial != null && _session.MovesMade != _elementTutorialMoves) HideElementTutorial();   // the player moved
             if (_undoGuidePending && !_busy && _boosterGuideStep == BoosterGuideStep.None && CanGuideBooster(Booster.Undo))
             {
                 _undoGuidePending = false;
@@ -872,6 +879,7 @@ namespace Game.Presentation
             if (_busy || _session.Board.State != BoardState.Playing) return;
             var id = (Booster)index;
             if (!_progress.IsUnlocked(id)) return;                                         // a locked tile does nothing
+            HideElementTutorial();
             if (_progress.Boosters(id) == 0) { Guard(() => Buy(id)); return; }
             bool guided = _boosterGuideStep == BoosterGuideStep.Booster;
 
@@ -965,6 +973,7 @@ namespace Game.Presentation
             _undoGuidePending = false;
             _boosterGuideTarget = -1;
             HideBoosterTutorial();
+            HideElementTutorial();
         }
 
         private void ShowBoosterTileGuide()
@@ -984,14 +993,70 @@ namespace Game.Presentation
         {
             _boosterGuideTarget = ShuffleTarget();
             if (_boosterGuideTarget < 0) return;
-            // the tube's tap area (screen-aligned, on the board's own layer) is what the spot must uncover
+            var target = TubePopupRect(_boosterGuideTarget);
+            if (target.width <= 0f) return;
+            ShowBoosterGuideTarget(target, _loc.Get(LocKeys.BoosterGuideShuffleBody), topPanel: false);
+        }
+
+        // a tube on screen as a Popup-layer rectangle: its tap area ("Hit", screen-aligned, under BoardView's "Tube N"); empty if none
+        private Rect TubePopupRect(int tube)
+        {
+            if (tube < 0 || _boardInstance == null) return default;
             var hit = _boardInstance.GetComponentsInChildren<Collider2D>()
-                .FirstOrDefault(c => c.transform.parent != null && c.transform.parent.name == $"Tube {_boosterGuideTarget}");
-            if (hit == null) return;
+                .FirstOrDefault(c => c.transform.parent != null && c.transform.parent.name == $"Tube {tube}");
+            if (hit == null) return default;
             var cam = _layers.GetCamera(RenderLayers.GamePlay);
             var b = hit.bounds;
-            ShowBoosterGuideTarget(PopupRect(cam.WorldToScreenPoint(b.min), cam.WorldToScreenPoint(b.max)),
-                _loc.Get(LocKeys.BoosterGuideShuffleBody), topPanel: false);
+            return PopupRect(cam.WorldToScreenPoint(b.min), cam.WorldToScreenPoint(b.max));
+        }
+
+        // ------------------------------------------------------------------ new element guide (CardSlot)
+
+        // Hidden: light the tube whose front group hides a "?" behind it. House: light the tube that can complete the house's
+        // colour (the hand on it) and the house itself. Not a gate: the board takes taps as usual and the first move hides it.
+        private void ShowElementTutorial(ElementId id)
+        {
+            HideElementTutorial();
+            if (_level != _tuning.UnlockLevel(id) || _hud == null || _hud.ElementTutorial == null || _session == null
+                || _session.Board.State != BoardState.Playing) return;
+            var tubes = _session.Board.Tubes;
+            Rect lit = default, element = default;
+            if (id == ElementId.Hidden)
+            {
+                for (int i = 0; i < tubes.Count && lit.width <= 0f; i++)
+                    if (tubes[i].IsActive && tubes[i].Top != null && !tubes[i].Top.Hidden && tubes[i].Slots.Any(b => b.Hidden))
+                        lit = TubePopupRect(i);
+            }
+            else
+            {
+                for (int h = 0; h < tubes.Count && element.width <= 0f; h++)
+                {
+                    if (!tubes[h].Locked) continue;
+                    element = TubePopupRect(h);
+                    var colour = tubes[h].HouseColor;
+                    for (int i = 0; i < tubes.Count; i++)
+                        if (tubes[i].IsActive && tubes[i].Top != null && !tubes[i].Top.Hidden && tubes[i].Top.Color == colour)
+                        { lit = TubePopupRect(i); break; }
+                }
+                if (lit.width <= 0f) { lit = element; element = default; }
+            }
+            if (lit.width <= 0f) return;   // this board shows no instance of it (yet): nothing to point at
+            _elementTutorial = Object.Instantiate(_hud.ElementTutorial, _layers.GetHost(RenderLayers.Popup), false);
+            _layers.Stamp(_elementTutorial.gameObject, RenderLayers.Popup);
+            _elementTutorial.Init(null);
+            var hint = _loc.Get(id == ElementId.Hidden ? LocKeys.ElementHiddenStackTutorial : LocKeys.ElementLockedTutorial);
+            if (element.width > 0f) _elementTutorial.SetPairedTargets(lit, element, hint);
+            else _elementTutorial.SetTarget(lit, hint);
+            _elementTutorialMoves = _session.MovesMade;
+            _elementTutorial.Show();
+        }
+
+        private void HideElementTutorial()
+        {
+            if (_elementTutorial == null) return;
+            var tutorial = _elementTutorial;
+            _elementTutorial = null;
+            tutorial.HideWithCompletion(() => { if (tutorial != null) Object.Destroy(tutorial.gameObject); });
         }
 
         // two screen points as a world rectangle on the Popup layer, where the guide is drawn
