@@ -1,0 +1,126 @@
+{
+  "schema": "obstacle-model-handoff/v1",
+  "date": "2026-11-20",
+  "approved_reference": "../mockup-integration/mockup-elements-v2.png",
+  "format": "FBX 7.4, triangulated, named palette materials",
+  "unity_contract": {
+    "units": "metres",
+    "import_scale": 1,
+    "front": "+Z",
+    "up": "+Y",
+    "pivot": "bottom-center"
+  },
+  "attachments": [
+    {
+      "child": "Shackle",
+      "parent": "Padlock"
+    },
+    {
+      "child": "Padlock",
+      "parent": "Door"
+    }
+  ],
+  "attachment_rule": "FBX moving parts are independent root meshes to avoid Blender nested-empty space-bake corruption. Attach with world transform preserved before animation. Closed .blend sources and open-pose scene can be used for authoring.",
+  "animation_clips": [],
+  "unity_integration": "not performed in this art-only handoff",
+  "assets": [
+    {
+      "asset": "character-hidden",
+      "ok": true,
+      "tris": 2408,
+      "size": {
+        "width": 1.02505,
+        "height": 0.846,
+        "length": 0.72548
+      },
+      "checks": {
+        "size_roundtrip": true,
+        "triangles_roundtrip": true,
+        "parts_preserved": true,
+        "ground_pivot": true,
+        "center_pivot": true,
+        "palette_materials": true,
+        "positive_scale": true
+      },
+      "fbx": "models/character-hidden/character-hidden.fbx",
+      "sha256": "7bc771e2dfbf6c53334287d3a207197a1048cddd4f5fdfaff6432ef1e43a0004",
+      "blend": "models/character-hidden/character-hidden.blend",
+      "status": "pending-user-visual-review",
+      "parts": [
+        "Body",
+        "Eye_L",
+        "Eye_R",
+        "Mouth",
+        "Arm_L",
+        "Arm_R",
+        "Foot_L",
+        "Foot_R",
+        "Accessory"
+      ]
+    },
+    {
+      "asset": "locked-house-pink",
+      "ok": true,
+      "tris": 9564,
+      "size": {
+        "width": 1.28,
+        "height": 2.35,
+        "length": 4.6
+      },
+      "checks": {
+        "size_roundtrip": true,
+        "triangles_roundtrip": true,
+        "parts_preserved": true,
+        "ground_pivot": true,
+        "center_pivot": true,
+        "palette_materials": true,
+        "positive_scale": true,
+        "moving_parts_independent": true
+      },
+      "fbx": "models/locked-house-pink/locked-house-pink.fbx",
+      "sha256": "f518364d6633732d566a6c2665c04a0cb13f9d8d87a9bfaad346faa0d6e91b46",
+      "blend": "models/locked-house-pink/locked-house-pink.blend",
+      "status": "pending-user-visual-review",
+      "parts": [
+        "Body",
+        "Roof",
+        "Door",
+        "Padlock",
+        "Shackle",
+        "Emblem"
+      ]
+    },
+    {
+      "asset": "locked-house-purple",
+      "ok": true,
+      "tris": 9528,
+      "size": {
+        "width": 1.28,
+        "height": 2.35,
+        "length": 4.6
+      },
+      "checks": {
+        "size_roundtrip": true,
+        "triangles_roundtrip": true,
+        "parts_preserved": true,
+        "ground_pivot": true,
+        "center_pivot": true,
+        "palette_materials": true,
+        "positive_scale": true,
+        "moving_parts_independent": true
+      },
+      "fbx": "models/locked-house-purple/locked-house-purple.fbx",
+      "sha256": "b40338c7ef9001a1ef08a18d6cbbbc4540aa2c21d79e43a36499fa800691fdd4",
+      "blend": "models/locked-house-purple/locked-house-purple.blend",
+      "status": "pending-user-visual-review",
+      "parts": [
+        "Body",
+        "Roof",
+        "Door",
+        "Padlock",
+        "Shackle",
+        "Emblem"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+import math
+from mathutils import Vector
+
+TONE = 'purple'
+
+def color(key):
+    return TONE + '_' + key
+
+def tube(name, points, radius, key, parent=None, sides=8):
+    vertices, faces = [], []
+    points = [Vector(p) for p in points]
+    for i, point in enumerate(points):
+        tangent = (points[min(i+1, len(points)-1)] - points[max(0, i-1)]).normalized()
+        across = tangent.cross(Vector((0, 1, 0))).normalized()
+        depth = tangent.cross(across).normalized()
+        for j in range(sides):
+            a = 2*math.pi*j/sides
+            vertices.append(tuple(point + radius*(math.cos(a)*across + math.sin(a)*depth)))
+    for i in range(len(points)-1):
+        for j in range(sides):
+            a=i*sides+j; b=i*sides+(j+1)%sides
+            faces.append((a,b,b+sides,a+sides))
+    faces.append(tuple(reversed(range(sides))))
+    faces.append(tuple((len(points)-1)*sides+j for j in range(sides)))
+    return mg.smooth(mg.mesh(name,vertices,faces,color=key,parent=parent),angle=45)
+
+def arch(radius, bottom, spring, samples=20):
+    pts=[(-radius,bottom),(radius,bottom),(radius,spring)]
+    pts += [(radius*math.cos(math.pi*i/samples),spring+radius*math.sin(math.pi*i/samples)) for i in range(1,samples+1)]
+    return pts
+
+# Four-slot queue footprint. The front (-Y) is the opening toward the plaza.
+body=[]
+body.append(mg.box('Base',(1.28,4.6,.13),loc=(0,0,.065),bevel=.06,segments=4,color='white'))
+for side in (-1,1):
+    body.append(mg.box('SideWall',( .12,4.28,1.51),loc=(side*.49,0,.845),bevel=.045,segments=3,color=color('wall')))
+body.append(mg.box('BackWall',(1.04,.12,1.51),loc=(0,2.08,.845),bevel=.04,segments=3,color=color('wall')))
+for side in (-1,1):
+    body.append(mg.box('FrontJamb',(.16,.14,.83),loc=(side*.465,-2.06,.545),bevel=.04,segments=3,color=color('wall')))
+# The front spandrel follows the real doorway arch, leaving a genuine opening.
+inner=[(.39*math.cos(math.pi*i/20),.87+.39*math.sin(math.pi*i/20)) for i in range(21)]
+outline=inner+[(-.55,1.58),(0,2.08),(.55,1.58)]
+body.append(mg.profile('FrontGable',outline,.14,axis='Y',loc=(0,-2.06,0),bevel=.018,segments=2,color=color('wall')))
+body.append(mg.profile('BackGable',[(-.55,1.55),(.55,1.55),(0,2.08)],.12,axis='Y',loc=(0,2.08,0),bevel=.025,segments=2,color=color('wall')))
+for side in (-1,1):
+    body.append(mg.box('PlinthSide',(.14,4.26,.14),loc=(side*.51,0,.18),bevel=.045,segments=3,color=color('highlight')))
+body=mg.join('Body',body)
+mg.smooth(body,angle=40)
+
+roof=[]
+profile=[(-.64,1.54),(-.64,1.68),(-.10,2.15),(0,2.19),(.10,2.15),(.64,1.68),(.64,1.54),(0,2.04)]
+for i in range(7):
+    roof.append(mg.profile('RoundedRoofTile',profile,.65,axis='Y',loc=(0,-1.89+i*.63,0),bevel=.058,segments=3,color=color('roof') if i%2==0 else color('roof_light')))
+roof.append(mg.sphere('RoofFinial',.115,loc=(0,1.9,2.235),segments=16,rings=10,color=color('roof')))
+roof=mg.join('Roof',roof)
+mg.smooth(roof,angle=45)
+
+# Static trim frames the moving door, not a painted fake recess.
+trim=[(-.43,-2.15,.13),(-.43,-2.15,.87)]
+trim += [(.43*math.cos(math.pi-math.pi*i/24),-2.15,.87+.43*math.sin(math.pi-math.pi*i/24)) for i in range(1,25)]
+trim.append((.43,-2.15,.13))
+tube('DoorFrame',trim,.055,color('highlight'),sides=10)
+
+# Hinge origin is at the front-left jamb. Door and lock can be animated independently.
+door=mg.empty('Door',loc=(-.39,-2.145,.13))
+panel=arch(.385,0,.735)
+panel=[(x+.39,z) for x,z in panel]
+mg.smooth(mg.profile('DoorPanel',panel,.075,axis='Y',loc=(0,0,0),bevel=.025,segments=3,color=color('door'),parent=door),angle=40)
+for x in (.19,.39,.59):
+    top=.735+math.sqrt(max(0,.385*.385-(x-.39)*(x-.39)))-.025
+    mg.box('DoorPlankGroove',(.009,.006,top-.03),loc=(x,-.041,(top+.03)*.5),bevel=.003,segments=2,color=color('inset'),parent=door)
+for z in (.22,.70):
+    mg.box('Hinge',(.065,.045,.12),loc=(.018,-.061,z),bevel=.018,segments=3,color=color('inset'),parent=door)
+mg.box('LatchPlate',(.11,.035,.18),loc=(.39,-.055,.48),bevel=.035,segments=3,color='gold_shadow',parent=door)
+
+lock=mg.empty('Padlock',loc=(.39,-.086,.43),parent=door)
+mg.smooth(mg.box('LockBody',(.36,.12,.33),loc=(0,0,0),bevel=.055,segments=4,color='gold',parent=lock),angle=40)
+shackle=mg.empty('Shackle',loc=(-.112,0,.12),parent=lock)
+loop=[(.0,0,0),(.0,0,.105)]
+loop += [(.112+.112*math.cos(math.pi-math.pi*i/16),0,.105+.112*math.sin(math.pi-math.pi*i/16)) for i in range(1,17)]
+loop.append((.224,0,0))
+tube('ShackleLoop',loop,.027,'gold',parent=shackle,sides=10)
+mg.cylinder('KeyholeRound',.037,.008,loc=(0,-.064,.025),rot=(90,0,0),verts=16,color='ink',parent=lock)
+mg.profile('KeyholeStem',[(-.017,.012),(.017,.012),(.025,-.075),(-.025,-.075)],.008,axis='Y',loc=(0,-.064,0),bevel=.004,segments=2,color='ink',parent=lock)
+
+emblem=mg.empty('Emblem',loc=(0,-2.135,1.59))
+mg.smooth(mg.cylinder('BadgeRim',.275,.065,rot=(90,0,0),verts=32,bevel=.018,segments=3,color='white',parent=emblem),angle=40)
+mg.smooth(mg.cylinder('BadgeInset',.228,.073,loc=(0,-.025,0),rot=(90,0,0),verts=32,bevel=.014,segments=3,color=color('highlight'),parent=emblem),angle=40)
+mg.smooth(mg.box('FaceMedallion',(.31,.048,.275),loc=(0,-.074,-.01),bevel=.065,segments=4,color=color('roof'),parent=emblem),angle=40)
+for side in (-1,1):
+    mg.sphere('MedallionEye',.019,loc=(side*.067,-.101,.012),scale=(.8,.4,1.05),segments=12,rings=8,color='ink',parent=emblem)
+smile=[(.058*math.cos(math.pi+math.pi*i/12),-.104,-.026+.045*math.sin(math.pi+math.pi*i/12)) for i in range(13)]
+tube('MedallionSmile',smile,.008,'ink',parent=emblem,sides=6)
+if TONE == 'pink':
+    for side in (-1,1):
+        mg.sphere('BowWing',.057,loc=(side*.051,-.084,.147),scale=(1,.48,.82),segments=12,rings=8,color=color('door'),parent=emblem)
+    mg.sphere('BowKnot',.034,loc=(0,-.105,.147),segments=12,rings=8,color=color('roof_light'),parent=emblem)
+else:
+    for side in (-1,1):
+        curl=[(side*(.065+.044*math.cos(math.pi*1.5-i*math.pi*1.8/16)),-.083,.155+.044*math.sin(math.pi*1.5-i*math.pi*1.8/16)) for i in range(17)]
+        tube('CurledAntenna',curl,.012,color('door'),parent=emblem,sides=7)
+
+for material in mg.materials.values():
+    material.use_nodes=True
+    bsdf=material.node_tree.nodes.get('Principled BSDF')
+    bsdf.inputs['Roughness'].default_value=.3
+    if material.name in ('M_gold','M_gold_shadow'):
+        bsdf.inputs['Metallic'].default_value=.25
+
+# Export each moving part as a root mesh with its authored pivot. Blender's experimental
+# FBX space-bake corrupts nested empty transforms; flat named mesh parts round-trip safely.
+bpy.context.view_layer.update()
+for anchor in (shackle, lock, door, emblem):
+    part_name = anchor.name
+    anchor.name = part_name + 'AuthoringAnchor'
+    children = [o for o in anchor.children if o.type == 'MESH']
+    part = mg.join(part_name, children)
+    world = part.matrix_world.copy()
+    part.parent = None
+    part.matrix_world = world
+    bpy.data.objects.remove(anchor)
+    bpy.context.view_layer.update()

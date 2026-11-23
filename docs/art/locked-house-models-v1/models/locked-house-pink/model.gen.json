@@ -1,0 +1,146 @@
+{
+  "schema": "model-gen-derivative/v1",
+  "status": "pending-user-review",
+  "approved_design": {
+    "path": "docs/art/mockup-integration/mockup-elements-v2.png",
+    "sha256": "eda0d61ead863fbf458e2d193dc6fab31ea55a60e4778d1ee60b8224f46b532a",
+    "approval": "User: ok t\u1ea1o model 3d \u0111i"
+  },
+  "facts": {
+    "ok": true,
+    "size": {
+      "width": 1.28,
+      "height": 2.35,
+      "length": 4.6
+    },
+    "bounds": {
+      "min": [
+        -0.64,
+        -2.3,
+        0.0
+      ],
+      "max": [
+        0.64,
+        2.3,
+        2.35
+      ]
+    },
+    "tris": 9564,
+    "materials": [
+      "M_gold",
+      "M_gold_shadow",
+      "M_ink",
+      "M_pink_door",
+      "M_pink_highlight",
+      "M_pink_inset",
+      "M_pink_roof",
+      "M_pink_roof_light",
+      "M_pink_wall",
+      "M_white"
+    ],
+    "empties": [],
+    "checks": [
+      {
+        "id": "meshes",
+        "ok": true,
+        "detail": "7 mesh object(s)"
+      },
+      {
+        "id": "size.width",
+        "ok": true,
+        "detail": "1.280 m, want 1.280 \u00b1 0.038"
+      },
+      {
+        "id": "size.height",
+        "ok": true,
+        "detail": "2.350 m, want 2.350 \u00b1 0.070"
+      },
+      {
+        "id": "size.length",
+        "ok": true,
+        "detail": "4.600 m, want 4.600 \u00b1 0.138"
+      },
+      {
+        "id": "pivot.ground",
+        "ok": true,
+        "detail": "lowest point z = 0.000, want 0 \u00b1 0.024"
+      },
+      {
+        "id": "pivot.centre",
+        "ok": true,
+        "detail": "bounding-box centre x = 0.000, y = 0.000, want 0, 0"
+      },
+      {
+        "id": "tris",
+        "ok": true,
+        "detail": "9564 triangles, budget 14000"
+      },
+      {
+        "id": "parts",
+        "ok": true,
+        "detail": "all present"
+      },
+      {
+        "id": "materials",
+        "ok": true,
+        "detail": "every face carries an M_<key> palette material"
+      },
+      {
+        "id": "object_types",
+        "ok": true,
+        "detail": "meshes and empties only"
+      },
+      {
+        "id": "transforms",
+        "ok": true,
+        "detail": "no negative scale"
+      }
+    ],
+    "objects": [
+      {
+        "name": "Body",
+        "tris": 2060,
+        "parent": null
+      },
+      {
+        "name": "Roof",
+        "tris": 2500,
+        "parent": null
+      },
+      {
+        "name": "DoorFrame",
+        "tris": 536,
+        "parent": null
+      },
+      {
+        "name": "Shackle",
+        "tris": 376,
+        "parent": null
+      },
+      {
+        "name": "Padlock",
+        "tris": 468,
+        "parent": null
+      },
+      {
+        "name": "Door",
+        "tris": 1316,
+        "parent": null
+      },
+      {
+        "name": "Emblem",
+        "tris": 2308,
+        "parent": null
+      }
+    ]
+  },
+  "script": {
+    "path": "docs/art/locked-house-models-v1/models/locked-house-pink/build.py",
+    "sha256": "8f8eea2a8b409fb0140b8205d0a3213941b382556b977eac24a70334c64ba0ae"
+  },
+  "fbx": {
+    "path": "docs/art/locked-house-models-v1/models/locked-house-pink/locked-house-pink.fbx",
+    "sha256": "f518364d6633732d566a6c2665c04a0cb13f9d8d87a9bfaad346faa0d6e91b46"
+  },
+  "outline_comparison": "Not measured: built directly against the approved perspective mockup, not an orthographic blueprint."
+}

@@ -1,0 +1,62 @@
+{
+  "schema": "model-gen-request/v1",
+  "id": "locked-house-purple",
+  "subject": "Purple toy house cover over a four-slot queue, rounded roof tiles, arched hinged door, golden padlock, matching character medallion.",
+  "size": {
+    "width": 1.28,
+    "height": 2.35,
+    "length": 4.6
+  },
+  "palette": {
+    "white": "F5F0F7",
+    "gold": "FFD23F",
+    "gold_shadow": "D99912",
+    "ink": "251F35",
+    "purple_wall": "DAB8EC",
+    "purple_roof": "AC4BE8",
+    "purple_roof_light": "BE63EF",
+    "purple_door": "B558DB",
+    "purple_highlight": "EFDDF8",
+    "purple_inset": "744098",
+    "pink_wall": "F4C4DA",
+    "pink_roof": "F55BAE",
+    "pink_roof_light": "FF78C3",
+    "pink_door": "E95C9E",
+    "pink_highlight": "FFE5EF",
+    "pink_inset": "AC3E75"
+  },
+  "max_tris": 14000,
+  "parts": [
+    {
+      "name": "Body"
+    },
+    {
+      "name": "Roof"
+    },
+    {
+      "name": "Door"
+    },
+    {
+      "name": "Padlock"
+    },
+    {
+      "name": "Shackle"
+    },
+    {
+      "name": "Emblem"
+    }
+  ],
+  "references": [
+    {
+      "path": "docs/art/mockup-integration/mockup-elements-v2.png",
+      "role": "approved-design"
+    }
+  ],
+  "out": "docs/art/locked-house-models-v1/models/locked-house-purple",
+  "hero": {
+    "pitch": 27,
+    "yaw": 22
+  },
+  "notes": "User approved obstacle-inclusive mockup and explicitly requested the 3D model. Preserve this design; do not introduce a new design. Blender -Y front; Unity +Z front, +Y up. Bottom-center pivot, real hollow doorway, left-hinge Door anchor and separate Padlock/Shackle anchors. No animation clips. Existing 1.28 by 4.6 queue footprint wins over perspective in the concept.",
+  "consumer": "Art handoff only; Unity integration is a separate consuming change."
+}
