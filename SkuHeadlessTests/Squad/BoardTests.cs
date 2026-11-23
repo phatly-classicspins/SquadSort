@@ -236,7 +236,7 @@ house B 3 -1 up 4 : R R R");
 plaza:
 ##
 tube 0 -1 up 4 : B B G G
-tube 1 -1 up 4 : G G B B");
+tube 1 -1 up 4 : G G Y Y");
 
             MoveResult r = board.TapTube(0);
 
@@ -246,6 +246,37 @@ tube 1 -1 up 4 : G G B B");
             board.AddPlazaCell(new GridPos(2, 0));
 
             Assert.That(board.State, Is.EqualTo(BoardState.Playing));
+        }
+
+        [Test]
+        public void AFullPlazaIsNotALossWhileAGroupCanStillReachATube()
+        {
+            Board board = Load(@"
+plaza:
+##
+tube 0 -1 up 4 : B B G G
+tube 1 -1 up 4 : G G B B");
+
+            MoveResult r = board.TapTube(0);   // the greens fill the plaza, but tube 1's blues can still join tube 0
+
+            Assert.That(r.State, Is.EqualTo(BoardState.Playing));
+            Assert.That(board.PlazaFree, Is.EqualTo(0));
+            Assert.That(board.TapTube(1).Accepted, Is.True);
+        }
+
+        [Test]
+        public void AFullPlazaIsNotALossWhileAPlazaBuddyCanReachATube()
+        {
+            Board board = Load(@"
+plaza:
+#
+tube 0 -1 up 4 : Y R
+tube 1 -1 up 4 :");
+
+            board.TapTube(1);                  // nothing to tap in an empty tube
+            MoveResult r = board.TapTube(0);   // red goes to the empty tube, not the plaza
+
+            Assert.That(r.State, Is.EqualTo(BoardState.Playing));
         }
 
         [Test]

@@ -419,9 +419,24 @@ namespace Game.Domain
             RevealTops(revealed);
 
             if (BuddiesRemaining() == 0) State = BoardState.Won;
-            else if (_outOfSpaceOnFullPlaza && PlazaFree == 0) State = BoardState.OutOfSpace;
+            else if (_outOfSpaceOnFullPlaza && PlazaFree == 0 && !HasTubeMove()) State = BoardState.OutOfSpace;
 
             return new MoveResult(moves, cleared, opened, revealed, State);
+        }
+
+        /// <summary>
+        /// Out of Space needs both a full plaza AND no move left: no tube's front group can walk into another tube and no
+        /// plaza buddy can walk into a tube. A full plaza alone is not a loss while a group can still go somewhere.
+        /// </summary>
+        private bool HasTubeMove()
+        {
+            foreach (Tube t in _tubes)
+                if (t.IsActive && t.TopRunLength() > 0 && FindTubeFor(t.Top.Color, t) != null)
+                    return true;
+            foreach (PlazaCell c in _plaza)
+                if (!c.IsFree && FindTubeFor(c.Occupant.Color, null) != null)
+                    return true;
+            return false;
         }
 
         private static bool IsCompleteSquad(Tube t)
