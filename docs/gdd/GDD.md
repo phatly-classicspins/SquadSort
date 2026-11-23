@@ -81,6 +81,10 @@ Mỗi ô chứa tối đa **1 nhân vật**. Nhân vật có **màu** (video: t�
     Popup "House Unlocked!": "Complete the matching color to open the house and free the characters inside."
 
 ### 2.3 Thao tác — chọn rồi thả (đổi 2026-11-19)
+> **2026-11-23 — quay lại một chạm** theo yêu cầu chủ dự án: chạm một nhóm thì game tự chọn đích (ống cùng màu → ống
+> rỗng → quảng trường gần đầu ống), chạm nhân vật trên quảng trường thì cả màu đó tự vào ống phù hợp — đúng luật
+> `Board.TapTube` / `TapPlaza` mà solver vẫn dùng. Bảng "chọn rồi thả" dưới đây không còn áp dụng.
+
 Đã thử một chạm như game gốc (chốt 2026-11-17); sau khi chơi prototype, đổi sang **hai chạm**: chạm nhóm
 để nhấc lên, chạm đích để thả. Người chơi tự quyết đích, game không chọn hộ.
 
@@ -297,6 +301,11 @@ Animation đi bộ chạy theo tick cố định qua `GameplayTickDriver` (rule 
 **không** dùng tên "Squad Sort", logo, thiết kế nhân vật, khung cảnh công viên hay level layout của họ.
 Cần chốt riêng: tên game, bộ nhân vật, bối cảnh (ví dụ: sân trường, bến xe buýt, hồ bơi…),
 và một **cơ chế ký tên** riêng từ §4.3.
+
+> **2026-11-23 — quyết định của chủ dự án:** game hiện nạp 100 level trích từ game gốc
+> (`Assets/SqadSort/Resources/Levels/levels_all.json`, đọc bằng `LevelPackParser`), thay cho 25 level tự thiết kế,
+> dù đoạn trên cấm dùng level layout của họ. Rào (`BarrierFeatureData`, 36 box từ Level060) chưa có luật nên đang
+> chơi như ống thường; Level089 quá lớn để solver kết luận, cần chơi thử bằng tay.
 
 ---
 

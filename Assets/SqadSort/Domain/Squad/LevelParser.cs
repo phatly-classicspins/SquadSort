@@ -18,7 +18,8 @@ namespace Game.Domain
     /// </code>
     /// Coordinates share one grid; Y grows downward; plaza row 0 is the first line under <c>plaza:</c>.
     /// Tube x/y is its mouth cell; direction points from the mouth toward the closed end.
-    /// Colour letters: R O Y G D(dark green) C(cyan) B P K(pink) N(brown). <c>//</c> starts a comment.
+    /// Colour letters: R O Y G D(dark green) C(cyan) B P K(pink) N(brown) A(gray) X(black) W(white). <c>//</c> starts a comment.
+    /// The shipped levels use the JSON level pack instead (<see cref="LevelPackParser"/>); this format stays for tests.
     /// </summary>
     public static class LevelParser
     {
@@ -141,7 +142,7 @@ namespace Game.Domain
         }
 
         /// <summary>Every colour must appear in multiples of 4 — otherwise the level cannot be won.</summary>
-        private static void ValidateColourCounts(List<TubeSpec> tubes, List<PlazaBuddySpec> plaza)
+        internal static void ValidateColourCounts(List<TubeSpec> tubes, List<PlazaBuddySpec> plaza)
         {
             var counts = new Dictionary<SquadColor, int>();
             foreach (TubeSpec t in tubes)

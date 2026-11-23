@@ -11,7 +11,7 @@ namespace Game.Views
     [CreateAssetMenu(menuName = "SqadSort/Look Library", fileName = "LookLibrary")]
     public sealed class LookLibrary : ScriptableObject
     {
-        [Tooltip("Buddy / squad / house colours, indexed by the domain colour id (Red, Orange, Yellow, Green, DarkGreen, Cyan, Blue, Purple, Pink, Brown).")]
+        [Tooltip("Buddy / squad / house colours, indexed by the domain colour id (Red, Orange, Yellow, Green, DarkGreen, Cyan, Blue, Purple, Pink, Brown, Gray, Black, White).")]
         [SerializeField] private Color[] _squadColors = new Color[0];
 
         [Tooltip("Body tint of a hidden buddy, before its colour is revealed.")]

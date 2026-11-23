@@ -215,7 +215,7 @@ namespace Game.Presentation
         private void StartLevel(int level)
         {
             _level = level;
-            _data = LevelParser.Parse(_levels.GetLevelText(level));
+            _data = _levels.GetLevel(level);
             var charges = new Dictionary<Booster, int>
             {
                 [Booster.Undo] = SessionCharges,
@@ -398,7 +398,7 @@ namespace Game.Presentation
             bool interstitial = rating == RatingResult.Closed && !afterAd && await Interstitial();
             if (rating == RatingResult.NotShown && !afterAd) interstitial = await MaybeInterstitial(_level);
             int destination = win.Saved ? win.NextLevel : _level;
-            bool nextHard = LevelParser.Parse(_levels.GetLevelText(Math.Min(Math.Max(1, destination), _levels.Count))).Difficulty != LevelDifficulty.Normal;
+            bool nextHard = _levels.GetLevel(Math.Min(Math.Max(1, destination), _levels.Count)).Difficulty != LevelDifficulty.Normal;
             var segments = _tuning.WinBonusSegments();
             bool bonus = win.Reward > 0;   // a skipped level pays nothing, so there is nothing to multiply
             bool adReady = bonus && await AdReady(AdPlacements.RewardedWinDouble);
