@@ -1,0 +1,87 @@
+apply plugin: 'com.android.library'
+apply from: '../shared/keepUnitySymbols.gradle'
+apply from: '../shared/common.gradle'
+**APPLY_PLUGINS**
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+// Android Resolver Dependencies Start
+    implementation 'androidx.recyclerview:recyclerview:1.2.1' // Packages/com.applovin.mediation.adapters.mintegral.android/Editor/Dependencies.xml:9
+    implementation 'com.adjust.sdk:adjust-android:5.8.1' // Packages/com.adjust.sdk/Native/Editor/Dependencies.xml:5
+    implementation 'com.android.installreferrer:installreferrer:2.2' // Packages/com.adjust.sdk/Native/Editor/Dependencies.xml:7
+    implementation 'com.android.support:customtabs:28.+' // Packages/com.applovin.mediation.adapters.inmobi.android/Editor/Dependencies.xml:7
+    implementation 'com.android.support:recyclerview-v7:28.+' // Packages/com.applovin.mediation.adapters.inmobi.android/Editor/Dependencies.xml:6
+    implementation 'com.applovin.mediation:bidmachine-adapter:3.8.0.1' // Packages/com.applovin.mediation.adapters.bidmachine.android/Editor/Dependencies.xml:8
+    implementation 'com.applovin.mediation:facebook-adapter:[6.22.0.1]' // Packages/com.applovin.mediation.adapters.facebook.android/Editor/Dependencies.xml:7
+    implementation 'com.applovin.mediation:fyber-adapter:8.5.1.0' // Packages/com.applovin.mediation.adapters.fyber.android/Editor/Dependencies.xml:4
+    implementation 'com.applovin.mediation:google-adapter:[25.5.0.0]' // Packages/com.applovin.mediation.adapters.google.android/Editor/Dependencies.xml:4
+    implementation 'com.applovin.mediation:google-ad-manager-adapter:[25.5.0.0]' // Packages/com.applovin.mediation.adapters.googleadmanager.android/Editor/Dependencies.xml:4
+    implementation 'com.applovin.mediation:inmobi-adapter:11.5.1.0' // Packages/com.applovin.mediation.adapters.inmobi.android/Editor/Dependencies.xml:4
+    implementation 'com.applovin.mediation:mintegral-adapter:17.2.21.0' // Packages/com.applovin.mediation.adapters.mintegral.android/Editor/Dependencies.xml:8
+    implementation 'com.applovin.mediation:moloco-adapter:4.14.1.0' // Packages/com.applovin.mediation.adapters.moloco.android/Editor/Dependencies.xml:4
+    implementation 'com.applovin.mediation:unityads-adapter:4.21.0.1' // Packages/com.applovin.mediation.adapters.unityads.android/Editor/Dependencies.xml:4
+    implementation 'com.applovin.mediation:vungle-adapter:7.8.0.0' // Packages/com.applovin.mediation.adapters.vungle.android/Editor/Dependencies.xml:4
+    implementation 'com.applovin:applovin-sdk:13.6.4' // Packages/com.applovin.mediation.ads/AppLovin/Editor/Dependencies.xml:4
+    implementation 'com.google.android.gms:play-services-base:18.11.1' // Packages/com.google.firebase.app/Firebase/Editor/AppDependencies.xml:16
+    implementation 'com.google.firebase:firebase-analytics:24.0.0' // Packages/com.google.firebase.analytics/Firebase/Editor/AnalyticsDependencies.xml:12
+    implementation 'com.google.firebase:firebase-analytics-unity:14.1.0' // Packages/com.google.firebase.analytics/Firebase/Editor/AnalyticsDependencies.xml:17
+    implementation 'com.google.firebase:firebase-app-unity:14.1.0' // Packages/com.google.firebase.app/Firebase/Editor/AppDependencies.xml:21
+    implementation 'com.google.firebase:firebase-common:23.0.0' // Packages/com.google.firebase.app/Firebase/Editor/AppDependencies.xml:12
+    implementation 'com.google.firebase:firebase-config:24.0.1' // Packages/com.google.firebase.remote-config/Firebase/Editor/RemoteConfigDependencies.xml:12
+    implementation 'com.google.firebase:firebase-config-unity:14.1.0' // Packages/com.google.firebase.remote-config/Firebase/Editor/RemoteConfigDependencies.xml:19
+    implementation 'com.google.firebase:firebase-crashlytics-ndk:21.0.1' // Packages/com.google.firebase.crashlytics/Firebase/Editor/CrashlyticsDependencies.xml:12
+    implementation 'com.google.firebase:firebase-crashlytics-unity:14.1.0' // Packages/com.google.firebase.crashlytics/Firebase/Editor/CrashlyticsDependencies.xml:19
+    implementation 'com.squareup.picasso:picasso:2.71828' // Packages/com.applovin.mediation.adapters.inmobi.android/Editor/Dependencies.xml:5
+// Android Resolver Dependencies End
+**DEPS**}
+
+// Android Resolver Exclusions Start
+android {
+  packaging {
+      exclude ('/lib/armeabi/*' + '*')
+      exclude ('/lib/armeabi-v7a/*' + '*')
+      exclude ('/lib/mips/*' + '*')
+      exclude ('/lib/mips64/*' + '*')
+      exclude ('/lib/x86/*' + '*')
+      exclude ('/lib/x86_64/*' + '*')
+  }
+}
+// Android Resolver Exclusions End
+android {
+    namespace "com.unity3d.player"
+    ndkPath "**NDKPATH**"
+    ndkVersion "**NDKVERSION**"
+
+    compileSdk **APIVERSION**
+    buildToolsVersion = "**BUILDTOOLS**"
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    defaultConfig {
+        minSdk **MINSDK**
+        targetSdk **TARGETSDK**
+        ndk {
+            abiFilters **ABIFILTERS**
+            debugSymbolLevel **DEBUGSYMBOLLEVEL**
+        }
+        versionCode **VERSIONCODE**
+        versionName '**VERSIONNAME**'
+        consumerProguardFiles 'proguard-unity.txt'**USER_PROGUARD**
+**DEFAULT_CONFIG_SETUP**
+    }
+
+    lint {
+        abortOnError false
+    }
+
+    androidResources {
+        noCompress = **BUILTIN_NOCOMPRESS** + unityStreamingAssets.tokenize(', ')
+        ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:!CVS:!thumbs.db:!picasa.ini:!*~"
+    }**PACKAGING**
+}
+**IL_CPP_BUILD_SETUP**
+**SOURCE_BUILD_SETUP**
+**EXTERNAL_SOURCES**

@@ -11,11 +11,22 @@ Search the project for `TODO(sdk-ids)` / `TODO_SQADSORT` to find each one.
 |---|---|---|---|
 | MAX ad units | All six unit ids empty; `AllowMissingUnitIds = 1` waives the preflight (logged as a warning) | `Assets/SqadSort/Features/Meta/Application/AdUnitConfig.cs` | The six unit ids (Android / iOS × rewarded, interstitial, banner) from AppLovin ▸ MAX ▸ Ad Units, **then set `AllowMissingUnitIds` back to `0`** |
 | MAX SDK key | `TODO_SQADSORT_MAX_SDK_KEY` | `Assets/MaxSdk/Resources/AppLovinSettings.asset` (AppLovin ▸ Integration Manager) | The account SDK key |
+| AdMob app ids | Google's public **sample** app ids `ca-app-pub-3940256099942544~3347511713` (Android) / `~1458002511` (iOS) — required as soon as the Google AdMob / Ad Manager adapters are installed, or the app crashes at launch | `Assets/MaxSdk/Resources/AppLovinSettings.asset` (Integration Manager ▸ Google AdMob / Ad Manager) | SqadSort's own AdMob app ids (AdMob ▸ Apps ▸ App settings) — never ship the sample ids |
 | MAX consent | Privacy policy URL `https://example.com/sqadsort/privacy-policy-todo` | `ProjectSettings/AppLovinInternalSettings.json` (Integration Manager ▸ Terms and Privacy Policy Flow) | SqadSort's real privacy policy URL (and terms URL, if any) |
 | Adjust | App token `sqadsorttodo` | `AdjustAppToken` in `AdUnitConfig.cs` | The 12-character app token from the Adjust dashboard; add `analytics.adjust.token.<wire_name>` event tokens if events should reach Adjust |
 | Firebase (Android) | `Assets/google-services.json`, project `sqadsort-placeholder` | `Assets/` | The file downloaded from Firebase Console for the Android app |
 | Firebase (iOS) | `Assets/GoogleService-Info.plist`, project `sqadsort-placeholder` | `Assets/` | The file downloaded from Firebase Console for the iOS app |
 | Rating | iOS App Store id empty (it was Chipsaway's `6827467015`); feedback URL `https://brainbucks.com/contact` | `RatingIosAppId` / `RatingFeedbackUrl` in `Assets/SqadSort/Features/Meta/Application/EconomyTuning.cs`, and `rating_ios_app_id` / `rating_feedback_url` in `Tools/Firebase/remote-config.template.json` | SqadSort's App Store id (digits only) and the support page for 1–3 star ratings. While the id is empty, a 4–5 star rating on iOS just thanks the player; Android uses the build's own package |
+
+## Mediation networks
+
+The same ten MAX mediation adapters as CardSlot, at the same versions (UPM packages
+`com.applovin.mediation.adapters.<network>.<android|ios>` from the AppLovin registry): BidMachine, DT Exchange
+(`fyber`), Meta Audience Network (`facebook`), Google AdMob (`google`), Google Ad Manager (`googleadmanager`), InMobi,
+Liftoff Monetize (`vungle`), Mintegral, Moloco and Unity Ads. Android dependencies are resolved by EDM4U into
+`Assets/Plugins/Android/mainTemplate.gradle`; iOS pods are added at build time. Each network still has to be enabled
+for SqadSort's ad units in the MAX dashboard. Unity shows a *Missing Signature* notice for these packages because they
+come from AppLovin's registry, not Unity's.
 
 ## Turning the real SDKs on
 

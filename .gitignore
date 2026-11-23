@@ -58,3 +58,7 @@ Thumbs.db
 # ======================================================================= #
 /Assets/StreamingAssets/google-services-desktop.json
 /Assets/StreamingAssets/google-services-desktop.json.meta
+
+# EDM4U regenerates this local Maven repo from the Firebase packages on import (as in CardSlot).
+Assets/GeneratedLocalRepo/
+Assets/GeneratedLocalRepo.meta
