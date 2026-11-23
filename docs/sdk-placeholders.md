@@ -15,7 +15,6 @@ Search the project for `TODO(sdk-ids)` / `TODO_SQADSORT` to find each one.
 | Adjust | App token `sqadsorttodo` | `AdjustAppToken` in `AdUnitConfig.cs` | The 12-character app token from the Adjust dashboard; add `analytics.adjust.token.<wire_name>` event tokens if events should reach Adjust |
 | Firebase (Android) | `Assets/google-services.json`, project `sqadsort-placeholder` | `Assets/` | The file downloaded from Firebase Console for the Android app |
 | Firebase (iOS) | `Assets/GoogleService-Info.plist`, project `sqadsort-placeholder` | `Assets/` | The file downloaded from Firebase Console for the iOS app |
-
 | Rating | iOS App Store id empty (it was Chipsaway's `6827467015`); feedback URL `https://brainbucks.com/contact` | `RatingIosAppId` / `RatingFeedbackUrl` in `Assets/SqadSort/Features/Meta/Application/EconomyTuning.cs`, and `rating_ios_app_id` / `rating_feedback_url` in `Tools/Firebase/remote-config.template.json` | SqadSort's App Store id (digits only) and the support page for 1–3 star ratings. While the id is empty, a 4–5 star rating on iOS just thanks the player; Android uses the build's own package |
 
 ## Turning the real SDKs on
