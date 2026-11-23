@@ -84,7 +84,7 @@ namespace Game.Application
         // Store ids are empty until the store pages exist: then every rating ends on the thank-you without leaving the game.
         public int RatingPromptLevel = 15;
         public int RatingStoreMinStars = 4;
-        public string RatingIosAppId = "6827467015";   // D-125: P9 Chipsaway on the App Store (tech doc / Nhu)
+        public string RatingIosAppId = "";   // TODO(sdk-ids): SqadSort's App Store id once the app exists; empty = 4-5 stars only thank the player (was Chipsaway's, D-125)
         public string RatingAndroidPackage = "";   // empty = the build's own application identifier
         public string RatingFeedbackUrl = "https://brainbucks.com/contact";   // 1..(StoreMinStars-1) stars open this page
         public int LevelCount = 40;             // fallback only: the shipped catalog's count wins when the caller knows it

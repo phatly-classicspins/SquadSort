@@ -495,7 +495,7 @@
         },
         "rating_ios_app_id": {
           "defaultValue": {
-            "value": "6827467015"
+            "value": ""
           },
           "description": "SqadSort config key rating.ios_app_id",
           "valueType": "STRING"
