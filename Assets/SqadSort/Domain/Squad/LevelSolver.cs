@@ -35,41 +35,68 @@ namespace Game.Domain
         {
             var board = new Board(level);
             var visited = new HashSet<string>();
-            int depth = Search(board, visited, maxStates, 0);
+            int depth = Search(board, visited, maxStates);
             bool exhausted = depth < 0 && visited.Count >= maxStates;
             return new Solution(depth >= 0, depth, visited.Count, exhausted);
         }
 
-        /// <returns>Moves to win from here, or -1.</returns>
-        private static int Search(Board board, HashSet<string> visited, int maxStates, int depth)
+        /// <summary>One state on the search path: where to come back to, and which move to try next.</summary>
+        private sealed class Frame
         {
-            if (board.State == BoardState.Won) return depth;
-            if (board.State != BoardState.Playing) return -1;
-            if (visited.Count >= maxStates || !visited.Add(Key(board))) return -1;
+            public Frame(BoardSnapshot snapshot) => Snapshot = snapshot;
 
-            BoardSnapshot here = board.Snapshot();
+            public readonly BoardSnapshot Snapshot;
+            public readonly HashSet<SquadColor> TriedColours = new HashSet<SquadColor>();
+            public int Next;
+        }
 
-            for (int t = 0; t < board.Tubes.Count; t++)
+        /// <summary>Depth-first, on an explicit stack — a long level's path is deeper than the thread's call stack.
+        /// Moves are tried tube by tube, then one plaza buddy per colour (every cell of a colour does the same).</summary>
+        /// <returns>Moves to win, or -1.</returns>
+        private static int Search(Board board, HashSet<string> visited, int maxStates)
+        {
+            if (board.State == BoardState.Won) return 0;
+            if (board.State != BoardState.Playing || !visited.Add(Key(board))) return -1;
+
+            var path = new Stack<Frame>();
+            path.Push(new Frame(board.Snapshot()));
+            while (path.Count > 0)
             {
-                if (board.TapTube(t).Accepted)
-                {
-                    int found = Search(board, visited, maxStates, depth + 1);
-                    if (found >= 0) return found;
-                    board.Restore(here);
-                }
-            }
+                Frame here = path.Peek();
+                board.Restore(here.Snapshot);
+                int tubes = board.Tubes.Count;
+                int moves = tubes + board.Plaza.Count;
+                bool advanced = false;
 
-            var triedColours = new HashSet<SquadColor>();
-            for (int c = 0; c < board.Plaza.Count; c++)
-            {
-                Buddy b = board.Plaza[c].Occupant;
-                if (b == null || !triedColours.Add(b.Color)) continue; // every cell of a colour does the same
-                if (board.TapPlaza(c).Accepted)
+                while (here.Next < moves && !advanced)
                 {
-                    int found = Search(board, visited, maxStates, depth + 1);
-                    if (found >= 0) return found;
-                    board.Restore(here);
+                    int m = here.Next++;
+                    bool accepted;
+                    if (m < tubes)
+                    {
+                        accepted = board.TapTube(m).Accepted;
+                    }
+                    else
+                    {
+                        Buddy b = board.Plaza[m - tubes].Occupant;
+                        if (b == null || !here.TriedColours.Add(b.Color)) continue;
+                        accepted = board.TapPlaza(m - tubes).Accepted;
+                    }
+
+                    if (!accepted) continue;
+                    if (board.State == BoardState.Won) return path.Count;
+                    if (board.State == BoardState.Playing && visited.Count < maxStates && visited.Add(Key(board)))
+                    {
+                        path.Push(new Frame(board.Snapshot()));
+                        advanced = true;
+                    }
+                    else
+                    {
+                        board.Restore(here.Snapshot);
+                    }
                 }
+
+                if (!advanced) path.Pop();
             }
 
             return -1;

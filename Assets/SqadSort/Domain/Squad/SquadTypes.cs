@@ -2,7 +2,8 @@ using System;
 
 namespace Game.Domain
 {
-    /// <summary>The colour of a buddy, a squad, or a house. Ten colours, as in the GDD §4.2a.</summary>
+    /// <summary>The colour of a buddy, a squad, or a house. The GDD §4.2a ten, plus Gray, Black and White, which the
+    /// level pack (<see cref="LevelPackParser"/>) uses. New colours are appended — the ids are saved and indexed.</summary>
     public enum SquadColor : byte
     {
         Red,
@@ -15,12 +16,15 @@ namespace Game.Domain
         Purple,
         Pink,
         Brown,
+        Gray,
+        Black,
+        White,
     }
 
     /// <summary>One-letter codes used by the level text format.</summary>
     public static class SquadColorCodes
     {
-        private const string Letters = "ROYGDCBPKN";
+        private const string Letters = "ROYGDCBPKNAXW";   // A = gray (ash), X = black, W = white
 
         public static bool TryParse(char letter, out SquadColor color)
         {

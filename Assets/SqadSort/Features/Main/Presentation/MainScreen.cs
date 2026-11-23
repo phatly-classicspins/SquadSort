@@ -70,7 +70,7 @@ namespace Game.Presentation
             _view.GiftPressed += () => OfferGift().Forget();   // D-070
             if (_levelCount > 0)
             {
-                var level = LevelParser.Parse(_levels.GetLevelText(_progress.HomeLevel(_levelCount)));
+                var level = _levels.GetLevel(_progress.HomeLevel(_levelCount));
                 _view.SetHardPlay(level.Difficulty != LevelDifficulty.Normal);
             }
             _tracking.SessionStarted();                                     // D-061: a killed attempt, the first loading flow
