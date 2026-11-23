@@ -1,0 +1,22 @@
+[
+  {
+    "id": "locked-house-purple",
+    "ok": true,
+    "tris": 9528,
+    "size": {
+      "width": 1.28,
+      "height": 2.35,
+      "length": 4.6
+    }
+  },
+  {
+    "id": "locked-house-pink",
+    "ok": true,
+    "tris": 9564,
+    "size": {
+      "width": 1.28,
+      "height": 2.35,
+      "length": 4.6
+    }
+  }
+]

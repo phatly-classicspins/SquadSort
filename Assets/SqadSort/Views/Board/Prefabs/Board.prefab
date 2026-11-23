@@ -411,6 +411,7 @@ MonoBehaviour:
   _queueModel: {fileID: 818682850313559524, guid: 4c99f2e1bd6e54a4a93a5b4a78ba3150, type: 3}
   _cellModel: {fileID: 4881264559041097869, guid: 599c28b7c8f250f448076382f3a138c9, type: 3}
   _edgeModel: {fileID: 4191995667662425174, guid: 91b20224892ad91469dccf5f4975f817, type: 3}
+  _houseModel: {fileID: 919132149155446097, guid: a2b5e8ef83b7d75438863a71576b15f8, type: 3}
   _modelCellSize: 1.15
   _characterScale: 105
   _marginSide: 43

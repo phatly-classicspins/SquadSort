@@ -1,0 +1,61 @@
+[
+  {
+    "asset": "character-hidden",
+    "ok": true,
+    "tris": 2408,
+    "size": {
+      "width": 1.02505,
+      "height": 0.846,
+      "length": 0.72548
+    },
+    "checks": {
+      "size_roundtrip": true,
+      "triangles_roundtrip": true,
+      "parts_preserved": true,
+      "ground_pivot": true,
+      "center_pivot": true,
+      "palette_materials": true,
+      "positive_scale": true
+    }
+  },
+  {
+    "asset": "locked-house-pink",
+    "ok": true,
+    "tris": 9564,
+    "size": {
+      "width": 1.28,
+      "height": 2.35,
+      "length": 4.6
+    },
+    "checks": {
+      "size_roundtrip": true,
+      "triangles_roundtrip": true,
+      "parts_preserved": true,
+      "ground_pivot": true,
+      "center_pivot": true,
+      "palette_materials": true,
+      "positive_scale": true,
+      "moving_parts_independent": true
+    }
+  },
+  {
+    "asset": "locked-house-purple",
+    "ok": true,
+    "tris": 9528,
+    "size": {
+      "width": 1.28,
+      "height": 2.35,
+      "length": 4.6
+    },
+    "checks": {
+      "size_roundtrip": true,
+      "triangles_roundtrip": true,
+      "parts_preserved": true,
+      "ground_pivot": true,
+      "center_pivot": true,
+      "palette_materials": true,
+      "positive_scale": true,
+      "moving_parts_independent": true
+    }
+  }
+]

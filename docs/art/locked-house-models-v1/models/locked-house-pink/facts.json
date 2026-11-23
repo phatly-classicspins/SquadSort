@@ -1,0 +1,170 @@
+{
+ "harness": 1,
+ "blender": "5.0.1",
+ "ok": true,
+ "checks": [
+  {
+   "id": "meshes",
+   "ok": true,
+   "detail": "7 mesh object(s)"
+  },
+  {
+   "id": "size.width",
+   "ok": true,
+   "detail": "1.280 m, want 1.280 \u00b1 0.038"
+  },
+  {
+   "id": "size.height",
+   "ok": true,
+   "detail": "2.350 m, want 2.350 \u00b1 0.070"
+  },
+  {
+   "id": "size.length",
+   "ok": true,
+   "detail": "4.600 m, want 4.600 \u00b1 0.138"
+  },
+  {
+   "id": "pivot.ground",
+   "ok": true,
+   "detail": "lowest point z = 0.000, want 0 \u00b1 0.024"
+  },
+  {
+   "id": "pivot.centre",
+   "ok": true,
+   "detail": "bounding-box centre x = 0.000, y = 0.000, want 0, 0"
+  },
+  {
+   "id": "tris",
+   "ok": true,
+   "detail": "9564 triangles, budget 14000"
+  },
+  {
+   "id": "parts",
+   "ok": true,
+   "detail": "all present"
+  },
+  {
+   "id": "materials",
+   "ok": true,
+   "detail": "every face carries an M_<key> palette material"
+  },
+  {
+   "id": "object_types",
+   "ok": true,
+   "detail": "meshes and empties only"
+  },
+  {
+   "id": "transforms",
+   "ok": true,
+   "detail": "no negative scale"
+  }
+ ],
+ "objects": [
+  {
+   "name": "Body",
+   "tris": 2060,
+   "parent": null,
+   "materials": [
+    "M_white",
+    "M_pink_wall",
+    "M_pink_highlight"
+   ]
+  },
+  {
+   "name": "Roof",
+   "tris": 2500,
+   "parent": null,
+   "materials": [
+    "M_pink_roof",
+    "M_pink_roof_light"
+   ]
+  },
+  {
+   "name": "DoorFrame",
+   "tris": 536,
+   "parent": null,
+   "materials": [
+    "M_pink_highlight"
+   ]
+  },
+  {
+   "name": "Shackle",
+   "tris": 376,
+   "parent": null,
+   "materials": [
+    "M_gold"
+   ]
+  },
+  {
+   "name": "Padlock",
+   "tris": 468,
+   "parent": null,
+   "materials": [
+    "M_ink",
+    "M_gold"
+   ]
+  },
+  {
+   "name": "Door",
+   "tris": 1316,
+   "parent": null,
+   "materials": [
+    "M_pink_door",
+    "M_pink_inset",
+    "M_gold_shadow"
+   ]
+  },
+  {
+   "name": "Emblem",
+   "tris": 2308,
+   "parent": null,
+   "materials": [
+    "M_pink_highlight",
+    "M_white",
+    "M_pink_roof_light",
+    "M_pink_door",
+    "M_pink_roof",
+    "M_ink"
+   ]
+  }
+ ],
+ "empties": [],
+ "tris": 9564,
+ "materials": [
+  "M_gold",
+  "M_gold_shadow",
+  "M_ink",
+  "M_pink_door",
+  "M_pink_highlight",
+  "M_pink_inset",
+  "M_pink_roof",
+  "M_pink_roof_light",
+  "M_pink_wall",
+  "M_white"
+ ],
+ "size": {
+  "width": 1.28,
+  "height": 2.35,
+  "length": 4.6
+ },
+ "bounds": {
+  "min": [
+   -0.64,
+   -2.3,
+   0.0
+  ],
+  "max": [
+   0.64,
+   2.3,
+   2.35
+  ]
+ },
+ "fbx": "model.fbx",
+ "views": {
+  "front": "view_front.png",
+  "right": "view_right.png",
+  "back": "view_back.png",
+  "top": "view_top.png"
+ },
+ "hero": "hero.png"
+}

@@ -70,6 +70,9 @@ namespace Game.Views
         [SerializeField] private GameObject _queueModel;
         [SerializeField] private GameObject _cellModel;
         [SerializeField] private GameObject _edgeModel;
+        [Tooltip("Locked-house cover over a whole tray (same 1.28 × 4.6 footprint as the queue model, door at +Z). Its " +
+                 "M_purple_* materials are recoloured to the house's squad colour; white, gold and ink stay as authored.")]
+        [SerializeField] private GameObject _houseModel;
         [SerializeField] private float _modelCellSize = 1.15f;
         [SerializeField] private float _characterScale = 100f;
 
@@ -290,6 +293,16 @@ namespace Game.Views
             house.gameObject.layer = t.Frame.gameObject.layer;
             house.SetParent(t.Frame, false);
             Color wall = _look.SquadColor(colorId);
+            if (_houseModel != null)
+            {
+                // Sits exactly where the tray model does, turned so the door faces the tube's mouth.
+                GameObject model = SpawnModel(_houseModel, house, new Vector3(0f, -_pitch / _modelCellSize * 0.04f, 0f),
+                    new Vector3(t.Width / 1.28f, _pitch / _modelCellSize, t.Length / 4.6f));
+                model.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+                TintHouse(model, wall);
+                t.House = house.gameObject;
+                return;
+            }
             float w = t.Width;
             float len = t.Length;
             BoardPiece.Create("Walls", house, _lit, new Vector3(w, _houseHeight, len), _trayWall, new Vector3(0f, _houseHeight * 0.5f, 0f), wall);
@@ -477,6 +490,40 @@ namespace Game.Views
             model.transform.localScale = scale;
             foreach (Transform t in model.GetComponentsInChildren<Transform>(true)) t.gameObject.layer = gameObject.layer;
             return model;
+        }
+
+        private const string HouseTintPrefix = "M_purple_";
+        private static readonly int BaseColorId = Shader.PropertyToID("_BaseColor");
+
+        /// <summary>
+        /// Recolour the house model's purple materials to <paramref name="color"/>, keeping the artist's shading: each
+        /// material's saturation and brightness relative to the roof (the reference purple) carry over to the new hue.
+        /// </summary>
+        private static void TintHouse(GameObject model, Color color)
+        {
+            Renderer[] renderers = model.GetComponentsInChildren<Renderer>(true);
+            Color roof = Color.white;
+            foreach (Renderer r in renderers)
+            foreach (Material m in r.sharedMaterials)
+                if (m != null && m.name == HouseTintPrefix + "roof") roof = m.GetColor(BaseColorId);
+            Color.RGBToHSV(roof, out _, out float roofS, out float roofV);
+            Color.RGBToHSV(color, out float h, out float s, out float v);
+
+            var block = new MaterialPropertyBlock();
+            foreach (Renderer r in renderers)
+            {
+                Material[] mats = r.sharedMaterials;
+                for (int i = 0; i < mats.Length; i++)
+                {
+                    if (mats[i] == null || !mats[i].name.StartsWith(HouseTintPrefix, StringComparison.Ordinal)) continue;
+                    Color.RGBToHSV(mats[i].GetColor(BaseColorId), out _, out float ms, out float mv);
+                    float ns = roofS > 0f ? Mathf.Clamp01(s * ms / roofS) : s;
+                    float nv = roofV > 0f ? Mathf.Clamp01(v * mv / roofV) : v;
+                    r.GetPropertyBlock(block, i);
+                    block.SetColor(BaseColorId, Color.HSVToRGB(h, ns, nv));
+                    r.SetPropertyBlock(block, i);
+                }
+            }
         }
 
         private static Vector3 GridToLocalDir(Vector2Int step) => new Vector3(step.x, 0f, -step.y);

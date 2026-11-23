@@ -1,0 +1,41 @@
+{
+ "palette": {
+  "white": "F5F0F7",
+  "gold": "FFD23F",
+  "gold_shadow": "D99912",
+  "ink": "251F35",
+  "purple_wall": "DAB8EC",
+  "purple_roof": "AC4BE8",
+  "purple_roof_light": "BE63EF",
+  "purple_door": "B558DB",
+  "purple_highlight": "EFDDF8",
+  "purple_inset": "744098",
+  "pink_wall": "F4C4DA",
+  "pink_roof": "F55BAE",
+  "pink_roof_light": "FF78C3",
+  "pink_door": "E95C9E",
+  "pink_highlight": "FFE5EF",
+  "pink_inset": "AC3E75"
+ },
+ "size": {
+  "width": 1.28,
+  "height": 2.35,
+  "length": 4.6
+ },
+ "max_tris": 14000,
+ "parts": [
+  "Body",
+  "Roof",
+  "Door",
+  "Padlock",
+  "Shackle",
+  "Emblem"
+ ],
+ "size_tolerance": 0.03,
+ "hero": {
+  "pitch": 27,
+  "yaw": 22
+ },
+ "view_px": 512,
+ "hero_px": 768
+}
