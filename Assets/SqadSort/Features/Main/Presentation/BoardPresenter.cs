@@ -49,6 +49,10 @@ namespace Game.Presentation
 
         public bool IsShufflePicking => _shufflePicking;
 
+        /// <summary>FTUE (CardSlot features/ftue.md v2): while set, only this tube takes a tap and the plaza takes none.
+        /// -1 = free play. The screen decides which tube; the presenter only gates.</summary>
+        public int GuidedTube { get; set; } = -1;
+
         /// <summary>Arm the Shuffle booster: the next tube the player taps is shuffled. Drops any held group.</summary>
         public void BeginShufflePick()
         {
@@ -152,6 +156,7 @@ namespace Game.Presentation
                 return;
             }
 
+            if (GuidedTube >= 0 && tube != GuidedTube) return; // FTUE: only the pointed tube
             Board board = _session.Board;
             if (!board.CanPickTube(tube)) return; // empty, a house, or a hidden front: nothing to send
             var group = FrontGroup(board.Tubes[tube]);
@@ -169,6 +174,7 @@ namespace Game.Presentation
                 return;
             }
 
+            if (GuidedTube >= 0) return; // FTUE: only the pointed tube
             Board board = _session.Board;
             if (board.Plaza[cell].IsFree) return;
             var group = new List<int> { board.Plaza[cell].Occupant.Id };
