@@ -89,6 +89,13 @@ namespace Game.Presentation
         private LevelSession _session;
         private bool _busy;
         private int _shuffleChargesArmed = -1;   // the session's Shuffle count when the booster was armed; -1 = not armed
+        // FTUE (CardSlot features/ftue.md v2): level 1, until it is won once
+        private const string FtueL1Done = "ftue.l1.done";
+        private const int FtueL1Taps = 2;            // guided taps before the goal bubble (CardSlot: two)
+        private const float FtueSettleSeconds = 0.45f;
+        private bool _ftueOn;                        // the guide runs this attempt
+        private int _ftueStep;                       // guided taps done this attempt
+        private int _ftueMoves;                      // moves seen, to notice the next one
         private int _paidRevives, _reviveAds;    // this attempt's Add Space revives: the next paid one costs more (GDD §7)
         private UniTaskCompletionSource<int> _countdownPick;
         private double? _hintLeft;               // seconds the paused lose countdown still had while its booster plays
@@ -226,6 +233,7 @@ namespace Game.Presentation
             _shuffleChargesArmed = -1;
             _hintLeft = null;
             EndBoosterGuide();
+            HideFtue();
             _paidRevives = 0;
             _reviveAds = 0;
             var start = _progress.BeginLevel(level);   // GDD §1.3: starting costs no life — leaving the attempt does (LeaveAttempt)
@@ -271,6 +279,7 @@ namespace Game.Presentation
             }
             _undoGuidePending = CanGuideBooster(Booster.Undo, needTarget: false);
             if (introduced.HasValue) ShowElementTutorial(introduced.Value);
+            StartFtue();
         }
 
         private async UniTask ShowHardLevelIntro(CancellationToken ct)
@@ -306,6 +315,13 @@ namespace Game.Presentation
             ShowLives();
             _hud.SetBoosters(Tiles());
             if (_elementTutorial != null && _session.MovesMade != _elementTutorialMoves) HideElementTutorial();   // the player moved
+            if (_ftueOn && _session.MovesMade > _ftueMoves)                                                       // a guided tap landed
+            {
+                _ftueMoves = _session.MovesMade;
+                _presenter.GuidedTube = -1;
+                _hud.HideTutorial();
+                FtueShowLater(advance: true).Forget();
+            }
             if (_undoGuidePending && !_busy && _boosterGuideStep == BoosterGuideStep.None && CanGuideBooster(Booster.Undo))
             {
                 _undoGuidePending = false;
@@ -384,6 +400,8 @@ namespace Game.Presentation
         /// <param name="afterAd">The skip was paid with a rewarded ad: no interstitial at this level end (Money Sort).</param>
         private async UniTask Won(float settleSeconds, WinInfo? skipped = null, bool afterAd = false)
         {
+            HideFtue();
+            if (skipped == null && _level == 1) _progress.MarkFtueDone(FtueL1Done);   // the level 1 guide does not come back
             var win = skipped ?? _progress.CompleteLevel(_level, _levels.Count);   // progress + the plain reward persisted first (G19)
             if (skipped != null) _tracking.LevelSkipped(_level, _level + 1);
             else _tracking.LevelCompleted(_level, _level + 1, win.Reward);
@@ -640,6 +658,7 @@ namespace Game.Presentation
 
         private async UniTask Lost(float settleSeconds)
         {
+            HideFtue();
             await AnimationsDone(settleSeconds);
             _tracking.ScreenViewed(TrackingNames.EndingPhase);
             _feedback.Lost();
@@ -922,6 +941,82 @@ namespace Game.Presentation
                 else { _boosterGuideStep = BoosterGuideStep.Booster; ShowBoosterTileGuide(); }   // cancelled: back to the tile
             }
             Draw();
+        }
+
+        // ------------------------------------------------------------------ FTUE (CardSlot features/ftue.md v2)
+
+        // Level 1, until it is won once: up to FtueL1Taps guided taps - a bubble points at a tube whose front group can join
+        // another tube, and only that tube takes a tap - then the goal bubble with no target until the level ends. Steps are not
+        // saved: replaying level 1 starts the guide again; the win saves FtueL1Done. Same view as CardSlot (FlickSortFtueController).
+        private void StartFtue()
+        {
+            HideFtue();
+            if (_level != 1 || _session == null || _hud == null || _progress.IsFtueDone(FtueL1Done)) return;
+            _ftueOn = true;
+            _ftueStep = 0;
+            _ftueMoves = _session.MovesMade;
+            FtueShowLater(advance: false).Forget();   // the board settles into place first, or the bubble points at a stale spot
+        }
+
+        private void HideFtue()
+        {
+            _ftueOn = false;
+            if (_presenter != null) _presenter.GuidedTube = -1;
+            if (_hud != null) _hud.HideTutorial();
+        }
+
+        // after a pause: the board settles (level start) or the guided group lands (after a tap; advance = next step)
+        private async UniTaskVoid FtueShowLater(bool advance)
+        {
+            int moves = _ftueMoves;
+            if (await UniTask.Delay(TimeSpan.FromSeconds(FtueSettleSeconds), DelayType.UnscaledDeltaTime, cancellationToken: _cts.Token)
+                    .SuppressCancellationThrow()) return;
+            if (!_ftueOn || moves != _ftueMoves) return;   // ended, or a newer move owns the next step
+            if (advance) _ftueStep++;
+            Tutorial();
+        }
+
+        private void Tutorial()
+        {
+            _presenter.GuidedTube = -1;
+            _hud.HideTutorial();
+            if (!_ftueOn || _session.Board.State != BoardState.Playing) return;
+            int tube = _ftueStep < FtueL1Taps ? FtueTube() : -1;
+            if (tube < 0)
+            {
+                if (_ftueStep == 0) { _ftueOn = false; return; }   // a level that does not fit the guide: play on unguided
+                _hud.ShowTutorial(default, _loc.Get(LocKeys.FtueL1Goal));
+                return;
+            }
+            var rect = TubeHudRect(tube);
+            if (rect.width <= 0f) { _ftueOn = false; return; }
+            _presenter.GuidedTube = tube;
+            _hud.ShowTutorial(rect, _loc.Get(LocKeys.FtueL1Tap));
+        }
+
+        // the first tube whose front group can walk into another tube (not onto the plaza)
+        private int FtueTube()
+        {
+            var board = _session.Board;
+            for (int i = 0; i < board.Tubes.Count; i++)
+                if (board.CanPickTube(i) && board.FindTubeFor(board.Tubes[i].Top.Color, board.Tubes[i]) != null) return i;
+            return -1;
+        }
+
+        // a tube on screen as a rect in the HUD canvas's world space (what GameplayHudView.ShowTutorial projects back)
+        private Rect TubeHudRect(int tube)
+        {
+            var hit = _boardInstance == null ? null : _boardInstance.GetComponentsInChildren<Collider2D>()
+                .FirstOrDefault(c => c.transform.parent != null && c.transform.parent.name == $"Tube {tube}");
+            if (hit == null) return default;
+            var gameCam = _layers.GetCamera(RenderLayers.GamePlay);
+            var bounds = hit.bounds;
+            Vector2 screenMin = gameCam.WorldToScreenPoint(bounds.min), screenMax = gameCam.WorldToScreenPoint(bounds.max);
+            var host = (RectTransform)_layers.GetHost(RenderLayers.Ui);
+            var uiCam = _layers.GetCamera(RenderLayers.Ui);
+            RectTransformUtility.ScreenPointToWorldPointInRectangle(host, screenMin, uiCam, out var a);
+            RectTransformUtility.ScreenPointToWorldPointInRectangle(host, screenMax, uiCam, out var b);
+            return Rect.MinMaxRect(Mathf.Min(a.x, b.x), Mathf.Min(a.y, b.y), Mathf.Max(a.x, b.x), Mathf.Max(a.y, b.y));
         }
 
         // ------------------------------------------------------------------ first-use booster guide (CardSlot)

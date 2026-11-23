@@ -29,18 +29,59 @@ namespace Game.Views
             externalLabel.fontSizeMax = 34f * scale;
             externalLabel.fontSizeMin = 23f * scale;
             Vector2 position = new Vector2(bounds.center.x, bounds.yMin + 309f * scale);
+            // under the target, not over it: the bubble's tail points up at the tube's mouth and everyone inside stays visible
             if (pointsAtStack && RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                    parent, screenRect.center, UiCamera, out var target))
+                    parent, new Vector2(screenRect.center.x, screenRect.yMin), UiCamera, out var target))
             {
                 position.x = target.x;
-                position.y = target.y - size.y * .5f - 18f * scale;
+                position.y = target.y - targetPadding - size.y * .5f - 18f * scale;
             }
+            if (pointsAtStack) ShowExternalHole(screenRect);
+            else SetVisualsVisible(false);   // the goal bubble lights nothing
             position.x = Mathf.Clamp(position.x, bounds.xMin + size.x * .5f + 12f, bounds.xMax - size.x * .5f - 12f);
             position.y = Mathf.Clamp(position.y, bounds.yMin + size.y * .5f + 12f, bounds.yMax - size.y * .5f - 12f);
             SetRect(externalBubble, position - size * .5f, position + size * .5f);
             var label = externalLabel.rectTransform;
             label.offsetMin = new Vector2(18f, 4f) * scale;
             label.offsetMax = new Vector2(-18f, pointsAtStack ? -28f : -4f) * scale;
+        }
+
+        /// <summary>The FTUE spotlight for <see cref="ShowExternal"/>: the same shades, white frame and pulsing hand as the
+        /// guided tutorial, around one screen rect. The shades take the taps outside the hole; the frame and hand take none.</summary>
+        private void ShowExternalHole(Rect screenRect)
+        {
+            if (visualRoot == null || highlight == null) return;
+            transform.SetAsLastSibling();
+            var rootRect = visualRoot.rect;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(visualRoot, screenRect.min, UiCamera, out var localMin);
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(visualRoot, screenRect.max, UiCamera, out var localMax);
+            localMin -= Vector2.one * targetPadding;
+            localMax += Vector2.one * targetPadding;
+            localMin = new Vector2(Mathf.Clamp(localMin.x, rootRect.xMin, rootRect.xMax), Mathf.Clamp(localMin.y, rootRect.yMin, rootRect.yMax));
+            localMax = new Vector2(Mathf.Clamp(localMax.x, rootRect.xMin, rootRect.xMax), Mathf.Clamp(localMax.y, rootRect.yMin, rootRect.yMax));
+
+            SetExtraTargetVisualsVisible(false);
+            SetRect(highlight, localMin, localMax);
+            SetRect(leftShade, new Vector2(rootRect.xMin, rootRect.yMin), new Vector2(localMin.x, rootRect.yMax));
+            SetRect(rightShade, new Vector2(localMax.x, rootRect.yMin), new Vector2(rootRect.xMax, rootRect.yMax));
+            SetRect(bottomShade, new Vector2(localMin.x, rootRect.yMin), new Vector2(localMax.x, localMin.y));
+            SetRect(topShade, new Vector2(localMin.x, localMax.y), new Vector2(localMax.x, rootRect.yMax));
+            foreach (var shade in new[] { leftShade, rightShade, bottomShade, topShade }) SetRaycastTarget(shade, true);
+            SetRaycastTargets(highlight, false);
+            SetRaycastTargets(hand, false);
+            if (spineHand != null) SetRaycastTargets(spineHand, false);
+            if (instructionLabel != null) instructionLabel.gameObject.SetActive(false);   // the external bubble carries the text
+
+            // the fingertip on the lower part of the hole, near the mouth, so the hand covers none of the buddies
+            var tip = new Vector2((localMin.x + localMax.x) * .5f, Mathf.Lerp(localMin.y, localMax.y, .2f));
+            if (spineHand != null)
+            {
+                hand.gameObject.SetActive(false);
+                TutorialHand.Place(spineHand, rootRect, tip, spineHandSize);
+            }
+            else hand.anchoredPosition = tip + Vector2.one * handOffset * .5f;
+            SetVisualsVisible(true);
+            StartHandAnimation();
         }
 
         [SerializeField] private MoneySortTutorialTargets board;
@@ -226,6 +267,7 @@ namespace Game.Views
                 return;
             }
 
+            if (instructionLabel != null) instructionLabel.gameObject.SetActive(true);   // ShowExternalHole hides it
             SetVisualsVisible(true);
             UpdateTargetVisuals();
             StartHandAnimation();
