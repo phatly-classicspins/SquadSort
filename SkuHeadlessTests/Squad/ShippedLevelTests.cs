@@ -18,9 +18,9 @@ namespace SqadSort.SkuHeadlessTests.Squad
 
         private static LevelDefinition Load(int number) => Pack.Levels[number - 1];
 
-        /// <summary>Pack levels the solver cannot decide within its budget (2,000,000 states tried 2026-11-23, still
-        /// undecided) — not proven unsolvable, not proven solvable. Reported as Ignored, never as a pass.</summary>
-        private static readonly HashSet<int> Undecided = new HashSet<int> { 89 };
+        /// <summary>Pack levels the solver cannot decide within its budget — not proven unsolvable, not proven solvable.
+        /// Reported as Ignored, never as a pass. Empty since the solver plays the two-tap moves (Level089 needed them).</summary>
+        private static readonly HashSet<int> Undecided = new HashSet<int>();
 
         [Test]
         public void ThereAreLevels() => Assert.That(Pack.Levels.Count, Is.GreaterThanOrEqualTo(8));

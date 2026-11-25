@@ -249,7 +249,7 @@ tube 1 -1 up 4 : G G Y Y");
         }
 
         [Test]
-        public void AFullPlazaIsNotALossWhileAGroupCanStillReachATube()
+        public void AFullFloorLosesEvenIfTwoContainersCouldPassAGroup()
         {
             Board board = Load(@"
 plaza:
@@ -257,11 +257,26 @@ plaza:
 tube 0 -1 up 4 : B B G G
 tube 1 -1 up 4 : G G B B");
 
-            MoveResult r = board.TapTube(0);   // the greens fill the plaza, but tube 1's blues can still join tube 0
+            MoveResult r = board.TapTube(0);   // the greens fill the floor; tube 1's blues could join tube 0, but not across a full floor
 
-            Assert.That(r.State, Is.EqualTo(BoardState.Playing));
-            Assert.That(board.PlazaFree, Is.EqualTo(0));
-            Assert.That(board.TapTube(1).Accepted, Is.True);
+            Assert.That(r.State, Is.EqualTo(BoardState.OutOfSpace));
+        }
+
+        [Test]
+        public void ContainerToContainerNeedsAFreeFloorTile()
+        {
+            Board board = Load(@"
+plaza:
+RB
+tube 0 -1 up 4 : R R
+tube 1 -1 up 4 : R");
+
+            MoveResult blocked = board.MoveTubeToTube(0, 1);
+
+            Assert.That(blocked.Reject, Is.EqualTo(RejectReason.NoSpace));
+            Assert.That(Colors(board.Tubes[0]), Is.EqualTo("RR"));
+            Assert.That(board.MovePlazaToTube(0, 1).Accepted, Is.True, "a floor buddy still walks into a container");
+            Assert.That(board.MoveTubeToTube(0, 1).Accepted, Is.True, "with a tile free again, containers pass groups");
         }
 
         [Test]

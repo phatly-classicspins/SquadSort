@@ -81,6 +81,11 @@ Mỗi ô chứa tối đa **1 nhân vật**. Nhân vật có **màu** (video: t�
     Popup "House Unlocked!": "Complete the matching color to open the house and free the characters inside."
 
 ### 2.3 Thao tác — chọn rồi thả (đổi 2026-11-19)
+> **2026-11-25 — đi thẳng ống → ống cần ít nhất 1 ô trống trên sàn** (GDD Squad Sort mới §1.2, chủ dự án chốt "ít nhất 1
+> ô"). Sàn đầy thì các ống không chuyển nhóm cho nhau; chỉ còn nước thú trên sàn đi vào ống. Thua = sàn đầy và không thú nào
+> trên sàn vào được ống. Solver giờ thử đủ nước hai chạm (ống → mọi ống nhận, sàn → mọi ống nhận, ống → sàn): cả 100 level
+> đều giải được, kể cả Level089.
+>
 > **2026-11-25 — lại về hai chạm (chọn rồi thả)** theo GDD Squad Sort mới (https://hvtanh07.github.io/gdd-squad-sort/
 > §1.1–1.2): chạm ống để chọn nhóm đầu ống, chạm ống khác hoặc ô trống trên sàn để đưa nhóm đi; chạm một nhân vật trên
 > sàn chọn cả nhóm cùng màu trên sàn. Ghi chú 23/11 bên dưới không còn áp dụng.

@@ -46,12 +46,14 @@ namespace Game.Domain
             public Frame(BoardSnapshot snapshot) => Snapshot = snapshot;
 
             public readonly BoardSnapshot Snapshot;
-            public readonly HashSet<SquadColor> TriedColours = new HashSet<SquadColor>();
+            public readonly HashSet<int> TriedFloorMoves = new HashSet<int>();   // colour × destination: one per pair
             public int Next;
         }
 
         /// <summary>Depth-first, on an explicit stack — a long level's path is deeper than the thread's call stack.
-        /// Moves are tried tube by tube, then one plaza buddy per colour (every cell of a colour does the same).</summary>
+        /// The moves are the two-tap control's (Squad Sort GDD §1.2): a container's front group into every container that
+        /// accepts it, a floor colour group into every container that accepts it (one try per colour and container — every cell
+        /// of a colour does the same), then a container's front group out onto the floor (where it lands changes no rule).</summary>
         /// <returns>Moves to win, or -1.</returns>
         private static int Search(Board board, HashSet<string> visited, int maxStates)
         {
@@ -65,22 +67,35 @@ namespace Game.Domain
                 Frame here = path.Peek();
                 board.Restore(here.Snapshot);
                 int tubes = board.Tubes.Count;
-                int moves = tubes + board.Plaza.Count;
+                int cells = board.Plaza.Count;
+                int tubeToTube = tubes * tubes, floorToTube = cells * tubes;
+                int moves = tubeToTube + floorToTube + tubes;
                 bool advanced = false;
 
                 while (here.Next < moves && !advanced)
                 {
                     int m = here.Next++;
                     bool accepted;
-                    if (m < tubes)
+                    if (m < tubeToTube)
                     {
-                        accepted = board.TapTube(m).Accepted;
+                        int from = m / tubes, to = m % tubes;
+                        if (from == to || !board.CanPickTube(from) || !board.Accepts(board.Tubes[to], board.Tubes[from].Top.Color)) continue;
+                        accepted = board.MoveTubeToTube(from, to).Accepted;
+                    }
+                    else if (m < tubeToTube + floorToTube)
+                    {
+                        int cell = (m - tubeToTube) / tubes, to = (m - tubeToTube) % tubes;
+                        Buddy b = board.Plaza[cell].Occupant;
+                        if (b == null || !board.Accepts(board.Tubes[to], b.Color) || !here.TriedFloorMoves.Add((int)b.Color * tubes + to)) continue;
+                        accepted = board.MovePlazaToTube(cell, to).Accepted;
                     }
                     else
                     {
-                        Buddy b = board.Plaza[m - tubes].Occupant;
-                        if (b == null || !here.TriedColours.Add(b.Color)) continue;
-                        accepted = board.TapPlaza(m - tubes).Accepted;
+                        int from = m - tubeToTube - floorToTube;
+                        if (!board.CanPickTube(from) || board.PlazaFree == 0) continue;
+                        int free = 0;
+                        while (!board.Plaza[free].IsFree) free++;
+                        accepted = board.MoveTubeToPlaza(from, free).Accepted;
                     }
 
                     if (!accepted) continue;
