@@ -16,7 +16,8 @@ namespace Game.Views
         public void ShowExternal(Rect screenRect, string text)
         {
             CancelTutorial();
-            externalBubble.gameObject.SetActive(true);
+            bool hasText = !string.IsNullOrEmpty(text);
+            externalBubble.gameObject.SetActive(hasText);   // a step with no text (GDD §2.2 "Group") lights the target only
             externalLabel.text = text ?? string.Empty;
             bool pointsAtStack = screenRect.width > 0f && screenRect.height > 0f;
             var sprite = pointsAtStack ? tapBubble : goalBubble;
