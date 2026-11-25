@@ -15,6 +15,9 @@ namespace Game.Views
         /// <summary>Longest a single walk may take, however far.</summary>
         public const float MoveMax = 0.55f;
 
+        /// <summary>Time to walk one orthogonal grid edge, including the small walking hop.</summary>
+        public const float GridStepDuration = 0.12f;
+
         /// <summary>Delay between consecutive buddies of one move.</summary>
         public const float Stagger = 0.06f;
 

@@ -22,6 +22,8 @@ namespace Game.Presentation
         private readonly List<int> _pickedIds = new List<int>();
         private LevelSession _session;
         private bool _ended;
+        private int _walking;
+        private int _replayVersion;
 
         // Shuffle booster armed: the next tube tap shuffles that tube instead of moving a group.
         private bool _shufflePicking;
@@ -56,6 +58,7 @@ namespace Game.Presentation
         /// <summary>Arm the Shuffle booster: the next tube the player taps is shuffled. Drops any held group.</summary>
         public void BeginShufflePick()
         {
+            if (_walking > 0) return;
             Drop();
             _shufflePicking = true;
         }
@@ -72,6 +75,8 @@ namespace Game.Presentation
         {
             _session = session ?? throw new ArgumentNullException(nameof(session));
             _ended = false;
+            _walking = 0;
+            _replayVersion++;
             _pickedIds.Clear();
             _shufflePicking = false;
             _shown.Clear();
@@ -108,6 +113,7 @@ namespace Game.Presentation
 
         public void Dispose()
         {
+            _replayVersion++;
             _view.BuddyTapped -= OnBuddyTapped;
             _view.TubeTapped -= OnTubeTapped;
             _view.CellTapped -= OnCellTapped;
@@ -146,6 +152,7 @@ namespace Game.Presentation
         /// else the plaza (<see cref="Board.TapTube"/>). An armed Shuffle shuffles that tube instead.</summary>
         private void OnTube(int tube)
         {
+            if (_walking > 0) return;
             if (_shufflePicking)
             {
                 MoveResult shuffled = _session.Shuffle(tube);
@@ -168,6 +175,7 @@ namespace Game.Presentation
         /// <summary>A plaza buddy was tapped: every plaza buddy of its colour goes to the best tube (<see cref="Board.TapPlaza"/>).</summary>
         private void OnPlaza(int cell)
         {
+            if (_walking > 0) return;
             if (_shufflePicking)
             {
                 CancelShufflePick(); // tapping off the tubes disarms the booster
@@ -214,15 +222,22 @@ namespace Game.Presentation
         {
             Board board = _session.Board;
 
-            float lastStart = 0f;
+            float settled = 0f;
+            int version = _replayVersion;
+            _walking = result.Moves.Count;
             for (int i = 0; i < result.Moves.Count; i++)
             {
                 BuddyMove move = result.Moves[i];
-                lastStart = i * MotionTokens.Stagger;
-                _view.MoveBuddy(move.BuddyId, ToGrid(CellOf(board, move.To)), lastStart);
+                IReadOnlyList<GridPos> path = BoardWalkRoute.Build(board, move.From, move.To);
+                var route = new Vector2Int[path.Count];
+                for (int point = 0; point < path.Count; point++) route[point] = ToGrid(path[point]);
+                float delay = i * MotionTokens.Stagger;
+                float duration = _view.MoveBuddy(move.BuddyId, route, delay, () =>
+                {
+                    if (version == _replayVersion) _walking--;
+                });
+                settled = Mathf.Max(settled, delay + duration);
             }
-
-            float settled = result.Moves.Count > 0 ? lastStart + MotionTokens.MoveMax : 0f;
 
             // A buddy the board no longer holds left with a completed squad.
             var gone = new List<int>();

@@ -214,25 +214,40 @@ namespace Game.Views
             _visual.localPosition = Vector3.zero;
         }
 
-        /// <summary>Walk (with a small hop) to <paramref name="localPosition"/> after <paramref name="delay"/> seconds.</summary>
-        public void MoveTo(Vector3 localPosition, float delay)
+        /// <summary>Walk the supplied grid waypoints without smoothing across corners. Returns the walk duration.</summary>
+        public float MoveAlong(System.Collections.Generic.IReadOnlyList<Vector3> path, float delay, Action arrived)
         {
             _move.TryCancel();
             _hop.TryCancel();
-            Vector3 from = transform.localPosition;
-            float distance = Vector3.Distance(from, localPosition);
-            float duration = Mathf.Min(MotionTokens.MoveMax, MotionTokens.MoveBase + distance * MotionTokens.MovePerUnit);
-
+            if (path == null || path.Count == 0) throw new ArgumentException("A walk needs grid waypoints.", nameof(path));
+            if (path.Count == 1)
+            {
+                PlaceAt(path[0]);
+                arrived?.Invoke();
+                return 0f;
+            }
+            int segments = path.Count - 1;
+            float duration = segments * MotionTokens.GridStepDuration;
             Transform self = transform;
-            _move = LMotion.Create(from, localPosition, duration)
-                .WithDelay(delay)
-                .WithEase(Ease.InOutQuad)
-                .Bind(p => self.localPosition = p);
-
             Transform visual = _visual;
-            _hop = LMotion.Create(0f, 1f, duration)
+            _move = LMotion.Create(0f, (float)segments, duration)
                 .WithDelay(delay)
-                .Bind(t => visual.localPosition = new Vector3(0f, Mathf.Sin(t * Mathf.PI) * MotionTokens.HopHeight, 0f));
+                .WithEase(Ease.Linear)
+                .WithOnComplete(() =>
+                {
+                    if (self == null) return;
+                    self.localPosition = path[segments];
+                    visual.localPosition = Vector3.zero;
+                    arrived?.Invoke();
+                })
+                .Bind(progress =>
+                {
+                    int segment = Mathf.Min(segments - 1, Mathf.FloorToInt(progress));
+                    float t = progress - segment;
+                    self.localPosition = Vector3.LerpUnclamped(path[segment], path[segment + 1], t);
+                    visual.localPosition = new Vector3(0f, Mathf.Sin(t * Mathf.PI) * MotionTokens.HopHeight, 0f);
+                });
+            return duration;
         }
 
         /// <summary>Hop in celebration, then shrink away and destroy this object.</summary>

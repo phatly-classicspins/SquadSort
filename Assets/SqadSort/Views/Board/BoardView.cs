@@ -385,9 +385,16 @@ namespace Game.Views
             if (_buddies.TryGetValue(id, out BuddyView b)) b.SetAwake(awake);
         }
 
-        public void MoveBuddy(int id, Vector2Int cell, float delay)
+        public float MoveBuddy(int id, IReadOnlyList<Vector2Int> route, float delay, Action arrived)
         {
-            if (_buddies.TryGetValue(id, out BuddyView b)) b.MoveTo(BuddyAt(cell), delay);
+            if (!_buddies.TryGetValue(id, out BuddyView b))
+            {
+                arrived?.Invoke();
+                return 0f;
+            }
+            var points = new Vector3[route.Count];
+            for (int i = 0; i < route.Count; i++) points[i] = BuddyAt(route[i]);
+            return b.MoveAlong(points, delay, arrived);
         }
 
         /// <summary>Snap a buddy to a cell with no animation (undo, restore).</summary>
