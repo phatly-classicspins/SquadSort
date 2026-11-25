@@ -72,7 +72,8 @@ namespace Game.Domain
 
             SquadColor color = source.Top.Color;
             var moves = new List<BuddyMove>();
-            Tube dest = FindTubeFor(color, source);
+            // Squad Sort GDD §1.2: container to container only while the Center Floor has a free tile to walk through
+            Tube dest = PlazaFree > 0 ? FindTubeFor(color, source) : null;
 
             if (dest != null)
             {
@@ -120,6 +121,7 @@ namespace Game.Domain
             SquadColor color = source.Top.Color;
             if (to < 0 || to >= _tubes.Count || to == from || !Accepts(_tubes[to], color))
                 return new MoveResult(RejectReason.WrongDestination, State);
+            if (PlazaFree == 0) return new MoveResult(RejectReason.NoSpace, State);   // GDD §1.2: no free tile to walk through
 
             Tube dest = _tubes[to];
             var moves = new List<BuddyMove>();
@@ -425,14 +427,16 @@ namespace Game.Domain
         }
 
         /// <summary>
-        /// Out of Space needs both a full plaza AND no move left: no tube's front group can walk into another tube and no
-        /// plaza buddy can walk into a tube. A full plaza alone is not a loss while a group can still go somewhere.
+        /// Out of Space needs both a full plaza AND no move left (Squad Sort GDD §1.1). With the floor full, containers cannot
+        /// pass groups to each other (§1.2 — there is no free tile to walk through), so the only move left is a floor buddy
+        /// walking into a container that accepts its colour.
         /// </summary>
         private bool HasTubeMove()
         {
-            foreach (Tube t in _tubes)
-                if (t.IsActive && t.TopRunLength() > 0 && FindTubeFor(t.Top.Color, t) != null)
-                    return true;
+            if (PlazaFree > 0)
+                foreach (Tube t in _tubes)
+                    if (t.IsActive && t.TopRunLength() > 0 && FindTubeFor(t.Top.Color, t) != null)
+                        return true;
             foreach (PlazaCell c in _plaza)
                 if (!c.IsFree && FindTubeFor(c.Occupant.Color, null) != null)
                     return true;

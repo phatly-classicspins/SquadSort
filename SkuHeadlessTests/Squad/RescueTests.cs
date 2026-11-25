@@ -41,8 +41,8 @@ spare 0 1 down");
             Board board = Load(@"
 plaza:
 #
-tube 0 -1 up 4 : B R R");
-            board.TapTube(0);   // the reds have no tube: one steps onto the only plaza cell and the plaza is full
+tube 0 -1 up 4 : B R");
+            board.TapTube(0);   // the red has no tube: it steps onto the only floor tile, the floor is full and blue cannot follow
             Assume.That(board.State, Is.EqualTo(BoardState.OutOfSpace));
 
             board.AddPlazaCell(board.NextPlazaCell().Value);
@@ -56,7 +56,7 @@ tube 0 -1 up 4 : B R R");
             Board board = Load(@"
 plaza:
 #
-tube 0 -1 up 4 : B R R
+tube 0 -1 up 4 : B R
 spare 1 0 right");
             board.TapTube(0);
             Assume.That(board.State, Is.EqualTo(BoardState.OutOfSpace));
