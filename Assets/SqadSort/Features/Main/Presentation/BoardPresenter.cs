@@ -10,7 +10,8 @@ namespace Game.Presentation
 {
     /// <summary>
     /// Drives the <see cref="BoardView"/> from a <see cref="LevelSession"/>: lays the level out, runs the
-    /// one-tap control of the reference game (tap a group and the board picks where it goes — GDD §2.3), and replays each <see cref="MoveResult"/> as animations. It
+    /// two-tap control of the Squad Sort GDD §1.1–1.2 (tap a container to select its front group, then a container or a
+    /// free Center Floor tile to send it there; tap a floor buddy to select its whole colour group), and replays each <see cref="MoveResult"/> as animations. It
     /// owns every "what happens" decision — who is awake, the order buddies walk in, when a squad
     /// celebrates — so the View stays a dumb drawer (rule #8). A plain class, never a MonoBehaviour.
     /// </summary>
@@ -24,6 +25,10 @@ namespace Game.Presentation
         private bool _ended;
         private int _walking;
         private int _replayVersion;
+
+        // The selected group: a tube's front run, or the plaza buddies of one colour. _pickedIndex < 0 = nothing selected.
+        private bool _pickedTube;
+        private int _pickedIndex = -1;
 
         // Shuffle booster armed: the next tube tap shuffles that tube instead of moving a group.
         private bool _shufflePicking;
@@ -51,9 +56,15 @@ namespace Game.Presentation
 
         public bool IsShufflePicking => _shufflePicking;
 
-        /// <summary>FTUE (CardSlot features/ftue.md v2): while set, only this tube takes a tap and the plaza takes none.
-        /// -1 = free play. The screen decides which tube; the presenter only gates.</summary>
+        /// <summary>FTUE: while set, only this tube takes a tap and the plaza takes none. -1 = free play. The screen decides
+        /// which tube (the one to select, then the one to send to); the presenter only gates.</summary>
         public int GuidedTube { get; set; } = -1;
+
+        /// <summary>Raised when the selection changes — a group picked up, swapped or put down (not a move; see Changed).</summary>
+        public event Action SelectionChanged;
+
+        /// <summary>The tube whose front group is selected; -1 when nothing, or a floor group, is selected.</summary>
+        public int SelectedTube => _pickedIndex >= 0 && _pickedTube ? _pickedIndex : -1;
 
         /// <summary>Arm the Shuffle booster: the next tube the player taps is shuffled. Drops any held group.</summary>
         public void BeginShufflePick()
@@ -78,6 +89,7 @@ namespace Game.Presentation
             _walking = 0;
             _replayVersion++;
             _pickedIds.Clear();
+            _pickedIndex = -1;
             _shufflePicking = false;
             _shown.Clear();
             _view.Clear();
@@ -148,8 +160,8 @@ namespace Game.Presentation
                 }
         }
 
-        /// <summary>A tube was tapped: its front group goes to the best destination — a tube of its colour, an empty tube,
-        /// else the plaza (<see cref="Board.TapTube"/>). An armed Shuffle shuffles that tube instead.</summary>
+        /// <summary>A tube was tapped: send the selected group into it, or select its front group (GDD §1.2).
+        /// An armed Shuffle shuffles that tube instead.</summary>
         private void OnTube(int tube)
         {
             if (_walking > 0) return;
@@ -165,14 +177,32 @@ namespace Game.Presentation
 
             if (GuidedTube >= 0 && tube != GuidedTube) return; // FTUE: only the pointed tube
             Board board = _session.Board;
-            if (!board.CanPickTube(tube)) return; // empty, a house, or a hidden front: nothing to send
-            var group = FrontGroup(board.Tubes[tube]);
-            MoveResult result = _session.TapTube(tube);
-            if (result.Accepted) Apply(result);
-            else Refuse(result.Reject, group);
+            if (_pickedIndex < 0)
+            {
+                if (board.CanPickTube(tube)) Pick(tube: true, tube);
+                return;
+            }
+
+            if (_pickedTube && _pickedIndex == tube)
+            {
+                Drop(); // the same container again puts the group down
+                return;
+            }
+
+            MoveResult result = _pickedTube
+                ? _session.MoveTubeToTube(_pickedIndex, tube)
+                : _session.MovePlazaToTube(_pickedIndex, tube);
+            if (result.Accepted)
+            {
+                Drop();
+                Apply(result);
+            }
+            else if (board.CanPickTube(tube)) Pick(tube: true, tube); // not a place to go, but a group to take
+            else Refuse(result.Reject);
         }
 
-        /// <summary>A plaza buddy was tapped: every plaza buddy of its colour goes to the best tube (<see cref="Board.TapPlaza"/>).</summary>
+        /// <summary>A Center Floor tile was tapped: select the colour group standing there, or walk the selected container
+        /// group out onto the floor (GDD §1.2).</summary>
         private void OnPlaza(int cell)
         {
             if (_walking > 0) return;
@@ -184,36 +214,79 @@ namespace Game.Presentation
 
             if (GuidedTube >= 0) return; // FTUE: only the pointed tube
             Board board = _session.Board;
-            if (board.Plaza[cell].IsFree) return;
-            var group = new List<int> { board.Plaza[cell].Occupant.Id };
-            MoveResult result = _session.TapPlaza(cell);
-            if (result.Accepted) Apply(result);
-            else Refuse(result.Reject, group);
+            if (!board.Plaza[cell].IsFree)
+            {
+                bool sameGroup = _pickedIndex >= 0 && !_pickedTube
+                    && board.Plaza[_pickedIndex].Occupant?.Color == board.Plaza[cell].Occupant.Color;
+                if (sameGroup) Drop();
+                else Pick(tube: false, cell);
+                return;
+            }
+
+            if (_pickedIndex < 0) return;
+            if (!_pickedTube)
+            {
+                Drop(); // floor to floor is not a move
+                return;
+            }
+
+            MoveResult result = _session.MoveTubeToPlaza(_pickedIndex, cell);
+            if (result.Accepted)
+            {
+                Drop();
+                Apply(result);
+            }
+            else Refuse(result.Reject);
         }
 
-        private static List<int> FrontGroup(Tube t)
+        /// <summary>Select a tube's front group, or every floor buddy of the tapped buddy's colour; they lift.</summary>
+        private void Pick(bool tube, int index)
         {
-            var ids = new List<int>();
-            int run = t.TopRunLength();
-            for (int slot = t.Count - run; slot < t.Count; slot++) ids.Add(t.Slots[slot].Id);
-            return ids;
+            ClearSelection();
+            Board board = _session.Board;
+            _pickedTube = tube;
+            _pickedIndex = index;
+            if (tube)
+            {
+                Tube t = board.Tubes[index];
+                int run = t.TopRunLength();
+                for (int slot = t.Count - run; slot < t.Count; slot++) _pickedIds.Add(t.Slots[slot].Id);
+            }
+            else
+            {
+                SquadColor color = board.Plaza[index].Occupant.Color;
+                foreach (PlazaCell c in board.Plaza)
+                    if (!c.IsFree && c.Occupant.Color == color) _pickedIds.Add(c.Occupant.Id);
+            }
+
+            foreach (int id in _pickedIds) _view.SetBuddySelected(id, true);
+            SelectionChanged?.Invoke();
         }
 
-        /// <summary>Clears a held selection. One-tap play never holds one; kept so arming Shuffle stays safe.</summary>
+        /// <summary>Put the selected group down (nothing moves).</summary>
         private void Drop()
         {
-            foreach (int id in _pickedIds) _view.SetBuddySelected(id, false);
-            _pickedIds.Clear();
+            if (!ClearSelection()) return;
+            SelectionChanged?.Invoke();
         }
 
-        /// <summary>The tap had nowhere to go: the plaza flashes when it is full (GDD §2.2b-8), otherwise the group winces.</summary>
-        private void Refuse(RejectReason reason, List<int> group)
+        private bool ClearSelection()
         {
-            if (group.Count == 0) return;
-            if (reason == RejectReason.NoSpace) _view.PlayRejected(group[0]);
+            if (_pickedIndex < 0 && _pickedIds.Count == 0) return false;
+            foreach (int id in _pickedIds) _view.SetBuddySelected(id, false);
+            _pickedIds.Clear();
+            _pickedIndex = -1;
+            return true;
+        }
+
+        /// <summary>The drop was refused: the floor flashes when it is full, otherwise the group winces; it is put down.</summary>
+        private void Refuse(RejectReason reason)
+        {
+            if (reason == RejectReason.NoSpace && _pickedIds.Count > 0) _view.PlayRejected(_pickedIds[0]);
             else
-                foreach (int id in group)
+                foreach (int id in _pickedIds)
                     _view.WinceBuddy(id);
+            Drop();
         }
 
         // ------------------------------------------------------------------ replay

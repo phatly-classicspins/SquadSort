@@ -81,6 +81,10 @@ Mỗi ô chứa tối đa **1 nhân vật**. Nhân vật có **màu** (video: t�
     Popup "House Unlocked!": "Complete the matching color to open the house and free the characters inside."
 
 ### 2.3 Thao tác — chọn rồi thả (đổi 2026-11-19)
+> **2026-11-25 — lại về hai chạm (chọn rồi thả)** theo GDD Squad Sort mới (https://hvtanh07.github.io/gdd-squad-sort/
+> §1.1–1.2): chạm ống để chọn nhóm đầu ống, chạm ống khác hoặc ô trống trên sàn để đưa nhóm đi; chạm một nhân vật trên
+> sàn chọn cả nhóm cùng màu trên sàn. Ghi chú 23/11 bên dưới không còn áp dụng.
+>
 > **2026-11-23 — quay lại một chạm** theo yêu cầu chủ dự án: chạm một nhóm thì game tự chọn đích (ống cùng màu → ống
 > rỗng → quảng trường gần đầu ống), chạm nhân vật trên quảng trường thì cả màu đó tự vào ống phù hợp — đúng luật
 > `Board.TapTube` / `TapPlaza` mà solver vẫn dùng. Bảng "chọn rồi thả" dưới đây không còn áp dụng.
