@@ -89,6 +89,7 @@ namespace Game.Presentation
         private LevelSession _session;
         private bool _busy;
         private int _shuffleChargesArmed = -1;   // the session's Shuffle count when the booster was armed; -1 = not armed
+        private int _removeChargesArmed = -1;      // Remove charges when it was armed (-1 = not armed)
         // FTUE (CardSlot features/ftue.md v2): level 1, until it is won once
         private const string FtueL1Done = "ftue.l1.done";
         private const int FtueL1Taps = 2;            // guided taps before the goal bubble (CardSlot: two)
@@ -140,6 +141,7 @@ namespace Game.Presentation
             _presenter.Changed += Draw;
             _presenter.SelectionChanged += OnSelectionChanged;
             _presenter.ShufflePickEnded += OnShuffleDone;
+            _presenter.RemovePickEnded += OnRemoveDone;
 
             // CardSlot's HUD: the Money Sort GameplayUI on the Ui layer
             _hudPrefab = await _assets.LoadAsync(AssetKeys.Gameplay.GameplayHud, ct);
@@ -187,6 +189,7 @@ namespace Game.Presentation
                 _presenter.Changed -= Draw;
                 _presenter.SelectionChanged -= OnSelectionChanged;
                 _presenter.ShufflePickEnded -= OnShuffleDone;
+                _presenter.RemovePickEnded -= OnRemoveDone;
                 _presenter.Dispose();
             }
 
@@ -229,10 +232,11 @@ namespace Game.Presentation
             {
                 [Booster.Undo] = SessionCharges,
                 [Booster.Shuffle] = SessionCharges,
-                [Booster.AddContainer] = SessionCharges,
+                [Booster.Remove] = SessionCharges,
             };
             _session = new LevelSession(level, _data, _random, charges);
             _shuffleChargesArmed = -1;
+            _removeChargesArmed = -1;
             _hintLeft = null;
             EndBoosterGuide();
             HideFtue();
@@ -273,7 +277,7 @@ namespace Game.Presentation
             }
 
             Draw();
-            foreach (var id in new[] { Booster.Shuffle, Booster.AddContainer })
+            foreach (var id in new[] { Booster.Shuffle, Booster.Remove })
             {
                 if (!CanGuideBooster(id)) continue;
                 StartBoosterGuide(id);
@@ -347,7 +351,7 @@ namespace Game.Presentation
                     Locked = open ? null : _loc.Get(LocKeys.BoosterLocked, _tuning.UnlockLevel(id)),
                     Badge = open && n > 0 ? _loc.Get(LocKeys.BoosterCount, n) : null,
                     Price = open && n == 0 ? _loc.Get(LocKeys.BoosterPrice, _tuning.Price(id)) : null,
-                    Active = id == Booster.Shuffle && _presenter.IsShufflePicking,
+                    Active = (id == Booster.Shuffle && _presenter.IsShufflePicking) || (id == Booster.Remove && _presenter.IsRemovePicking),
                 };
             }
 
@@ -777,11 +781,11 @@ namespace Game.Presentation
             }
         }
 
-        // unlocked ones only: the first owned in the order Add Container → Undo → Shuffle (the ones that free the plaza first),
+        // unlocked ones only: the first owned in the order Remove → Undo → Shuffle (the ones that free the plaza first),
         // else the first unlocked in that order; -1 = none
         private int HintBooster()
         {
-            var order = new[] { Booster.AddContainer, Booster.Undo, Booster.Shuffle };
+            var order = new[] { Booster.Remove, Booster.Undo, Booster.Shuffle };
             foreach (var id in order) if (_progress.IsUnlocked(id) && _progress.Boosters(id) > 0) return (int)id;
             foreach (var id in order) if (_progress.IsUnlocked(id)) return (int)id;
             return -1;
@@ -798,9 +802,11 @@ namespace Game.Presentation
                     if (!_session.Undo() || !_progress.TryUseBooster(id)) return false;
                     _presenter.Show(_session);
                     return true;
-                case Booster.AddContainer:
-                    if (_session.AddContainer() < 0 || !_progress.TryUseBooster(id)) return false;
-                    _presenter.Show(_session);
+                case Booster.Remove:
+                    // no tap on a lost board: Remove takes the colour GDD §1.3 names (most on the floor)
+                    MoveResult removed = _session.RemoveAuto();
+                    if (removed == null || !removed.Accepted || !_progress.TryUseBooster(id)) return false;
+                    _presenter.Play(removed);
                     return true;
                 default:
                     return false;   // a shuffle does not free a full plaza
@@ -897,6 +903,7 @@ namespace Game.Presentation
             if (_boosterGuideStep != BoosterGuideStep.None
                 && (_boosterGuideStep != BoosterGuideStep.Booster || index != (int)_guidedBooster)) return;
             if (_presenter.IsShufflePicking) { _presenter.CancelShufflePick(); return; }   // the active tile again = cancel
+            if (_presenter.IsRemovePicking) { _presenter.CancelRemovePick(); return; }
             if (_busy || _session.Board.State != BoardState.Playing) return;
             var id = (Booster)index;
             if (!_progress.IsUnlocked(id)) return;                                         // a locked tile does nothing
@@ -917,15 +924,18 @@ namespace Game.Presentation
                     _presenter.BeginShufflePick();
                     used = true;
                     break;
-                case Booster.AddContainer:
-                    used = _session.AddContainer() >= 0 && _progress.TryUseBooster(id);
-                    if (used) _presenter.Show(_session);
+                case Booster.Remove:
+                    // armed until a buddy is tapped; the saved booster is spent when Remove happens (OnRemoveDone)
+                    _removeChargesArmed = _session.Charges(Booster.Remove);
+                    _presenter.BeginRemovePick();
+                    used = true;
                     break;
             }
 
             if (guided && used)
             {
                 if (id == Booster.Shuffle) { _boosterGuideStep = BoosterGuideStep.Tube; ShowShuffleTubeGuide(); }
+                else if (id == Booster.Remove) { _boosterGuideStep = BoosterGuideStep.Tube; ShowRemoveTubeGuide(); }
                 else CompleteBoosterGuide();
             }
             Draw();
@@ -938,6 +948,20 @@ namespace Game.Presentation
             _shuffleChargesArmed = -1;
             if (used) _progress.TryUseBooster(Booster.Shuffle);
             if (_boosterGuideStep == BoosterGuideStep.Tube)
+            {
+                if (used) CompleteBoosterGuide();
+                else { _boosterGuideStep = BoosterGuideStep.Booster; ShowBoosterTileGuide(); }   // cancelled: back to the tile
+            }
+            Draw();
+        }
+
+        // the armed Remove ended: used on a buddy (the session spent one) or cancelled (nothing spent)
+        private void OnRemoveDone()
+        {
+            bool used = _session != null && _removeChargesArmed >= 0 && _session.Charges(Booster.Remove) < _removeChargesArmed;
+            _removeChargesArmed = -1;
+            if (used) _progress.TryUseBooster(Booster.Remove);
+            if (_boosterGuideStep == BoosterGuideStep.Tube && _guidedBooster == Booster.Remove)
             {
                 if (used) CompleteBoosterGuide();
                 else { _boosterGuideStep = BoosterGuideStep.Booster; ShowBoosterTileGuide(); }   // cancelled: back to the tile
@@ -1057,7 +1081,7 @@ namespace Game.Presentation
             switch (id)
             {
                 case Booster.Undo: return _session.CanUndo;
-                case Booster.AddContainer: return board.CanAddSpareTube;
+                case Booster.Remove: return RemoveGuideTube() >= 0;
                 default: return ShuffleTarget() >= 0;
             }
         }
@@ -1114,6 +1138,27 @@ namespace Game.Presentation
             var target = TubePopupRect(_boosterGuideTarget);
             if (target.width <= 0f) return;
             ShowBoosterGuideTarget(target, _loc.Get(LocKeys.BoosterGuideShuffleBody), topPanel: false);
+        }
+
+        // the first open container whose front buddy Remove can use
+        private int RemoveGuideTube()
+        {
+            var board = _session.Board;
+            for (int i = 0; i < board.Tubes.Count; i++)
+            {
+                var t = board.Tubes[i];
+                if (t.IsActive && t.TopRunLength() > 0 && board.CanRemove(t.Top.Id)) return i;
+            }
+            return -1;
+        }
+
+        private void ShowRemoveTubeGuide()
+        {
+            _boosterGuideTarget = RemoveGuideTube();
+            if (_boosterGuideTarget < 0) return;
+            var target = TubePopupRect(_boosterGuideTarget);
+            if (target.width <= 0f) return;
+            ShowBoosterGuideTarget(target, _loc.Get(LocKeys.BoosterGuideMagnetPole), topPanel: false);
         }
 
         // a tube on screen as a Popup-layer rectangle: its tap area ("Hit", screen-aligned, under BoardView's "Tube N"); empty if none
@@ -1479,8 +1524,8 @@ namespace Game.Presentation
             bool watch = await ShowRetryUI(AssetKeys.UI.RestartBoosterUI, _loc.Get(LocKeys.RestartBoosterTitle), _loc.Get(LocKeys.RestartBoosterBody),
                 _loc.Get(LocKeys.RestartBoosterGet), new[] { _loc.Get(LocKeys.BoosterCount, amount) });
             if (!watch) return;
-            if (await Rewarded(AdPlacements.RewardedBooster, TrackingNames.Booster(Booster.AddContainer),
-                    Reward(TrackingNames.Booster(Booster.AddContainer), amount)) && _progress.GrantRestartBoosterFromAd(_clock.UtcNow))
+            if (await Rewarded(AdPlacements.RewardedBooster, TrackingNames.Booster(Booster.Remove),
+                    Reward(TrackingNames.Booster(Booster.Remove), amount)) && _progress.GrantRestartBoosterFromAd(_clock.UtcNow))
             {
                 _feedback.BoosterReward();
                 Draw();

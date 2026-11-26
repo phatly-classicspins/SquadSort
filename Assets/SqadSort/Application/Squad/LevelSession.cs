@@ -9,7 +9,7 @@ namespace Game.Application
     {
         Undo,
         Shuffle,
-        AddContainer,
+        Remove,      // Squad Sort GDD §1.5 (was Add Container; the save still names it booster_add_container / BoosterAddContainer)
     }
 
     /// <summary>
@@ -75,13 +75,33 @@ namespace Game.Application
             return r;
         }
 
-        /// <summary>Add the level's spare tube. Returns its index, or -1 (no charge, already added, or no spare slot).</summary>
-        public int AddContainer()
+        /// <summary>Remove booster (Squad Sort GDD §1.5) on a tapped buddy: its colour fills a container and clears. Spends a
+        /// charge only if it happened; Undo can take it back. Null without a charge.</summary>
+        public MoveResult Remove(int buddyId)
         {
-            if (Charges(Booster.AddContainer) <= 0) return -1;
+            if (Charges(Booster.Remove) <= 0) return null;
+            BoardSnapshot before = Board.Snapshot();
+            MoveResult r = Board.Remove(buddyId);
+            if (!r.Accepted) return r;
+            _history.Push(before);
+            _charges[Booster.Remove]--;
+            return r;
+        }
+
+        /// <summary>Remove with no tap (the lose flow): on the buddy <see cref="Board.AutoRemoveBuddy"/> picks. Null without a
+        /// charge or a target.</summary>
+        public MoveResult RemoveAuto()
+        {
+            int buddy = Board.AutoRemoveBuddy();
+            return buddy < 0 ? null : Remove(buddy);
+        }
+
+        /// <summary>The level's spare tube (kept for the GDD §1.3 RV Slot; no booster spends it). Returns its index, or -1
+        /// (already added, or no spare slot).</summary>
+        public int AddSpareTube()
+        {
             int index = Board.AddSpareTube();
             if (index < 0) return -1;
-            _charges[Booster.AddContainer]--;
             _history.Clear(); // undo across a new tube would leave the tube's view stranded
             return index;
         }

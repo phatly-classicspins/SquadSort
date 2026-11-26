@@ -54,7 +54,7 @@ namespace SqadSort.SkuHeadlessTests.Meta
         {
             service = new LevelProgressService(store, new TestWallet(), new EconomyTuning { AddContainerAdAmount = 9 }, new TestFacts());
             Assert.That(service.GrantRestartBoosterFromAd(), Is.True);
-            Assert.That(service.Boosters(Booster.AddContainer), Is.EqualTo(1));
+            Assert.That(service.Boosters(Booster.Remove), Is.EqualTo(1));
             Assert.That(service.Boosters(Booster.Undo), Is.Zero);
             Assert.That(service.Boosters(Booster.Shuffle), Is.Zero);
         }
@@ -62,6 +62,6 @@ namespace SqadSort.SkuHeadlessTests.Meta
         {
             store.Fail = true;
             Assert.That(service.GrantRestartBoosterFromAd(), Is.False);
-            Assert.That(service.Boosters(Booster.AddContainer), Is.Zero);
+            Assert.That(service.Boosters(Booster.Remove), Is.Zero);
         }    }
 }

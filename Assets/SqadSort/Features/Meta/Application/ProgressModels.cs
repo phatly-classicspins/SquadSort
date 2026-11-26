@@ -9,7 +9,8 @@ namespace Game.Application
         public static readonly ResourceKey Coin = new ResourceKey("coin");
     }
 
-    // The three boosters are Game.Application.Booster (LevelSession.cs): Undo, Shuffle, AddContainer — the bar order on screen.
+    // The three boosters are Game.Application.Booster (LevelSession.cs): Undo, Shuffle, Remove — the bar order on screen.
+    // Remove was Add Container: its count and unlock keep the old save names (BoosterAddContainer, "booster_add_container").
 
     /// <summary>The elements of the SqadSort GDD §2.2b (11: Hidden, 12: House), in unlock order.</summary>
     public enum ElementId { Hidden = 0, House = 1 }

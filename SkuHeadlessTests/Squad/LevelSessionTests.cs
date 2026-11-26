@@ -13,7 +13,7 @@ namespace SqadSort.SkuHeadlessTests.Squad
                 1,
                 LevelParser.Parse(text, requireFullSquads: false),
                 new Pcg32(7),
-                new Dictionary<Booster, int> { [Booster.Undo] = undo, [Booster.Shuffle] = shuffle, [Booster.AddContainer] = add });
+                new Dictionary<Booster, int> { [Booster.Undo] = undo, [Booster.Shuffle] = shuffle, [Booster.Remove] = add });
 
         private const string TwoTubes = @"
 plaza:
@@ -75,13 +75,34 @@ spare 2 -1 up";
         }
 
         [Test]
-        public void AddContainerWorksOncePerLevel()
+        public void TheSpareTubeComesOncePerLevelAndSpendsNoBooster()
         {
             LevelSession s = Session(TwoTubes);
 
-            Assert.That(s.AddContainer(), Is.EqualTo(2));
-            Assert.That(s.AddContainer(), Is.EqualTo(-1));
-            Assert.That(s.Charges(Booster.AddContainer), Is.EqualTo(2));
+            Assert.That(s.AddSpareTube(), Is.EqualTo(2));
+            Assert.That(s.AddSpareTube(), Is.EqualTo(-1));
+            Assert.That(s.Charges(Booster.Remove), Is.EqualTo(3));
+        }
+
+        [Test]
+        public void RemoveSpendsAChargeOnlyWhenItHappensAndUndoTakesItBack()
+        {
+            LevelSession s = Session(@"
+plaza:
+GG##
+tube 0 -1 up 4 : R G
+tube 1 -1 up 4 : G R R
+tube 2 -1 up 4 : R", add: 1);
+
+            Assert.That(s.Remove(s.Board.Tubes[0].Slots[0].Id).Accepted, Is.False, "a buried buddy cannot be tapped");
+            Assert.That(s.Charges(Booster.Remove), Is.EqualTo(1));
+            MoveResult r = s.Remove(s.Board.Tubes[1].Top.Id);
+            Assert.That(r.Accepted, Is.True);
+            Assert.That(r.ClearedTubes, Is.EqualTo(new[] { 1 }));
+            Assert.That(s.Charges(Booster.Remove), Is.EqualTo(0));
+            Assert.That(s.Remove(s.Board.Tubes[0].Top.Id), Is.Null, "no charge left");
+            Assert.That(s.Undo(), Is.True);
+            Assert.That(s.Board.Tubes[1].Cleared, Is.False);
         }
     }
 }

@@ -52,7 +52,7 @@ namespace SqadSort.SkuHeadlessTests.Meta
             Assert.That((svc.Coins, p.BoosterUndo, p.BoosterShuffle, p.BoosterAddContainer), Is.EqualTo((0L, 6, 5, 5)));
             Assert.That(svc.UnlimitedLivesLeft(Now), Is.EqualTo(TimeSpan.FromHours(2)));
             Assert.That(facts.Log, Is.EqualTo(new[] { "earn coins 10000 home_shop", "earn ap_booster_undo 5 home_shop",
-                "earn ap_booster_shuffle 5 home_shop", "earn ap_booster_add_container 5 home_shop" }));
+                "earn ap_booster_shuffle 5 home_shop", "earn ap_booster_remove 5 home_shop" }));
         }
 
         [Test]

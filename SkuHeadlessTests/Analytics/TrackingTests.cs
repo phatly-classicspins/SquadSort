@@ -357,11 +357,11 @@ namespace SqadSort.SkuHeadlessTests.Analytics
             var tracking = new GameTracking(sink, wallet, store, false);
             var live = new LevelProgressService(store, wallet, tuning, tracking);
             wallet.Grant(SqadSortResources.Coin, 500, GrantSource.Reward);
-            live.TryBuyBooster(Booster.AddContainer);
+            live.TryBuyBooster(Booster.Remove);
             var spend = sink.Last("spend_virtual_currency");
             var earn = sink.Last("earn_virtual_currency");
-            Assert.That((spend["virtual_currency_name"], spend["value"], spend["balance"]), Is.EqualTo(("coins", (long)tuning.Price(Booster.AddContainer), 500L - tuning.Price(Booster.AddContainer))));
-            Assert.That((earn["virtual_currency_name"], earn["balance"]), Is.EqualTo(("ap_booster_add_container", (long)tuning.BuyAmount(Booster.AddContainer))));
+            Assert.That((spend["virtual_currency_name"], spend["value"], spend["balance"]), Is.EqualTo(("coins", (long)tuning.Price(Booster.Remove), 500L - tuning.Price(Booster.Remove))));
+            Assert.That((earn["virtual_currency_name"], earn["balance"]), Is.EqualTo(("ap_booster_remove", (long)tuning.BuyAmount(Booster.Remove))));
         }
     }
 }
