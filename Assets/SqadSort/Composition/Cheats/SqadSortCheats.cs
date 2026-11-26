@@ -137,7 +137,7 @@ namespace Game.Composition
             string refill = lives < _tuning.LivesMax ? $" (next in {_progress.NextLifeIn(now):mm\\:ss})" : string.Empty;
             return $"Level {_progress.CurrentLevel} · cleared {_progress.HighestCleared} · {(_gameplay.InGameplay ? "in gameplay" : "home")}\n" +
                    $"Coins {_progress.Coins} · Lives {lives}/{_tuning.LivesMax}{refill}\n" +
-                   $"Undo {_progress.Boosters(Booster.Undo)} · Shuffle {_progress.Boosters(Booster.Shuffle)} · Add Container {_progress.Boosters(Booster.AddContainer)}";
+                   $"Undo {_progress.Boosters(Booster.Undo)} · Shuffle {_progress.Boosters(Booster.Shuffle)} · Remove {_progress.Boosters(Booster.Remove)}";
         }
 
         private async UniTaskVoid GoToLevel(int level)

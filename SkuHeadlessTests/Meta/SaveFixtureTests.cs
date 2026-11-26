@@ -58,7 +58,7 @@ namespace SqadSort.SkuHeadlessTests.Meta
             var (store, svc) = Load(BeforeLives);
             Assert.That(svc.Lives(Now), Is.EqualTo(5));
             Assert.That(svc.NextLifeIn(Now), Is.EqualTo(TimeSpan.Zero));
-            Assert.That((svc.Boosters(Booster.Undo), svc.Boosters(Booster.AddContainer)), Is.EqualTo((2, 1)));
+            Assert.That((svc.Boosters(Booster.Undo), svc.Boosters(Booster.Remove)), Is.EqualTo((2, 1)));
             Assert.That(svc.UnlockBoostersFor(13), Is.Empty, "already unlocked: no second gift");
             Assert.That(store.Progress.ElementsUnlocked, Has.Count.EqualTo(2));
         }

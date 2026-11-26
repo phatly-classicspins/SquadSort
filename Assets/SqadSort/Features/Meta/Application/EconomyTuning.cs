@@ -39,6 +39,8 @@ namespace Game.Application
         // C2 boosters (GDD v2.0 §4.1, §7, D-031): unlock level, coin price, how many one purchase / one ad gives (per
         // booster, CR-013: booster_{id}_coin_amount, booster_{id}_ad_amount), unlock gift
         public int UndoUnlockLevel = 5, ShuffleUnlockLevel = 11, AddContainerUnlockLevel = 15;   // SqadSort GDD §3
+        // AddContainer* hold the Remove booster's values (Squad Sort GDD §1.5): the remote-config keys keep their
+        // booster_add_container_* names until a codegen run renames them, and every key must match a field of its name.
         public int UndoPrice = 100, ShufflePrice = 80, AddContainerPrice = 120;
         public int UndoBuyAmount = 3, ShuffleBuyAmount = 3, AddContainerBuyAmount = 3;
         public int UndoAdAmount = 1, ShuffleAdAmount = 1, AddContainerAdAmount = 1;   // "▶ Free" in the buy dialog

@@ -189,8 +189,8 @@ namespace SqadSort.SkuHeadlessTests.Meta
             Assert.That(svc.UnlockBoostersFor(5), Is.EqualTo(new[] { Booster.Undo }));
             Assert.That(svc.UnlockBoostersFor(5), Is.Empty, "once");
             Assert.That(svc.Boosters(Booster.Undo), Is.EqualTo(3));
-            Assert.That(svc.UnlockBoostersFor(16), Is.EqualTo(new[] { Booster.Shuffle, Booster.AddContainer }), "a save already past them catches up");
-            Assert.That((svc.Boosters(Booster.Shuffle), svc.Boosters(Booster.AddContainer)), Is.EqualTo((3, 3)));
+            Assert.That(svc.UnlockBoostersFor(16), Is.EqualTo(new[] { Booster.Shuffle, Booster.Remove }), "a save already past them catches up");
+            Assert.That((svc.Boosters(Booster.Shuffle), svc.Boosters(Booster.Remove)), Is.EqualTo((3, 3)));
         }
 
         [Test]
@@ -204,21 +204,21 @@ namespace SqadSort.SkuHeadlessTests.Meta
         [Test]
         public void Using_a_booster_needs_one_and_a_failed_save_keeps_it()
         {
-            Assert.That(svc.TryUseBooster(Booster.AddContainer), Is.False, "none owned");
+            Assert.That(svc.TryUseBooster(Booster.Remove), Is.False, "none owned");
             svc.UnlockBoostersFor(15);
-            Assert.That(svc.TryUseBooster(Booster.AddContainer), Is.True);
-            Assert.That(svc.Boosters(Booster.AddContainer), Is.EqualTo(2));
+            Assert.That(svc.TryUseBooster(Booster.Remove), Is.True);
+            Assert.That(svc.Boosters(Booster.Remove), Is.EqualTo(2));
             store.Fail = true;
-            Assert.That(svc.TryUseBooster(Booster.AddContainer), Is.False);
-            Assert.That(svc.Boosters(Booster.AddContainer), Is.EqualTo(2));
+            Assert.That(svc.TryUseBooster(Booster.Remove), Is.False);
+            Assert.That(svc.Boosters(Booster.Remove), Is.EqualTo(2));
         }
 
         [Test]
         public void Buying_a_booster_spends_its_price_and_a_failed_save_refunds_and_takes_it_back()
         {
             wallet.Grant(SqadSortResources.Coin, 100, GrantSource.Reward);
-            Assert.That(svc.TryBuyBooster(Booster.AddContainer), Is.False, "120 > 100");
-            Assert.That((svc.Coins, svc.Boosters(Booster.AddContainer)), Is.EqualTo((100L, 0)));
+            Assert.That(svc.TryBuyBooster(Booster.Remove), Is.False, "120 > 100");
+            Assert.That((svc.Coins, svc.Boosters(Booster.Remove)), Is.EqualTo((100L, 0)));
             Assert.That(svc.TryBuyBooster(Booster.Shuffle), Is.True);
             Assert.That((svc.Coins, svc.Boosters(Booster.Shuffle)), Is.EqualTo((20L, 3)), "CR-013: one purchase gives 3");
             wallet.Grant(SqadSortResources.Coin, 200, GrantSource.Reward);

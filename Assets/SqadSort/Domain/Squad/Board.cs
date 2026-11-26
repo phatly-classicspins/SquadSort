@@ -225,6 +225,184 @@ namespace Game.Domain
             return Finish(moves, tube);
         }
 
+        /// <summary>
+        /// Remove booster (Squad Sort GDD §1.5): the tapped buddy's colour fills one container with a whole squad, which clears.
+        /// The target is the tapped buddy's container; for a floor buddy, the open container already showing the most buddies
+        /// of that colour (none ⇒ refused). Every other-colour buddy in the target swaps places with a buddy of the colour from
+        /// elsewhere (another open container or the floor), then more of the colour are pulled in until it holds a squad. Buddies
+        /// in a closed house are never taken; a hidden buddy of the colour may be taken (it reveals and clears), one of another
+        /// colour swapped out stays hidden. Refused, changing nothing, when fewer than a squad of the colour can be reached.
+        /// Usable while playing and while out of space.
+        /// </summary>
+        /// <param name="buddyId">A front buddy of an open container (its revealed front group), or a buddy on the floor.</param>
+        public MoveResult Remove(int buddyId)
+        {
+            if (State != BoardState.Playing && State != BoardState.OutOfSpace) return new MoveResult(RejectReason.NotPlaying, State);
+            BuddyLocation? at = Locate(buddyId);
+            if (!at.HasValue) return new MoveResult(RejectReason.NotTappable, State);
+
+            Tube target;
+            SquadColor color;
+            if (at.Value.Kind == LocationKind.Tube)
+            {
+                Tube tube = _tubes[at.Value.Index];
+                int run = tube.IsActive ? tube.TopRunLength() : 0;
+                if (run == 0 || at.Value.Slot < tube.Count - run) return new MoveResult(RejectReason.NotTappable, State);
+                target = tube;
+                color = tube.Top.Color;
+            }
+            else
+            {
+                color = _plaza[at.Value.Index].Occupant.Color;
+                target = null;
+                int best = 0;
+                foreach (Tube t in _tubes)
+                {
+                    if (!t.IsActive) continue;
+                    int n = 0;
+                    foreach (Buddy b in t.Slots) if (!b.Hidden && b.Color == color) n++;
+                    if (n > best) { best = n; target = t; }
+                }
+                if (target == null) return new MoveResult(RejectReason.NoDestination, State);
+            }
+
+            // Who of the colour is outside the target and reachable: the floor first, then each open container from its
+            // opening inward — the order in which they are taken.
+            var pool = new List<BuddyLocation>();
+            foreach (PlazaCell c in _plaza)
+                if (!c.IsFree && c.Occupant.Color == color) pool.Add(BuddyLocation.OnPlaza(c.Index));
+            foreach (Tube t in _tubes)
+            {
+                if (t == target || !t.IsActive) continue;
+                for (int s = t.Count - 1; s >= 0; s--)
+                    if (t.Slots[s].Color == color) pool.Add(BuddyLocation.InTube(t.Index, s));
+            }
+
+            List<Buddy> slots = target.MutableSlots;
+            var others = new List<int>();   // target slots holding another colour
+            for (int s = 0; s < slots.Count; s++) if (slots[s].Color != color) others.Add(s);
+            int needed = SquadSize - (slots.Count - others.Count);
+            if (needed <= 0 || pool.Count < needed || slots.Count - others.Count + needed > target.Capacity)
+                return new MoveResult(RejectReason.NotTappable, State);
+
+            var before = new Dictionary<int, BuddyLocation>();
+            foreach (Tube t in _tubes)
+                for (int s = 0; s < t.Count; s++) before[t.Slots[s].Id] = BuddyLocation.InTube(t.Index, s);
+            foreach (PlazaCell c in _plaza)
+                if (!c.IsFree) before[c.Occupant.Id] = BuddyLocation.OnPlaza(c.Index);
+
+            // Swap: each other-colour buddy trades places with one of the colour.
+            int next = 0;
+            foreach (int s in others)
+            {
+                BuddyLocation from = pool[next++];
+                Buddy outgoing = slots[s];
+                Buddy incoming = TakeAt(from);
+                PutAt(from, outgoing);
+                slots[s] = incoming;
+            }
+
+            // Fill: the rest walk in. A container taken from closes the gap toward its closed end (no other way to keep a stack).
+            var takenFromTubes = new List<(Tube tube, Buddy buddy)>();
+            for (; next < needed; next++)
+            {
+                BuddyLocation from = pool[next];
+                if (from.Kind == LocationKind.Plaza)
+                {
+                    PlazaCell cell = _plaza[from.Index];
+                    slots.Add(cell.Occupant);
+                    cell.Occupant = null;
+                }
+                else
+                {
+                    Tube t = _tubes[from.Index];
+                    Buddy b = t.Slots[from.Slot];
+                    takenFromTubes.Add((t, b));
+                    slots.Add(b);
+                }
+            }
+            foreach (var (t, b) in takenFromTubes) t.MutableSlots.Remove(b);
+            foreach (Buddy b in slots) b.Hidden = false;   // a hidden buddy of the colour reveals as it joins the squad
+
+            var moves = new List<BuddyMove>();
+            foreach (KeyValuePair<int, BuddyLocation> kv in before)
+            {
+                BuddyLocation? now = Locate(kv.Key);
+                if (now.HasValue && !now.Value.Equals(kv.Value)) moves.Add(new BuddyMove(kv.Key, kv.Value, now.Value));
+            }
+
+            if (State == BoardState.OutOfSpace) State = BoardState.Playing;
+            return Finish(moves, target);
+        }
+
+        /// <summary>Whether <see cref="Remove"/> on this buddy would happen. A dry run: the board is left exactly as it was.</summary>
+        public bool CanRemove(int buddyId)
+        {
+            BoardSnapshot before = Snapshot();
+            bool ok = Remove(buddyId).Accepted;
+            Restore(before);
+            return ok;
+        }
+
+        /// <summary>
+        /// The buddy Remove should take when no one taps (Squad Sort GDD §1.3 revive, and the lose flow): the colour with the
+        /// most buddies on the floor (tie: the most buried in containers), through one of its floor buddies; with none on the
+        /// floor that works, the first front buddy of a container that does. -1 when Remove can do nothing here.
+        /// </summary>
+        public int AutoRemoveBuddy()
+        {
+            var onFloor = new Dictionary<SquadColor, List<Buddy>>();
+            foreach (PlazaCell c in _plaza)
+            {
+                if (c.IsFree) continue;
+                if (!onFloor.TryGetValue(c.Occupant.Color, out var list)) onFloor[c.Occupant.Color] = list = new List<Buddy>();
+                list.Add(c.Occupant);
+            }
+
+            int Buried(SquadColor color)
+            {
+                int n = 0;
+                foreach (Tube t in _tubes)
+                {
+                    if (!t.IsActive) continue;
+                    int front = t.Count - t.TopRunLength();
+                    for (int s = 0; s < front; s++) if (t.Slots[s].Color == color) n++;
+                }
+                return n;
+            }
+
+            var colours = new List<SquadColor>(onFloor.Keys);
+            colours.Sort((a, b) =>
+            {
+                int byFloor = onFloor[b].Count.CompareTo(onFloor[a].Count);
+                return byFloor != 0 ? byFloor : Buried(b).CompareTo(Buried(a));
+            });
+            foreach (SquadColor color in colours)
+                if (CanRemove(onFloor[color][0].Id)) return onFloor[color][0].Id;
+            foreach (Tube t in _tubes)
+                if (t.IsActive && t.TopRunLength() > 0 && CanRemove(t.Top.Id)) return t.Top.Id;
+            return -1;
+        }
+
+        private Buddy TakeAt(BuddyLocation at)
+        {
+            if (at.Kind == LocationKind.Plaza)
+            {
+                PlazaCell cell = _plaza[at.Index];
+                Buddy b = cell.Occupant;
+                cell.Occupant = null;
+                return b;
+            }
+
+            return _tubes[at.Index].Slots[at.Slot];
+        }
+
+        private void PutAt(BuddyLocation at, Buddy buddy)
+        {
+            if (at.Kind == LocationKind.Plaza) _plaza[at.Index].Occupant = buddy;
+            else _tubes[at.Index].MutableSlots[at.Slot] = buddy;
+        }
+
         /// <summary>Add Container booster: one empty tube at the level's spare position. Returns its index, or -1.</summary>
         public int AddSpareTube(int capacity = SquadSize)
         {

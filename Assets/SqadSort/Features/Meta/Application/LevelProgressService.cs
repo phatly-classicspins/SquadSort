@@ -131,7 +131,7 @@ namespace Game.Application
         public bool CanOfferSkipAfterRestart(int level, bool tutorialLevel, DateTimeOffset now) =>
             CanOfferSkip(level, tutorialLevel, now) && _store.Progress.SkipFailLevel == level &&
             _store.Progress.SkipFailCount >= _tuning.SkipLevelFailCount;
-        public bool CanOfferRestartBooster(int level, DateTimeOffset now = default) => RetryBoostersLeft(now) > 0 && IsUnlocked(Booster.AddContainer) &&
+        public bool CanOfferRestartBooster(int level, DateTimeOffset now = default) => RetryBoostersLeft(now) > 0 && IsUnlocked(Booster.Remove) &&
             _store.Progress.SkipFailLevel == level && _store.Progress.SkipFailCount >= 2 &&
             _store.Progress.RestartBoosterOfferedLevel != level;
 
@@ -411,11 +411,11 @@ namespace Game.Application
         {
             if (RetryBoostersLeft(now) <= 0) return false;
             if (!Transact(p => {
-                Add(p, Booster.AddContainer, 1);
+                Add(p, Booster.Remove, 1);
                 p.RetryBoostersToday = (p.RetryBoosterDay == Day(now) ? p.RetryBoostersToday : 0) + 1;
                 p.RetryBoosterDay = Day(now);
             }, 0)) return false;
-            _facts.Earned(TrackingNames.Booster(Booster.AddContainer), 1, TrackingNames.ActionPhase);
+            _facts.Earned(TrackingNames.Booster(Booster.Remove), 1, TrackingNames.ActionPhase);
             return true;
         }
         private static string Name(Booster id) => id == Booster.Undo ? "booster_undo" : id == Booster.Shuffle ? "booster_shuffle" : "booster_add_container";

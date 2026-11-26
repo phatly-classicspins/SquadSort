@@ -44,7 +44,7 @@ namespace SqadSort.SkuHeadlessTests.Meta
             store.Fail=true;
             Assert.That(svc.GrantRestartBoosterFromAd(now),Is.False);
             Assert.That(svc.RetryBoostersLeft(now),Is.EqualTo(1));
-            Assert.That(svc.Boosters(Booster.AddContainer),Is.EqualTo(1));
+            Assert.That(svc.Boosters(Booster.Remove),Is.EqualTo(1));
             store.Fail=false;
             Assert.That(svc.GrantRestartBoosterFromAd(now),Is.True);
             Assert.That(svc.GrantRestartBoosterFromAd(now),Is.False);

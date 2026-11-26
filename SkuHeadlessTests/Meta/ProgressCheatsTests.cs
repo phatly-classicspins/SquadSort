@@ -47,8 +47,8 @@ namespace SqadSort.SkuHeadlessTests.Meta
             store.Fail = true;
             Assert.That(cheats.AddCoins(500), Is.False);
             Assert.That(svc.Coins, Is.EqualTo(0));
-            Assert.That(cheats.AddBooster(Booster.AddContainer, 5), Is.False);
-            Assert.That(svc.Boosters(Booster.AddContainer), Is.EqualTo(0));
+            Assert.That(cheats.AddBooster(Booster.Remove, 5), Is.False);
+            Assert.That(svc.Boosters(Booster.Remove), Is.EqualTo(0));
             Assert.That(cheats.SetLevel(10, 30), Is.EqualTo(10));
             Assert.That(svc.CurrentLevel, Is.EqualTo(1));
         }

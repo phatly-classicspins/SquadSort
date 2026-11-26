@@ -124,7 +124,7 @@ namespace Game.Application
         /// <summary>A booster as a currency and as a feature: <c>ap_booster_undo</c> / <c>_shuffle</c> / <c>_remove</c>.</summary>
         public static string Booster(Game.Application.Booster id) =>
             id == Game.Application.Booster.Undo ? "ap_booster_undo"
-            : id == Game.Application.Booster.Shuffle ? "ap_booster_shuffle" : "ap_booster_add_container";
+            : id == Game.Application.Booster.Shuffle ? "ap_booster_shuffle" : "ap_booster_remove";
 
         /// <summary>An element as a feature, the name it has in the save.</summary>
         public static string Element(ElementId id) =>
@@ -478,7 +478,7 @@ namespace Game.Application
             Add(pack.Coins > 0, TrackingNames.Coins, "Coins", "soft");
             Add(pack.BoosterEach > 0, TrackingNames.Booster(Booster.Undo), "Undo", "soft");
             Add(pack.BoosterEach > 0, TrackingNames.Booster(Booster.Shuffle), "Shuffle", "soft");
-            Add(pack.BoosterEach > 0, TrackingNames.Booster(Booster.AddContainer), "Add Container", "soft");
+            Add(pack.BoosterEach > 0, TrackingNames.Booster(Booster.Remove), "Remove", "soft");
             Add(pack.UnlimitedLivesHours > 0, TrackingNames.InfiniteLives, "Infinite Lives", "soft");
             Add(pack.RemoveAds, "remove_ads", "Remove Ads", "feature");
             return "[" + string.Join(",", items) + "]";
@@ -553,7 +553,7 @@ namespace Game.Application
             if (currency == TrackingNames.Lives) return p.Lives;
             if (currency == TrackingNames.Booster(Booster.Undo)) return p.BoosterUndo;
             if (currency == TrackingNames.Booster(Booster.Shuffle)) return p.BoosterShuffle;
-            if (currency == TrackingNames.Booster(Booster.AddContainer)) return p.BoosterAddContainer;
+            if (currency == TrackingNames.Booster(Booster.Remove)) return p.BoosterAddContainer;
             return 0;
         }
 

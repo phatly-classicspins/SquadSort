@@ -33,6 +33,9 @@ namespace Game.Presentation
         // Shuffle booster armed: the next tube tap shuffles that tube instead of moving a group.
         private bool _shufflePicking;
 
+        // Remove booster armed: the next buddy tap (a container's front, or the floor) is Remove's choice of colour.
+        private bool _removePicking;
+
         public BoardPresenter(BoardView view, IWorldViewport viewport)
         {
             _view = view ? view : throw new ArgumentNullException(nameof(view));
@@ -54,7 +57,12 @@ namespace Game.Presentation
         /// <summary>Raised when an armed Shuffle ends — used on a tube, or cancelled.</summary>
         public event Action ShufflePickEnded;
 
+        /// <summary>Raised when an armed Remove ends — used on a buddy, or cancelled.</summary>
+        public event Action RemovePickEnded;
+
         public bool IsShufflePicking => _shufflePicking;
+
+        public bool IsRemovePicking => _removePicking;
 
         /// <summary>FTUE: while set, only this tube takes a tap and the plaza takes none. -1 = free play. The screen decides
         /// which tube (the one to select, then the one to send to); the presenter only gates.</summary>
@@ -71,7 +79,31 @@ namespace Game.Presentation
         {
             if (_walking > 0) return;
             Drop();
+            CancelRemovePick();
             _shufflePicking = true;
+        }
+
+        /// <summary>Arm the Remove booster (Squad Sort GDD §1.5): the next buddy tapped picks the colour. Drops any held group.</summary>
+        public void BeginRemovePick()
+        {
+            if (_walking > 0) return;
+            Drop();
+            CancelShufflePick();
+            _removePicking = true;
+        }
+
+        /// <summary>Disarm the Remove booster without using it.</summary>
+        public void CancelRemovePick()
+        {
+            if (!_removePicking) return;
+            _removePicking = false;
+            RemovePickEnded?.Invoke();
+        }
+
+        /// <summary>Replay a result made outside a tap (a booster used from the lose flow): animate it, raise the events.</summary>
+        public void Play(MoveResult result)
+        {
+            if (result != null && result.Accepted) Apply(result);
         }
 
         /// <summary>Disarm the Shuffle booster without using it.</summary>
@@ -91,6 +123,7 @@ namespace Game.Presentation
             _pickedIds.Clear();
             _pickedIndex = -1;
             _shufflePicking = false;
+            _removePicking = false;
             _shown.Clear();
             _view.Clear();
 
@@ -175,6 +208,13 @@ namespace Game.Presentation
                 return;
             }
 
+            if (_removePicking)
+            {
+                Tube t = _session.Board.Tubes[tube];
+                if (t.Top != null) RemoveOn(t.Top.Id);   // any buddy of a container means its front
+                return;
+            }
+
             if (GuidedTube >= 0 && tube != GuidedTube) return; // FTUE: only the pointed tube
             Board board = _session.Board;
             if (_pickedIndex < 0)
@@ -212,6 +252,14 @@ namespace Game.Presentation
                 return;
             }
 
+            if (_removePicking)
+            {
+                Buddy on = _session.Board.Plaza[cell].Occupant;
+                if (on != null) RemoveOn(on.Id);
+                else CancelRemovePick(); // an empty tile disarms the booster
+                return;
+            }
+
             if (GuidedTube >= 0) return; // FTUE: only the pointed tube
             Board board = _session.Board;
             if (!board.Plaza[cell].IsFree)
@@ -237,6 +285,21 @@ namespace Game.Presentation
                 Apply(result);
             }
             else Refuse(result.Reject);
+        }
+
+        // The armed Remove on a buddy: the squad forms and clears; refused, the buddy winces and Remove stays armed.
+        private void RemoveOn(int buddyId)
+        {
+            MoveResult r = _session.Remove(buddyId);
+            if (r == null || !r.Accepted)
+            {
+                _view.WinceBuddy(buddyId);
+                return;
+            }
+
+            _removePicking = false;
+            RemovePickEnded?.Invoke();
+            Apply(r);
         }
 
         /// <summary>Select a tube's front group, or every floor buddy of the tapped buddy's colour; they lift.</summary>

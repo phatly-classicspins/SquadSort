@@ -81,6 +81,13 @@ Mỗi ô chứa tối đa **1 nhân vật**. Nhân vật có **màu** (video: t�
     Popup "House Unlocked!": "Complete the matching color to open the house and free the characters inside."
 
 ### 2.3 Thao tác — chọn rồi thả (đổi 2026-11-19)
+> **2026-11-26 — booster thứ ba là Remove** (GDD Squad Sort mới §1.5) thay cho Add Container, mở ở level 15 (chủ dự án chốt).
+> Bật Remove rồi chạm một thú: chạm thú ở đầu ống ⇒ ống đó; chạm thú trên sàn ⇒ ống đang lộ nhiều thú màu đó nhất, không có
+> ống nào thì không cho dùng. Thú khác màu trong ống đổi chỗ với thú cùng màu (sàn trước, rồi từ miệng các ống vào trong),
+> lấy thêm cho đủ 4 rồi đội tan. Không lấy thú trong nhà đang khoá; không đủ 4 thì không cho dùng, không trừ lượt. Undo hoàn
+> tác được. Ở màn thua, Remove tự chọn màu có nhiều thú nhất trên sàn. Thêm ống rỗng (Add Container) không còn là booster,
+> giữ trong code cho RV Slot sau này. Save và khoá remote config vẫn mang tên add_container (đổi khi chạy codegen).
+>
 > **2026-11-25 — đi thẳng ống → ống cần ít nhất 1 ô trống trên sàn** (GDD Squad Sort mới §1.2, chủ dự án chốt "ít nhất 1
 > ô"). Sàn đầy thì các ống không chuyển nhóm cho nhau; chỉ còn nước thú trên sàn đi vào ống. Thua = sàn đầy và không thú nào
 > trên sàn vào được ống. Solver giờ thử đủ nước hai chạm (ống → mọi ống nhận, sàn → mọi ống nhận, ống → sàn): cả 100 level
