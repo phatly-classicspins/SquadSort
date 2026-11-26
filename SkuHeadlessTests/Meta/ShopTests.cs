@@ -79,12 +79,12 @@ namespace SqadSort.SkuHeadlessTests.Meta
         }
 
         [Test]
-        public void Remove_ads_grants_no_booster()   // D-140: only what the popup shows (its 1,500 coins: the store's grant)
+        public void Remove_ads_grants_one_of_each_booster()   // Squad Sort GDD §6.1 (its 1,500 coins: the store's grant)
         {
             Assert.That(svc.GrantPurchase(P("remove_ads"), Now, TrackingNames.HomeShop), Is.True);
             var p = store.Progress;
             Assert.That((svc.Coins, p.BoosterUndo, p.BoosterShuffle, p.BoosterAddContainer, svc.UnlimitedLivesLeft(Now)),
-                Is.EqualTo((0L, 0, 0, 0, TimeSpan.Zero)));
+                Is.EqualTo((0L, 1, 1, 1, TimeSpan.Zero)));
         }
 
         [Test]

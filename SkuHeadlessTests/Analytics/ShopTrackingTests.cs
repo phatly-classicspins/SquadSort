@@ -51,7 +51,10 @@ namespace SqadSort.SkuHeadlessTests.Analytics
             var e = sink.Last(TrackingNames.IapCompleted);
             Assert.That((V(e, "item_category"), V(e, "receiptStatus"), V(e, "isTestPurchase")), Is.EqualTo(("shop", "success", true)));
             Assert.That(V(e, "reward"), Is.EqualTo("[{\"itemID\":\"coins\",\"Name\":\"Coins\",\"Type\":\"soft\"}," +
-                "{\"itemID\":\"remove_ads\",\"Name\":\"Remove Ads\",\"Type\":\"feature\"}]"));   // D-140: no boosters
+                "{\"itemID\":\"ap_booster_undo\",\"Name\":\"Undo\",\"Type\":\"soft\"}," +
+                "{\"itemID\":\"ap_booster_shuffle\",\"Name\":\"Shuffle\",\"Type\":\"soft\"}," +
+                "{\"itemID\":\"ap_booster_remove\",\"Name\":\"Remove\",\"Type\":\"soft\"}," +
+                "{\"itemID\":\"remove_ads\",\"Name\":\"Remove Ads\",\"Type\":\"feature\"}]"));   // GDD §6.1: each booster ×1
             t.IapCompleted(P("pack_small"), "Small Pack", TrackingNames.HomeShop);
             Assert.That((string)V(sink.Last(TrackingNames.IapCompleted), "reward"), Does.Contain("ap_booster_undo"));
             t.IapCompleted(P("starter_pack"), "Starter Pack", TrackingNames.StarterPopup);

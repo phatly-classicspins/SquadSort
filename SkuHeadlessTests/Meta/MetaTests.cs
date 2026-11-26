@@ -216,15 +216,15 @@ namespace SqadSort.SkuHeadlessTests.Meta
         [Test]
         public void Buying_a_booster_spends_its_price_and_a_failed_save_refunds_and_takes_it_back()
         {
-            wallet.Grant(SqadSortResources.Coin, 100, GrantSource.Reward);
-            Assert.That(svc.TryBuyBooster(Booster.Remove), Is.False, "120 > 100");
-            Assert.That((svc.Coins, svc.Boosters(Booster.Remove)), Is.EqualTo((100L, 0)));
+            wallet.Grant(SqadSortResources.Coin, 1300, GrantSource.Reward);
+            Assert.That(svc.TryBuyBooster(Booster.Remove), Is.False, "1500 > 1300");
+            Assert.That((svc.Coins, svc.Boosters(Booster.Remove)), Is.EqualTo((1300L, 0)));
             Assert.That(svc.TryBuyBooster(Booster.Shuffle), Is.True);
-            Assert.That((svc.Coins, svc.Boosters(Booster.Shuffle)), Is.EqualTo((20L, 3)), "CR-013: one purchase gives 3");
-            wallet.Grant(SqadSortResources.Coin, 200, GrantSource.Reward);
+            Assert.That((svc.Coins, svc.Boosters(Booster.Shuffle)), Is.EqualTo((100L, 3)), "GDD: 1200 coins give 3");
+            wallet.Grant(SqadSortResources.Coin, 900, GrantSource.Reward);
             store.Fail = true;
             Assert.That(svc.TryBuyBooster(Booster.Undo), Is.False);
-            Assert.That((svc.Coins, svc.Boosters(Booster.Undo)), Is.EqualTo((220L, 0)), "G18: coins and booster both restored");
+            Assert.That((svc.Coins, svc.Boosters(Booster.Undo)), Is.EqualTo((1000L, 0)), "G18: coins and booster both restored");
         }
 
         [Test]
