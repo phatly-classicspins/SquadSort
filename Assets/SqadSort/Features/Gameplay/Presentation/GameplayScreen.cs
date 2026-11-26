@@ -658,7 +658,9 @@ namespace Game.Presentation
 
         // ------------------------------------------------------------------ lose (CardSlot, on a full plaza)
 
-        private bool CanRevive => _paidRevives + _reviveAds < _tuning.ReviveMaxPerAttempt && _session.Board.NextPlazaCell().HasValue;
+        // a revive needs somewhere to go on: a free Remove that works, else (no colour Remove can gather) one more floor tile
+        private bool CanRevive => _paidRevives + _reviveAds < _tuning.ReviveMaxPerAttempt
+            && (_session.Board.AutoRemoveBuddy() >= 0 || _session.Board.NextPlazaCell().HasValue);
 
         private bool AnyUnlocked() => Enum.GetValues(typeof(Booster)).Cast<Booster>().Any(_progress.IsUnlocked);
 
@@ -705,13 +707,13 @@ namespace Game.Presentation
                             if (_progress.Coins < price) { await OpenShopForCoins(TrackingNames.Revive); continue; }
                             if (!_progress.TrySpendCoins(price, TrackingNames.Revive)) continue;
                             _paidRevives++;
-                            AddSpace();
+                            await Revive();
                             return;
                         case LoseChoice.ReviveAd:
                             if (!_tuning.CanRewardedRevive(_reviveAds)) continue;
                             if (!await Rewarded(AdPlacements.RewardedRevive, TrackingNames.Revive, Reward("revive", 1))) continue;
                             _reviveAds++;
-                            AddSpace();
+                            await Revive();
                             return;
                         case LoseChoice.Booster0:
                         case LoseChoice.Booster1:
@@ -733,7 +735,38 @@ namespace Game.Presentation
             }
         }
 
-        // Play On in SqadSort: one more plaza cell (GDD §2.4 Add Space), and the board goes on
+        // Revive (Squad Sort GDD §1.3): play on from where it stopped with revive.removes free Removes (GDD: 1), each on the
+        // colour with the most buddies on the floor. Not from the stock, and Remove need not be unlocked. When Remove can gather
+        // no colour, one more floor tile instead (the old Add Space). A Remove that leaves the floor full (its swaps put the other
+        // colours where the picked ones stood) gets the floor tile first, so a paid revive always frees the board
+        private async UniTask Revive()
+        {
+            Board board = _session.Board;
+            if (board.FreeingRemoveBuddy() < 0 && board.AutoRemoveBuddy() >= 0 && board.NextPlazaCell() is GridPos cell)
+            {
+                _session.AddSpace(cell);
+                _presenter.Show(_session);
+                _log.Info($"[GameplayScreen] revive: no Remove frees level {_level}; one more floor tile first.");
+            }
+
+            int done = 0;
+            for (int i = 0; i < _tuning.ReviveRemoves; i++)
+            {
+                if (done > 0) await AnimationsDone(ReviveRemoveBeatSeconds);   // let the last squad clear before the next one forms
+                MoveResult removed = _session.ReviveRemove();
+                if (removed == null || !removed.Accepted) break;
+                _log.Info($"[GameplayScreen] revive: free Remove on level {_level}.");
+                _presenter.Play(removed);
+                done++;
+                if (_session.Board.State != BoardState.Playing) break;   // that Remove won the level
+            }
+
+            if (done == 0) AddSpace();
+        }
+
+        private const float ReviveRemoveBeatSeconds = 0.6f;
+
+        // one more plaza cell (GDD §2.4 Add Space), and the board goes on: the revive's fallback
         private void AddSpace()
         {
             GridPos? cell = _session.Board.NextPlazaCell();

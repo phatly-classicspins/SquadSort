@@ -351,6 +351,33 @@ namespace Game.Domain
         /// </summary>
         public int AutoRemoveBuddy()
         {
+            List<int> order = AutoRemoveOrder();
+            foreach (int id in order) if (CanRemove(id)) return id;
+            return -1;
+        }
+
+        /// <summary>
+        /// Like <see cref="AutoRemoveBuddy"/>, but only a Remove after which the board is no longer out of space — the revive must
+        /// free the board. A swap leaves the floor as full as it was (each buddy swapped out stands where one of the colour
+        /// left), so the first colour in GDD order may not do it. -1 when no Remove frees the board.
+        /// </summary>
+        public int FreeingRemoveBuddy()
+        {
+            foreach (int id in AutoRemoveOrder())
+            {
+                BoardSnapshot before = Snapshot();
+                MoveResult r = Remove(id);
+                bool frees = r.Accepted && State != BoardState.OutOfSpace;
+                Restore(before);
+                if (frees) return id;
+            }
+            return -1;
+        }
+
+        // the buddies AutoRemoveBuddy tries, in order: one floor buddy per colour (most on the floor first, tie: the most buried),
+        // then every container's front buddy
+        private List<int> AutoRemoveOrder()
+        {
             var onFloor = new Dictionary<SquadColor, List<Buddy>>();
             foreach (PlazaCell c in _plaza)
             {
@@ -377,11 +404,11 @@ namespace Game.Domain
                 int byFloor = onFloor[b].Count.CompareTo(onFloor[a].Count);
                 return byFloor != 0 ? byFloor : Buried(b).CompareTo(Buried(a));
             });
-            foreach (SquadColor color in colours)
-                if (CanRemove(onFloor[color][0].Id)) return onFloor[color][0].Id;
+            var order = new List<int>();
+            foreach (SquadColor color in colours) order.Add(onFloor[color][0].Id);
             foreach (Tube t in _tubes)
-                if (t.IsActive && t.TopRunLength() > 0 && CanRemove(t.Top.Id)) return t.Top.Id;
-            return -1;
+                if (t.IsActive && t.TopRunLength() > 0) order.Add(t.Top.Id);
+            return order;
         }
 
         private Buddy TakeAt(BuddyLocation at)
