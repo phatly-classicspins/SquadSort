@@ -22,7 +22,7 @@ namespace Game.Application
         public double WinBonusAdDelaySeconds = 1;
         public int RevivePrice = 900;           // CR-013: revive_base_cost, coins for the first revive of an attempt …
         public double RevivePriceGrowth = 1.0;  // … × this for each further one (revive_cost_growth; 1 = same price)
-        public int ReviveRemoves = 2;           // R-22: poles a revive clears for free
+        public int ReviveRemoves = 1;           // Squad Sort GDD §1.3: free Removes a revive uses (R-22 was 2 poles)
         public int ReviveMaxAdsPerAttempt = 1;
         public int RetryBoosterMaxPerDay = 3;
         public int LevelLoopLastLevel = 40, LevelLoopStartLevel = 21;

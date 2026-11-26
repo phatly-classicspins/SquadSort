@@ -81,6 +81,12 @@ Mỗi ô chứa tối đa **1 nhân vật**. Nhân vật có **màu** (video: t�
     Popup "House Unlocked!": "Complete the matching color to open the house and free the characters inside."
 
 ### 2.3 Thao tác — chọn rồi thả (đổi 2026-11-19)
+> **2026-11-26 — hồi sinh dùng 1 Remove miễn phí** (GDD Squad Sort mới §1.3): Hồi sinh bằng xu hoặc quảng cáo chơi tiếp từ chỗ dừng và
+> dùng ngay `revive.removes` (mặc định 1) Remove miễn phí lên màu có nhiều thú trên sàn nhất. Không trừ kho, không cần đã mở
+> Remove, và Undo không quay về được bàn đã thua. Thú bị đổi ra đứng vào chỗ thú màu đó vừa rời đi, nên màu GDD chọn có thể
+> vẫn để sàn đầy và thua lại ngay: khi đó lấy màu kế tiếp theo cùng thứ tự mà làm bàn chơi tiếp được. Không màu nào làm được
+> thì thêm 1 ô sàn rồi mới Remove; Remove không gom được màu nào thì chỉ thêm 1 ô sàn như Add Space cũ.
+>
 > **2026-11-26 — booster thứ ba là Remove** (GDD Squad Sort mới §1.5) thay cho Add Container, mở ở level 15 (chủ dự án chốt).
 > Bật Remove rồi chạm một thú: chạm thú ở đầu ống ⇒ ống đó; chạm thú trên sàn ⇒ ống đang lộ nhiều thú màu đó nhất, không có
 > ống nào thì không cho dùng. Thú khác màu trong ống đổi chỗ với thú cùng màu (sàn trước, rồi từ miệng các ống vào trong),

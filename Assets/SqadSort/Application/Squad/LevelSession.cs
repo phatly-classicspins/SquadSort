@@ -96,6 +96,20 @@ namespace Game.Application
             return buddy < 0 ? null : Remove(buddy);
         }
 
+        /// <summary>Revive (Squad Sort GDD §1.3): one free Remove, no charge, so it works with Remove locked or none owned. Takes
+        /// the first colour in GDD order whose Remove frees the board (<see cref="Board.FreeingRemoveBuddy"/>), else the GDD's
+        /// own pick (<see cref="Board.AutoRemoveBuddy"/>). Undo cannot reach back past it (that would bring the lost board back
+        /// with the revive spent). Null when Remove can do nothing here.</summary>
+        public MoveResult ReviveRemove()
+        {
+            int buddy = Board.FreeingRemoveBuddy();
+            if (buddy < 0) buddy = Board.AutoRemoveBuddy();
+            if (buddy < 0) return null;
+            MoveResult r = Board.Remove(buddy);
+            if (r.Accepted) _history.Clear();
+            return r;
+        }
+
         /// <summary>The level's spare tube (kept for the GDD §1.3 RV Slot; no booster spends it). Returns its index, or -1
         /// (already added, or no spare slot).</summary>
         public int AddSpareTube()
