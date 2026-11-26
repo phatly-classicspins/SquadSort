@@ -47,13 +47,25 @@ namespace Game.Presentation
         }
 
         public void Click() => Play(AudioKeys.SfxUiClick, HapticType.Light);
-        public void Tap() => Play(AudioKeys.SfxTap, HapticType.Medium);
-        public void ChipsFlew() => Play(AudioKeys.SfxChipFly);
-        public void CardLanded() => Play(AudioKeys.SfxCardLandTarget);
-        public void TargetCompleted() => Play(AudioKeys.SfxTargetComplete, HapticType.Medium);
-        public void Revealed() => Play(AudioKeys.SfxReveal);
         public void Unlocked() => Play(AudioKeys.SfxUnlock);
-        public void Shuffled() => Play(AudioKeys.SfxShuffle);
+
+        // Squad Sort GDD §4, gameplay: sound and haptic strength of each moment (light / medium / heavy)
+        /// <summary>Buddy Select: a group was picked up, in a container or on the floor.</summary>
+        public void Selected() => Play(AudioKeys.SfxTap, HapticType.Light);
+        /// <summary>Buddy Move: buddies jumped out and walked to the floor or into a container.</summary>
+        public void Moved() => Play(AudioKeys.SfxChipFly, HapticType.Light);
+        /// <summary>Squad Complete: a container held four of one colour and left.</summary>
+        public void SquadCompleted() => Play(AudioKeys.SfxTargetComplete, HapticType.Medium);
+        /// <summary>Hidden Reveal: a hidden buddy showed its colour.</summary>
+        public void Revealed() => Play(AudioKeys.SfxReveal, HapticType.Light);
+        /// <summary>House Open: a house opened after the squad of its colour left.</summary>
+        public void HouseOpened() => Play(AudioKeys.SfxHouseOpen, HapticType.Medium);
+        /// <summary>Undo: the last move was rewound.</summary>
+        public void Undone() => Play(AudioKeys.SfxUndo, HapticType.Light);
+        /// <summary>Shuffle: a container's buddies were mixed.</summary>
+        public void Shuffled() => Play(AudioKeys.SfxShuffle, HapticType.Medium);
+        /// <summary>Remove: buddies swapped, the container filled and its squad left.</summary>
+        public void Removed() => Play(AudioKeys.SfxRemove, HapticType.Heavy);
         public void Coins() => Play(AudioKeys.SfxCoin);
         public void BoosterReward() => Play(AudioKeys.SfxBoosterReward);
         public void Won() => Play(AudioKeys.SfxWin, HapticType.Heavy);

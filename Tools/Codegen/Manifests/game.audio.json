@@ -21,6 +21,9 @@
     { "id": "SfxReveal", "value": "sfx_reveal", "order": 10 },
     { "id": "SfxUnlock", "value": "sfx_unlock", "order": 11 },
     { "id": "SfxShuffle", "value": "sfx_shuffle", "order": 12 },
-    { "id": "SfxChipFly", "value": "sfx_chip_fly", "order": 13 }
+    { "id": "SfxChipFly", "value": "sfx_chip_fly", "order": 13 },
+    { "id": "SfxUndo", "value": "sfx_undo", "order": 14 },
+    { "id": "SfxRemove", "value": "sfx_remove", "order": 15 },
+    { "id": "SfxHouseOpen", "value": "sfx_house_open", "order": 16 }
   ]
 }
