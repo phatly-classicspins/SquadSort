@@ -140,6 +140,7 @@ namespace Game.Presentation
             _presenter.LevelEnded += OnLevelEnded;
             _presenter.Changed += Draw;
             _presenter.SelectionChanged += OnSelectionChanged;
+            _presenter.Replayed += OnReplayed;
             _presenter.ShufflePickEnded += OnShuffleDone;
             _presenter.RemovePickEnded += OnRemoveDone;
 
@@ -188,6 +189,7 @@ namespace Game.Presentation
                 _presenter.LevelEnded -= OnLevelEnded;
                 _presenter.Changed -= Draw;
                 _presenter.SelectionChanged -= OnSelectionChanged;
+                _presenter.Replayed -= OnReplayed;
                 _presenter.ShufflePickEnded -= OnShuffleDone;
                 _presenter.RemovePickEnded -= OnRemoveDone;
                 _presenter.Dispose();
@@ -834,6 +836,7 @@ namespace Game.Presentation
                 case Booster.Undo:
                     if (!_session.Undo() || !_progress.TryUseBooster(id)) return false;
                     _presenter.Show(_session);
+                    _feedback.Undone();
                     return true;
                 case Booster.Remove:
                     // no tap on a lost board: Remove takes the colour GDD §1.3 names (most on the floor)
@@ -949,7 +952,7 @@ namespace Game.Presentation
             {
                 case Booster.Undo:
                     used = _session.Undo() && _progress.TryUseBooster(id);
-                    if (used) _presenter.Show(_session);   // rebuild from the restored state
+                    if (used) { _presenter.Show(_session); _feedback.Undone(); }   // rebuild from the restored state
                     break;
                 case Booster.Shuffle:
                     // armed until a tube is tapped; the saved booster is spent when the shuffle happens (OnShuffleDone)
@@ -1022,7 +1025,31 @@ namespace Game.Presentation
         // a group picked up or put down moves the FTUE between its Select and Group steps (a move is seen in Draw)
         private void OnSelectionChanged()
         {
+            if (_presenter.HasSelection) _feedback.Selected();
             if (_ftueOn) Tutorial();
+        }
+
+        // Squad Sort GDD §4: each moment of a replayed result sounds when it shows — the walk at once, a reveal and a
+        // completed squad when the buddies settle, an opened house as the cleared container goes
+        private void OnReplayed(MoveResult result, ReplayKind kind, float settled, float cleared)
+        {
+            if (kind == ReplayKind.Remove) _feedback.Removed();
+            else if (kind == ReplayKind.Shuffle) _feedback.Shuffled();
+            else if (result.Moves.Count > 0) _feedback.Moved();
+            if (result.RevealedBuddies.Count > 0) FeedbackLater(settled, _feedback.Revealed);
+            if (result.ClearedTubes.Count > 0 && kind != ReplayKind.Remove) FeedbackLater(settled, _feedback.SquadCompleted);
+            if (result.OpenedHouses.Count > 0) FeedbackLater(cleared, _feedback.HouseOpened);
+        }
+
+        private void FeedbackLater(float seconds, Action play)
+        {
+            if (seconds <= 0f) { play(); return; }
+            UniTask.Void(async () =>
+            {
+                if (await UniTask.Delay(TimeSpan.FromSeconds(seconds), DelayType.UnscaledDeltaTime, cancellationToken: _cts.Token)
+                        .SuppressCancellationThrow()) return;
+                play();
+            });
         }
 
         private void HideFtue()

@@ -23,5 +23,8 @@ namespace Game.Gen
         public static readonly AudioKey SfxUnlock         = new("sfx_unlock");
         public static readonly AudioKey SfxShuffle        = new("sfx_shuffle");
         public static readonly AudioKey SfxChipFly        = new("sfx_chip_fly");
+        public static readonly AudioKey SfxUndo           = new("sfx_undo");
+        public static readonly AudioKey SfxRemove         = new("sfx_remove");
+        public static readonly AudioKey SfxHouseOpen      = new("sfx_house_open");
     }
 }

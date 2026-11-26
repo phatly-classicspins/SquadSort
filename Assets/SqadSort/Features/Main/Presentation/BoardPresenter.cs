@@ -71,6 +71,13 @@ namespace Game.Presentation
         /// <summary>Raised when the selection changes — a group picked up, swapped or put down (not a move; see Changed).</summary>
         public event Action SelectionChanged;
 
+        /// <summary>A result was animated: what made it, then the seconds until the buddies settle and until a cleared squad's
+        /// container is gone (both 0 when nothing moves or clears).</summary>
+        public event Action<MoveResult, ReplayKind, float, float> Replayed;
+
+        /// <summary>A group is picked up (in a container or on the floor).</summary>
+        public bool HasSelection => _pickedIds.Count > 0;
+
         /// <summary>The tube whose front group is selected; -1 when nothing, or a floor group, is selected.</summary>
         public int SelectedTube => _pickedIndex >= 0 && _pickedTube ? _pickedIndex : -1;
 
@@ -103,7 +110,7 @@ namespace Game.Presentation
         /// <summary>Replay a result made outside a tap (a booster used from the lose flow): animate it, raise the events.</summary>
         public void Play(MoveResult result)
         {
-            if (result != null && result.Accepted) Apply(result);
+            if (result != null && result.Accepted) Apply(result, ReplayKind.Remove);
         }
 
         /// <summary>Disarm the Shuffle booster without using it.</summary>
@@ -204,7 +211,7 @@ namespace Game.Presentation
                 if (shuffled == null || !shuffled.Accepted) return; // not a tube that can shuffle — stay armed
                 _shufflePicking = false;
                 ShufflePickEnded?.Invoke();
-                Apply(shuffled);
+                Apply(shuffled, ReplayKind.Shuffle);
                 return;
             }
 
@@ -299,7 +306,7 @@ namespace Game.Presentation
 
             _removePicking = false;
             RemovePickEnded?.Invoke();
-            Apply(r);
+            Apply(r, ReplayKind.Remove);
         }
 
         /// <summary>Select a tube's front group, or every floor buddy of the tapped buddy's colour; they lift.</summary>
@@ -354,7 +361,7 @@ namespace Game.Presentation
 
         // ------------------------------------------------------------------ replay
 
-        private void Apply(MoveResult result)
+        private void Apply(MoveResult result, ReplayKind kind = ReplayKind.Move)
         {
             Board board = _session.Board;
 
@@ -409,6 +416,7 @@ namespace Game.Presentation
 
             RefreshAwake();
             Changed?.Invoke();
+            Replayed?.Invoke(result, kind, settled, cleared);
 
             if (result.State != BoardState.Playing)
             {
@@ -466,4 +474,7 @@ namespace Game.Presentation
             }
         }
     }
+
+    /// <summary>What a replayed result came from: a player's move, or a booster.</summary>
+    public enum ReplayKind { Move, Shuffle, Remove }
 }
