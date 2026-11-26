@@ -66,3 +66,7 @@ Assets/GeneratedLocalRepo.meta
 # Firebase Crashlytics writes a fresh build id into this on every build (as in CardSlot).
 Assets/Plugins/Android/FirebaseCrashlytics.androidlib/
 Assets/Plugins/Android/FirebaseCrashlytics.androidlib.meta
+
+# Local play-test output: Game view captures and the Unity MCP plugin's working folder (snippets, cache).
+/Screenshots/
+/.ai-game-dev/
