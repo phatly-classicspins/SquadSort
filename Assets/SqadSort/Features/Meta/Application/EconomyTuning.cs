@@ -41,12 +41,13 @@ namespace Game.Application
         public int UndoUnlockLevel = 5, ShuffleUnlockLevel = 11, AddContainerUnlockLevel = 15;   // SqadSort GDD §3
         // AddContainer* hold the Remove booster's values (Squad Sort GDD §1.5): the remote-config keys keep their
         // booster_add_container_* names until a codegen run renames them, and every key must match a field of its name.
-        public int UndoPrice = 100, ShufflePrice = 80, AddContainerPrice = 120;
+        // Squad Sort GDD §5 "Công cụ hỗ trợ": weak (Undo) 900, medium (Shuffle) 1200, strong (Remove) 1500 coins for 3; an ad gives 1
+        public int UndoPrice = 900, ShufflePrice = 1200, AddContainerPrice = 1500;
         public int UndoBuyAmount = 3, ShuffleBuyAmount = 3, AddContainerBuyAmount = 3;
         public int UndoAdAmount = 1, ShuffleAdAmount = 1, AddContainerAdAmount = 1;   // "▶ Free" in the buy dialog
         public int BoosterUnlockGift = 3;
         // D elements (GDD v2.0 §4.1): the level that introduces each — also the milestones of the Win progress bar (§4.2)
-        public int HiddenLevel = 8, HouseLevel = 20;   // SqadSort GDD §2.2b-11/12
+        public int HiddenLevel = 8, HouseLevel = 20;   // the level pack shows hidden buddies from 8 (Squad Sort GDD §1.4 says 10)
         // E lives (GDD v2.0 §4.3, §7 lives.max / lives.refill_minutes)
         public int LivesMax = 5;
         public int LivesRefillMinutes = 20;

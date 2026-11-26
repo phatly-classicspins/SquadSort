@@ -36,7 +36,7 @@ namespace Game.Application
 
         public static readonly IReadOnlyList<ShopPack> All = new[]
         {
-            new ShopPack(RemoveAdsId,    ShopSection.RemoveAds, 1500,   0, 0, true,  true,  5.99m,  ShopTag.Hot),   // D-140: no boosters, as the popup shows
+            new ShopPack(RemoveAdsId,    ShopSection.RemoveAds, 1500,   1, 0, true,  true,  5.99m,  ShopTag.Hot),   // Squad Sort GDD §6.1: each booster ×1 (D-140 had none)
             new ShopPack(StarterId,      ShopSection.Limited,   2500,   2, 2, false, true,  1.99m,  ShopTag.Off),
             new ShopPack("pack_small",   ShopSection.Special,   2500,   2, 1, false, false, 4.99m,  ShopTag.None),
             new ShopPack("pack_medium",  ShopSection.Special,   10000,  5, 2, false, false, 9.99m,  ShopTag.None),
@@ -44,9 +44,9 @@ namespace Game.Application
             new ShopPack("coins_1K",     ShopSection.Gold,      1000,   0, 0, false, false, 1.99m,  ShopTag.None),
             new ShopPack("coins_5K",     ShopSection.Gold,      5000,   0, 0, false, false, 4.99m,  ShopTag.None),
             new ShopPack("coins_10K",    ShopSection.Gold,      10000,  0, 0, false, false, 8.99m,  ShopTag.None),
-            new ShopPack("coins_25K",    ShopSection.Gold,      25000,  0, 0, false, false, 18.99m, ShopTag.None),
+            new ShopPack("coins_25K",    ShopSection.Gold,      25000,  0, 0, false, false, 19.99m, ShopTag.None),   // GDD §6.1 (25/11)
             new ShopPack("coins_50K",    ShopSection.Gold,      50000,  0, 0, false, false, 34.99m, ShopTag.None),
-            new ShopPack("coins_100K",   ShopSection.Gold,      100000, 0, 0, false, false, 65.99m, ShopTag.BestValue),
+            new ShopPack("coins_100K",   ShopSection.Gold,      100000, 0, 0, false, false, 69.99m, ShopTag.BestValue),
         };
 
         public static ShopPack Find(string id)

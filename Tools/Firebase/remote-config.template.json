@@ -190,21 +190,21 @@
         },
         "booster_undo_coin_price": {
           "defaultValue": {
-            "value": "100"
+            "value": "900"
           },
           "description": "SqadSort config key booster_undo_coin_price",
           "valueType": "NUMBER"
         },
         "booster_shuffle_coin_price": {
           "defaultValue": {
-            "value": "80"
+            "value": "1200"
           },
           "description": "SqadSort config key booster_shuffle_coin_price",
           "valueType": "NUMBER"
         },
         "booster_add_container_coin_price": {
           "defaultValue": {
-            "value": "120"
+            "value": "1500"
           },
           "description": "SqadSort config key booster_add_container_coin_price",
           "valueType": "NUMBER"
