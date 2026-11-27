@@ -225,6 +225,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 94205a56f85c66c41a8f4adde24042ce
+    m_Address: Gameplay/RewindOverlayUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 974ce21db4bcf8242ad99829116f0021
     m_Address: Scenes/Main
     m_ReadOnly: 0
