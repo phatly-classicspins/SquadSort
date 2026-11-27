@@ -835,8 +835,7 @@ namespace Game.Presentation
             {
                 case Booster.Undo:
                     if (!_session.Undo() || !_progress.TryUseBooster(id)) return false;
-                    _presenter.Show(_session);
-                    _feedback.Undone();
+                    PlayRewind();
                     return true;
                 case Booster.Remove:
                     // no tap on a lost board: Remove takes the colour GDD §1.3 names (most on the floor)
@@ -925,6 +924,21 @@ namespace Game.Presentation
 
         // ------------------------------------------------------------------ boosters
 
+        // Undo (Squad Sort GDD §1.5): the undone move plays backwards — its buddies walk back — under the full-screen
+        // "◀◀ REW" tape effect, held while they walk (a short beat at least); the effect takes taps until it fades
+        private void PlayRewind()
+        {
+            float walk = _presenter.Rewind(_session);
+            _feedback.Undone();
+            var prefab = _hud.RewindOverlay;
+            if (prefab == null) return;
+            var overlay = Object.Instantiate(prefab, _layers.GetHost(RenderLayers.Popup), false);
+            _layers.Stamp(overlay.gameObject, RenderLayers.Popup);
+            overlay.Play(Mathf.Max(RewindMinHold, walk));
+        }
+
+        private const float RewindMinHold = 0.45f;
+
         private void OnBoosterPressed(int index)
         {
             // during the lose countdown a booster tile answers the countdown (the flow is busy, the board is lost)
@@ -952,7 +966,7 @@ namespace Game.Presentation
             {
                 case Booster.Undo:
                     used = _session.Undo() && _progress.TryUseBooster(id);
-                    if (used) { _presenter.Show(_session); _feedback.Undone(); }   // rebuild from the restored state
+                    if (used) PlayRewind();
                     break;
                 case Booster.Shuffle:
                     // armed until a tube is tapped; the saved booster is spent when the shuffle happens (OnShuffleDone)

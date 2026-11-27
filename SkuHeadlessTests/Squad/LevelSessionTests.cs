@@ -35,6 +35,22 @@ spare 2 -1 up";
         }
 
         [Test]
+        public void UndoKeepsTheMoveItTookBackSoItCanPlayBackwards()
+        {
+            LevelSession s = Session(TwoTubes);
+            Assert.That(s.LastUndone, Is.Null);
+            MoveResult first = s.TapTube(0);
+            MoveResult second = s.TapTube(1);
+
+            s.Undo();
+            Assert.That(s.LastUndone, Is.SameAs(second));
+            s.Undo();
+            Assert.That(s.LastUndone, Is.SameAs(first));
+            foreach (BuddyMove m in first.Moves)
+                Assert.That(s.Board.Locate(m.BuddyId), Is.EqualTo(m.From), "back where the undone move took it from");
+        }
+
+        [Test]
         public void UndoWithNothingToUndoCostsNothing()
         {
             LevelSession s = Session(TwoTubes);

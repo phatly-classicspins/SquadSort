@@ -19,7 +19,7 @@ namespace Game.Application
     /// </summary>
     public sealed class LevelSession
     {
-        private readonly Stack<BoardSnapshot> _history = new Stack<BoardSnapshot>();
+        private readonly Stack<(BoardSnapshot Before, MoveResult Move)> _history = new Stack<(BoardSnapshot, MoveResult)>();
         private readonly Dictionary<Booster, int> _charges;
         private readonly IRandom _random;
 
@@ -43,6 +43,9 @@ namespace Game.Application
 
         public int Charges(Booster booster) => _charges[booster];
 
+        /// <summary>The move the last <see cref="Undo"/> took back (its buddies walk back along it), null before any undo.</summary>
+        public MoveResult LastUndone { get; private set; }
+
         public MoveResult TapTube(int tube) => Record(() => Board.TapTube(tube));
 
         public MoveResult TapPlaza(int cell) => Record(() => Board.TapPlaza(cell));
@@ -57,7 +60,9 @@ namespace Game.Application
         public bool Undo()
         {
             if (!CanUndo) return false;
-            Board.Restore(_history.Pop());
+            (BoardSnapshot before, MoveResult move) = _history.Pop();
+            Board.Restore(before);
+            LastUndone = move;
             _charges[Booster.Undo]--;
             MovesMade = Math.Max(0, MovesMade - 1);
             return true;
@@ -70,7 +75,7 @@ namespace Game.Application
             BoardSnapshot before = Board.Snapshot();
             MoveResult r = Board.Shuffle(tube, _random);
             if (!r.Accepted) return r;
-            _history.Push(before);
+            _history.Push((before, r));
             _charges[Booster.Shuffle]--;
             return r;
         }
@@ -83,7 +88,7 @@ namespace Game.Application
             BoardSnapshot before = Board.Snapshot();
             MoveResult r = Board.Remove(buddyId);
             if (!r.Accepted) return r;
-            _history.Push(before);
+            _history.Push((before, r));
             _charges[Booster.Remove]--;
             return r;
         }
@@ -134,7 +139,7 @@ namespace Game.Application
             MoveResult r = action();
             if (r.Accepted)
             {
-                _history.Push(before);
+                _history.Push((before, r));
                 MovesMade++;
             }
 
