@@ -70,3 +70,14 @@ Assets/Plugins/Android/FirebaseCrashlytics.androidlib.meta
 # Local play-test output: Game view captures and the Unity MCP plugin's working folder (snippets, cache).
 /Screenshots/
 /.ai-game-dev/
+
+# UI review captures (before/after screenshots, galleries, zips): working output of Tools/UiMockup, regenerated per review.
+# Source art in docs/art (mockups, models, icons) stays tracked; ui-chip-away keeps its committed layout JSON.
+/docs/art/ui-*.zip
+/docs/art/*-review-*/
+/docs/art/popup-header-alignment-*/
+/docs/art/ui-native-*/
+/docs/art/ui-reskin-*/
+/docs/art/ui-chip-away-*/*
+!/docs/art/ui-chip-away-*/before-layout.json
+!/docs/art/ui-chip-away-*/original-assets.json
