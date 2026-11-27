@@ -50,9 +50,7 @@ namespace Game.Presentation
         public void Unlocked() => Play(AudioKeys.SfxUnlock);
 
         // Squad Sort GDD §4, gameplay: sound and haptic strength of each moment (light / medium / heavy)
-        /// <summary>Buddy Select: a group was picked up, in a container or on the floor.</summary>
-        public void Selected() => Play(AudioKeys.SfxTap, HapticType.Light);
-        /// <summary>Buddy Move: buddies jumped out and walked to the floor or into a container.</summary>
+        /// <summary>Buddy Move: a tap sent buddies out to the floor or into a container.</summary>
         public void Moved() => Play(AudioKeys.SfxChipFly, HapticType.Light);
         /// <summary>Squad Complete: a container held four of one colour and left.</summary>
         public void SquadCompleted() => Play(AudioKeys.SfxTargetComplete, HapticType.Medium);

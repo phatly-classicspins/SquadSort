@@ -19,8 +19,12 @@ namespace SqadSort.SkuHeadlessTests.Squad
         private static LevelDefinition Load(int number) => Pack.Levels[number - 1];
 
         /// <summary>Pack levels the solver cannot decide within its budget — not proven unsolvable, not proven solvable.
-        /// Reported as Ignored, never as a pass. Empty since the solver plays the two-tap moves (Level089 needed them).</summary>
+        /// Reported as Ignored, never as a pass. Empty: every pack level is decided with the one-tap moves.</summary>
         private static readonly HashSet<int> Undecided = new HashSet<int>();
+
+        /// <summary>Pack levels that need more than the solver's default budget (one-tap moves, 2026-11-27): Level099 solves
+        /// in 144 taps after about 570,000 states.</summary>
+        private static readonly Dictionary<int, int> BigBudget = new Dictionary<int, int> { [99] = 1000000 };
 
         [Test]
         public void ThereAreLevels() => Assert.That(Pack.Levels.Count, Is.GreaterThanOrEqualTo(8));
@@ -53,7 +57,7 @@ namespace SqadSort.SkuHeadlessTests.Squad
         {
             LevelDefinition level = Load(number);
             if (Undecided.Contains(number)) Assert.Ignore($"{level.Name}: too big for the solver's budget — play-test it by hand.");
-            LevelSolver.Solution s = LevelSolver.Solve(level);
+            LevelSolver.Solution s = BigBudget.TryGetValue(number, out int budget) ? LevelSolver.Solve(level, budget) : LevelSolver.Solve(level);
 
             Assert.That(s.Exhausted, Is.False, $"{level.Name}: search budget ran out after {s.StatesVisited} states");
             Assert.That(s.Solvable, Is.True, $"{level.Name}: no solution ({s.StatesVisited} states)");
