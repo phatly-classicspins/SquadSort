@@ -426,7 +426,7 @@ namespace Game.Presentation
             int destination = win.Saved ? win.NextLevel : _level;
             bool nextHard = _levels.GetLevel(Math.Min(Math.Max(1, destination), _levels.Count)).Difficulty != LevelDifficulty.Normal;
             var segments = _tuning.WinBonusSegments();
-            bool bonus = win.Reward > 0;   // a skipped level pays nothing, so there is nothing to multiply
+            bool bonus = win.Reward > 0 && skipped == null;   // Squad Sort GDD §7.4: a skip pays the level coins, never the bonus
             bool adReady = bonus && await AdReady(AdPlacements.RewardedWinDouble);
             var next = win.Final ? _loc.Get(LocKeys.WinPlayAgain) : _loc.Get(LocKeys.WinNext);
 
@@ -438,7 +438,7 @@ namespace Game.Presentation
                 return true;
             }
 
-            var result = await ShowLevelUp(win.Reward, next, segments, adReady, nextHard, PayBonus);
+            var result = await ShowLevelUp(win.Reward, next, segments, bonus, adReady, nextHard, PayBonus);
             if (result.Choice == WinChoice.Home) { GoHome(); return; }
             Draw();
             await LevelCompleteOffer(interstitial);
@@ -515,7 +515,7 @@ namespace Game.Presentation
             }
         }
 
-        private async UniTask<WinPick> ShowLevelUp(int reward, string next, int[] segments, bool adReady, bool nextHard,
+        private async UniTask<WinPick> ShowLevelUp(int reward, string next, int[] segments, bool offerBonus, bool adReady, bool nextHard,
             Func<int, UniTask<bool>> payBonus)
         {
             var ct = _cts.Token;
@@ -526,7 +526,7 @@ namespace Game.Presentation
             var token = lifetime.Token;
             var choice = new UniTaskCompletionSource<WinPick>();
             bool picked = false;
-            var needle = reward > 0 ? WinNeedle(segments) : null;
+            var needle = reward > 0 && offerBonus ? WinNeedle(segments) : null;   // no needle: the gauge and Bonus button hide
             long walletShown = 0;   // what the popup's wallet shows; the coins count it up as they land
             Action back = () => Finish(WinChoice.Home);
             try
