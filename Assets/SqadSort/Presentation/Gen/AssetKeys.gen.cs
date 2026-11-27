@@ -20,6 +20,7 @@ namespace Game.Presentation
             public static readonly AssetKey<GameObject> ElementTutorialUI = new("Gameplay/ElementTutorialUI");
             public static readonly AssetKey<GameObject> GameplayHud       = new("Gameplay/GameplayHud");
             public static readonly AssetKey<GameObject> HardLevelUI       = new("Gameplay/HardLevelUI");
+            public static readonly AssetKey<GameObject> RewindOverlayUI   = new("Gameplay/RewindOverlayUI");
         }
         public static class Home
         {
