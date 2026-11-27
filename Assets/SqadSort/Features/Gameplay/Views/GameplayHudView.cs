@@ -103,6 +103,8 @@ namespace Game.Views
         [SerializeField] private GameplayUI _moneySortHud;
         [SerializeField] private CanvasGroup _hardLevelIntro;
         public CanvasGroup HardLevelIntro => _hardLevelIntro;
+        [SerializeField] private RewindOverlayView _rewindOverlay;    // prefab: Undo's full-screen "◀◀ REW" tape effect
+        public RewindOverlayView RewindOverlay => _rewindOverlay;
         [SerializeField] private ElementTutorialUI _elementTutorial;   // prefab: the spotlight + hint after a new element's popup
         public ElementTutorialUI ElementTutorial => _elementTutorial;
         [SerializeField] private BoosterHelperUI _boosterHelper;       // prefab: the banner + pick hint + ✕ of a booster in use

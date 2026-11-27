@@ -53,6 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Game.Views::Game.Views.BoardView
   _moneySortHud: {fileID: 3718074914267643275}
   _hardLevelIntro: {fileID: 2492542333260141598, guid: 637d4ff81d744e04d8bc3cb24d9e4140, type: 3}
+  _rewindOverlay: {fileID: 8965794214433997821, guid: 94205a56f85c66c41a8f4adde24042ce, type: 3}
   _elementTutorial: {fileID: 8276504905489099229, guid: c7bf4fbd40b3ee542840cab35646859e, type: 3}
   _boosterHelper: {fileID: 4560340490003088159, guid: f764e14ccfb4d0141b157fdab348c86c, type: 3}
   _moneySortTutorial: {fileID: 2464253342205519498}

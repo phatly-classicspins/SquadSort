@@ -153,6 +153,52 @@ namespace Game.Presentation
             Changed?.Invoke();
         }
 
+        /// <summary>
+        /// After an Undo (Squad Sort GDD §1.5): rebuild from the restored board, then play the undone move backwards — each
+        /// buddy it moved starts where the move left it (a cleared squad's container included) and walks back to where it
+        /// stands now, the last mover first. Taps wait until they stand still. Returns those seconds (0 when nothing walks).
+        /// </summary>
+        public float Rewind(LevelSession session)
+        {
+            Show(session);
+            MoveResult undone = session.LastUndone;
+            if (undone == null) return 0f;
+
+            Board board = session.Board;
+            var start = new Dictionary<int, BuddyLocation>();
+            var order = new List<int>();
+            for (int i = undone.Moves.Count - 1; i >= 0; i--)
+            {
+                BuddyMove move = undone.Moves[i];
+                if (start.ContainsKey(move.BuddyId)) continue;
+                start.Add(move.BuddyId, move.To);   // its last move's end: where the undone move left it
+                order.Add(move.BuddyId);
+            }
+
+            float settled = 0f;
+            int version = _replayVersion;
+            int walkers = 0;
+            foreach (int id in order)
+            {
+                BuddyLocation? now = board.Locate(id);
+                if (!now.HasValue || !_shown.Contains(id) || now.Value.Equals(start[id])) continue;
+                IReadOnlyList<GridPos> path = BoardWalkRoute.Build(board, start[id], now.Value);
+                var route = new Vector2Int[path.Count];
+                for (int point = 0; point < path.Count; point++) route[point] = ToGrid(path[point]);
+                _view.PlaceBuddy(id, route[0]);
+                float delay = walkers * MotionTokens.Stagger;
+                walkers++;
+                _walking++;
+                float duration = _view.MoveBuddy(id, route, delay, () =>
+                {
+                    if (version == _replayVersion) _walking--;
+                });
+                settled = Mathf.Max(settled, delay + duration);
+            }
+
+            return settled;
+        }
+
         /// <summary>Re-fit the board to the current viewport (an aspect change).</summary>
         public void Layout()
         {
