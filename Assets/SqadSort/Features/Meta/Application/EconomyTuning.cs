@@ -38,13 +38,13 @@ namespace Game.Application
         public int RvFreeUpToLevel = 3;         // D-129 (Ethan 12-11): levels 1..this start with every RV slot open, nothing locked behind an ad
         // C2 boosters (GDD v2.0 §4.1, §7, D-031): unlock level, coin price, how many one purchase / one ad gives (per
         // booster, CR-013: booster_{id}_coin_amount, booster_{id}_ad_amount), unlock gift
-        public int UndoUnlockLevel = 5, ShuffleUnlockLevel = 11, AddContainerUnlockLevel = 15;   // SqadSort GDD §3
-        // AddContainer* hold the Remove booster's values (Squad Sort GDD §1.5): the remote-config keys keep their
-        // booster_add_container_* names until a codegen run renames them, and every key must match a field of its name.
+        public int UndoUnlockLevel = 5, ShuffleUnlockLevel = 11, RemoveUnlockLevel = 15;   // SqadSort GDD §3
+        // Remove* (Squad Sort GDD §1.5, was Add Container) read booster.remove.unlock_level / booster_remove_*; every key
+        // must match a field of its name. The save still counts the booster as BoosterAddContainer.
         // Squad Sort GDD §5 "Công cụ hỗ trợ": weak (Undo) 900, medium (Shuffle) 1200, strong (Remove) 1500 coins for 3; an ad gives 1
-        public int UndoPrice = 900, ShufflePrice = 1200, AddContainerPrice = 1500;
-        public int UndoBuyAmount = 3, ShuffleBuyAmount = 3, AddContainerBuyAmount = 3;
-        public int UndoAdAmount = 1, ShuffleAdAmount = 1, AddContainerAdAmount = 1;   // "▶ Free" in the buy dialog
+        public int UndoPrice = 900, ShufflePrice = 1200, RemovePrice = 1500;
+        public int UndoBuyAmount = 3, ShuffleBuyAmount = 3, RemoveBuyAmount = 3;
+        public int UndoAdAmount = 1, ShuffleAdAmount = 1, RemoveAdAmount = 1;   // "▶ Free" in the buy dialog
         public int BoosterUnlockGift = 3;
         // D elements (GDD v2.0 §4.1): the level that introduces each — also the milestones of the Win progress bar (§4.2)
         public int HiddenLevel = 8, HouseLevel = 20;   // the level pack shows hidden buddies from 8 (Squad Sort GDD §1.4 says 10)
@@ -168,13 +168,13 @@ namespace Game.Application
             LoseBoosterHintSeconds = Math.Max(0, LoseBoosterHintSeconds);
             UndoPrice = Math.Max(1, UndoPrice);
             ShufflePrice = Math.Max(1, ShufflePrice);
-            AddContainerPrice = Math.Max(1, AddContainerPrice);
+            RemovePrice = Math.Max(1, RemovePrice);
             UndoBuyAmount = Math.Max(1, UndoBuyAmount);
             ShuffleBuyAmount = Math.Max(1, ShuffleBuyAmount);
-            AddContainerBuyAmount = Math.Max(1, AddContainerBuyAmount);
+            RemoveBuyAmount = Math.Max(1, RemoveBuyAmount);
             UndoAdAmount = Math.Max(1, UndoAdAmount);
             ShuffleAdAmount = Math.Max(1, ShuffleAdAmount);
-            AddContainerAdAmount = Math.Max(1, AddContainerAdAmount);
+            RemoveAdAmount = Math.Max(1, RemoveAdAmount);
             BoosterUnlockGift = Math.Max(0, BoosterUnlockGift);
             LivesMax = Math.Max(1, LivesMax);
             LivesRefillMinutes = Math.Max(1, LivesRefillMinutes);
@@ -200,10 +200,10 @@ namespace Game.Application
             return this;
         }
 
-        public int UnlockLevel(Booster id) => id == Booster.Undo ? UndoUnlockLevel : id == Booster.Shuffle ? ShuffleUnlockLevel : AddContainerUnlockLevel;
-        public int Price(Booster id) => id == Booster.Undo ? UndoPrice : id == Booster.Shuffle ? ShufflePrice : AddContainerPrice;
-        public int BuyAmount(Booster id) => id == Booster.Undo ? UndoBuyAmount : id == Booster.Shuffle ? ShuffleBuyAmount : AddContainerBuyAmount;
-        public int AdAmount(Booster id) => id == Booster.Undo ? UndoAdAmount : id == Booster.Shuffle ? ShuffleAdAmount : AddContainerAdAmount;
+        public int UnlockLevel(Booster id) => id == Booster.Undo ? UndoUnlockLevel : id == Booster.Shuffle ? ShuffleUnlockLevel : RemoveUnlockLevel;
+        public int Price(Booster id) => id == Booster.Undo ? UndoPrice : id == Booster.Shuffle ? ShufflePrice : RemovePrice;
+        public int BuyAmount(Booster id) => id == Booster.Undo ? UndoBuyAmount : id == Booster.Shuffle ? ShuffleBuyAmount : RemoveBuyAmount;
+        public int AdAmount(Booster id) => id == Booster.Undo ? UndoAdAmount : id == Booster.Shuffle ? ShuffleAdAmount : RemoveAdAmount;
         public int UnlockLevel(ElementId id) => id == ElementId.Hidden ? HiddenLevel : HouseLevel;
 
         /// <summary>

@@ -88,7 +88,7 @@ Mỗi ô chứa tối đa **1 nhân vật**. Nhân vật có **màu** (video: t�
 >
 > **2026-11-26 — số liệu theo GDD Squad Sort mới:** giá booster 900 / 1200 / 1500 xu cho 3 lượt (Undo / Shuffle / Remove;
 > quảng cáo vẫn 1 lượt), gói Remove Ads tặng thêm mỗi booster ×1, gói vàng 25K = $19.99 và 100K = $69.99. Buddy ẩn vẫn mở ở
-> level 8 vì bộ level gốc có buddy ẩn từ level 8 (GDD mới ghi 10). Key cấu hình vẫn là `booster_{undo,shuffle,add_container}_*`.
+> level 8 vì bộ level gốc có buddy ẩn từ level 8 (GDD mới ghi 10). Key cấu hình của booster thứ ba đổi thành `booster_remove_*` và `booster.remove.unlock_level` (27/11).
 >
 > **2026-11-26 — hồi sinh dùng 1 Remove miễn phí** (GDD Squad Sort mới §1.3): Hồi sinh bằng xu hoặc quảng cáo chơi tiếp từ chỗ dừng và
 > dùng ngay `revive.removes` (mặc định 1) Remove miễn phí lên màu có nhiều thú trên sàn nhất. Không trừ kho, không cần đã mở
@@ -101,7 +101,7 @@ Mỗi ô chứa tối đa **1 nhân vật**. Nhân vật có **màu** (video: t�
 > ống nào thì không cho dùng. Thú khác màu trong ống đổi chỗ với thú cùng màu (sàn trước, rồi từ miệng các ống vào trong),
 > lấy thêm cho đủ 4 rồi đội tan. Không lấy thú trong nhà đang khoá; không đủ 4 thì không cho dùng, không trừ lượt. Undo hoàn
 > tác được. Ở màn thua, Remove tự chọn màu có nhiều thú nhất trên sàn. Thêm ống rỗng (Add Container) không còn là booster,
-> giữ trong code cho RV Slot sau này. Save và khoá remote config vẫn mang tên add_container (đổi khi chạy codegen).
+> giữ trong code cho RV Slot sau này. Save vẫn mang tên add_container (`BoosterAddContainer`, `booster_add_container`); khoá remote config đổi sang remove ngày 27/11.
 >
 > **2026-11-25 — đi thẳng ống → ống cần ít nhất 1 ô trống trên sàn** (GDD Squad Sort mới §1.2, chủ dự án chốt "ít nhất 1
 > ô"). Sàn đầy thì các ống không chuyển nhóm cho nhau; chỉ còn nước thú trên sàn đi vào ống. Thua = sàn đầy và không thú nào

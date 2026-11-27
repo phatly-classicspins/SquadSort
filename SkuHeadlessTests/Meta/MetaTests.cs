@@ -96,10 +96,10 @@ namespace SqadSort.SkuHeadlessTests.Meta
         [Test]
         public void A_bad_remote_price_never_makes_a_paid_revive_free()
         {
-            var t = new EconomyTuning { RevivePrice = 0, RevivePriceGrowth = -3, LivesMax = 0, RvSlotAmount = -8, UndoPrice = -1, AddContainerBuyAmount = 0 }.Sanitize();
+            var t = new EconomyTuning { RevivePrice = 0, RevivePriceGrowth = -3, LivesMax = 0, RvSlotAmount = -8, UndoPrice = -1, RemoveBuyAmount = 0 }.Sanitize();
             Assert.That(t.RevivePriceAfter(0), Is.EqualTo(1));
             Assert.That(t.RevivePriceAfter(3), Is.EqualTo(1));
-            Assert.That((t.LivesMax, t.RvSlotAmount, t.UndoPrice, t.AddContainerBuyAmount), Is.EqualTo((1, 0, 1, 1)));
+            Assert.That((t.LivesMax, t.RvSlotAmount, t.UndoPrice, t.RemoveBuyAmount), Is.EqualTo((1, 0, 1, 1)));
             Assert.That(new EconomyTuning { RevivePriceGrowth = double.NaN }.Sanitize().RevivePriceAfter(2), Is.EqualTo(900));
             Assert.That(new EconomyTuning { RevivePrice = 100, RevivePriceGrowth = 1000 }.RevivePriceAfter(20), Is.EqualTo(long.MaxValue),
                 "saturates instead of overflowing negative");

@@ -27,10 +27,10 @@ namespace Game.Gen
         public static readonly ConfigKey<int> RvSlotMaxPerAttempt            = new("rv_slot.max_per_attempt");
         public static readonly ConfigKey<int> UndoUnlockLevel                = new("booster.undo.unlock_level");
         public static readonly ConfigKey<int> ShuffleUnlockLevel             = new("booster.shuffle.unlock_level");
-        public static readonly ConfigKey<int> AddContainerUnlockLevel        = new("booster.add_container.unlock_level");
+        public static readonly ConfigKey<int> RemoveUnlockLevel              = new("booster.remove.unlock_level");
         public static readonly ConfigKey<int> UndoPrice                      = new("booster_undo_coin_price");
         public static readonly ConfigKey<int> ShufflePrice                   = new("booster_shuffle_coin_price");
-        public static readonly ConfigKey<int> AddContainerPrice              = new("booster_add_container_coin_price");
+        public static readonly ConfigKey<int> RemovePrice                    = new("booster_remove_coin_price");
         public static readonly ConfigKey<int> UndoBuyAmount                  = new("booster_undo_coin_amount");
         public static readonly ConfigKey<int> ShuffleBuyAmount               = new("booster_shuffle_coin_amount");
         public static readonly ConfigKey<int> BoosterUnlockGift              = new("booster.unlock_gift");
@@ -48,10 +48,10 @@ namespace Game.Gen
         public static readonly ConfigKey<string> RatingIosAppId                 = new("rating.ios_app_id");
         public static readonly ConfigKey<string> RatingAndroidPackage           = new("rating.android_package");
         public static readonly ConfigKey<string> RatingFeedbackUrl              = new("rating.feedback_url");
-        public static readonly ConfigKey<int> AddContainerBuyAmount          = new("booster_add_container_coin_amount");
+        public static readonly ConfigKey<int> RemoveBuyAmount                = new("booster_remove_coin_amount");
         public static readonly ConfigKey<int> UndoAdAmount                   = new("booster_undo_ad_amount");
         public static readonly ConfigKey<int> ShuffleAdAmount                = new("booster_shuffle_ad_amount");
-        public static readonly ConfigKey<int> AddContainerAdAmount           = new("booster_add_container_ad_amount");
+        public static readonly ConfigKey<int> RemoveAdAmount                 = new("booster_remove_ad_amount");
         public static readonly ConfigKey<int> BannerFirstLevel               = new("ads.banner.first_level");
         public static readonly ConfigKey<int> LivesRefillCoinCost            = new("lives_refill_coin_cost");
         public static readonly ConfigKey<int> LivesRefillCoinAmount          = new("lives_refill_coin_amount");

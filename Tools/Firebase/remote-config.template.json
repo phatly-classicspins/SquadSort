@@ -181,11 +181,11 @@
           "description": "SqadSort config key booster.shuffle.unlock_level",
           "valueType": "NUMBER"
         },
-        "booster_add_container_unlock_level": {
+        "booster_remove_unlock_level": {
           "defaultValue": {
             "value": "15"
           },
-          "description": "SqadSort config key booster.add_container.unlock_level",
+          "description": "SqadSort config key booster.remove.unlock_level",
           "valueType": "NUMBER"
         },
         "booster_undo_coin_price": {
@@ -202,11 +202,11 @@
           "description": "SqadSort config key booster_shuffle_coin_price",
           "valueType": "NUMBER"
         },
-        "booster_add_container_coin_price": {
+        "booster_remove_coin_price": {
           "defaultValue": {
             "value": "1500"
           },
-          "description": "SqadSort config key booster_add_container_coin_price",
+          "description": "SqadSort config key booster_remove_coin_price",
           "valueType": "NUMBER"
         },
         "booster_undo_coin_amount": {
@@ -223,11 +223,11 @@
           "description": "SqadSort config key booster_shuffle_coin_amount",
           "valueType": "NUMBER"
         },
-        "booster_add_container_coin_amount": {
+        "booster_remove_coin_amount": {
           "defaultValue": {
             "value": "3"
           },
-          "description": "SqadSort config key booster_add_container_coin_amount",
+          "description": "SqadSort config key booster_remove_coin_amount",
           "valueType": "NUMBER"
         },
         "booster_undo_ad_amount": {
@@ -244,11 +244,11 @@
           "description": "SqadSort config key booster_shuffle_ad_amount",
           "valueType": "NUMBER"
         },
-        "booster_add_container_ad_amount": {
+        "booster_remove_ad_amount": {
           "defaultValue": {
             "value": "1"
           },
-          "description": "SqadSort config key booster_add_container_ad_amount",
+          "description": "SqadSort config key booster_remove_ad_amount",
           "valueType": "NUMBER"
         },
         "booster_unlock_gift": {
