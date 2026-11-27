@@ -41,7 +41,7 @@
   "element.unlock.ok": "OK",
   "element.unlock.title": "New Element",
   "ftue.l1.goal": "Gather four buddies of one color to clear a squad!",
-  "ftue.l1.tap": "Tap container to select buddies.",
+  "ftue.l1.tap": "Tap buddies to group them!",
   "gameplay.buffer_count": "{0} / {1}",
   "gameplay.count": "{0}/{1}",
   "gameplay.holding_area": "Holding area",

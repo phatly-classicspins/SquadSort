@@ -139,7 +139,6 @@ namespace Game.Presentation
             _presenter = new BoardPresenter(_boardInstance.GetComponent<BoardView>(), _viewport);
             _presenter.LevelEnded += OnLevelEnded;
             _presenter.Changed += Draw;
-            _presenter.SelectionChanged += OnSelectionChanged;
             _presenter.Replayed += OnReplayed;
             _presenter.ShufflePickEnded += OnShuffleDone;
             _presenter.RemovePickEnded += OnRemoveDone;
@@ -188,7 +187,6 @@ namespace Game.Presentation
             {
                 _presenter.LevelEnded -= OnLevelEnded;
                 _presenter.Changed -= Draw;
-                _presenter.SelectionChanged -= OnSelectionChanged;
                 _presenter.Replayed -= OnReplayed;
                 _presenter.ShufflePickEnded -= OnShuffleDone;
                 _presenter.RemovePickEnded -= OnRemoveDone;
@@ -1021,10 +1019,9 @@ namespace Game.Presentation
 
         // ------------------------------------------------------------------ FTUE (CardSlot features/ftue.md v2)
 
-        // Level 1, until it is won once (Squad Sort GDD §2.2): up to FtueL1Taps guided moves, each two steps - Select: the
-        // spotlight and "Tap container to select buddies." on a tube whose front group can join another tube; Group: once it is
-        // selected, the spotlight (no text) on the tube it can join. Only the lit tube takes a tap. Then the goal bubble with no
-        // target until the level ends. Steps are not saved: replaying level 1 starts the guide again; the win saves FtueL1Done.
+        // Level 1, until it is won once: up to FtueL1Taps guided taps - the spotlight and "Tap buddies to group them!" on a tube
+        // whose front group can join another tube (one tap sends it there), and only that tube takes a tap - then the goal
+        // bubble with no target until the level ends. Steps are not saved: replaying level 1 starts the guide again; the win saves FtueL1Done.
         // Same view as CardSlot (FlickSortFtueController).
         private void StartFtue()
         {
@@ -1034,13 +1031,6 @@ namespace Game.Presentation
             _ftueStep = 0;
             _ftueMoves = _session.MovesMade;
             FtueShowLater(advance: false).Forget();   // the board settles into place first, or the bubble points at a stale spot
-        }
-
-        // a group picked up or put down moves the FTUE between its Select and Group steps (a move is seen in Draw)
-        private void OnSelectionChanged()
-        {
-            if (_presenter.HasSelection) _feedback.Selected();
-            if (_ftueOn) Tutorial();
         }
 
         // Squad Sort GDD §4: each moment of a replayed result sounds when it shows — the walk at once, a reveal and a
@@ -1089,19 +1079,6 @@ namespace Game.Presentation
             _presenter.GuidedTube = -1;
             _hud.HideTutorial();
             if (!_ftueOn || _session.Board.State != BoardState.Playing) return;
-            int selected = _presenter.SelectedTube;
-            if (selected >= 0)   // Group: the selected group's way in, no text (GDD §2.2)
-            {
-                var source = _session.Board.Tubes[selected];
-                var into = source.Top == null ? null : _session.Board.FindTubeFor(source.Top.Color, source);
-                var target = into == null ? default : TubeHudRect(into.Index);
-                if (target.width > 0f)
-                {
-                    _presenter.GuidedTube = into.Index;
-                    _hud.ShowTutorial(target, null);
-                    return;
-                }
-            }
             int tube = _ftueStep < FtueL1Taps ? FtueTube() : -1;
             if (tube < 0)
             {

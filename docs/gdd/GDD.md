@@ -81,6 +81,11 @@ Mỗi ô chứa tối đa **1 nhân vật**. Nhân vật có **màu** (video: t�
     Popup "House Unlocked!": "Complete the matching color to open the house and free the characters inside."
 
 ### 2.3 Thao tác — chọn rồi thả (đổi 2026-11-19)
+> **2026-11-27 — về lại một chạm** theo chủ dự án: bản Android của game gốc điều khiển một chạm và dữ liệu level lấy từ
+> bản đó, nên giữ kiểu Android. Chạm ống thì nhóm đầu ống tự tìm đích (ống nhận được → sàn), chạm thú trên sàn thì cả màu đó
+> tự vào ống (`Board.TapTube` / `TapPlaza`). Vẫn giữ luật ống → ống cần ít nhất 1 ô trống trên sàn. Solver chơi lại nước một
+> chạm: cả 100 level đều giải được (Level099 cần ~570 nghìn trạng thái). Ghi chú hai chạm 25/11 bên dưới không còn áp dụng.
+>
 > **2026-11-26 — số liệu theo GDD Squad Sort mới:** giá booster 900 / 1200 / 1500 xu cho 3 lượt (Undo / Shuffle / Remove;
 > quảng cáo vẫn 1 lượt), gói Remove Ads tặng thêm mỗi booster ×1, gói vàng 25K = $19.99 và 100K = $69.99. Buddy ẩn vẫn mở ở
 > level 8 vì bộ level gốc có buddy ẩn từ level 8 (GDD mới ghi 10). Key cấu hình vẫn là `booster_{undo,shuffle,add_container}_*`.
