@@ -78,14 +78,9 @@ namespace Game.Views
 
         private void SetProgress(float value)
         {
+            value = Mathf.Clamp01(value);
             _fillImage.fillAmount = value;
             _fillImage.enabled = value > 0f;
-            if (_fillImage.type == Image.Type.Sliced)
-            {
-                var rect = _fillImage.rectTransform;
-                rect.anchorMax = new Vector2(value, 1f);
-                rect.offsetMax = new Vector2(22f - 44f * value, -15f);
-            }
             if (_loadingText != null) _loadingText.SetText("{0}%", Mathf.RoundToInt(value * 100f));
         }
 

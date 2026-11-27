@@ -1,0 +1,17 @@
+[
+  {
+    "key": "fixed-skills",
+    "name": "exec-23adc514-699f-464d-a424-af972ff58ac5.png",
+    "prompt": "Edit this exact six-panel SQUAD SORT UI mockup. Preserve all foreground modal art, texts, icons, prices and button positions EXACTLY. Remove the outdated background HUD in ALL six panels: erase the top Level7 coin and heart bars and erase ALL three bottom skill controls including glove, Level11,Level15. Replace only those background areas with dim blurred lavender garden stone ground matching surrounding background. Keep foregrounds untouched. All six foreground panels remain same size and layout. Do not add any new controls."
+  },
+  {
+    "key": "fixed-flow",
+    "name": "exec-549af947-b7e5-4f98-9c92-c82944209ae1.png",
+    "prompt": "Edit this exact six-panel SQUAD SORT mockup with these precise corrections only. In first four modal panels remove outdated BACKGROUND HUD topbars and all bottom skill controls including glove Level11 Level15; fill with dim blurred lavender garden paving. Preserve every foreground title/body/button/icon/amount exactly. In fifth panel victory make header read 'Level 12' instead of Level8 and progress read '3/10' instead of3/5. Keep House icon and NEXT ELEMENT. This is consistent with Hidden Buddy unlock10 and House unlock20, progress=currentCompleted12-previous10+1=3. Keep PERFECT reward40, bonus and Continue exactly. Remove any background HUD showing behind victory panel. Sixth panel Loading remains completely unchanged. Keep all six panels, dimensions, shapes and placement identical."
+  },
+  {
+    "key": "fixed-offers",
+    "name": "exec-3be57ddd-6133-4812-925a-bf3a9244b099.png",
+    "prompt": "Edit this exact four-panel SQUAD SORT mockup. Preserve every layout, number, price and tool icon except explicit changes. First three panels: remove outdated BACKGROUND HUD top bars and all three bottom skill controls (glove,Level11,Level15) and replace with dim blurred lavender garden paving. Foreground panels stay untouched. First panel Remove Ads feature list: replace 'Play offline' with 'Permanent ad removal' because GDD doesn't establish offline entitlement. Leave other two rows same. Third panel Limited Time Reward: booster type not specified by GDD, so replace specific yellow Undo arrow in REWARD inset with generic wrapped giftbox marked '?' and maintain quantityx1; leave200coins,9:59, buttons and header. Fourth fullscreen REWARDS panel unchanged. Do not add text to other areas."
+  }
+]

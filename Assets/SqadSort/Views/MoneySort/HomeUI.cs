@@ -229,9 +229,11 @@ namespace Game.Views
         private Transform _mountedPage;
         private void LateUpdate()
         {
-            if (_resourceGroup == null) return;
             bool pageUp = _mountedPage != null && _mountedPage.gameObject.activeInHierarchy;
-            if (_resourceGroup.gameObject.activeSelf == pageUp) _resourceGroup.gameObject.SetActive(!pageUp);
+            if (_resourceGroup != null && _resourceGroup.gameObject.activeSelf == pageUp)
+                _resourceGroup.gameObject.SetActive(!pageUp);
+            if (_settingsButton != null && _settingsButton.gameObject.activeSelf == pageUp)
+                _settingsButton.gameObject.SetActive(!pageUp);
         }
 
         /// <summary>Lights a footer tab without touching Home's content (the page switch shows or hides that).</summary>

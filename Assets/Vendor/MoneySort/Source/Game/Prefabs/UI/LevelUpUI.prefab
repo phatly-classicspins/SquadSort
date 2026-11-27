@@ -911,7 +911,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 14, y: 7}
+  m_AnchoredPosition: {x: 24.5, y: 0}
   m_SizeDelta: {x: 88, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5814035663107012851
@@ -944,8 +944,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 100
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f08ffd8f227073d489f844e4a4ae4be7, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 6b77e1d56b4313043bd387ca366442c6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fdb284ec2b2c7364b9c1e90cf4a06df4, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 8cabc1b93673c3b4fb5ff26172edb738, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -953,7 +953,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 1
+  m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
@@ -969,15 +969,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 39.35
+  m_fontSize: 36
   m_fontSizeBase: 21.1
   m_fontWeight: 400
-  m_enableAutoSizing: 1
-  m_fontSizeMin: 26
-  m_fontSizeMax: 40
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 36
+  m_fontSizeMax: 36
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
@@ -1156,7 +1156,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c54df4a8e4517504a8f502bb6bbe8d3a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e5fc523929d09d645ae24b669ebe2bbd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1371,7 +1371,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7e403d5e73d8b9e459f5de4a4cc5a6f8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cb7ce6309fb13b143874e1f5fd760e18, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1797,7 +1797,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 84c551d89573d2a44891f123dea992ff, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cf2dc142975bd024999924596248b00c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2337,7 +2337,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 71c207dd4623b6240a816b1f1fbce770, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0933bf52cb1f1544d8583735993186ab, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2550,7 +2550,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 403e23966b2c0954eac2c89085bf56bf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f7cb43e4701bf3c419e6f7930360ee90, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2700,7 +2700,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Feature
+  m_text: Next Element
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f08ffd8f227073d489f844e4a4ae4be7, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: d8e331a2b5df0e347a64fe5ad3832c8b, type: 2}
@@ -2727,7 +2727,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.7
+  m_fontSize: 28.1
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2847,9 +2847,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 55abbc2250628414f9c64f61f09942c5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1bf3a37f6ef1d6d48bbf43cd97dfe86c, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2926,7 +2926,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 296fccfd755f04f40b5ab074c26d8be7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0a373aa423340464288dd45f0c91c626, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2935,7 +2935,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 0.26416335
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &6376381483081530224
 GameObject:
   m_ObjectHideFlags: 0
@@ -3465,9 +3465,9 @@ MonoBehaviour:
   - Id: '@Content/X2CoinButton'
     Button: {fileID: 7023012226723385579}
   _featureIcons:
-  - {fileID: 21300000, guid: 5ce7a5062b988f0489314f2f91dfdfda, type: 3}
-  - {fileID: 21300000, guid: 5fe2148db3810544e9cd83498eb9371b, type: 3}
-  - {fileID: 21300000, guid: 9d2ac8b7a2499f64ca5c23d1e8db20f3, type: 3}
+  - {fileID: 21300000, guid: 895d2a7920dda2f44a9ba8696faa6371, type: 3}
+  - {fileID: 21300000, guid: a92a01b3e0974de49aefc9ab71a7a675, type: 3}
+  - {fileID: 21300000, guid: a92a01b3e0974de49aefc9ab71a7a675, type: 3}
   _featureBoosters: {fileID: 11400000, guid: 576b46cf3eaf83e4994b9ef2387e23d8, type: 2}
   _levelText: {fileID: 4187628816427856576}
   _coinRewardText: {fileID: 8856361767485523239}
@@ -3600,7 +3600,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a110140f1878b6c4f80de33ff28d7fa6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ff5f307977fc9d0418dd75ee7387c9bd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3950,9 +3950,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a55f93638dcf5d247b1a3a6e45b4bcf1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0bd0d93aaaf6b0a4bbcdeb59f407fc5e, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1

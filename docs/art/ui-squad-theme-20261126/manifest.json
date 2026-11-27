@@ -1,0 +1,42 @@
+[
+  {
+    "file": "01-booster-slot.png",
+    "screens": "BoosterUnlock, RestartBooster, SkipLevel, RentSlot",
+    "size": [
+      1086,
+      1448
+    ]
+  },
+  {
+    "file": "02-offers-space.png",
+    "screens": "OutOfSpace, RemoveAds, StarterBundle, GarageGift",
+    "size": [
+      1086,
+      1448
+    ]
+  },
+  {
+    "file": "03-purchase-network.png",
+    "screens": "PurchaseReward, PurchaseFailed, RestorePurchase, NoInternet",
+    "size": [
+      1086,
+      1448
+    ]
+  },
+  {
+    "file": "04-system-loading.png",
+    "screens": "Error, NotificationPermission, Rating, Loading",
+    "size": [
+      1086,
+      1448
+    ]
+  },
+  {
+    "file": "05-shop-v2.png",
+    "screens": "Shop revised",
+    "size": [
+      941,
+      1672
+    ]
+  }
+]

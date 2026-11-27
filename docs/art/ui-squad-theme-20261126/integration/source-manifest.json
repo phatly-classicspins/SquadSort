@@ -1,0 +1,58 @@
+[
+  {
+    "path": "Assets/SqadSort/Content/UI/SquadTheme/Source/controls.png",
+    "pixels": [
+      1254,
+      1254
+    ],
+    "sha256": "d8600bc60ab19d13ad23ab5e2bddef4bbc66ab3a66c4dc79c03353069314201c"
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/SquadTheme/Source/home.png",
+    "pixels": [
+      941,
+      1672
+    ],
+    "sha256": "30607e1ddc75d3e28bb2909fb6583c4559abfb2a1d69f4a746aca8806cf7a5d4"
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/SquadTheme/Source/icons.png",
+    "pixels": [
+      1254,
+      1254
+    ],
+    "sha256": "04fb76497658cd95a2e6d0b9f1d3d785cb8bbe85bed43f229aa79f1672f338c9"
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/SquadTheme/Source/illustrations.png",
+    "pixels": [
+      1774,
+      887
+    ],
+    "sha256": "9b02036925192410a0c7bb13ab3138a84b01a5d71961b9ae65c3a6041b789987"
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/SquadTheme/Source/loading.png",
+    "pixels": [
+      941,
+      1672
+    ],
+    "sha256": "cc7e9a0443996ec6889a13998584b41756174b1e96fbf21b2c7ac62597627d3f"
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/SquadTheme/Source/logo.png",
+    "pixels": [
+      1616,
+      973
+    ],
+    "sha256": "1b379104ef6132ae5a473d58b8ac380db86073d68137adf1310cb74f0b0872bb"
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/SquadTheme/Source/replay.png",
+    "pixels": [
+      1254,
+      1254
+    ],
+    "sha256": "3091dbf4df8feb4a0ac4bd568e5439c351a6a2ede2573c977cb60727d0de955c"
+  }
+]

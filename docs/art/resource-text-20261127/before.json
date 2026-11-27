@@ -1,0 +1,211 @@
+[
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Gameplay/GameplayHud.prefab",
+    "node": "MoneySort_GameplayUI/SafeArea/ResoureGroup/MoneyHud/MoneyText",
+    "size": 33.0,
+    "auto": true,
+    "min": 20.0,
+    "max": 33.0,
+    "font": "LilitaOne-Regular SDF",
+    "scale": "(1.00, 1.00, 1.00)",
+    "rect": "(x:-40.50, y:-24.50, width:81.00, height:49.00)"
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Gameplay/GameplayHud.prefab",
+    "node": "MoneySort_GameplayUI/SafeArea/ResoureGroup/LivesHud/HeartIcon/LivesText",
+    "size": 30.0,
+    "auto": false,
+    "min": 24.0,
+    "max": 44.0,
+    "font": "LilitaOne-Regular SDF",
+    "scale": "(1.00, 1.00, 1.00)",
+    "rect": "(x:-29.00, y:-24.00, width:58.00, height:48.00)"
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Gameplay/GameplayHud.prefab",
+    "node": "MoneySort_GameplayUI/SafeArea/ResoureGroup/LivesHud/LifeTimerText",
+    "size": 26.35,
+    "auto": true,
+    "min": 20.0,
+    "max": 33.0,
+    "font": "LilitaOne-Regular SDF",
+    "scale": "(1.00, 1.00, 1.00)",
+    "rect": "(x:-42.50, y:-24.50, width:85.00, height:49.00)"
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Home/HomeView.prefab",
+    "node": "MoneySort_HomeUI/SafeArea/ResoureGroup/MoneyHud/MoneyText",
+    "size": 47.1999969,
+    "auto": false,
+    "min": 25.5999985,
+    "max": 40.0,
+    "font": "Baloo2-ExtraBold SDF",
+    "scale": "(1.00, 1.00, 1.00)",
+    "rect": "(x:-43.00, y:-22.50, width:86.00, height:45.00)"
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Home/HomeView.prefab",
+    "node": "MoneySort_HomeUI/SafeArea/ResoureGroup/LivesHud/HeartIcon/LivesText",
+    "size": 44.8399963,
+    "auto": false,
+    "min": 23.039999,
+    "max": 36.0,
+    "font": "Baloo2-ExtraBold SDF",
+    "scale": "(1.00, 1.00, 1.00)",
+    "rect": "(x:-24.50, y:-21.00, width:49.00, height:42.00)"
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Home/HomeView.prefab",
+    "node": "MoneySort_HomeUI/SafeArea/ResoureGroup/LivesHud/LifeTimerText",
+    "size": 34.29861,
+    "auto": false,
+    "min": 22.4,
+    "max": 35.0,
+    "font": "Baloo2-ExtraBold SDF",
+    "scale": "(1.00, 1.00, 1.00)",
+    "rect": "(x:-46.00, y:-21.50, width:92.00, height:43.00)"
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/GameplayUI.prefab",
+    "node": "SafeArea/ResoureGroup/MoneyHud/MoneyText",
+    "size": 33.0,
+    "auto": true,
+    "min": 20.0,
+    "max": 33.0,
+    "font": "LilitaOne-Regular SDF",
+    "scale": "(1.00, 1.00, 1.00)",
+    "rect": "(x:-40.50, y:-24.50, width:81.00, height:49.00)"
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/GameplayUI.prefab",
+    "node": "SafeArea/ResoureGroup/LivesHud/HeartIcon/LivesText",
+    "size": 30.0,
+    "auto": false,
+    "min": 24.0,
+    "max": 44.0,
+    "font": "LilitaOne-Regular SDF",
+    "scale": "(1.00, 1.00, 1.00)",
+    "rect": "(x:-29.00, y:-24.00, width:58.00, height:48.00)"
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/GameplayUI.prefab",
+    "node": "SafeArea/ResoureGroup/LivesHud/LifeTimerText",
+    "size": 26.35,
+    "auto": true,
+    "min": 20.0,
+    "max": 33.0,
+    "font": "LilitaOne-Regular SDF",
+    "scale": "(1.00, 1.00, 1.00)",
+    "rect": "(x:-42.50, y:-24.50, width:85.00, height:49.00)"
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/HomeUI.prefab",
+    "node": "SafeArea/ResoureGroup/MoneyHud/MoneyText",
+    "size": 39.35,
+    "auto": true,
+    "min": 25.5999985,
+    "max": 40.0,
+    "font": "LilitaOne-Regular SDF Thick",
+    "scale": "(1.00, 1.00, 1.00)",
+    "rect": "(x:-51.00, y:-22.50, width:102.00, height:45.00)"
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/HomeUI.prefab",
+    "node": "SafeArea/ResoureGroup/LivesHud/HeartIcon/LivesText",
+    "size": 36.0,
+    "auto": true,
+    "min": 23.039999,
+    "max": 36.0,
+    "font": "LilitaOne-Regular SDF Thick",
+    "scale": "(1.00, 1.00, 1.00)",
+    "rect": "(x:-24.50, y:-21.00, width:49.00, height:42.00)"
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/HomeUI.prefab",
+    "node": "SafeArea/ResoureGroup/LivesHud/LifeTimerText",
+    "size": 33.85,
+    "auto": true,
+    "min": 22.4,
+    "max": 35.0,
+    "font": "LilitaOne-Regular SDF Thick",
+    "scale": "(1.00, 1.00, 1.00)",
+    "rect": "(x:-48.00, y:-21.00, width:96.00, height:42.00)"
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/LevelUpUI.prefab",
+    "node": "Content/Wallet/MoneyText",
+    "size": 39.35,
+    "auto": true,
+    "min": 26.0,
+    "max": 40.0,
+    "font": "LilitaOne-Regular SDF Thick",
+    "scale": "(1.00, 1.00, 1.00)",
+    "rect": "(x:-44.00, y:-22.50, width:88.00, height:45.00)"
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ResoureGroup.prefab",
+    "node": "MoneyHud/MoneyText",
+    "size": 39.35,
+    "auto": true,
+    "min": 25.5999985,
+    "max": 40.0,
+    "font": "LilitaOne-Regular SDF Thick",
+    "scale": "(1.00, 1.00, 1.00)",
+    "rect": "(x:-51.00, y:-22.50, width:102.00, height:45.00)"
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ResoureGroup.prefab",
+    "node": "LivesHud/HeartIcon/LivesText",
+    "size": 36.0,
+    "auto": true,
+    "min": 23.039999,
+    "max": 36.0,
+    "font": "LilitaOne-Regular SDF Thick",
+    "scale": "(1.00, 1.00, 1.00)",
+    "rect": "(x:-24.50, y:-21.00, width:49.00, height:42.00)"
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ResoureGroup.prefab",
+    "node": "LivesHud/LifeTimerText",
+    "size": 28.1,
+    "auto": true,
+    "min": 22.4,
+    "max": 35.0,
+    "font": "LilitaOne-Regular SDF Thick",
+    "scale": "(1.00, 1.00, 1.00)",
+    "rect": "(x:-39.82, y:-21.00, width:79.64, height:42.00)"
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/ShopHeaderBackground/OverlayResources/MoneyHud/MoneyText",
+    "size": 49.5599976,
+    "auto": false,
+    "min": 25.5999985,
+    "max": 40.0,
+    "font": "Baloo2-ExtraBold SDF",
+    "scale": "(1.00, 1.00, 1.00)",
+    "rect": "(x:-40.00, y:-22.00, width:80.00, height:44.00)"
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/ShopHeaderBackground/OverlayResources/LivesHud/HeartIcon/LivesText",
+    "size": 44.8399963,
+    "auto": false,
+    "min": 23.039999,
+    "max": 36.0,
+    "font": "Baloo2-ExtraBold SDF",
+    "scale": "(1.00, 1.00, 1.00)",
+    "rect": "(x:-24.50, y:-21.00, width:49.00, height:42.00)"
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/ShopHeaderBackground/OverlayResources/LivesHud/LifeTimerText",
+    "size": 32.0600243,
+    "auto": false,
+    "min": 22.4,
+    "max": 35.0,
+    "font": "Baloo2-ExtraBold SDF",
+    "scale": "(1.00, 1.00, 1.00)",
+    "rect": "(x:-43.00, y:-19.50, width:86.00, height:39.00)"
+  }
+]

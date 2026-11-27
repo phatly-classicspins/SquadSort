@@ -1,0 +1,17 @@
+{
+  "pages": 25,
+  "rectTransforms": 847,
+  "geometryDifferences": [],
+  "replacedImages": 228,
+  "invalidTextureDimensions": [],
+  "textAutoSizingChanges": [
+    [
+      "LevelUp",
+      "LevelUpUI(Clone)/FeatureProgress/Image/FeatureText",
+      "fontSize",
+      29.7,
+      28.1
+    ]
+  ],
+  "nativeTextureMismatches": []
+}

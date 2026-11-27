@@ -428,7 +428,7 @@ namespace Game.Presentation
             var segments = _tuning.WinBonusSegments();
             bool bonus = win.Reward > 0;   // a skipped level pays nothing, so there is nothing to multiply
             bool adReady = bonus && await AdReady(AdPlacements.RewardedWinDouble);
-            var next = win.Final ? _loc.Get(LocKeys.WinPlayAgain) : _loc.Get(LocKeys.GameplayLevel, win.NextLevel);
+            var next = win.Final ? _loc.Get(LocKeys.WinPlayAgain) : _loc.Get(LocKeys.WinNext);
 
             async UniTask<bool> PayBonus(int multiplier)
             {

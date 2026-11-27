@@ -28,6 +28,8 @@ namespace Game.Views
             public GameObject lockIcon;
             public bool locked;
             public TMP_Text label;
+            [Tooltip("Optional caption kept with the deselected art, localized together with the selected caption.")]
+            public TMP_Text unselectedLabel;
         }
 
         [SerializeField] private TabView[] _tabs = Array.Empty<TabView>();
@@ -54,9 +56,13 @@ namespace Game.Views
         {
             foreach (var view in _tabs)
             {
-                if (view?.label == null) continue;
+                if (view == null) continue;
                 string text = view.tab == MoneySortHomeTab.Shop ? shop : view.tab == MoneySortHomeTab.Main ? home : null;
-                if (text != null) view.label.text = text;
+                if (text != null)
+                {
+                    if (view.label != null) view.label.text = text;
+                    if (view.unselectedLabel != null) view.unselectedLabel.text = text;
+                }
             }
         }
         public void SetSelected(MoneySortHomeTab selectedTab)

@@ -1,0 +1,473 @@
+{
+  "source": "https://hvtanh07.github.io/gdd-squad-sort/",
+  "retrieved": "2026-11-26",
+  "language": "en",
+  "scope": "mockup copy only; no production localization changes",
+  "rows": [
+    {
+      "screen": "Home",
+      "title": "SQUAD SORT",
+      "body": "",
+      "buttons": [
+        "Level {level}",
+        "Shop",
+        "Home"
+      ],
+      "source": "https://hvtanh07.github.io/gdd-squad-sort/#game-concept",
+      "status": "proposed wording consistent with GDD; not a verbatim approved string",
+      "values": {
+        "level": "dynamic",
+        "lives_max": 5,
+        "life_refill_minutes": 20
+      }
+    },
+    {
+      "screen": "GameplayHud",
+      "title": "Level {level}",
+      "body": "",
+      "buttons": [
+        "Undo",
+        "Shuffle",
+        "Remove"
+      ],
+      "source": "https://hvtanh07.github.io/gdd-squad-sort/#booster-mechanics",
+      "status": "proposed wording consistent with GDD; not a verbatim approved string",
+      "values": {
+        "undo_unlock": 5,
+        "shuffle_unlock": 11,
+        "remove_unlock": null,
+        "remove_unlock_status": "TBD; do not display Level 15",
+        "lives": "dynamic"
+      }
+    },
+    {
+      "screen": "Settings",
+      "title": "Settings",
+      "body": "SFX / Music / Vibration",
+      "buttons": [
+        "Restart",
+        "Home"
+      ],
+      "source": "https://hvtanh07.github.io/gdd-squad-sort/#game-concept",
+      "status": "GDD does not specify exact settings microcopy; retained functional labels",
+      "values": {}
+    },
+    {
+      "screen": "Shop",
+      "title": "Shop",
+      "body": "",
+      "buttons": [],
+      "source": "https://hvtanh07.github.io/gdd-squad-sort/#pack-list",
+      "status": "Pack names and amounts from GDD §6.1; layout follows original Shop",
+      "values": {
+        "remove_ads": {
+          "coins": 1500,
+          "each_booster": 1,
+          "usd": "5.99"
+        },
+        "starter": {
+          "coins": 2500,
+          "each_booster": 2,
+          "unlimited_lives_hours": 2,
+          "usd": "1.99",
+          "offer_hours": 72
+        },
+        "special_packs": [
+          {
+            "name": "Small Pack",
+            "coins": 2500,
+            "each_booster": 2,
+            "lives_hours": 1,
+            "usd": "4.99"
+          },
+          {
+            "name": "Medium Pack",
+            "coins": 10000,
+            "each_booster": 5,
+            "lives_hours": 2,
+            "usd": "9.99"
+          },
+          {
+            "name": "Ultra Pack",
+            "coins": 25000,
+            "each_booster": 10,
+            "lives_hours": 6,
+            "usd": "24.99"
+          }
+        ],
+        "gold_packs": [
+          [
+            1000,
+            "1.99"
+          ],
+          [
+            5000,
+            "4.99"
+          ],
+          [
+            10000,
+            "8.99"
+          ],
+          [
+            25000,
+            "19.99"
+          ],
+          [
+            50000,
+            "34.99"
+          ],
+          [
+            100000,
+            "69.99"
+          ]
+        ]
+      }
+    },
+    {
+      "screen": "LevelUp",
+      "title": "PERFECT!",
+      "body": "Level {level}",
+      "buttons": [
+        "Bonus",
+        "Continue"
+      ],
+      "source": "https://hvtanh07.github.io/gdd-squad-sort/#additional-mechanics",
+      "status": "proposed wording consistent with GDD; not a verbatim approved string",
+      "values": {
+        "base_coins": 40,
+        "multipliers": [
+          2,
+          3,
+          5,
+          3,
+          2
+        ],
+        "progress": "{current}/{total}",
+        "icon": "next ELEMENT, not booster",
+        "progress_example": "after level 12: 3/10 toward House at level 20 (previous element at 10)"
+      }
+    },
+    {
+      "screen": "Lose",
+      "title": "Are you sure?",
+      "body": "Restarting this level uses 1 life.",
+      "buttons": [
+        "Restart"
+      ],
+      "source": "https://hvtanh07.github.io/gdd-squad-sort/#additional-mechanics",
+      "status": "proposed wording consistent with GDD; not a verbatim approved string",
+      "values": {
+        "lives_delta": -1,
+        "unlimited_lives_exception": true,
+        "note": "Existing prefab named Lose is a restart confirmation, not a specification of the final lose flow."
+      }
+    },
+    {
+      "screen": "OutOfLives",
+      "title": "Out of lives!",
+      "body": "Refill lives to keep playing.",
+      "buttons": [
+        "900",
+        "Free"
+      ],
+      "source": "https://hvtanh07.github.io/gdd-squad-sort/#remote-config",
+      "status": "proposed wording consistent with GDD; not a verbatim approved string",
+      "values": {
+        "coin_cost": 900,
+        "coin_lives": 5,
+        "ad_lives": 1
+      }
+    },
+    {
+      "screen": "OutOfSpace",
+      "title": "Play on",
+      "body": "Use a free Remove to clear a squad and continue.",
+      "buttons": [
+        "{revive_cost}",
+        "Free"
+      ],
+      "source": "https://hvtanh07.github.io/gdd-squad-sort/#additional-mechanics",
+      "status": "proposed wording consistent with GDD; not a verbatim approved string",
+      "values": {
+        "first_coin_cost": 900,
+        "growth": 1.0,
+        "ads_per_attempt": 1,
+        "free_remove": 1,
+        "inventory_consumed": false,
+        "lives_lost": 0
+      }
+    },
+    {
+      "screen": "BoosterPurchase",
+      "title": "{booster_name}",
+      "body": "{booster_description}",
+      "buttons": [
+        "{coin_price}",
+        "Free"
+      ],
+      "source": "https://hvtanh07.github.io/gdd-squad-sort/#remote-config",
+      "status": "proposed wording consistent with GDD; not a verbatim approved string",
+      "values": {
+        "coin_quantity": 3,
+        "ad_quantity": 1,
+        "undo_price": 900,
+        "shuffle_price": 1200,
+        "remove_price": 1500,
+        "icons": {
+          "Undo": "yellow curved back arrow",
+          "Shuffle": "purple-white tornado",
+          "Remove": "clear X on green button"
+        }
+      }
+    },
+    {
+      "screen": "BoosterUnlock",
+      "title": "{booster_name}",
+      "body": "{booster_tutorial}",
+      "buttons": [
+        "OK"
+      ],
+      "source": "https://hvtanh07.github.io/gdd-squad-sort/#booster-tutorial",
+      "status": "proposed wording consistent with GDD; not a verbatim approved string",
+      "values": {
+        "undo": {
+          "unlock": 5,
+          "free": 3,
+          "draft": "Rewind your previous move."
+        },
+        "shuffle": {
+          "unlock": 11,
+          "free": 3,
+          "draft": "Mix buddies between containers.",
+          "tutorial_exact_status": "TBD in GDD; draft is inferred from §1.5"
+        },
+        "remove": {
+          "unlock": null,
+          "free": 3,
+          "draft": "Choose a buddy. Gather its color into one tray and clear the squad."
+        }
+      }
+    },
+    {
+      "screen": "ElementUnlock",
+      "title": "{element_name}",
+      "body": "{element_description}",
+      "buttons": [
+        "OK"
+      ],
+      "source": "https://hvtanh07.github.io/gdd-squad-sort/#element-tutorial",
+      "status": "proposed wording consistent with GDD; not a verbatim approved string",
+      "values": {
+        "hidden_buddy": {
+          "unlock": 10,
+          "draft": "A hidden buddy reveals its color when it reaches the front.",
+          "tutorial_exact_status": "TBD in GDD; draft based on §1.4"
+        },
+        "house": {
+          "unlock": 20,
+          "draft": "Complete a squad in the house color to release the buddies inside."
+        }
+      }
+    },
+    {
+      "screen": "StarterBundle",
+      "title": "Starter Pack",
+      "body": "Limited Time Offer: {time_left}",
+      "buttons": [
+        "$1.99"
+      ],
+      "source": "https://hvtanh07.github.io/gdd-squad-sort/#starter-pack",
+      "status": "proposed wording consistent with GDD; not a verbatim approved string",
+      "values": {
+        "coins": 2500,
+        "each_booster": 2,
+        "unlimited_lives_hours": 2,
+        "offer_hours": 72,
+        "timer_sample": "71:59:59"
+      }
+    },
+    {
+      "screen": "RemoveAds",
+      "title": "Remove Ads",
+      "body": "No banner or interstitial ads. Permanent ad removal. Optional ads still give rewards.",
+      "buttons": [
+        "$5.99"
+      ],
+      "source": "https://hvtanh07.github.io/gdd-squad-sort/#remove-ads",
+      "status": "proposed wording consistent with GDD; not a verbatim approved string",
+      "values": {
+        "coins": 1500,
+        "each_booster": 1
+      }
+    },
+    {
+      "screen": "GarageGift",
+      "title": "Limited Time Reward",
+      "body": "Claim your gift before time runs out.",
+      "buttons": [
+        "No thanks",
+        "Get Reward"
+      ],
+      "source": "https://hvtanh07.github.io/gdd-squad-sort/#limited-time-reward",
+      "status": "proposed wording consistent with GDD; not a verbatim approved string",
+      "values": {
+        "coins": 200,
+        "booster_count": 1,
+        "booster_type": null,
+        "booster_type_status": "not specified; final artwork uses generic gift placeholder, not a promised random reward",
+        "offer_minutes": 10,
+        "cooldown_hours": 4,
+        "unlock": 10
+      }
+    },
+    {
+      "screen": "SkipLevel",
+      "title": "Skip this level?",
+      "body": "Move on without a coin reward.",
+      "buttons": [
+        "No thanks",
+        "Skip level"
+      ],
+      "source": "https://hvtanh07.github.io/gdd-squad-sort/#skip-retry",
+      "status": "proposed wording consistent with GDD; not a verbatim approved string",
+      "values": {
+        "rewarded_ad": 1,
+        "coins_price": null,
+        "coins_price_status": "remote config, numerical value not provided",
+        "daily_limit": 3,
+        "not_in_levels": [
+          1,
+          2,
+          3
+        ],
+        "no_life_lost": true
+      }
+    },
+    {
+      "screen": "RestartBooster",
+      "title": "Try again?",
+      "body": "Restart with one free Remove. Uses 1 life.",
+      "buttons": [
+        "No thanks",
+        "Get Booster"
+      ],
+      "source": "https://hvtanh07.github.io/gdd-squad-sort/#skip-retry",
+      "status": "proposed wording consistent with GDD; not a verbatim approved string",
+      "values": {
+        "rewarded_ad": 1,
+        "daily_limit": 3,
+        "remove_count": 1,
+        "requires_remove_unlocked": true,
+        "remove_unlock": null,
+        "unlimited_lives_exception": true
+      }
+    },
+    {
+      "screen": "RentSlot",
+      "title": "Extra Container",
+      "body": "Watch an ad to add an empty container.",
+      "buttons": [
+        "Free"
+      ],
+      "source": "https://hvtanh07.github.io/gdd-squad-sort/#additional-mechanics",
+      "status": "proposed wording consistent with GDD; not a verbatim approved string",
+      "values": {
+        "extra_containers_per_ad": 1,
+        "coin_option": "not specified; removed",
+        "duration": "not specified; remove 60 Sec",
+        "max_per_level": null,
+        "max_status": "TBD"
+      }
+    },
+    {
+      "screen": "PurchaseReward",
+      "title": "REWARDS!",
+      "body": "{purchased_pack_rewards}",
+      "buttons": [
+        "Continue"
+      ],
+      "source": "https://hvtanh07.github.io/gdd-squad-sort/#pack-list",
+      "status": "proposed wording consistent with GDD; not a verbatim approved string",
+      "values": {
+        "rewards": "dynamic per purchased SKU; no fixed 3000 / 3 each",
+        "mockup_fixture": "Small Pack: 2500 coins, 1h unlimited lives, each booster x2"
+      }
+    },
+    {
+      "screen": "PurchaseFailed",
+      "title": "Purchase Failed",
+      "body": "Your account wasn't charged!",
+      "buttons": [
+        "Continue"
+      ],
+      "source": "https://hvtanh07.github.io/gdd-squad-sort/#store",
+      "status": "Exact message not specified; retain source UI sample, render only for confirmed uncharged failure",
+      "values": {}
+    },
+    {
+      "screen": "RestorePurchase",
+      "title": "Restore Purchase",
+      "body": "Your purchase has been successfully restored.",
+      "buttons": [
+        "OK"
+      ],
+      "source": "https://hvtanh07.github.io/gdd-squad-sort/#store",
+      "status": "Exact microcopy not specified; retained source UI success text",
+      "values": {}
+    },
+    {
+      "screen": "NoInternet",
+      "title": "No Internet",
+      "body": "Check your connection and try again.",
+      "buttons": [
+        "Retry"
+      ],
+      "source": "https://hvtanh07.github.io/gdd-squad-sort/#store",
+      "status": "Exact microcopy not specified; proposed concise source-UI wording",
+      "values": {}
+    },
+    {
+      "screen": "NotificationPermission",
+      "title": "Stay Updated!",
+      "body": "Get a reminder when it's time to play.",
+      "buttons": [
+        "No thanks",
+        "Yes"
+      ],
+      "source": "https://hvtanh07.github.io/gdd-squad-sort/#game-concept",
+      "status": "Not specified by GDD; retained source UI copy",
+      "values": {}
+    },
+    {
+      "screen": "Rating",
+      "title": "We would like to hear from you",
+      "body": "How has your experience been so far?",
+      "buttons": [
+        "Submit"
+      ],
+      "source": "https://hvtanh07.github.io/gdd-squad-sort/#game-concept",
+      "status": "Not specified by GDD; proposed copy, 5-star source UI unchanged",
+      "values": {}
+    },
+    {
+      "screen": "Loading",
+      "title": "SQUAD SORT",
+      "body": "{progress}% ",
+      "buttons": [],
+      "source": "https://hvtanh07.github.io/gdd-squad-sort/#game-concept",
+      "status": "proposed wording consistent with GDD; not a verbatim approved string",
+      "values": {
+        "illustration": "three buddies around a bubbling potion cauldron in a castle hall"
+      }
+    },
+    {
+      "screen": "Error",
+      "title": "ERROR!",
+      "body": "No ads available right now. Please try again later.",
+      "buttons": [],
+      "source": "https://hvtanh07.github.io/gdd-squad-sort/#additional-mechanics",
+      "status": "Exact microcopy not specified; proposed source-UI wording",
+      "values": {}
+    }
+  ]
+}

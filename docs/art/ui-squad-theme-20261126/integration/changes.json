@@ -1,0 +1,2054 @@
+[
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Home/HomeView.prefab",
+    "node": "MoneySort_HomeUI",
+    "old": "bg_home 2",
+    "role": "home",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/home-720x1280.png",
+    "width": 0.0,
+    "height": 0.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Home/HomeView.prefab",
+    "node": "MoneySort_HomeUI/SafeArea/ChipAwayLogo",
+    "old": "title 2",
+    "role": "logo",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/logo-539x325.png",
+    "width": 539.0,
+    "height": 325.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Home/HomeView.prefab",
+    "node": "MoneySort_HomeUI/SafeArea/SettingsButton",
+    "old": "panel_3 1",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-79x79.png",
+    "width": 79.0,
+    "height": 79.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Home/HomeView.prefab",
+    "node": "MoneySort_HomeUI/SafeArea/PlayButton",
+    "old": "level_normal_button2 1",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-432x180.png",
+    "width": 432.0,
+    "height": 180.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Home/HomeView.prefab",
+    "node": "MoneySort_HomeUI/SafeArea/ResoureGroup/MoneyHud",
+    "old": "win_wallet",
+    "role": "pill",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/pill-172x69.png",
+    "width": 172.0,
+    "height": 69.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Home/HomeView.prefab",
+    "node": "MoneySort_HomeUI/SafeArea/ResoureGroup/LivesHud",
+    "old": "Rectangle 25",
+    "role": "pill",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/pill-148x59.png",
+    "width": 148.0,
+    "height": 59.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Home/HomeView.prefab",
+    "node": "MoneySort_HomeUI/HomeFooter",
+    "old": "menu_bar 1",
+    "role": "pink",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/pink-720x135.png",
+    "width": 0.0,
+    "height": 135.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Home/HomeView.prefab",
+    "node": "MoneySort_HomeUI/HomeFooter/ShopTab/Content/Selected/Tile",
+    "old": "Rectangle 7 1 1",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-250x157.png",
+    "width": 250.0,
+    "height": 157.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Home/HomeView.prefab",
+    "node": "MoneySort_HomeUI/HomeFooter/ShopTab/Content/Selected/Icon",
+    "old": "dfb3a98d-08f7-4c5b-a1d1-ea00c04909d4 1",
+    "role": "shop-icon",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/shop-icon-154x140.png",
+    "width": 154.0,
+    "height": 140.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Home/HomeView.prefab",
+    "node": "MoneySort_HomeUI/HomeFooter/ShopTab/Content/Icon",
+    "old": "dfb3a98d-08f7-4c5b-a1d1-ea00c04909d4 1",
+    "role": "shop-icon",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/shop-icon-140x130.png",
+    "width": 140.0,
+    "height": 130.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Home/HomeView.prefab",
+    "node": "MoneySort_HomeUI/HomeFooter/MainTab/Content/Selected/Tile",
+    "old": "Rectangle 7 1 1",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-250x157.png",
+    "width": 250.0,
+    "height": 157.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Home/HomeView.prefab",
+    "node": "MoneySort_HomeUI/HomeFooter/MainTab/Content/Selected/Icon",
+    "old": "c5a6fba0-16e9-4b31-a9cc-9931f2cb9f88 2",
+    "role": "home-icon",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/home-icon-176x166.png",
+    "width": 176.0,
+    "height": 166.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Home/HomeView.prefab",
+    "node": "MoneySort_HomeUI/HomeFooter/MainTab/Content/Icon",
+    "old": "c5a6fba0-16e9-4b31-a9cc-9931f2cb9f88 2",
+    "role": "home-icon",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/home-icon-140x130.png",
+    "width": 140.0,
+    "height": 130.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Home/HomeView.prefab",
+    "node": "MoneySort_HomeUI/HomeFooter/LockedTab/Content/Selected/Tile",
+    "old": "Rectangle 7 1 1",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-250x164.png",
+    "width": 250.0,
+    "height": 164.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Home/HomeView.prefab",
+    "node": "MoneySort_HomeUI/HomeFooter/LockedTab/Content/Selected/Icon",
+    "old": "chip_away_lock_option_1 1",
+    "role": "lock",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/lock-145x140.png",
+    "width": 145.0,
+    "height": 140.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Home/HomeView.prefab",
+    "node": "MoneySort_HomeUI/HomeFooter/LockedTab/Content/Lock",
+    "old": "chip_away_lock_option_1 1",
+    "role": "lock",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/lock-118x117.png",
+    "width": 118.0,
+    "height": 117.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Gameplay/GameplayHud.prefab",
+    "node": "MoneySort_GameplayUI",
+    "old": "Background",
+    "role": "yellow",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/yellow-720x1280.png",
+    "width": 0.0,
+    "height": 0.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Gameplay/GameplayHud.prefab",
+    "node": "MoneySort_GameplayUI/SafeArea/LevelSlab",
+    "old": "LEVEL SLAB",
+    "role": "pill",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/pill-197x60.png",
+    "width": 197.0,
+    "height": 60.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Gameplay/GameplayHud.prefab",
+    "node": "MoneySort_GameplayUI/SafeArea/SkillContainer/BoosterButtonUI (2)",
+    "old": "Boosters buttons",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-113x113.png",
+    "width": 113.0,
+    "height": 113.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Gameplay/GameplayHud.prefab",
+    "node": "MoneySort_GameplayUI/SafeArea/SkillContainer/BoosterButtonUI (2)/UnlockedContent/ShuffleIcon",
+    "old": "Hand 1",
+    "role": "undo",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/undo-88x88.png",
+    "width": 88.0,
+    "height": 88.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Gameplay/GameplayHud.prefab",
+    "node": "MoneySort_GameplayUI/SafeArea/SkillContainer/BoosterButtonUI",
+    "old": "Boosters buttons",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-113x113.png",
+    "width": 113.0,
+    "height": 113.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Gameplay/GameplayHud.prefab",
+    "node": "MoneySort_GameplayUI/SafeArea/SkillContainer/BoosterButtonUI/UnlockedContent/ShuffleIcon",
+    "old": "Shuffle 1",
+    "role": "shuffle",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/shuffle-88x88.png",
+    "width": 88.0,
+    "height": 88.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Gameplay/GameplayHud.prefab",
+    "node": "MoneySort_GameplayUI/SafeArea/SkillContainer/BoosterButtonUI (1)",
+    "old": "Boosters buttons",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-113x113.png",
+    "width": 113.0,
+    "height": 113.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Gameplay/GameplayHud.prefab",
+    "node": "MoneySort_GameplayUI/SafeArea/SkillContainer/BoosterButtonUI (1)/UnlockedContent/ShuffleIcon",
+    "old": "Magnet 1",
+    "role": "remove",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/remove-88x88.png",
+    "width": 88.0,
+    "height": 88.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Gameplay/GameplayHud.prefab",
+    "node": "MoneySort_GameplayUI/SafeArea/ResoureGroup/MoneyHud",
+    "old": "COIN SLAB",
+    "role": "pill",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/pill-125x47.png",
+    "width": 125.0,
+    "height": 47.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Gameplay/GameplayHud.prefab",
+    "node": "MoneySort_GameplayUI/SafeArea/ResoureGroup/LivesHud",
+    "old": "COIN SLAB",
+    "role": "pill",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/pill-121x47.png",
+    "width": 121.0,
+    "height": 47.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Gameplay/GameplayHud.prefab",
+    "node": "MoneySort_GameplayUI/SafeArea/SettingsButton",
+    "old": "SETTINGS",
+    "role": "settings-control",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/settings-control-62x62.png",
+    "width": 62.0,
+    "height": 62.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Gameplay/GameplayHud.prefab",
+    "node": "MoneySort_GameplayUI/SafeArea/RestartButton",
+    "old": "REPLAY",
+    "role": "restart-control",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/restart-control-62x62.png",
+    "width": 62.0,
+    "height": 62.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Gameplay/GameplayHud.prefab",
+    "node": "MoneySort_Tutorial/VisualRoot/PointingHand",
+    "old": "Hand 1",
+    "role": "undo",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/undo-104x104.png",
+    "width": 104.0,
+    "height": 104.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Gameplay/GameplayHud.prefab",
+    "node": "RvNudge",
+    "old": "slot_popup",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-192x96.png",
+    "width": 192.0,
+    "height": 96.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Settings/Prefabs/SettingsUI.prefab",
+    "node": "SettingsCard",
+    "old": "popup_1 1",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-552x734.png",
+    "width": 552.0,
+    "height": 734.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Settings/Prefabs/SettingsUI.prefab",
+    "node": "SettingsCard/Inner/GameplayButtons/RestartButton",
+    "old": "c8feb63ee9d6ee6562294b57c79e5e63815c5d95",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-382x110.png",
+    "width": 382.0,
+    "height": 110.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Settings/Prefabs/SettingsUI.prefab",
+    "node": "SettingsCard/Inner/GameplayButtons/HomeButton",
+    "old": "BlueButton",
+    "role": "blue",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/blue-378x110.png",
+    "width": 378.0,
+    "height": 110.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Settings/Prefabs/SettingsUI.prefab",
+    "node": "SettingsCard/Inner/HomeButtons/TermsOfServicesButton",
+    "old": "BlueButton",
+    "role": "blue",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/blue-378x110.png",
+    "width": 378.0,
+    "height": 110.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Settings/Prefabs/SettingsUI.prefab",
+    "node": "SettingsCard/Inner/HomeButtons/PrivacyPolicyButton",
+    "old": "BlueButton",
+    "role": "blue",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/blue-378x110.png",
+    "width": 378.0,
+    "height": 110.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Settings/Prefabs/SettingsUI.prefab",
+    "node": "SettingsCard/Header",
+    "old": "yellow_title 2",
+    "role": "header",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/header-346x109.png",
+    "width": 346.0,
+    "height": 109.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/ShopHeaderBackground/OverlayResources/MoneyHud",
+    "old": "win_wallet",
+    "role": "pill",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/pill-172x69.png",
+    "width": 172.0,
+    "height": 69.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/ShopHeaderBackground/OverlayResources/LivesHud",
+    "old": "Rectangle 25",
+    "role": "pill",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/pill-148x59.png",
+    "width": 148.0,
+    "height": 59.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel",
+    "old": "Rectangle 30",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-720x990.png",
+    "width": 0.0,
+    "height": -290.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/remove_ads/Background",
+    "old": "Panel2 1",
+    "role": "offer",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/offer-676x357.png",
+    "width": 676.0,
+    "height": 356.4727
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/remove_ads/BoosterPanel",
+    "old": "Booster panel",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-272x198.png",
+    "width": 272.0,
+    "height": 198.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/remove_ads/LivesPanel",
+    "old": "Rectangle 32",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-122x198.png",
+    "width": 122.0,
+    "height": 198.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/remove_ads/BuyButton",
+    "old": "shop_btn_green",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-236x60.png",
+    "width": 236.0,
+    "height": 60.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/remove_ads/Hammer",
+    "old": "Magnet 1",
+    "role": "remove",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/remove-90x90.png",
+    "width": 90.0,
+    "height": 90.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/remove_ads/FreeMove",
+    "old": "Hand 1",
+    "role": "undo",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/undo-94x94.png",
+    "width": 94.0,
+    "height": 94.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/remove_ads/Shuffle",
+    "old": "Shuffle 1",
+    "role": "shuffle",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/shuffle-94x94.png",
+    "width": 94.0,
+    "height": 94.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/starter/Background",
+    "old": "Panel1 2",
+    "role": "offer",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/offer-676x373.png",
+    "width": 676.0,
+    "height": 372.347565
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/starter/RedBand",
+    "old": "Rectangle 50",
+    "role": "header",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/header-608x92.png",
+    "width": 608.0,
+    "height": 92.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/starter/BoosterPanel",
+    "old": "Booster panel",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-272x198.png",
+    "width": 272.0,
+    "height": 198.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/starter/Hammer",
+    "old": "Magnet 1",
+    "role": "remove",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/remove-90x90.png",
+    "width": 90.0,
+    "height": 90.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/starter/FreeMove",
+    "old": "Hand 1",
+    "role": "undo",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/undo-94x94.png",
+    "width": 94.0,
+    "height": 94.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/starter/Shuffle",
+    "old": "Shuffle 1",
+    "role": "shuffle",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/shuffle-94x94.png",
+    "width": 94.0,
+    "height": 94.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/starter/LivesPanel",
+    "old": "Rectangle 32",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-122x198.png",
+    "width": 122.0,
+    "height": 198.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/starter/BuyButton",
+    "old": "shop_btn_green",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-174x60.png",
+    "width": 174.0,
+    "height": 60.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/starter/Timer/Pill",
+    "old": "shop_timer_pill",
+    "role": "pill",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/pill-146x60.png",
+    "width": 146.0,
+    "height": 60.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/starter/Timer/PillInner",
+    "old": "shop_timer_pill_inner",
+    "role": "pill",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/pill-118x27.png",
+    "width": 118.0,
+    "height": 27.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/SpecialPackHeader/Background",
+    "old": "Rectangle 7",
+    "role": "header",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/header-621x77.png",
+    "width": 621.0,
+    "height": 77.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/special_small/Background",
+    "old": "Panel1 2",
+    "role": "offer",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/offer-676x373.png",
+    "width": 676.0,
+    "height": 372.347565
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/special_small/BoosterPanel",
+    "old": "Booster panel",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-272x198.png",
+    "width": 272.0,
+    "height": 198.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/special_small/Hammer",
+    "old": "Magnet 1",
+    "role": "remove",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/remove-90x90.png",
+    "width": 90.0,
+    "height": 90.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/special_small/FreeMove",
+    "old": "Hand 1",
+    "role": "undo",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/undo-94x94.png",
+    "width": 94.0,
+    "height": 94.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/special_small/Shuffle",
+    "old": "Shuffle 1",
+    "role": "shuffle",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/shuffle-94x94.png",
+    "width": 94.0,
+    "height": 94.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/special_small/LivesPanel",
+    "old": "Rectangle 32",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-122x198.png",
+    "width": 122.0,
+    "height": 198.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/special_small/BuyButton",
+    "old": "shop_btn_green",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-236x60.png",
+    "width": 236.0,
+    "height": 60.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/special_medium/Background",
+    "old": "Panel1 2",
+    "role": "offer",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/offer-676x373.png",
+    "width": 676.0,
+    "height": 372.347565
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/special_medium/BoosterPanel",
+    "old": "Booster panel",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-272x198.png",
+    "width": 272.0,
+    "height": 198.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/special_medium/Hammer",
+    "old": "Magnet 1",
+    "role": "remove",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/remove-90x90.png",
+    "width": 90.0,
+    "height": 90.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/special_medium/FreeMove",
+    "old": "Hand 1",
+    "role": "undo",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/undo-94x94.png",
+    "width": 94.0,
+    "height": 94.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/special_medium/Shuffle",
+    "old": "Shuffle 1",
+    "role": "shuffle",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/shuffle-94x94.png",
+    "width": 94.0,
+    "height": 94.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/special_medium/LivesPanel",
+    "old": "Rectangle 32",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-122x198.png",
+    "width": 122.0,
+    "height": 198.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/special_medium/BuyButton",
+    "old": "shop_btn_green",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-236x60.png",
+    "width": 236.0,
+    "height": 60.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/special_ultra/Background",
+    "old": "Panel1 2",
+    "role": "offer",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/offer-676x373.png",
+    "width": 676.0,
+    "height": 372.347565
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/special_ultra/BoosterPanel",
+    "old": "Booster panel",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-272x198.png",
+    "width": 272.0,
+    "height": 198.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/special_ultra/Hammer",
+    "old": "Magnet 1",
+    "role": "remove",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/remove-90x90.png",
+    "width": 90.0,
+    "height": 90.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/special_ultra/FreeMove",
+    "old": "Hand 1",
+    "role": "undo",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/undo-94x94.png",
+    "width": 94.0,
+    "height": 94.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/special_ultra/Shuffle",
+    "old": "Shuffle 1",
+    "role": "shuffle",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/shuffle-94x94.png",
+    "width": 94.0,
+    "height": 94.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/special_ultra/LivesPanel",
+    "old": "Rectangle 32",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-122x198.png",
+    "width": 122.0,
+    "height": 198.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/special_ultra/BuyButton",
+    "old": "shop_btn_green",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-236x60.png",
+    "width": 236.0,
+    "height": 60.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/GoldPackHeader/Background",
+    "old": "Rectangle 7",
+    "role": "header",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/header-621x77.png",
+    "width": 621.0,
+    "height": 77.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/GoldPackGrid/coins_1000/Background",
+    "old": "shop_small_panel 2 1",
+    "role": "cream",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/cream-203x270.png",
+    "width": 203.0,
+    "height": 270.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/GoldPackGrid/coins_1000/BuyButton",
+    "old": "shop_btn_green",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-164x44.png",
+    "width": 164.0,
+    "height": 44.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/GoldPackGrid/coins_5000/Background",
+    "old": "shop_small_panel 2 1",
+    "role": "cream",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/cream-203x270.png",
+    "width": 203.0,
+    "height": 270.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/GoldPackGrid/coins_5000/BuyButton",
+    "old": "shop_btn_green",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-164x44.png",
+    "width": 164.0,
+    "height": 44.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/GoldPackGrid/coins_10000/Background",
+    "old": "shop_small_panel 2 1",
+    "role": "cream",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/cream-203x270.png",
+    "width": 203.0,
+    "height": 270.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/GoldPackGrid/coins_10000/BuyButton",
+    "old": "shop_btn_green",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-164x44.png",
+    "width": 164.0,
+    "height": 44.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/GoldPackGrid/coins_25000/Background",
+    "old": "shop_small_panel 2 1",
+    "role": "cream",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/cream-203x270.png",
+    "width": 203.0,
+    "height": 270.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/GoldPackGrid/coins_25000/BuyButton",
+    "old": "shop_btn_green",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-164x44.png",
+    "width": 164.0,
+    "height": 44.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/GoldPackGrid/coins_50000/Background",
+    "old": "shop_small_panel 2 1",
+    "role": "cream",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/cream-203x270.png",
+    "width": 203.0,
+    "height": 270.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/GoldPackGrid/coins_50000/BuyButton",
+    "old": "shop_btn_green",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-164x44.png",
+    "width": 164.0,
+    "height": 44.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/GoldPackGrid/coins_100000/Background",
+    "old": "shop_small_panel 2 1",
+    "role": "cream",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/cream-203x270.png",
+    "width": 203.0,
+    "height": 270.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/GoldPackGrid/coins_100000/BuyButton",
+    "old": "shop_btn_green",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-164x44.png",
+    "width": 164.0,
+    "height": 44.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/RestoreButton",
+    "old": "BlueButton",
+    "role": "blue",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/blue-245x70.png",
+    "width": 0.0,
+    "height": 70.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/Panel/Awning",
+    "old": "shop_ui 2",
+    "role": "awning",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/awning-720x112.png",
+    "width": 0.0,
+    "height": 112.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "SafeArea/SettingsButton",
+    "old": "panel_3 1",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-80x80.png",
+    "width": 79.2999,
+    "height": 79.2999
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "ShopFooter",
+    "old": "menu_bar 1",
+    "role": "pink",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/pink-720x135.png",
+    "width": 0.0,
+    "height": 135.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "ShopFooter/ShopTab/Content/Selected/Tile",
+    "old": "Rectangle 7 1 1",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-250x157.png",
+    "width": 250.0,
+    "height": 157.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "ShopFooter/ShopTab/Content/Selected/Icon",
+    "old": "dfb3a98d-08f7-4c5b-a1d1-ea00c04909d4 1",
+    "role": "shop-icon",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/shop-icon-154x140.png",
+    "width": 154.0,
+    "height": 140.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "ShopFooter/ShopTab/Content/Icon",
+    "old": "dfb3a98d-08f7-4c5b-a1d1-ea00c04909d4 1",
+    "role": "shop-icon",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/shop-icon-140x130.png",
+    "width": 140.0,
+    "height": 130.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "ShopFooter/MainTab/Content/Selected/Tile",
+    "old": "Rectangle 7 1 1",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-250x157.png",
+    "width": 250.0,
+    "height": 157.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "ShopFooter/MainTab/Content/Selected/Icon",
+    "old": "c5a6fba0-16e9-4b31-a9cc-9931f2cb9f88 2",
+    "role": "home-icon",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/home-icon-176x166.png",
+    "width": 176.0,
+    "height": 166.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "ShopFooter/MainTab/Content/Icon",
+    "old": "c5a6fba0-16e9-4b31-a9cc-9931f2cb9f88 2",
+    "role": "home-icon",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/home-icon-140x130.png",
+    "width": 140.0,
+    "height": 130.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "ShopFooter/LockedTab/Content/Selected/Tile",
+    "old": "Rectangle 7 1 1",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-250x164.png",
+    "width": 250.0,
+    "height": 164.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "ShopFooter/LockedTab/Content/Selected/Icon",
+    "old": "chip_away_lock_option_1 1",
+    "role": "lock",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/lock-145x140.png",
+    "width": 145.0,
+    "height": 140.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "node": "ShopFooter/LockedTab/Content/Lock",
+    "old": "chip_away_lock_option_1 1",
+    "role": "lock",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/lock-118x117.png",
+    "width": 118.0,
+    "height": 117.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/LevelUpUI.prefab",
+    "node": "Content",
+    "old": "bg 3",
+    "role": "victory-ground",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/victory-ground-720x1280.png",
+    "width": 0.0,
+    "height": 0.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/LevelUpUI.prefab",
+    "node": "Content/ExcellentTextImage",
+    "old": "txt_excellent 4",
+    "role": "perfect",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/perfect-687x199.png",
+    "width": 687.0,
+    "height": 199.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/LevelUpUI.prefab",
+    "node": "Content/ContinueButton",
+    "old": "level_normal_button2 1",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-430x178.png",
+    "width": 430.0,
+    "height": 178.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/LevelUpUI.prefab",
+    "node": "Content/X2CoinButton",
+    "old": "1c62b683b507d4dfb95239f678196475806eb4ed",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-380x104.png",
+    "width": 380.0,
+    "height": 104.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/LevelUpUI.prefab",
+    "node": "Content/Wallet",
+    "old": "win_wallet",
+    "role": "pill",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/pill-172x69.png",
+    "width": 172.0,
+    "height": 69.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/LevelUpUI.prefab",
+    "node": "FeatureProgress/Image",
+    "old": "win_feature_tag",
+    "role": "header",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/header-233x112.png",
+    "width": 233.0,
+    "height": 112.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/LevelUpUI.prefab",
+    "node": "FeatureProgress/Track",
+    "old": "win_feature_track_border",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-378x99.png",
+    "width": 378.0,
+    "height": 99.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/LevelUpUI.prefab",
+    "node": "FeatureProgress/Track/FeatureIconBox",
+    "old": "win_feature_box_border",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-169x167.png",
+    "width": 169.0,
+    "height": 167.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/LevelUpUI.prefab",
+    "node": "FeatureProgress/Track/FeatureIconBox/FeatureIcon",
+    "old": "Shuffle 1",
+    "role": "shuffle",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/shuffle-89x88.png",
+    "width": 88.459,
+    "height": 87.4122
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/LoseUI.prefab",
+    "node": "LifePopupCard",
+    "old": "popup_2 1",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-628x618.png",
+    "width": 628.0,
+    "height": 618.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/LoseUI.prefab",
+    "node": "LifePopupCard/Header",
+    "old": "red_tittle 1",
+    "role": "header",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/header-441x100.png",
+    "width": 441.0,
+    "height": 100.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/LoseUI.prefab",
+    "node": "LifePopupCard/RetryButton",
+    "old": "Background",
+    "role": "yellow",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/yellow-276x80.png",
+    "width": 276.0,
+    "height": 80.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/OutOfLivesUI.prefab",
+    "node": "LifePopupCard",
+    "old": "popup_2 1",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-628x618.png",
+    "width": 628.0,
+    "height": 618.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/OutOfLivesUI.prefab",
+    "node": "LifePopupCard/Frame",
+    "old": "d2e7fdf51afe98ba9e69cadc9087ecbd00632924",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-628x618.png",
+    "width": 628.0,
+    "height": 618.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/OutOfLivesUI.prefab",
+    "node": "LifePopupCard/Header",
+    "old": "Popup-RedTitleRibbonCompact",
+    "role": "header",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/header-440x100.png",
+    "width": 440.0,
+    "height": 100.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/OutOfLivesUI.prefab",
+    "node": "LifePopupCard/BuyButton",
+    "old": "Background1",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-268x77.png",
+    "width": 268.0,
+    "height": 77.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/OutOfLivesUI.prefab",
+    "node": "LifePopupCard/FreeButton",
+    "old": "Background",
+    "role": "yellow",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/yellow-268x77.png",
+    "width": 268.0,
+    "height": 77.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/OutOfSpaceUI.prefab",
+    "node": "Card",
+    "old": "Group 47",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-550x733.png",
+    "width": 550.0,
+    "height": 733.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/OutOfSpaceUI.prefab",
+    "node": "Card/PreviewFrame",
+    "old": "Rectangle 39",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-455x280.png",
+    "width": 455.0,
+    "height": 280.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/OutOfSpaceUI.prefab",
+    "node": "Card/CoinButton",
+    "old": "Background1",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-232x67.png",
+    "width": 232.0,
+    "height": 67.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/OutOfSpaceUI.prefab",
+    "node": "Card/AdButton",
+    "old": "Background",
+    "role": "yellow",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/yellow-232x67.png",
+    "width": 232.0,
+    "height": 67.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/OutOfSpaceUI.prefab",
+    "node": "Card/Header",
+    "old": "41d244d6ddb8afe0fa02cc469d49cbeffde607a2",
+    "role": "header",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/header-347x91.png",
+    "width": 347.0,
+    "height": 91.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/OutOfSpaceUI.prefab",
+    "node": "Card/BeforePanel",
+    "old": "Rectangle 30",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-211x281.png",
+    "width": 211.0,
+    "height": 281.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/OutOfSpaceUI.prefab",
+    "node": "Card/AfterPanel",
+    "old": "Rectangle 30",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-211x281.png",
+    "width": 211.0,
+    "height": 281.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/OutOfSpaceUI.prefab",
+    "node": "Card/FullSlots",
+    "old": "mockup1 3",
+    "role": "buddies",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/buddies-153x259.png",
+    "width": 153.0,
+    "height": 259.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/OutOfSpaceUI.prefab",
+    "node": "Card/ClearSlots",
+    "old": "f57105c2-c4d6-48cb-b1d9-8bd84d4df900 1",
+    "role": "revive-art",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/revive-art-178x233.png",
+    "width": 178.0,
+    "height": 233.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/OutOfSpaceUI.prefab",
+    "node": "OutOfMovesBanner",
+    "old": "Group 223",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-596x271.png",
+    "width": 596.0,
+    "height": 271.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/BoosterPurchaseUI.prefab",
+    "node": "Card",
+    "old": "popup_1 7",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-550x733.png",
+    "width": 550.0,
+    "height": 733.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/BoosterPurchaseUI.prefab",
+    "node": "Card/Content/BoosterHeader",
+    "old": "yellow_title 2",
+    "role": "header",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/header-346x109.png",
+    "width": 346.0,
+    "height": 109.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/BoosterPurchaseUI.prefab",
+    "node": "Card/Content/BoardPreviewFrame",
+    "old": "Rectangle 39",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-508x333.png",
+    "width": 508.0,
+    "height": 333.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/BoosterPurchaseUI.prefab",
+    "node": "Card/Content/ButtonContainer/CoinButton",
+    "old": "image 143",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-230x70.png",
+    "width": 230.0,
+    "height": 70.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/BoosterPurchaseUI.prefab",
+    "node": "Card/Content/ButtonContainer/CoinButton/LeftContent",
+    "old": "c8feb63ee9d6ee6562294b57c79e5e63815c5d95",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-65x65.png",
+    "width": 65.0,
+    "height": 65.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/BoosterPurchaseUI.prefab",
+    "node": "Card/Content/ButtonContainer/CoinButton/LeftContent/BoosterIcon",
+    "old": "Shuffle 1",
+    "role": "shuffle",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/shuffle-54x54.png",
+    "width": 54.0,
+    "height": 54.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/BoosterPurchaseUI.prefab",
+    "node": "Card/Content/ButtonContainer/FreeButton",
+    "old": "yellow_button_2 1",
+    "role": "yellow",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/yellow-230x70.png",
+    "width": 230.0,
+    "height": 70.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/BoosterPurchaseUI.prefab",
+    "node": "Card/Content/ButtonContainer/FreeButton/LeftContent",
+    "old": "c8feb63ee9d6ee6562294b57c79e5e63815c5d95",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-65x65.png",
+    "width": 65.0,
+    "height": 65.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/BoosterPurchaseUI.prefab",
+    "node": "Card/Content/ButtonContainer/FreeButton/LeftContent/BoosterIcon",
+    "old": "Shuffle 1",
+    "role": "shuffle",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/shuffle-54x54.png",
+    "width": 54.0,
+    "height": 54.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/BoosterPurchaseUI.prefab",
+    "node": "Panel",
+    "old": "Popup-Booster2 2",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-720x1280.png",
+    "width": 0.0,
+    "height": 0.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/BoosterUnlockUI.prefab",
+    "node": "Card",
+    "old": "popup_1 7",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-545x735.png",
+    "width": 545.0,
+    "height": 735.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/BoosterUnlockUI.prefab",
+    "node": "Card/Header",
+    "old": "Popup-BlueTitleRibbon",
+    "role": "header",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/header-346x99.png",
+    "width": 346.0,
+    "height": 99.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/BoosterUnlockUI.prefab",
+    "node": "Card/Content/BoosterHeader",
+    "old": "Rectangle 38",
+    "role": "header",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/header-10x10.png",
+    "width": 10.0,
+    "height": 10.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/BoosterUnlockUI.prefab",
+    "node": "Card/Content/BoosterHeader/BoosterIcon",
+    "old": "Hand 1",
+    "role": "undo",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/undo-210x210.png",
+    "width": 210.0,
+    "height": 210.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/BoosterUnlockUI.prefab",
+    "node": "Card/Content/BoardPreviewFrame",
+    "old": "Rectangle 39",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-506x334.png",
+    "width": 506.0,
+    "height": 334.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/BoosterUnlockUI.prefab",
+    "node": "Card/Content/ClaimButton",
+    "old": "shop_btn_green",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-319x106.png",
+    "width": 319.0,
+    "height": 106.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/BoosterUnlockUI.prefab",
+    "node": "Panel",
+    "old": "Popup-Booster2",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-720x1280.png",
+    "width": 0.0,
+    "height": 0.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/BoosterUnlockUI.prefab",
+    "node": "MagnetGuideCard",
+    "old": "popup_1 7",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-536x800.png",
+    "width": 536.0,
+    "height": 800.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/BoosterUnlockUI.prefab",
+    "node": "MagnetGuideCard/Header",
+    "old": "yellow_title 2",
+    "role": "header",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/header-390x90.png",
+    "width": 390.0,
+    "height": 90.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/BoosterUnlockUI.prefab",
+    "node": "MagnetGuideCard/Icon",
+    "old": "Magnet 1",
+    "role": "remove",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/remove-210x210.png",
+    "width": 210.0,
+    "height": 210.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/BoosterUnlockUI.prefab",
+    "node": "MagnetGuideCard/OkButton",
+    "old": "shop_btn_green",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-300x88.png",
+    "width": 300.0,
+    "height": 88.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ElementUnlockUI.prefab",
+    "node": "Card",
+    "old": "popup_1 6",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-550x733.png",
+    "width": 550.0,
+    "height": 733.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ElementUnlockUI.prefab",
+    "node": "Card/Content/BoosterHeader",
+    "old": "Rectangle 38",
+    "role": "header",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/header-518x131.png",
+    "width": 518.0,
+    "height": 131.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ElementUnlockUI.prefab",
+    "node": "Card/Content/BoardPreviewFrame",
+    "old": "Rectangle 29",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-442x199.png",
+    "width": 442.0,
+    "height": 199.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ElementUnlockUI.prefab",
+    "node": "Card/Content/BoardPreviewFrame/BoardPreviewPlaceholder/HiddenStackIllustration/Before",
+    "old": "c5ad8c32-eaf5-4659-bfba-43998b7304fc 1",
+    "role": "hidden",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/hidden-264x246.png",
+    "width": 264.0,
+    "height": 246.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ElementUnlockUI.prefab",
+    "node": "Card/Content/BoardPreviewFrame/BoardPreviewPlaceholder/HiddenStackIllustration/After",
+    "old": "mockup2 1",
+    "role": "hidden",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/hidden-235x218.png",
+    "width": 235.0,
+    "height": 218.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ElementUnlockUI.prefab",
+    "node": "Card/Content/BoardPreviewFrame/BoardPreviewPlaceholder/HiddenPoleIllustration/Before",
+    "old": "mockup3 1",
+    "role": "house",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/house-146x284.png",
+    "width": 146.0,
+    "height": 284.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ElementUnlockUI.prefab",
+    "node": "Card/Content/BoardPreviewFrame/BoardPreviewPlaceholder/HiddenPoleIllustration/After",
+    "old": "mockup4 1",
+    "role": "house",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/house-170x234.png",
+    "width": 170.0,
+    "height": 234.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ElementUnlockUI.prefab",
+    "node": "Card/Content/BoardPreviewFrame/BoardPreviewPlaceholder/LockedChipIllustration/Before",
+    "old": "mockup5 1",
+    "role": "house",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/house-207x156.png",
+    "width": 207.0,
+    "height": 156.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ElementUnlockUI.prefab",
+    "node": "Card/Content/BoardPreviewFrame/BoardPreviewPlaceholder/LockedChipIllustration/After",
+    "old": "mockup6 1",
+    "role": "house",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/house-221x147.png",
+    "width": 221.0,
+    "height": 147.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ElementUnlockUI.prefab",
+    "node": "Card/Content/ClaimButton",
+    "old": "Background1",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-250x72.png",
+    "width": 250.0,
+    "height": 72.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ElementUnlockUI.prefab",
+    "node": "Card/Header",
+    "old": "Popup-BlueTitleRibbon",
+    "role": "header",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/header-346x109.png",
+    "width": 346.0,
+    "height": 109.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/StarterBundleUI.prefab",
+    "node": "OfferCard",
+    "old": "6912889d689a77c979223e33ff11f1dfb2a07bb3",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-552x694.png",
+    "width": 552.0,
+    "height": 694.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/StarterBundleUI.prefab",
+    "node": "OfferCard/Background",
+    "old": "popup3 3",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-518x611.png",
+    "width": 518.0,
+    "height": 611.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/StarterBundleUI.prefab",
+    "node": "OfferCard/Ribbon",
+    "old": "title 1",
+    "role": "header",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/header-542x180.png",
+    "width": 542.0,
+    "height": 180.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/StarterBundleUI.prefab",
+    "node": "OfferCard/TimerPill",
+    "old": "starter_popup_timer_pill",
+    "role": "pill",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/pill-338x34.png",
+    "width": 338.0,
+    "height": 34.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/StarterBundleUI.prefab",
+    "node": "OfferCard/Rewards/Panel",
+    "old": "starter_popup_panel",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-430x347.png",
+    "width": 430.0,
+    "height": 347.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/StarterBundleUI.prefab",
+    "node": "OfferCard/Rewards/Hammer",
+    "old": "Hand 1",
+    "role": "undo",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/undo-85x91.png",
+    "width": 85.0,
+    "height": 91.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/StarterBundleUI.prefab",
+    "node": "OfferCard/Rewards/Shuffle",
+    "old": "Shuffle 1",
+    "role": "shuffle",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/shuffle-80x86.png",
+    "width": 80.0,
+    "height": 86.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/StarterBundleUI.prefab",
+    "node": "OfferCard/Rewards/FreeMove",
+    "old": "Magnet 1",
+    "role": "remove",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/remove-78x81.png",
+    "width": 78.0,
+    "height": 81.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/StarterBundleUI.prefab",
+    "node": "OfferCard/BuyButton",
+    "old": "shop_btn_green",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-212x70.png",
+    "width": 212.0,
+    "height": 70.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/RemoveAdsUI.prefab",
+    "node": "OfferCard",
+    "old": "6912889d689a77c979223e33ff11f1dfb2a07bb3",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-573x772.png",
+    "width": 573.0,
+    "height": 772.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/RemoveAdsUI.prefab",
+    "node": "OfferCard/Background",
+    "old": "popup4_2 1",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-520x744.png",
+    "width": 520.0,
+    "height": 744.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/RemoveAdsUI.prefab",
+    "node": "OfferCard/Ribbon",
+    "old": "Group 267",
+    "role": "mint",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/mint-427x95.png",
+    "width": 427.0,
+    "height": 95.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/RemoveAdsUI.prefab",
+    "node": "OfferCard/Title",
+    "old": "remove_ads_popup_title",
+    "role": "header",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/header-335x57.png",
+    "width": 335.0,
+    "height": 57.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/RemoveAdsUI.prefab",
+    "node": "OfferCard/BuyButton",
+    "old": "shop_btn_green",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-212x70.png",
+    "width": 212.0,
+    "height": 70.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/GarageGiftUI.prefab",
+    "node": "PromptCard/Card",
+    "old": "popup5 2",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-592x782.png",
+    "width": 592.0,
+    "height": 782.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/GarageGiftUI.prefab",
+    "node": "PromptCard/TimerPill",
+    "old": "Rectangle 49",
+    "role": "header",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/header-160x48.png",
+    "width": 160.0,
+    "height": 48.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/GarageGiftUI.prefab",
+    "node": "PromptCard/FreeMoveIcon",
+    "old": "Hand 1",
+    "role": "undo",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/undo-96x101.png",
+    "width": 96.0,
+    "height": 101.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/GarageGiftUI.prefab",
+    "node": "PromptCard/NoThanksButton",
+    "old": "BlueButton",
+    "role": "blue",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/blue-224x68.png",
+    "width": 224.0,
+    "height": 68.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/GarageGiftUI.prefab",
+    "node": "PromptCard/WatchAdButton",
+    "old": "Background",
+    "role": "yellow",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/yellow-228x70.png",
+    "width": 227.2764,
+    "height": 70.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/SkipLevelUI.prefab",
+    "node": "PromptCard/Card",
+    "old": "popup_3 3",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-614x705.png",
+    "width": 614.0,
+    "height": 705.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/SkipLevelUI.prefab",
+    "node": "PromptCard/TitleRibbon",
+    "old": "Popup-RedTitleRibbonCompact",
+    "role": "header",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/header-409x94.png",
+    "width": 409.0,
+    "height": 94.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/SkipLevelUI.prefab",
+    "node": "PromptCard/NoThanksButton",
+    "old": "button_red_1 1",
+    "role": "red",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/red-224x76.png",
+    "width": 224.0,
+    "height": 75.8696
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/SkipLevelUI.prefab",
+    "node": "PromptCard/WatchAdButton",
+    "old": "yellow_button 3",
+    "role": "yellow",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/yellow-281x82.png",
+    "width": 281.0,
+    "height": 81.87
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/RestartBoosterUI.prefab",
+    "node": "PromptCard/Card",
+    "old": "popup_3 3",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-614x705.png",
+    "width": 614.0,
+    "height": 705.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/RestartBoosterUI.prefab",
+    "node": "PromptCard/TitleRibbon",
+    "old": "Popup-RedTitleRibbonCompact",
+    "role": "header",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/header-409x94.png",
+    "width": 409.0,
+    "height": 94.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/RestartBoosterUI.prefab",
+    "node": "PromptCard/Icon",
+    "old": "Magnet 1",
+    "role": "remove",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/remove-174x170.png",
+    "width": 174.0,
+    "height": 170.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/RestartBoosterUI.prefab",
+    "node": "PromptCard/NoThanksButton",
+    "old": "button_red_1 1",
+    "role": "red",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/red-224x76.png",
+    "width": 224.0,
+    "height": 75.8696
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/RestartBoosterUI.prefab",
+    "node": "PromptCard/WatchAdButton",
+    "old": "yellow_button 3",
+    "role": "yellow",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/yellow-281x82.png",
+    "width": 281.0,
+    "height": 81.87
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/RentSlotUI.prefab",
+    "node": "Card",
+    "old": "d2e7fdf51afe98ba9e69cadc9087ecbd00632924",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-620x916.png",
+    "width": 620.0,
+    "height": 915.9628
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/RentSlotUI.prefab",
+    "node": "Card/RentVisual",
+    "old": "rent_panel 1",
+    "role": "extra-tray",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/extra-tray-190x340.png",
+    "width": 190.0,
+    "height": 340.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/RentSlotUI.prefab",
+    "node": "Card/Header",
+    "old": "image 72",
+    "role": "header",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/header-395x109.png",
+    "width": 394.2133,
+    "height": 108.927368
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/RentSlotUI.prefab",
+    "node": "Card/CoinButton",
+    "old": "c8feb63ee9d6ee6562294b57c79e5e63815c5d95",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-315x88.png",
+    "width": 315.0,
+    "height": 88.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/RentSlotUI.prefab",
+    "node": "Card/FreeButton",
+    "old": "1c62b683b507d4dfb95239f678196475806eb4ed",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-311x97.png",
+    "width": 310.32,
+    "height": 96.3845
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/PurchaseRewardUI.prefab",
+    "node": "OfferCard",
+    "old": "6912889d689a77c979223e33ff11f1dfb2a07bb3",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-720x1280.png",
+    "width": 720.0,
+    "height": 1280.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/PurchaseRewardUI.prefab",
+    "node": "OfferCard/Background",
+    "old": "starter_popup_card",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-552x673.png",
+    "width": 552.0,
+    "height": 673.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/PurchaseRewardUI.prefab",
+    "node": "OfferCard/Ribbon",
+    "old": "starter_popup_ribbon",
+    "role": "header",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/header-368x103.png",
+    "width": 368.0,
+    "height": 103.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/PurchaseRewardUI.prefab",
+    "node": "OfferCard/Panel",
+    "old": "starter_popup_panel",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-475x383.png",
+    "width": 475.0,
+    "height": 383.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/PurchaseRewardUI.prefab",
+    "node": "OfferCard/BundleContent/Hammer",
+    "old": "Magnet 1",
+    "role": "remove",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/remove-112x120.png",
+    "width": 112.0,
+    "height": 120.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/PurchaseRewardUI.prefab",
+    "node": "OfferCard/BundleContent/Shuffle",
+    "old": "Shuffle 1",
+    "role": "shuffle",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/shuffle-112x120.png",
+    "width": 112.0,
+    "height": 120.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/PurchaseRewardUI.prefab",
+    "node": "OfferCard/BundleContent/FreeMove",
+    "old": "Hand 1",
+    "role": "undo",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/undo-112x120.png",
+    "width": 112.0,
+    "height": 120.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/PurchaseRewardUI.prefab",
+    "node": "OfferCard/ContinueButton",
+    "old": "shop_btn_green",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-380x108.png",
+    "width": 380.0,
+    "height": 108.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/PurchaseFailedUI.prefab",
+    "node": "OfferCard",
+    "old": "6912889d689a77c979223e33ff11f1dfb2a07bb3",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-720x1280.png",
+    "width": 720.0,
+    "height": 1280.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/PurchaseFailedUI.prefab",
+    "node": "OfferCard/Background",
+    "old": "popup_2 4",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-628x618.png",
+    "width": 628.0,
+    "height": 618.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/PurchaseFailedUI.prefab",
+    "node": "OfferCard/Ribbon",
+    "old": "purchase_failed_ribbon",
+    "role": "header",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/header-435x94.png",
+    "width": 435.0,
+    "height": 94.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/PurchaseFailedUI.prefab",
+    "node": "OfferCard/ContinueButton",
+    "old": "shop_btn_green",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-382x116.png",
+    "width": 382.0,
+    "height": 116.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/PurchaseFailedUI.prefab",
+    "node": "Panel",
+    "old": "Popup-PurchaseFailed",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-720x1280.png",
+    "width": 0.0,
+    "height": 0.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/NoInternetUI.prefab",
+    "node": "NoInternetCard",
+    "old": "popup_3 1",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-614x705.png",
+    "width": 614.0,
+    "height": 705.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/NoInternetUI.prefab",
+    "node": "NoInternetCard/Background",
+    "old": "no_internet_card",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-552x673.png",
+    "width": 552.0,
+    "height": 673.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/NoInternetUI.prefab",
+    "node": "NoInternetCard/Header",
+    "old": "yellow_title 2",
+    "role": "header",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/header-430x100.png",
+    "width": 430.0,
+    "height": 100.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/NoInternetUI.prefab",
+    "node": "NoInternetCard/RetryButton",
+    "old": "shop_btn_green",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-260x82.png",
+    "width": 260.0,
+    "height": 82.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/NotificationPermissionUI.prefab",
+    "node": "Card",
+    "old": "d2e7fdf51afe98ba9e69cadc9087ecbd00632924",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-560x680.png",
+    "width": 560.0,
+    "height": 680.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/NotificationPermissionUI.prefab",
+    "node": "Card/Header",
+    "old": "image 72",
+    "role": "header",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/header-360x85.png",
+    "width": 360.0,
+    "height": 85.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/NotificationPermissionUI.prefab",
+    "node": "Card/LaterButton",
+    "old": "c8feb63ee9d6ee6562294b57c79e5e63815c5d95",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-230x73.png",
+    "width": 230.0,
+    "height": 73.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/NotificationPermissionUI.prefab",
+    "node": "Card/YesButton",
+    "old": "1c62b683b507d4dfb95239f678196475806eb4ed",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-230x73.png",
+    "width": 230.0,
+    "height": 73.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/RatingUI.prefab",
+    "node": "Frame",
+    "old": "popup_2 6",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-628x618.png",
+    "width": 628.0,
+    "height": 618.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/RatingUI.prefab",
+    "node": "Frame/Header",
+    "old": "red_tittle 1",
+    "role": "header",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/header-432x98.png",
+    "width": 432.0,
+    "height": 98.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/RatingUI.prefab",
+    "node": "Frame/RatingContent/SubmitButton",
+    "old": "BlueButton",
+    "role": "blue",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/blue-310x90.png",
+    "width": 310.0,
+    "height": 90.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/LoadingUI.prefab",
+    "node": "",
+    "old": "background 1",
+    "role": "loading",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/loading-720x1280.png",
+    "width": 0.0,
+    "height": 0.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/LoadingUI.prefab",
+    "node": "ProgressionBoarder",
+    "old": "progress_bar 3",
+    "role": "pill",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/pill-606x85.png",
+    "width": 606.0,
+    "height": 85.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/LoadingUI.prefab",
+    "node": "Logo",
+    "old": "title 2",
+    "role": "logo",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/logo-539x325.png",
+    "width": 539.0,
+    "height": 325.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ErrorUI.prefab",
+    "node": "ErrorPopupCard",
+    "old": "type_three_one 1",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-616x471.png",
+    "width": 616.0,
+    "height": 471.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ErrorUI.prefab",
+    "node": "ErrorPopupCard/Header",
+    "old": "7d7ba46021612e81ba838adfa048cd4b92044eb9",
+    "role": "header",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/header-400x86.png",
+    "width": 400.0,
+    "height": 86.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/UI/RestorePurchaseUI.prefab",
+    "node": "Panel",
+    "old": "popup6 2",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-588x671.png",
+    "width": 588.0,
+    "height": 671.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/UI/RestorePurchaseUI.prefab",
+    "node": "Panel/OkButton",
+    "old": "shop_btn_green",
+    "role": "green",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/green-258x84.png",
+    "width": 258.0,
+    "height": 84.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/UI/RestorePurchaseUI.prefab",
+    "node": "Panel (1)",
+    "old": "Popup-PurchaseRestored",
+    "role": "popup",
+    "asset": "Assets/SqadSort/Content/UI/SquadTheme/Generated/popup-720x1280.png",
+    "width": 720.0,
+    "height": 1280.0
+  }
+]

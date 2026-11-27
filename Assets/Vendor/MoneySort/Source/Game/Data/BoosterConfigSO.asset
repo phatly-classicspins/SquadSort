@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c6a8887c3bad3347954c951dbeee369, type: 3}
   m_Name: BoosterConfigSO
   m_EditorClassIdentifier: FlickSort.Runtime::FlickSort.Data.BoosterConfigSO
-  shuffleIcon: {fileID: 21300000, guid: 403e23966b2c0954eac2c89085bf56bf, type: 3}
-  hammerIcon: {fileID: 21300000, guid: 4d99347e8b72619469207646a89c0cbd, type: 3}
-  freeMoveIcon: {fileID: 21300000, guid: 1caadaae0ad2a1a48ad909652494bbd2, type: 3}
+  shuffleIcon: {fileID: 21300000, guid: df14fd17dc89ab64c8798fa73dfada2c, type: 3}
+  hammerIcon: {fileID: 21300000, guid: 06987488fa41f814eb15ff3a63219382, type: 3}
+  freeMoveIcon: {fileID: 21300000, guid: bf8b8f2308347d943ab9d2de8988e1c7, type: 3}
   shuffleClip: {fileID: 32900000, guid: 5c87992af0f0a5640b7eb393b089dd4f, type: 3}
   hammerClip: {fileID: 32900000, guid: 1e2b21fe597162c4a8573ee05c351328, type: 3}
   freeMoveClip: {fileID: 32900000, guid: 6667b3039eb04974f9e819b867f5c7f7, type: 3}

@@ -1,0 +1,27 @@
+[
+  {
+    "key": "controls",
+    "transparent": true,
+    "prompt": "Create a production transparent UI ATLAS, square, exact 3 columns3rows equal cells, NO text NO characters NO icons NO labels NO gridlines. Match reference whitepink sculpted casual mobilegame materials. Each object isolated centered in its own equal cell, with transparent clear gutters20pixels; nothing crosses cells. Row1: wide horizontal glossy GREEN blank button, BLUE blank button, YELLOW blank button. Row2: RED wide blankbutton, LAVENDER wide blank header plaque, darkPLUM wide blank HUD pill. All wideobjects same shape width:height about2.8:1, thick milkwhite rounded outer rim, pink extruded bottom sidewall, raisedrich glossy faces upperleft shine, generous emptycenter for separate text. Row3: cream blank square rounded PANEL thickwhitepink rim, mintblank square rounded PANEL same rim, palePINK square rounded PANEL. Row3 fills near squarecell. Flat frontorthographic assets with dimensional painted shading, clean straight topbottom/side edges for9slice, corner radii32, no perspective no tiltedobjects no decorative reflections. True alpha transparent outside objects. Similar highlypolished layered original gamebuttons not generic flatvectors."
+  },
+  {
+    "key": "icons",
+    "transparent": true,
+    "prompt": "Create a production transparent game UI icon ATLAS, square exact3columns3rows equalcells, clear transparentgutters, no text labels no background no framegrid. All objects isolated centered insidecell, full shapes not cropped. Reference style glossy 3D softmobilepuzzle game. Readingorder nine motifs: row1 UNDO yellow curvedbackarrow; SHUFFLE purplewhite tornado; REMOVE green raisedclear X. Row2 a pinkcream toy HOUSE navicon; a tiny SHOP pinkcream awning storefront with blue cube glasses buddy in doorway; a plainpink glossy PADLOCK goldshackle (NO chip). Row3 three happy cube buddies together red blueglasses greenflowers peeking with small arms (no plaque); darkgray stone cube questionmark beside revealed purplehaired cube in one whitepinktray; three small tall housesyellow bluepink groupedtogether. No coinschips, no pokergraphics. Make all equally richlysculpted, upperleft lighting."
+  },
+  {
+    "key": "home-background",
+    "transparent": false,
+    "prompt": "Create FULL portrait9:16 mobilegame HOME BACKGROUND illustration only, no UI no text no logo no buttons no currency. Matchreference sunny lavenderstone gardenplaza withfountain upperback edge, plantsflowers along edges. Upper40% is open verysoft lavenderpaving/airyspace for logooverlay; no centralobjects there. Mainillustration from42% to73% height: three long milkwhite roundedsortingtrays withpinksidewalls, containing red yellow purple blueglasses greenflower cute roundedcube buddies, glossy3D casual render. Match refcharacteridentities. Lower23% mostly quiet lavenderpavement for playbutton/footer overlays. Wholecomposition front slightlytopdown, symmetrical coherent, rich finishedgameart. No pokerchip no casino."
+  },
+  {
+    "key": "loading-background",
+    "transparent": false,
+    "prompt": "Create FULL portrait9:16 mobilegame LOADING BACKGROUND only. Referencecharacter identities: cute glossyroundedcubes red, bluewithroundglasses, greenwithflowers. Scene castlehall lavenderpurplewalls, archedwindows, warmgolden sconces, magicalpinklight. Upper43% clean quiet castlewall forlogooverlay no text. Mainillustration lower40% (between57%and85%height): THREE buddiesredbluegreen happily gathered around bubbling magenta potion CAULDRON, softlyglowing sparklingbubbles. Bottom12% clearquiet floor forprogressbaroverlay. No logo no text no UI no buttons no progressbar drawn. Gorgeous polished3D casualpuzzlegame fullbleedbackground."
+  },
+  {
+    "key": "logo",
+    "transparent": true,
+    "prompt": "Create ONE productiontransparent logo cutout 'SQUAD SORT' on two lines, wideabout1.66aspect silhouette, no backdrop. Faithfulref game branding: boldpuffy3D roundedgoldyellow SQUAD top andcyanblue SORT below, deeppurple extrudedsides, crispmilkwhitehighlights, smallpinktraycurvedbase, threecutebuddies red, blueglasses, greenflowers peeking above. Text exact SQUAD SORT, no otherletters. Center wholelogo fit allshapes insidecanvas withsmalltransparentmargin, no mockup no screen no background, polishedcommercialmobilegame lettering. No pokerchips."
+  }
+]

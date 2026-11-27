@@ -1,0 +1,58 @@
+[
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ResoureGroup.prefab",
+    "before": "(-71.00, 5.00, 0.00)",
+    "after": "(-60.75, 0.00, 0.00)",
+    "alignment": "Midline",
+    "glyphCenter": "(0.00, -1.46, 0.00)",
+    "size": 36.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/GameplayUI.prefab",
+    "before": "(16.00, 1.00, 0.00)",
+    "after": "(17.50, 0.00, 0.00)",
+    "alignment": "Midline",
+    "glyphCenter": "(0.00, -1.46, 0.00)",
+    "size": 36.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/HomeUI.prefab",
+    "before": "(15.00, 5.00, 0.00)",
+    "after": "(25.25, 0.00, 0.00)",
+    "alignment": "Midline",
+    "glyphCenter": "(0.00, -1.46, 0.00)",
+    "size": 36.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/LevelUpUI.prefab",
+    "before": "(14.00, 7.00, 0.00)",
+    "after": "(24.50, 0.00, 0.00)",
+    "alignment": "Midline",
+    "glyphCenter": "(0.00, -1.46, 0.00)",
+    "size": 36.0
+  },
+  {
+    "prefab": "Assets/Vendor/MoneySort/Source/Game/Prefabs/UI/ShopUI.prefab",
+    "before": "(16.50, 0.00, 0.00)",
+    "after": "(20.50, 0.00, 0.00)",
+    "alignment": "Midline",
+    "glyphCenter": "(0.00, -1.46, 0.00)",
+    "size": 36.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Gameplay/GameplayHud.prefab",
+    "before": "(17.50, 0.00, 0.00)",
+    "after": "(17.50, 0.00, 0.00)",
+    "alignment": "Midline",
+    "glyphCenter": "(0.00, -1.46, 0.00)",
+    "size": 36.0
+  },
+  {
+    "prefab": "Assets/SqadSort/Prefabs/Home/HomeView.prefab",
+    "before": "(18.50, 2.50, 0.00)",
+    "after": "(21.50, 0.00, 0.00)",
+    "alignment": "Midline",
+    "glyphCenter": "(0.00, -1.46, 0.00)",
+    "size": 36.0
+  }
+]

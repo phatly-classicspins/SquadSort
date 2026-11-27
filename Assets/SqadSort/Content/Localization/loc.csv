@@ -1,5 +1,5 @@
 key,en,vi
-home.title,CardSlot,CardSlot
+home.title,SQUAD SORT,SQUAD SORT
 home.tagline,Tap. Match. Clear!,Tap. Match. Clear!
 home.play,Level {0},Level {0}
 home.more_soon,More levels coming soon,More levels coming soon
@@ -11,9 +11,9 @@ gameplay.holding_area,Holding area,Holding area
 gameplay.buffer_count,{0} / {1},{0} / {1}
 gameplay.next,next,next
 gameplay.stack_count,{0},{0}
-win.title,Level Complete!,Level Complete!
+win.title,PERFECT!,PERFECT!
 win.subtitle,Level {0},Level {0}
-win.next,Next Level,Next Level
+win.next,Continue,Continue
 win.bonus,Bonus,Bonus
 win.home,Home,Home
 win.play_again,Play again,Play again
@@ -21,7 +21,7 @@ lose.title,Out of space!,Out of space!
 lose.no_slots,Oops! No more slots available,Oops! No more slots available
 lose.countdown,{0},{0}
 lose.play_on,Play on,Play on
-lose.play_on_message,You are out of space.\nClear some slots to keep playing,You are out of space.\nClear some slots to keep playing
+lose.play_on_message,Use a free Remove to clear a squad and continue.,Use a free Remove to clear a squad and continue.
 lose.play_on_free,Free,Free
 lose.subtitle,Level {0},Level {0}
 lose.retry,Retry,Retry
@@ -32,7 +32,7 @@ pause.title,Paused,Paused
 pause.resume,Resume,Resume
 pause.restart,Restart,Restart
 pause.home,Home,Home
-settings.title,Setting,Setting
+settings.title,Settings,Settings
 settings.sound,SFX,SFX
 settings.music,Music,Music
 settings.haptics,Vibration,Vibration
@@ -51,7 +51,7 @@ gameplay.restart.yes,Yes,Yes
 gameplay.restart.no,No,No
 lose.title_stuck,No moves left!,No moves left!
 lose.revive,Revive,Revive
-lose.revive_note,Clears {0} poles,Clears {0} poles
+lose.revive_note,Clear one squad and keep playing,Clear one squad and keep playing
 lose.rv_slot,+{0} slots,+{0} slots
 gameplay.rv_slot,+{0} Slots,+{0} Slots
 gameplay.rv_nudge,+{0} slots,+{0} slots
@@ -59,12 +59,14 @@ hud.coins,"{0:#,0}","{0:#,0}"
 win.reward,+{0},+{0}
 win.claim,Claim ×{0},Claim ×{0}
 lose.revive_price,"{0:#,0}","{0:#,0}"
-booster.hand.name,Hand,Hand
+booster.hand.name,Undo,Undo
 booster.shuffle.name,Shuffle,Shuffle
 booster.remove.name,Remove,Remove
-booster.hand.tip,Pick up any chip stack,Pick up any chip stack
-booster.shuffle.tip,Shuffle all poles!,Shuffle all poles!
-booster.remove.tip,Fill a container with one color and clear it!,Fill a container with one color and clear it!
+booster.hand.tip,Rewind your previous move.,Rewind your previous move.
+booster.shuffle.tip,Mix buddies between containers.,Mix buddies between containers.
+booster.remove.tip,"Gather one color into a tray
+and clear the squad.","Gather one color into a tray
+and clear the squad."
 booster.locked,Lv {0},Lv {0}
 booster.count,{0},{0}
 booster.price,"{0:#,0}","{0:#,0}"
@@ -76,22 +78,22 @@ booster.unlock.gift,×{0},×{0}
 booster.unlock.ok,Got it,Got it
 booster.unlock.claim,OK,OK
 unlock.unlocked,Unlocked!,Unlocked!
-booster.pick.hand,Select a chip stack to send up,Select a chip stack to send up
+booster.pick.hand,Undo your last move,Undo your last move
 booster.pick.remove,Tap a buddy to fill its container,Tap a buddy to fill its container
 lose.use_booster,or use a booster ▼,or use a booster ▼
 element.unlock.title,New Element,New Element
 element.unlock.ok,OK,OK
-element.hidden_stack.name,Hidden Stack,Hidden Stack
-element.hidden_pole.name,Hidden Pole,Hidden Pole
+element.hidden_stack.name,Hidden Buddy,Hidden Buddy
+element.hidden_pole.name,House,House
 element.locked.name,Locked Stack,Locked Stack
-element.hidden_stack.tip,Unblock the stack to reveal its color.,Unblock the stack to reveal its color.
-element.hidden_pole.tip,Move pole to the bottom to reveal its color.,Move pole to the bottom to reveal its color.
+element.hidden_stack.tip,A hidden buddy reveals its color when it reaches the front.,A hidden buddy reveals its color when it reaches the front.
+element.hidden_pole.tip,Complete a squad in the house color to release the buddies inside.,Complete a squad in the house color to release the buddies inside.
 element.locked.tip,Send chips up to unlock the stack.,Send chips up to unlock the stack.
 element.lock_count,{0},{0}
 element.hidden_mark,?,?
-element.hidden_stack.tutorial,Remove the top stack to reveal the hidden one!,Remove the top stack to reveal the hidden one!
-element.hidden_pole.tutorial,Push the hidden pole down to reveal its color!,Push the hidden pole down to reveal its color!
-element.locked.tutorial,Send the other stack up to unlock the locked chip,Send the other stack up to unlock the locked chip
+element.hidden_stack.tutorial,Clear the buddies in front to reveal the hidden buddy.,Clear the buddies in front to reveal the hidden buddy.
+element.hidden_pole.tutorial,Complete a squad in the house color to open it.,Complete a squad in the house color to open it.
+element.locked.tutorial,Complete a squad in the house color to open it.,Complete a squad in the house color to open it.
 win.progress,{0}/{1},{0}/{1}
 lives.full,Full,Full
 lives.count,{0},{0}
@@ -113,7 +115,7 @@ lose.restart,Restart,Restart
 lose.return_home,Return Home,Return Home
 gameplay.home.confirm,Go home?,Go home?
 ftue.l1.tap,Tap container to select buddies.,Tap container to select buddies.
-ftue.l1.goal,Stack up all poles to win!,Stack up all poles to win!
+ftue.l1.goal,Gather four buddies of one color to clear a squad!,Gather four buddies of one color to clear a squad!
 rating.title,We'd like to hear from you,We'd like to hear from you
 rating.question,How was your experience with the game so far?,How was your experience with the game so far?
 rating.submit,Submit,Submit
@@ -139,7 +141,7 @@ shop.booster,{0},{0}
 shop.lives,{0}h,{0}h
 shop.noads.label,Remove Ads,Remove Ads
 shop.noads.benefit1,Remove all interstitial & banner ads!,Remove all interstitial & banner ads!
-shop.noads.benefit2,Play without internet connection,Play without internet connection
+shop.noads.benefit2,Permanent ad removal,Permanent ad removal
 shop.noads.benefit3,Keep optional ads for rewards,Keep optional ads for rewards
 shop.noads.coins,"Plus {0:#,0} coins & boosters","Plus {0:#,0} coins & boosters"
 pack.remove_ads,Remove Ads Pack,Remove Ads Pack
@@ -162,7 +164,7 @@ goldbrick.no,No thanks,No thanks
 goldbrick.get,Get Reward,Get Reward
 goldbrick.timer,{0}:{1:00},{0}:{1:00}
 win.reward_label,Reward,Reward
-win.new_feature,New Feature,New Feature
+win.new_feature,Next Element,Next Element
 win.segment,x{0},x{0}
 restart_booster.title,Need a help?,Need a help?
 restart_booster.body,"Retry the level
@@ -178,12 +180,10 @@ booster.guide.magnet.tap,Tap on Remove booster,Tap on Remove booster
 booster.guide.magnet.pole,"Tap a buddy to fill its container
 with that color and clear it!","Tap a buddy to fill its container
 with that color and clear it!"
-booster.guide.hand.body,Pick up any chip stack,Pick up any chip stack
-booster.guide.hand.tap,Tap on Hand booster,Tap on Hand booster
-booster.guide.hand.stack,"Tap on any chip stack
-to send them up","Tap on any chip stack
-to send them up"
-booster.guide.shuffle.body,Shuffle all poles!,Shuffle all poles!
+booster.guide.hand.body,Rewind your previous move.,Rewind your previous move.
+booster.guide.hand.tap,Tap Undo to rewind your last move.,Tap Undo to rewind your last move.
+booster.guide.hand.stack,Tap Undo to rewind your last move.,Tap Undo to rewind your last move.
+booster.guide.shuffle.body,Mix buddies between containers.,Mix buddies between containers.
 booster.guide.shuffle.tap,Tap on Shuffle booster,Tap on Shuffle booster
 hud.level,Level {0},Màn {0}
 hud.count,{0},{0}

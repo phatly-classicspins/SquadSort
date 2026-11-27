@@ -1,0 +1,1039 @@
+[
+  {
+    "page": "Home",
+    "node": "MoneySort_HomeUI",
+    "target": [
+      0.0,
+      0.0,
+      720.0,
+      1280.0
+    ],
+    "observed": [
+      0.0,
+      0.0,
+      720.0,
+      1280.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Home",
+    "node": "MoneySort_HomeUI/SafeArea/ChipAwayLogo",
+    "target": [
+      95.0,
+      116.0,
+      535.0,
+      360.0
+    ],
+    "observed": [
+      95.0,
+      116.0,
+      535.0,
+      360.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Home",
+    "node": "MoneySort_HomeUI/SafeArea/PlayButton",
+    "target": [
+      144.0,
+      934.0,
+      436.0,
+      153.0
+    ],
+    "observed": [
+      144.0,
+      934.0,
+      436.0,
+      153.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Home",
+    "node": "MoneySort_HomeUI/SafeArea/SettingsButton",
+    "target": [
+      52.0,
+      26.0,
+      77.0,
+      83.0
+    ],
+    "observed": [
+      52.0,
+      26.0,
+      77.0,
+      83.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Home",
+    "node": "MoneySort_HomeUI/SafeArea/ResoureGroup/MoneyHud",
+    "target": [
+      530.0,
+      36.0,
+      143.0,
+      64.0
+    ],
+    "observed": [
+      530.0,
+      36.0,
+      143.0,
+      64.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Home",
+    "node": "MoneySort_HomeUI/SafeArea/ResoureGroup/coin",
+    "target": [
+      493.0,
+      27.0,
+      82.0,
+      82.0
+    ],
+    "observed": [
+      493.0,
+      27.0,
+      82.0,
+      82.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Home",
+    "node": "MoneySort_HomeUI/SafeArea/ResoureGroup/LivesHud",
+    "target": [
+      309.0,
+      37.0,
+      149.0,
+      64.0
+    ],
+    "observed": [
+      309.0,
+      37.0,
+      149.0,
+      64.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Home",
+    "node": "MoneySort_HomeUI/SafeArea/ResoureGroup/heart",
+    "target": [
+      268.0,
+      25.0,
+      91.0,
+      87.0
+    ],
+    "observed": [
+      268.0,
+      25.0,
+      91.0,
+      87.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Home",
+    "node": "MoneySort_HomeUI/HomeFooter",
+    "target": [
+      0.0,
+      1135.0,
+      720.0,
+      145.0
+    ],
+    "observed": [
+      0.0,
+      1135.0,
+      720.0,
+      145.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Home",
+    "node": "MoneySort_HomeUI/HomeFooter/MainTab/Content/Selected/Tile",
+    "target": [
+      244.0,
+      1112.0,
+      238.0,
+      168.0
+    ],
+    "observed": [
+      244.0,
+      1112.0,
+      238.0,
+      168.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Home",
+    "node": "MoneySort_HomeUI/HomeFooter/ShopTab/Content/Selected/Tile",
+    "target": [
+      0.0,
+      1128.0,
+      250.0,
+      152.0
+    ],
+    "observed": [
+      0.0,
+      1128.0,
+      250.0,
+      152.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Home",
+    "node": "MoneySort_HomeUI/HomeFooter/MainTab/Content/Selected/Icon",
+    "target": [
+      304.0,
+      1082.0,
+      112.0,
+      112.0
+    ],
+    "observed": [
+      304.0,
+      1082.0,
+      112.0,
+      112.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Home",
+    "node": "MoneySort_HomeUI/HomeFooter/MainTab/Content/Icon",
+    "target": [
+      304.0,
+      1150.0,
+      112.0,
+      112.0
+    ],
+    "observed": [
+      304.0,
+      1150.0,
+      112.0,
+      112.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Home",
+    "node": "MoneySort_HomeUI/HomeFooter/ShopTab/Content/Selected/Icon",
+    "target": [
+      70.0,
+      1062.0,
+      110.0,
+      100.0
+    ],
+    "observed": [
+      70.0,
+      1062.0,
+      110.0,
+      100.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Home",
+    "node": "MoneySort_HomeUI/HomeFooter/ShopTab/Content/Icon",
+    "target": [
+      98.0,
+      1136.0,
+      110.0,
+      100.0
+    ],
+    "observed": [
+      98.0,
+      1136.0,
+      110.0,
+      100.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Home",
+    "node": "MoneySort_HomeUI/HomeFooter/LockedTab/Content/Lock",
+    "target": [
+      530.0,
+      1138.0,
+      95.0,
+      110.0
+    ],
+    "observed": [
+      530.0,
+      1138.0,
+      94.9999847,
+      110.0
+    ],
+    "maxError": 1.52587891E-05
+  },
+  {
+    "page": "Home",
+    "node": "MoneySort_HomeUI/HomeFooter/ShopTab/Content/Unselected/Icon",
+    "target": [
+      98.0,
+      1136.0,
+      110.0,
+      100.0
+    ],
+    "observed": [
+      98.0,
+      1136.0,
+      110.0,
+      100.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Settings",
+    "node": "SettingsCard",
+    "target": [
+      50.0,
+      328.0,
+      620.0,
+      680.0
+    ],
+    "observed": [
+      50.0,
+      328.0,
+      620.0,
+      680.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Settings",
+    "node": "popup-topper",
+    "target": [
+      115.0,
+      194.0,
+      515.0,
+      236.0
+    ],
+    "observed": [
+      115.0,
+      194.0,
+      515.0,
+      236.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Settings",
+    "node": "close",
+    "target": [
+      555.0,
+      301.0,
+      78.0,
+      79.0
+    ],
+    "observed": [
+      555.0,
+      301.0,
+      78.0,
+      79.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Settings",
+    "node": "SettingsCard/Inner/SFXToggle/Background",
+    "target": [
+      445.0,
+      445.0,
+      137.0,
+      67.0
+    ],
+    "observed": [
+      445.0,
+      445.0,
+      137.0,
+      67.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Settings",
+    "node": "SettingsCard/Inner/MusicToggle/Background",
+    "target": [
+      445.0,
+      528.0,
+      137.0,
+      67.0
+    ],
+    "observed": [
+      445.0,
+      528.0,
+      137.0,
+      67.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Settings",
+    "node": "SettingsCard/Inner/VibrationToggle/Background",
+    "target": [
+      445.0,
+      611.0,
+      137.0,
+      67.0
+    ],
+    "observed": [
+      445.0,
+      611.0,
+      137.0,
+      67.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Settings",
+    "node": "SettingsCard/Inner/GameplayButtons/RestartButton",
+    "target": [
+      138.0,
+      704.0,
+      454.0,
+      128.0
+    ],
+    "observed": [
+      138.0,
+      704.0,
+      454.0,
+      128.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Settings",
+    "node": "SettingsCard/Inner/GameplayButtons/HomeButton",
+    "target": [
+      138.0,
+      833.0,
+      454.0,
+      125.0
+    ],
+    "observed": [
+      138.0,
+      833.0,
+      454.0,
+      125.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Shop",
+    "node": "SafeArea/ShopHeaderBackground",
+    "target": [
+      0.0,
+      0.0,
+      720.0,
+      1280.0
+    ],
+    "observed": [
+      0.0,
+      0.0,
+      720.0,
+      1280.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Shop",
+    "node": "SafeArea/SettingsButton",
+    "target": [
+      24.0,
+      12.0,
+      75.0,
+      75.0
+    ],
+    "observed": [
+      24.0,
+      12.0,
+      75.0,
+      75.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Shop",
+    "node": "SafeArea/ShopHeaderBackground/OverlayResources/MoneyHud",
+    "target": [
+      446.0,
+      25.0,
+      137.0,
+      58.0
+    ],
+    "observed": [
+      446.0,
+      25.0,
+      137.0,
+      58.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Shop",
+    "node": "SafeArea/ShopHeaderBackground/OverlayResources/coin",
+    "target": [
+      407.0,
+      16.0,
+      82.0,
+      82.0
+    ],
+    "observed": [
+      407.0,
+      16.0,
+      82.0,
+      82.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Shop",
+    "node": "SafeArea/ShopHeaderBackground/OverlayResources/LivesHud",
+    "target": [
+      174.0,
+      28.0,
+      130.0,
+      54.0
+    ],
+    "observed": [
+      174.0,
+      28.0,
+      130.0,
+      54.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Shop",
+    "node": "SafeArea/ShopHeaderBackground/OverlayResources/heart",
+    "target": [
+      126.0,
+      17.0,
+      87.0,
+      77.0
+    ],
+    "observed": [
+      126.0,
+      17.0,
+      87.0,
+      77.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Shop",
+    "node": "SafeArea/Panel/Awning",
+    "target": [
+      0.0,
+      106.0,
+      720.0,
+      91.0
+    ],
+    "observed": [
+      0.0,
+      106.0,
+      720.0,
+      91.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Shop",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/remove_ads/Background",
+    "target": [
+      15.0,
+      211.000732,
+      690.0,
+      366.0
+    ],
+    "observed": [
+      15.0,
+      211.000732,
+      690.0,
+      366.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Shop",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/remove_ads/BuyButton",
+    "target": [
+      426.0,
+      475.000732,
+      244.0,
+      70.0
+    ],
+    "observed": [
+      426.0,
+      475.000732,
+      244.0,
+      70.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Shop",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/starter/Background",
+    "target": [
+      15.0,
+      593.000732,
+      690.0,
+      366.0
+    ],
+    "observed": [
+      15.0,
+      593.000732,
+      690.0,
+      366.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Shop",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/starter/BuyButton",
+    "target": [
+      489.0,
+      857.000732,
+      179.0,
+      70.0
+    ],
+    "observed": [
+      489.0,
+      857.000732,
+      179.0,
+      70.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Shop",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/special_small/Background",
+    "target": [
+      15.0,
+      1075.00073,
+      690.0,
+      366.0
+    ],
+    "observed": [
+      15.0,
+      1075.00073,
+      690.0,
+      366.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Shop",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/special_small/BuyButton",
+    "target": [
+      426.0,
+      1339.00073,
+      244.0,
+      70.0
+    ],
+    "observed": [
+      426.0,
+      1339.00073,
+      244.0,
+      70.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Shop",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/special_medium/Background",
+    "target": [
+      15.0,
+      1457.00073,
+      690.0,
+      366.0
+    ],
+    "observed": [
+      15.0,
+      1457.00073,
+      690.0,
+      366.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Shop",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/special_medium/BuyButton",
+    "target": [
+      426.0,
+      1721.00073,
+      244.0,
+      70.0
+    ],
+    "observed": [
+      426.0,
+      1721.00073,
+      244.0,
+      70.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Shop",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/special_ultra/Background",
+    "target": [
+      15.0,
+      1839.00073,
+      690.0,
+      366.0
+    ],
+    "observed": [
+      15.0,
+      1839.00073,
+      690.0,
+      366.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Shop",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/special_ultra/BuyButton",
+    "target": [
+      426.0,
+      2103.00073,
+      244.0,
+      70.0
+    ],
+    "observed": [
+      426.0,
+      2103.00073,
+      244.0,
+      70.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Shop",
+    "node": "SafeArea/Panel/Scroll/Viewport/Content/SpecialPackHeader/Background",
+    "target": [
+      29.0,
+      975.000732,
+      662.0,
+      84.0
+    ],
+    "observed": [
+      29.0,
+      975.000732,
+      662.0,
+      84.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Shop",
+    "node": "ShopFooter",
+    "target": [
+      0.0,
+      1135.0,
+      720.0,
+      145.0
+    ],
+    "observed": [
+      0.0,
+      1135.0,
+      720.0,
+      145.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Shop",
+    "node": "ShopFooter/MainTab/Content/Selected/Tile",
+    "target": [
+      244.0,
+      1112.0,
+      238.0,
+      168.0
+    ],
+    "observed": [
+      244.0,
+      1112.0,
+      238.0,
+      168.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Shop",
+    "node": "ShopFooter/ShopTab/Content/Selected/Tile",
+    "target": [
+      0.0,
+      1128.0,
+      250.0,
+      152.0
+    ],
+    "observed": [
+      0.0,
+      1128.0,
+      250.0,
+      152.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Shop",
+    "node": "ShopFooter/MainTab/Content/Selected/Icon",
+    "target": [
+      304.0,
+      1082.0,
+      112.0,
+      112.0
+    ],
+    "observed": [
+      304.0,
+      1082.0,
+      112.0,
+      112.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Shop",
+    "node": "ShopFooter/MainTab/Content/Icon",
+    "target": [
+      304.0,
+      1150.0,
+      112.0,
+      112.0
+    ],
+    "observed": [
+      304.0,
+      1150.0,
+      112.0,
+      112.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Shop",
+    "node": "ShopFooter/ShopTab/Content/Selected/Icon",
+    "target": [
+      70.0,
+      1062.0,
+      110.0,
+      100.0
+    ],
+    "observed": [
+      70.0,
+      1062.0,
+      110.0,
+      100.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Shop",
+    "node": "ShopFooter/LockedTab/Content/Lock",
+    "target": [
+      530.0,
+      1138.0,
+      95.0,
+      110.0
+    ],
+    "observed": [
+      530.0,
+      1138.0,
+      94.9999847,
+      110.0
+    ],
+    "maxError": 1.52587891E-05
+  },
+  {
+    "page": "Shop",
+    "node": "ShopFooter/ShopTab/Content/Unselected/Icon",
+    "target": [
+      98.0,
+      1136.0,
+      110.0,
+      100.0
+    ],
+    "observed": [
+      98.0,
+      1136.0,
+      110.0,
+      100.0
+    ],
+    "maxError": 0.0
+  },
+  {
+    "page": "Lose",
+    "node": "popup-topper",
+    "target": [
+      86.36747,
+      263.419281,
+      547.265,
+      250.785538
+    ],
+    "observed": [
+      86.36746,
+      263.419281,
+      547.265,
+      250.785522
+    ],
+    "maxError": 1.52587891E-05
+  },
+  {
+    "page": "OutOfLives",
+    "node": "popup-topper",
+    "target": [
+      86.98795,
+      257.710846,
+      546.0241,
+      250.216873
+    ],
+    "observed": [
+      86.9879456,
+      257.710846,
+      546.0241,
+      250.216858
+    ],
+    "maxError": 1.52587891E-05
+  },
+  {
+    "page": "OutOfSpace",
+    "node": "popup-topper",
+    "target": [
+      159.692764,
+      291.8265,
+      430.614441,
+      197.330124
+    ],
+    "observed": [
+      159.692764,
+      291.8265,
+      430.614441,
+      197.330139
+    ],
+    "maxError": 1.52587891E-05
+  },
+  {
+    "page": "BoosterUnlock",
+    "node": "popup-topper",
+    "target": [
+      144.313248,
+      212.618073,
+      429.373474,
+      196.761444
+    ],
+    "observed": [
+      144.313248,
+      212.618042,
+      429.373474,
+      196.761459
+    ],
+    "maxError": 3.05175781E-05
+  },
+  {
+    "page": "ElementUnlock",
+    "node": "popup-topper",
+    "target": [
+      160.313248,
+      269.618073,
+      429.373474,
+      196.761444
+    ],
+    "observed": [
+      160.313248,
+      269.618042,
+      429.373474,
+      196.761459
+    ],
+    "maxError": 3.05175781E-05
+  },
+  {
+    "page": "RentSlot",
+    "node": "popup-topper",
+    "target": [
+      121.397781,
+      104.735329,
+      489.204437,
+      224.179123
+    ],
+    "observed": [
+      121.397781,
+      104.735352,
+      489.204437,
+      224.179108
+    ],
+    "maxError": 2.28881836E-05
+  },
+  {
+    "page": "NoInternet",
+    "node": "popup-topper",
+    "target": [
+      93.19277,
+      234.6265,
+      533.6145,
+      244.530136
+    ],
+    "observed": [
+      93.19278,
+      234.6265,
+      533.6145,
+      244.530151
+    ],
+    "maxError": 1.52587891E-05
+  },
+  {
+    "page": "NotificationPermission",
+    "node": "popup-topper",
+    "target": [
+      136.626511,
+      246.536148,
+      446.747,
+      204.7229
+    ],
+    "observed": [
+      136.626511,
+      246.536133,
+      446.747,
+      204.7229
+    ],
+    "maxError": 1.52587891E-05
+  },
+  {
+    "page": "Rating",
+    "node": "popup-topper",
+    "target": [
+      91.9518051,
+      260.043365,
+      536.0964,
+      245.66748
+    ],
+    "observed": [
+      91.95181,
+      260.043365,
+      536.0964,
+      245.66748
+    ],
+    "maxError": 7.62939453E-06
+  },
+  {
+    "page": "Error",
+    "node": "popup-topper",
+    "target": [
+      111.807228,
+      315.8735,
+      496.385559,
+      227.469879
+    ],
+    "observed": [
+      111.80722,
+      315.8735,
+      496.385559,
+      227.469879
+    ],
+    "maxError": 7.62939453E-06
+  }
+]

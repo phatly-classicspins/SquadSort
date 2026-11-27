@@ -1,0 +1,3068 @@
+[
+  {
+    "path": "Assets/SqadSort/Content/UI/Home/bg_home 2.png",
+    "sprites": [
+      "bg_home 2"
+    ],
+    "used_by": [
+      "Home"
+    ],
+    "sha256": "7a9a61dde4f6a1bdafd75c0a7b59845fd082e3f5ad502404c87332ada624db23",
+    "source_pixels": [
+      1440,
+      2554
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Loading/title 2.png",
+    "sprites": [
+      "title 2"
+    ],
+    "used_by": [
+      "Home",
+      "Loading"
+    ],
+    "sha256": "4e4d032b0236425e83355d27aa1dea452a176c25c1ec34834875a6b7826979e8",
+    "source_pixels": [
+      539,
+      325
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/Group 249.png",
+    "sprites": [
+      "Group 249"
+    ],
+    "used_by": [
+      "Home"
+    ],
+    "sha256": "dbb08412a5bdcb42cf89e48c1641f3b54ebcc717f48f989b9b5c814f5105be9a",
+    "source_pixels": [
+      75,
+      965
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/highlight_node 1.png",
+    "sprites": [
+      "highlight_node 1"
+    ],
+    "used_by": [
+      "Home"
+    ],
+    "sha256": "70b1ce9b7c69dffaaf31581eb33370ba4a351333b31aa4e727826a101f8acc43",
+    "source_pixels": [
+      250,
+      224
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/Home_chap_icn.png",
+    "sprites": [
+      "Home_chap_icn"
+    ],
+    "used_by": [
+      "Home"
+    ],
+    "sha256": "42fb3caed024fba1807c581d2f6e228dc82152329cbc4b67ce93611435cbc66a",
+    "source_pixels": [
+      383,
+      328
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/panel_3 1.png",
+    "sprites": [
+      "panel_3 1"
+    ],
+    "used_by": [
+      "Home",
+      "Shop"
+    ],
+    "sha256": "e5b0f3e662fc339d9a118721ba6dbba871c4bac0c121b7f731be9663c4b5039e",
+    "source_pixels": [
+      81,
+      80
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/icn_setting 1.png",
+    "sprites": [
+      "icn_setting 1"
+    ],
+    "used_by": [
+      "GameplayHud",
+      "Home",
+      "Shop"
+    ],
+    "sha256": "c04ea8bfac8c28d82e6aed597e3b485ce44ea849ec42d225a5a98132f21813b2",
+    "source_pixels": [
+      44,
+      45
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Home/level_normal_button2 1.png",
+    "sprites": [
+      "level_normal_button2 1"
+    ],
+    "used_by": [
+      "Home"
+    ],
+    "sha256": "1071e00bedd2a712c9c0434e8f80f52b28a5a123b80f13cf8782b0468b2e21c8",
+    "source_pixels": [
+      432,
+      180
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Win/Figma/win_wallet.png",
+    "sprites": [
+      "win_wallet"
+    ],
+    "used_by": [
+      "Home",
+      "LevelUp",
+      "Shop"
+    ],
+    "sha256": "7d0d2788b5122eea3afc9338aa758ff796e19618da0a9dbed2181f48d7d24db8",
+    "source_pixels": [
+      172,
+      69
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Win/Figma/win_wallet_coin.png",
+    "sprites": [
+      "win_wallet_coin"
+    ],
+    "used_by": [
+      "Home",
+      "LevelUp",
+      "Shop"
+    ],
+    "sha256": "997a67d56974a8889d6613cf81f8a06c073415bd8df25985bd707c8f4e384478",
+    "source_pixels": [
+      73,
+      74
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Win/Figma/win_wallet_plus.png",
+    "sprites": [
+      "win_wallet_plus"
+    ],
+    "used_by": [
+      "Home",
+      "LevelUp",
+      "Shop"
+    ],
+    "sha256": "a296001fefd61c801c35b6fd4e3afb470305e0ca94b4084f805de4c516727776",
+    "source_pixels": [
+      34,
+      35
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/ResourceGroup/Rectangle 25.png",
+    "sprites": [
+      "Rectangle 25"
+    ],
+    "used_by": [
+      "Home",
+      "Shop"
+    ],
+    "sha256": "a02f53105f2dfbfbed75a67e9056290582019dc85c5af97ff5da57fa5db27a5c",
+    "source_pixels": [
+      142,
+      58
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/ResourceGroup/image 19.png",
+    "sprites": [
+      "image 19"
+    ],
+    "used_by": [
+      "Home",
+      "Shop"
+    ],
+    "sha256": "13ee7c22e50fd64f849568385f1ad2b660f083a9376d3151deb5f58a5b437b67",
+    "source_pixels": [
+      90,
+      74
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Home/image 69.png",
+    "sprites": [
+      "image 69"
+    ],
+    "used_by": [
+      "Home"
+    ],
+    "sha256": "d98c84de0186032b52912461ea60989cdfc9454765a37e6b60ec811b27adf404",
+    "source_pixels": [
+      136,
+      136
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Home/icon_starterpack 1.png",
+    "sprites": [
+      "icon_starterpack 1"
+    ],
+    "used_by": [
+      "Home"
+    ],
+    "sha256": "cf9cb8c94b25908812cfcd81eb51887e5611bffa59ec52fdbd4a2c1ff02fb4a2",
+    "source_pixels": [
+      131,
+      131
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Home/icon_gifr 1.png",
+    "sprites": [
+      "icon_gifr 1"
+    ],
+    "used_by": [
+      "Home"
+    ],
+    "sha256": "683b1c3861709886f69aaac3f7aa6455fa134f1981f130040415cbcffdd951db",
+    "source_pixels": [
+      133,
+      133
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Footer/menu_bar 1.png",
+    "sprites": [
+      "menu_bar 1"
+    ],
+    "used_by": [
+      "Home",
+      "Shop"
+    ],
+    "sha256": "6cd0951eab6e9b116d39434c64651c1bfc329a20799ac312939756234f3eb073",
+    "source_pixels": [
+      1440,
+      282
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Footer/Rectangle 7 1 1.png",
+    "sprites": [
+      "Rectangle 7 1 1"
+    ],
+    "used_by": [
+      "Home",
+      "Shop"
+    ],
+    "sha256": "b9961fc7138c4736c4ab8e955370a64e4bc33e7324d63217c5d203ff497e468f",
+    "source_pixels": [
+      252,
+      164
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Footer/dfb3a98d-08f7-4c5b-a1d1-ea00c04909d4 1.png",
+    "sprites": [
+      "dfb3a98d-08f7-4c5b-a1d1-ea00c04909d4 1"
+    ],
+    "used_by": [
+      "Home",
+      "Shop"
+    ],
+    "sha256": "e49ec5c81c6da95c52591cebe120b7604903bdade94876ad5b327af52ec5a13c",
+    "source_pixels": [
+      156,
+      144
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Footer/c5a6fba0-16e9-4b31-a9cc-9931f2cb9f88 2.png",
+    "sprites": [
+      "c5a6fba0-16e9-4b31-a9cc-9931f2cb9f88 2"
+    ],
+    "used_by": [
+      "Home",
+      "Shop"
+    ],
+    "sha256": "5f1b434fbc714d61651e5afefddf11b82b1e3e38db88b8e45d30b6c5c7fe4815",
+    "source_pixels": [
+      143,
+      130
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Footer/chip_away_lock_option_1 1.png",
+    "sprites": [
+      "chip_away_lock_option_1 1"
+    ],
+    "used_by": [
+      "Home",
+      "Shop"
+    ],
+    "sha256": "59aa6f590a51cb800adf8fb5672350fb6616450d4f16544db81cc97dec3d795e",
+    "source_pixels": [
+      114,
+      114
+    ]
+  },
+  {
+    "path": "Assets/~fake/Home 1.png",
+    "sprites": [
+      "Home 1"
+    ],
+    "used_by": [
+      "Home"
+    ],
+    "sha256": "04dc348100e41fa72be87b9e39ad516d26a2a72c3f5e45d7c2b7dedd635a9edc",
+    "source_pixels": [
+      720,
+      1280
+    ]
+  },
+  {
+    "path": "Resources/unity_builtin_extra",
+    "sprites": [
+      "Background",
+      "Checkmark",
+      "UISprite"
+    ],
+    "used_by": [
+      "BoosterPurchase",
+      "BoosterUnlock",
+      "ElementUnlock",
+      "GameplayHud",
+      "GarageGift",
+      "Lose",
+      "OutOfSpace",
+      "PurchaseFailed",
+      "PurchaseReward",
+      "RemoveAds",
+      "RestartBooster",
+      "Settings",
+      "StarterBundle"
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/progress_bar 1.png",
+    "sprites": [
+      "progress_bar 1"
+    ],
+    "used_by": [
+      "GameplayHud"
+    ],
+    "sha256": "806ac04e68bda0d571905fcf469b89e67a38ab220bf075cc2f245f67e2da7ae0",
+    "source_pixels": [
+      551,
+      95
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/386c7cbafd7454760dc0fb5c8885f0c64d8436a6.png",
+    "sprites": [
+      "386c7cbafd7454760dc0fb5c8885f0c64d8436a6"
+    ],
+    "used_by": [
+      "GameplayHud"
+    ],
+    "sha256": "8156780cbca05eb374d279cad4196f13f2fd14a97e72fa14c4ad96b8191699f2",
+    "source_pixels": [
+      2731,
+      275
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/da52f1a67c42a3ccdc2b51dec0f78681497b6c9b.png",
+    "sprites": [
+      "da52f1a67c42a3ccdc2b51dec0f78681497b6c9b"
+    ],
+    "used_by": [
+      "GameplayHud"
+    ],
+    "sha256": "dadf9f0d61e3c25ae3cc84f17ec7b6649983e6500ebc4464a6072d20fa76d845",
+    "source_pixels": [
+      1254,
+      1254
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Art Assets/UI/LEVEL SLAB.png",
+    "sprites": [
+      "LEVEL SLAB"
+    ],
+    "used_by": [
+      "GameplayHud"
+    ],
+    "sha256": "b28b3fd91cba338f686ad7a79ef4f02e7defd59216a3d3dae526aea456f49b59",
+    "source_pixels": [
+      783,
+      203
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Art Assets/UI/Boosters/Boosters buttons.png",
+    "sprites": [
+      "Boosters buttons"
+    ],
+    "used_by": [
+      "GameplayHud"
+    ],
+    "sha256": "0919114841bb46ea59f38c9f44449a0035e6be55ac1338e39d35f32604e1b4af",
+    "source_pixels": [
+      606,
+      606
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Art Assets/UI/Boosters/Hand 1.png",
+    "sprites": [
+      "Hand 1"
+    ],
+    "used_by": [
+      "BoosterUnlock",
+      "GameplayHud",
+      "GarageGift",
+      "PurchaseReward",
+      "Shop",
+      "StarterBundle"
+    ],
+    "sha256": "3244c216112a0c3920cc659403d7063ff42d346be3d47c0d68e2059f7a9f1859",
+    "source_pixels": [
+      437,
+      470
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Art Assets/UI/Boosters/Booster Count.png",
+    "sprites": [
+      "Booster Count"
+    ],
+    "used_by": [
+      "GameplayHud"
+    ],
+    "sha256": "5ca5ce2cf8d0dbe27de4f7a3ad1f326606f5e597e269ed07fbf3c8eda7f07f9d",
+    "source_pixels": [
+      205,
+      203
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Gameplay/Lock.png",
+    "sprites": [
+      "Lock"
+    ],
+    "used_by": [
+      "GameplayHud"
+    ],
+    "sha256": "3563430de8bfe72c1b0ae43887aa77e0eee83c071728b448678f17d5107ea159",
+    "source_pixels": [
+      229,
+      268
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Art Assets/UI/Boosters/Shuffle 1.png",
+    "sprites": [
+      "Shuffle 1"
+    ],
+    "used_by": [
+      "BoosterPurchase",
+      "GameplayHud",
+      "LevelUp",
+      "PurchaseReward",
+      "Shop",
+      "StarterBundle"
+    ],
+    "sha256": "47a6e453aba0739a2e3a06509384cf9e5bccb25fbad65f5c6ec182c310913433",
+    "source_pixels": [
+      384,
+      412
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Art Assets/UI/Boosters/Magnet 1.png",
+    "sprites": [
+      "Magnet 1"
+    ],
+    "used_by": [
+      "BoosterUnlock",
+      "GameplayHud",
+      "PurchaseReward",
+      "RestartBooster",
+      "Shop",
+      "StarterBundle"
+    ],
+    "sha256": "471a5aad1c7f1f6a4ca41df25d66a20885846df1d2033d0788fb6daba88cb960",
+    "source_pixels": [
+      575,
+      596
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Art Assets/UI/COIN SLAB.png",
+    "sprites": [
+      "COIN SLAB"
+    ],
+    "used_by": [
+      "GameplayHud"
+    ],
+    "sha256": "3fba0ea82e9570b60251403648e4dac8255955b45eda3c00ca4b72ce82800bd3",
+    "source_pixels": [
+      709,
+      203
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Art Assets/UI/POKER COIN.png",
+    "sprites": [
+      "POKER COIN"
+    ],
+    "used_by": [
+      "GameplayHud"
+    ],
+    "sha256": "1fb38a3f972491ac765ebbf5b82975260ffbad7d2f67da51c3ae0099b6914bdb",
+    "source_pixels": [
+      283,
+      286
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/ResourceGroup/btn_plus_icon 1.png",
+    "sprites": [
+      "btn_plus_icon 1"
+    ],
+    "used_by": [
+      "GameplayHud"
+    ],
+    "sha256": "a296001fefd61c801c35b6fd4e3afb470305e0ca94b4084f805de4c516727776",
+    "source_pixels": [
+      34,
+      35
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Art Assets/UI/Heart.png",
+    "sprites": [
+      "Heart"
+    ],
+    "used_by": [
+      "GameplayHud"
+    ],
+    "sha256": "50aa8d22ada3a58724926b6f2049f44d6680b76155b44aa01131de135dc9e145",
+    "source_pixels": [
+      289,
+      238
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Art Assets/UI/SETTINGS.png",
+    "sprites": [
+      "SETTINGS"
+    ],
+    "used_by": [
+      "GameplayHud"
+    ],
+    "sha256": "06291f5e8295cbc2b78cf65826c76fdefa8ceabe28094068e1e042228510f129",
+    "source_pixels": [
+      283,
+      286
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Art Assets/UI/REPLAY.png",
+    "sprites": [
+      "REPLAY"
+    ],
+    "used_by": [
+      "GameplayHud"
+    ],
+    "sha256": "d052e30867828cb6b5c31db9e42e66da241fbaa1d736c18e7018542b185f5c59",
+    "source_pixels": [
+      283,
+      286
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/Group 245.png",
+    "sprites": [
+      "Group 245"
+    ],
+    "used_by": [
+      "GameplayHud"
+    ],
+    "sha256": "5a0e7d2d94a94403f137c1e8ce4235bfe43c1eb8b52ae0b1f2b56f3d2d88d524",
+    "source_pixels": [
+      665,
+      239
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/Rectangle 40.png",
+    "sprites": [
+      "Rectangle 40"
+    ],
+    "used_by": [
+      "GameplayHud"
+    ],
+    "sha256": "63d61e8bec8b4178e000359ab040fc8fdb5c25e6a507614f78c1528c5888f341",
+    "source_pixels": [
+      204,
+      147
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/Rectangle 40 (1).png",
+    "sprites": [
+      "Rectangle 40 (1)"
+    ],
+    "used_by": [
+      "GameplayHud"
+    ],
+    "sha256": "b8b9e69680692499b201feb0bfe5824f400d3085d0b83a3d5a76e8c0dc5bb47f",
+    "source_pixels": [
+      225,
+      135
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Settings/MoneySort/c8a04f046a684cd40f5f578ccd0199540a92f2bb.png",
+    "sprites": [
+      "c8a04f046a684cd40f5f578ccd0199540a92f2bb"
+    ],
+    "used_by": [
+      "BoosterPurchase",
+      "BoosterUnlock",
+      "ElementUnlock",
+      "Error",
+      "GameplayHud",
+      "NotificationPermission",
+      "OutOfLives",
+      "OutOfSpace",
+      "Rating",
+      "RentSlot",
+      "Shop"
+    ],
+    "sha256": "789b49adb658a87234a2e552ca78714b0c95a82b076de5554b61bf34b5c6c32a",
+    "source_pixels": [
+      2614,
+      2591
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/LoseCountdown/lose_countdown_bar.png",
+    "sprites": [
+      "lose_countdown_bar"
+    ],
+    "used_by": [
+      "GameplayHud"
+    ],
+    "sha256": "8f767bbb8c8a33fbb8783c5eee05847e1352ac67c63ab7fa31af212af8a26735",
+    "source_pixels": [
+      570,
+      110
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/ElementTutorial/PointHand.png",
+    "sprites": [
+      "PointHand"
+    ],
+    "used_by": [
+      "GameplayHud"
+    ],
+    "sha256": "dc66a28a48a45b2f74f81c6f161a8f2134ee8b38256e56eddcb80f2080da56a1",
+    "source_pixels": [
+      166,
+      167
+    ]
+  },
+  {
+    "path": "Assets/~fake/UI V5.png",
+    "sprites": [
+      "UI V5"
+    ],
+    "used_by": [
+      "GameplayHud"
+    ],
+    "sha256": "69c7063138ac4f0ccb52494595b05044ec8c0e1261537869faa9b8ab21b4acc8",
+    "source_pixels": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/FTUE/Union11.png",
+    "sprites": [
+      "Union11"
+    ],
+    "used_by": [
+      "GameplayHud"
+    ],
+    "sha256": "72e90521175a71b8cd859ee1258dd3b16c15106ef9b081c98a26b41d88a9363c",
+    "source_pixels": [
+      400,
+      140
+    ]
+  },
+  {
+    "path": "Assets/~fake/Gameplay-ZoomTutorial.png",
+    "sprites": [
+      "Gameplay-ZoomTutorial"
+    ],
+    "used_by": [
+      "GameplayHud"
+    ],
+    "sha256": "687b1bd022876a556ad4c88df39d2b08f788e60b77df94eb51643d64b449e272",
+    "source_pixels": [
+      720,
+      1280
+    ]
+  },
+  {
+    "path": "Assets/~fake/Gameplay-Zoom.png",
+    "sprites": [
+      "Gameplay-Zoom"
+    ],
+    "used_by": [
+      "GameplayHud"
+    ],
+    "sha256": "37eb0409b8b46940ee20b0d193b5b073a668d99528e23e03d4bff4ae683be804",
+    "source_pixels": [
+      720,
+      1280
+    ]
+  },
+  {
+    "path": "Assets/~fake/Gameplay-Zoom 1.png",
+    "sprites": [
+      "Gameplay-Zoom 1"
+    ],
+    "used_by": [
+      "GameplayHud"
+    ],
+    "sha256": "f5b5b4be543b74b5297b250c10ba07f7916b06260802786a69db33f1a4c1cdf3",
+    "source_pixels": [
+      720,
+      1280
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/LowSlotWarning/slot_popup.png",
+    "sprites": [
+      "slot_popup"
+    ],
+    "used_by": [
+      "GameplayHud"
+    ],
+    "sha256": "f26e2a6d95ca6c3454bdbbe721021a97aeeffed7d0e8ac1e64b69ad1ce7222ff",
+    "source_pixels": [
+      129,
+      65
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Settings/popup_1 1.png",
+    "sprites": [
+      "popup_1 1"
+    ],
+    "used_by": [
+      "Settings"
+    ],
+    "sha256": "ae5b8bcd53b482b080a54e4925ec383ef69f7ad167675ad2e6e5b140ebc8fbe8",
+    "source_pixels": [
+      1100,
+      1466
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Settings/ToggleOn.png",
+    "sprites": [
+      "ToggleOn"
+    ],
+    "used_by": [
+      "Settings"
+    ],
+    "sha256": "c460a894f07eec0c8246460c415f830d880b097f7568910d6f2718682b6bdcf0",
+    "source_pixels": [
+      129,
+      67
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Settings/ToggleOff.png",
+    "sprites": [
+      "ToggleOff"
+    ],
+    "used_by": [
+      "Settings"
+    ],
+    "sha256": "c40f2fcf53f1dcba019d8a5df1ba6fbb724cdb94c478cb737bf65a2e2346da42",
+    "source_pixels": [
+      126,
+      65
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Settings/MoneySort/c8feb63ee9d6ee6562294b57c79e5e63815c5d95.png",
+    "sprites": [
+      "c8feb63ee9d6ee6562294b57c79e5e63815c5d95"
+    ],
+    "used_by": [
+      "BoosterPurchase",
+      "NotificationPermission",
+      "RentSlot",
+      "Settings"
+    ],
+    "sha256": "4315db7d24af93defdfc780b628f0f7b8b08ac5fe0c282d3f56c37746d706a8d",
+    "source_pixels": [
+      1230,
+      354
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Settings/BlueButton.png",
+    "sprites": [
+      "BlueButton"
+    ],
+    "used_by": [
+      "GarageGift",
+      "Rating",
+      "Settings",
+      "Shop"
+    ],
+    "sha256": "17b2459828910562d1bfea6662340639f9de11db8a4dbe7057e32e893896e8fd",
+    "source_pixels": [
+      378,
+      110
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Settings/yellow_title 2.png",
+    "sprites": [
+      "yellow_title 2"
+    ],
+    "used_by": [
+      "BoosterPurchase",
+      "BoosterUnlock",
+      "NoInternet",
+      "Settings"
+    ],
+    "sha256": "ad4caaa00ca02bea99e8da46195d509758bde4db18917b383f7d27a6dfad278c",
+    "source_pixels": [
+      346,
+      109
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Settings/HUDIcon 1.png",
+    "sprites": [
+      "HUDIcon 1"
+    ],
+    "used_by": [
+      "Lose",
+      "NoInternet",
+      "RestartBooster",
+      "Settings",
+      "SkipLevel"
+    ],
+    "sha256": "84acbd2fe2acd5036f8c6ff3c602c8e9380ab4740ff5afe39fe7d2acfe3ac34a",
+    "source_pixels": [
+      74,
+      76
+    ]
+  },
+  {
+    "path": "Assets/~fake/Pause.png",
+    "sprites": [
+      "Pause"
+    ],
+    "used_by": [
+      "Settings"
+    ],
+    "sha256": "063a6a38c92401f2b1fc343f557818bb46b24f2824033a053b78823b4648d208",
+    "source_pixels": [
+      720,
+      1280
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/a6b4ca876f256483c63996c2bddd9f192fc024c5.png",
+    "sprites": [
+      "a6b4ca876f256483c63996c2bddd9f192fc024c5"
+    ],
+    "used_by": [
+      "Shop"
+    ],
+    "sha256": "9ec042f7da2f592fbf87ae5ee272abdb0217ebc0a139f2d2452e03fd0caf19e1",
+    "source_pixels": [
+      946,
+      1662
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Shop/Rectangle 30.png",
+    "sprites": [
+      "Rectangle 30"
+    ],
+    "used_by": [
+      "Shop"
+    ],
+    "sha256": "23663612891f96f4c4f15de2a9278d0e88012edf5ac43cef157b7670348ac71e",
+    "source_pixels": [
+      720,
+      2997
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Shop/Panel2 1.png",
+    "sprites": [
+      "Panel2 1"
+    ],
+    "used_by": [
+      "Shop"
+    ],
+    "sha256": "fa10fd4b035b1aeeddcf830f8de3cef3a022809931a842f778ba4681643936c3",
+    "source_pixels": [
+      1354,
+      714
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Shop/Booster panel.png",
+    "sprites": [
+      "Booster panel"
+    ],
+    "used_by": [
+      "Shop"
+    ],
+    "sha256": "8215f2579870bc473b21fc007ad19ac71f9ae877f00c1ec0231c245f13a606cb",
+    "source_pixels": [
+      272,
+      199
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Shop/Rectangle 32.png",
+    "sprites": [
+      "Rectangle 32"
+    ],
+    "used_by": [
+      "Shop"
+    ],
+    "sha256": "f43a6970e97b1f5a39ef368ba372e7a2adc4ef925382a4b715b0fd93ebae0267",
+    "source_pixels": [
+      122,
+      198
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Shop/image 31.png",
+    "sprites": [
+      "image 31"
+    ],
+    "used_by": [
+      "Shop"
+    ],
+    "sha256": "a3e926badcc7b53cfe576e62a2e0f3e5c0e5a1ecf80bdec3fce370dd8153e1a5",
+    "source_pixels": [
+      178,
+      167
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/Shop/shop_star.png",
+    "sprites": [
+      "shop_star"
+    ],
+    "used_by": [
+      "Shop"
+    ],
+    "sha256": "916af609894b829472b61fc08bf4610653bab6586efa62d9ef136967ef52977f",
+    "source_pixels": [
+      34,
+      32
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/Shop/shop_btn_green.png",
+    "sprites": [
+      "shop_btn_green"
+    ],
+    "used_by": [
+      "Shop"
+    ],
+    "sha256": "1985aef9008824ee541c0b389a2953474b0c1c1ad47e9f96a9d084df1eb77672",
+    "source_pixels": [
+      212,
+      70
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Shop/image 33.png",
+    "sprites": [
+      "image 33"
+    ],
+    "used_by": [
+      "Shop"
+    ],
+    "sha256": "6589d7757a4106c82f640185870bd74fecf8c4d70791c5347e610866f8e1b199",
+    "source_pixels": [
+      112,
+      113
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/Shop/shop_icon_remove_ads_tv.png",
+    "sprites": [
+      "shop_icon_remove_ads_tv"
+    ],
+    "used_by": [
+      "PurchaseReward",
+      "Shop"
+    ],
+    "sha256": "5be8b4687c75df28b17bbffd0c813d6c8f9bb05262e2c0d39c5b56b44b94cc6c",
+    "source_pixels": [
+      183,
+      183
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Shop/Panel1 2.png",
+    "sprites": [
+      "Panel1 2"
+    ],
+    "used_by": [
+      "Shop"
+    ],
+    "sha256": "f8aeefabd959a3cce8119b062cee2e88f38b7101e0a8cf40e029ab556b4c2a2f",
+    "source_pixels": [
+      1358,
+      748
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Shop/Rectangle 50.png",
+    "sprites": [
+      "Rectangle 50"
+    ],
+    "used_by": [
+      "Shop"
+    ],
+    "sha256": "1ab49e576b8d4916be8d6e195b21e7cb9cb6789aff420b56ed4e7811868c49e3",
+    "source_pixels": [
+      619,
+      89
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/Shop/shop_heart_infinite.png",
+    "sprites": [
+      "shop_heart_infinite"
+    ],
+    "used_by": [
+      "PurchaseReward",
+      "Shop"
+    ],
+    "sha256": "0979f888e6391778d4d601866cabd33611bf32d87a41a09ba86f618e833996d9",
+    "source_pixels": [
+      108,
+      87
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/Shop/shop_timer_pill.png",
+    "sprites": [
+      "shop_timer_pill"
+    ],
+    "used_by": [
+      "Shop"
+    ],
+    "sha256": "07afb4f6d2b37b91fad977a667e92da7058c5526c74611869889ca48c553e925",
+    "source_pixels": [
+      120,
+      63
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/Shop/shop_timer_pill_inner.png",
+    "sprites": [
+      "shop_timer_pill_inner"
+    ],
+    "used_by": [
+      "Shop"
+    ],
+    "sha256": "afa49764648b4c3e18775e1caf60883ae06e2d57f6788928ec7d053bab5769af",
+    "source_pixels": [
+      108,
+      23
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/Shop/shop_timer_clock.png",
+    "sprites": [
+      "shop_timer_clock"
+    ],
+    "used_by": [
+      "Shop"
+    ],
+    "sha256": "1071bec249348fa357a8d6789d4324e4f13f37bad0c86d6bdb4750bd2b5e8dc0",
+    "source_pixels": [
+      35,
+      41
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Shop/image 83.png",
+    "sprites": [
+      "image 83"
+    ],
+    "used_by": [
+      "Shop"
+    ],
+    "sha256": "17dfb416846f624c24909ebde57180a75f38f3de265449d6494b96f45e27ca2e",
+    "source_pixels": [
+      116,
+      111
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Shop/Rectangle 7.png",
+    "sprites": [
+      "Rectangle 7"
+    ],
+    "used_by": [
+      "Shop"
+    ],
+    "sha256": "065368c6b76564b97267104e6831653c258aac73558246204c27739a2e5f10f4",
+    "source_pixels": [
+      622,
+      78
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Shop/CoinStack1212.png",
+    "sprites": [
+      "CoinStack1212"
+    ],
+    "used_by": [
+      "Shop"
+    ],
+    "sha256": "facbfefd2bff8352cda2babe9dfbf5fafb0b83bd1243e67b075a3a4bb281cc56",
+    "source_pixels": [
+      178,
+      167
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Shop/CoinStack1.png",
+    "sprites": [
+      "CoinStack1"
+    ],
+    "used_by": [
+      "Shop"
+    ],
+    "sha256": "8455935852898aebad44acee3539cd8eb8cb74fb7e4996bb667ecc6cc1649120",
+    "source_pixels": [
+      178,
+      167
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Shop/shop_small_panel 2 1.png",
+    "sprites": [
+      "shop_small_panel 2 1"
+    ],
+    "used_by": [
+      "Shop"
+    ],
+    "sha256": "647a52981e52511e7e7630dee161a0eef4e567b63ec8636ea3a163a9f5e50c5c",
+    "source_pixels": [
+      203,
+      270
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Shop/image 29.png",
+    "sprites": [
+      "image 29"
+    ],
+    "used_by": [
+      "Shop"
+    ],
+    "sha256": "bcc366ddd38ffbd8ddfd1145223a30bf10e91ec101362a35302251a7bf5159f0",
+    "source_pixels": [
+      148,
+      139
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Shop/CoinStack.png",
+    "sprites": [
+      "CoinStack"
+    ],
+    "used_by": [
+      "Shop"
+    ],
+    "sha256": "192326dd7e9c7626155bc1659a02f8ec368c09542a778be66361402b76e83e99",
+    "source_pixels": [
+      148,
+      139
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Shop/shop_ui 2.png",
+    "sprites": [
+      "shop_ui 2"
+    ],
+    "used_by": [
+      "Shop"
+    ],
+    "sha256": "ae8938f5bed3d3e5c556ba1df0083f6736472b5a09690db2e2802bbccd8a58ab",
+    "source_pixels": [
+      720,
+      158
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/Group 273.png",
+    "sprites": [
+      "Group 273"
+    ],
+    "used_by": [
+      "Shop"
+    ],
+    "sha256": "fc571a90b1bc7315e30b850069fabd734ae77cf00216d3872e8c4dcee4f01ecc",
+    "source_pixels": [
+      253,
+      162
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/image 111.png",
+    "sprites": [
+      "image 111"
+    ],
+    "used_by": [
+      "Shop"
+    ],
+    "sha256": "7cd93f8935c445424a414969e15d4076ea9d9f2070ad1f9db496d77c84584546",
+    "source_pixels": [
+      154,
+      130
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/~Fake/Home screen.png",
+    "sprites": [
+      "Home screen"
+    ],
+    "used_by": [
+      "Shop"
+    ],
+    "sha256": "9734468338ffc68319e0785f7573f1005f2a352c21487db85e768a618c7bb151",
+    "source_pixels": [
+      720,
+      1280
+    ]
+  },
+  {
+    "path": "Assets/~fake/ShopOpenFromHome.png",
+    "sprites": [
+      "ShopOpenFromHome"
+    ],
+    "used_by": [
+      "Shop"
+    ],
+    "sha256": "92a04f73e8776cda199eab1f6f75d3c0ba1359baa50a9b67ba17f77c771a3101",
+    "source_pixels": [
+      720,
+      1280
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Win/bg 3.png",
+    "sprites": [
+      "bg 3"
+    ],
+    "used_by": [
+      "LevelUp"
+    ],
+    "sha256": "27992e0fc4adeedec089a7aa56572481924afe0735fe35c50083920dd818c44e",
+    "source_pixels": [
+      1440,
+      2558
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Win/Figma/win_rays.png",
+    "sprites": [
+      "win_rays"
+    ],
+    "used_by": [
+      "LevelUp"
+    ],
+    "sha256": "7ed83feef10ca67be48f970c0310668458c2d2ec8964d56492b78d599e32ffcd",
+    "source_pixels": [
+      481,
+      402
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/c710f2e853c212f575d62a707f3c772bfc2b72c7.png",
+    "sprites": [
+      "c710f2e853c212f575d62a707f3c772bfc2b72c7"
+    ],
+    "used_by": [
+      "LevelUp"
+    ],
+    "sha256": "18bdb00b1eaeef2c7fe057dbefe379343bc6e5c24a5eea8412157b1d14fde988",
+    "source_pixels": [
+      1017,
+      899
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/955a430c3d2e3f1592af98b12e86d948d9d26e9c.png",
+    "sprites": [
+      "955a430c3d2e3f1592af98b12e86d948d9d26e9c"
+    ],
+    "used_by": [
+      "LevelUp"
+    ],
+    "sha256": "e77e870bf894cc542c97d2fe0da19e64706d87ae14cb348eaa32a9127db2bb58",
+    "source_pixels": [
+      1017,
+      899
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Win/txt_excellent 4.png",
+    "sprites": [
+      "txt_excellent 4"
+    ],
+    "used_by": [
+      "LevelUp"
+    ],
+    "sha256": "23c5a83ef108e3047d3882fc7ff562f72fbacfdec948b10609dc1c30d807feb0",
+    "source_pixels": [
+      687,
+      199
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Win/icn_coin_stacks 1.png",
+    "sprites": [
+      "icn_coin_stacks 1"
+    ],
+    "used_by": [
+      "LevelUp"
+    ],
+    "sha256": "936f499bad9483520d1fd0a23969c896de1365a00f9b652dddf6667ec8940a04",
+    "source_pixels": [
+      268,
+      189
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Win/Figma/win_reward_coin.png",
+    "sprites": [
+      "win_reward_coin"
+    ],
+    "used_by": [
+      "LevelUp"
+    ],
+    "sha256": "d85afba7ce03a317f5e84fb9f2c7fc77b78ec888a1aafc56a32c92c8b53d1a66",
+    "source_pixels": [
+      69,
+      69
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/a3dffdcc418d124e632a38e53a58a40a1e9eeb3b.png",
+    "sprites": [
+      "a3dffdcc418d124e632a38e53a58a40a1e9eeb3b"
+    ],
+    "used_by": [
+      "LevelUp"
+    ],
+    "sha256": "f81ab16af400d5b181498f4544c3c7cab8a1f66def4451cb79505b0a9efca009",
+    "source_pixels": [
+      1433,
+      1098
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/Line 7.png",
+    "sprites": [
+      "Line 7"
+    ],
+    "used_by": [
+      "LevelUp"
+    ],
+    "sha256": "4a5fce5368562582b56bb1dc9d3727a668b2f8292249708f56e7f1e4e88e9769",
+    "source_pixels": [
+      144,
+      8
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Win/level_normal_button2 1.png",
+    "sprites": [
+      "level_normal_button2 1"
+    ],
+    "used_by": [
+      "LevelUp"
+    ],
+    "sha256": "1071e00bedd2a712c9c0434e8f80f52b28a5a123b80f13cf8782b0468b2e21c8",
+    "source_pixels": [
+      432,
+      180
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Win/image 79.png",
+    "sprites": [
+      "image 79"
+    ],
+    "used_by": [
+      "LevelUp"
+    ],
+    "sha256": "8d056399df9e9d69527c76fc1d790fd75986a6f31484e3898927ba66c54c46b2",
+    "source_pixels": [
+      267,
+      129
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Win/needle 1.png",
+    "sprites": [
+      "needle 1"
+    ],
+    "used_by": [
+      "LevelUp"
+    ],
+    "sha256": "5a5150beabcd3653610a443daf77145da32ed6027a3e4bd9a0e56ec57c336ce8",
+    "source_pixels": [
+      33,
+      81
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Win/base 1.png",
+    "sprites": [
+      "base 1"
+    ],
+    "used_by": [
+      "LevelUp"
+    ],
+    "sha256": "4a15d2b331cef2ad44c3a3f2c2ae64bf39e195fb54345f0f188573327995a210",
+    "source_pixels": [
+      58,
+      35
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Settings/MoneySort/1c62b683b507d4dfb95239f678196475806eb4ed.png",
+    "sprites": [
+      "1c62b683b507d4dfb95239f678196475806eb4ed"
+    ],
+    "used_by": [
+      "LevelUp",
+      "NotificationPermission",
+      "RentSlot"
+    ],
+    "sha256": "9361045d3e55707bbbf4469262134a67ced783f558076587dd1d04303a6c7a6a",
+    "source_pixels": [
+      1271,
+      346
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/ResourceGroup/icn_coin.png",
+    "sprites": [
+      "icn_coin"
+    ],
+    "used_by": [
+      "BoosterPurchase",
+      "LevelUp",
+      "OutOfLives",
+      "OutOfSpace",
+      "RentSlot"
+    ],
+    "sha256": "1ad988e29059285f1ed23f6359a3012f7f12f9b273f521acd7206346d2d1448d",
+    "source_pixels": [
+      130,
+      132
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/RestartBooster/Ads icon 1.png",
+    "sprites": [
+      "Ads icon 1"
+    ],
+    "used_by": [
+      "BoosterPurchase",
+      "GarageGift",
+      "LevelUp",
+      "OutOfLives",
+      "RestartBooster",
+      "SkipLevel"
+    ],
+    "sha256": "7b08af221360f1a31081ae03009cccaef844ca9b66756fe08b19e9bd158a26a4",
+    "source_pixels": [
+      76,
+      73
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Win/Figma/win_feature_tag.png",
+    "sprites": [
+      "win_feature_tag"
+    ],
+    "used_by": [
+      "LevelUp"
+    ],
+    "sha256": "607f6a0664b89196521ca66d6b6b36c26955104ebfd1088e94f0ff2948133921",
+    "source_pixels": [
+      233,
+      112
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Win/Figma/win_feature_track_border.png",
+    "sprites": [
+      "win_feature_track_border"
+    ],
+    "used_by": [
+      "LevelUp"
+    ],
+    "sha256": "31a036f1709e3ca0d24f8ddb697b2ff60772dbbfe78c658e213f61f4b0d01562",
+    "source_pixels": [
+      378,
+      99
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Win/Figma/win_feature_track_back.png",
+    "sprites": [
+      "win_feature_track_back"
+    ],
+    "used_by": [
+      "LevelUp"
+    ],
+    "sha256": "12a4e610b3635cdbc3fe9f7fdc67dc2b1af7ca36993ea4c70a0fbced256c0eef",
+    "source_pixels": [
+      333,
+      52
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Loading/loading_bar_fill.png",
+    "sprites": [
+      "loading_bar_fill"
+    ],
+    "used_by": [
+      "LevelUp",
+      "Loading"
+    ],
+    "sha256": "93439e561e1fc4e72a99b4df93991bb66fa32f85d9d5f71e5ae035214de37836",
+    "source_pixels": [
+      875,
+      84
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Win/Figma/win_feature_box_border.png",
+    "sprites": [
+      "win_feature_box_border"
+    ],
+    "used_by": [
+      "LevelUp"
+    ],
+    "sha256": "a8f0adee041c3c2e447168ac444f60d961cb4ad241ff754855ea10186048d1fc",
+    "source_pixels": [
+      169,
+      167
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Win/Figma/win_feature_box_back.png",
+    "sprites": [
+      "win_feature_box_back"
+    ],
+    "used_by": [
+      "LevelUp"
+    ],
+    "sha256": "2ce08ca74c76f2ebe9979c63b982cf03fa8a1fbdfb28039d2812d1923c0ba19b",
+    "source_pixels": [
+      120,
+      119
+    ]
+  },
+  {
+    "path": "Assets/~fake/Lose 5.png",
+    "sprites": [
+      "Lose 5"
+    ],
+    "used_by": [
+      "LevelUp"
+    ],
+    "sha256": "8afe4f814c01752437a7cc9d1386cde2d068c74fc12b552af572210d76999e50",
+    "source_pixels": [
+      720,
+      1280
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Lose/popup_2 1.png",
+    "sprites": [
+      "popup_2 1"
+    ],
+    "used_by": [
+      "Lose",
+      "OutOfLives"
+    ],
+    "sha256": "27d2da1ce82197aac4246ddcaf4fda64eaac01d30f9b85022eb4d32bb7dd0a9d",
+    "source_pixels": [
+      1256,
+      1236
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/804de02a618c9692c8acb73e72ab5da3cacbae11.png",
+    "sprites": [
+      "804de02a618c9692c8acb73e72ab5da3cacbae11"
+    ],
+    "used_by": [
+      "Lose"
+    ],
+    "sha256": "d5879558c960d06e3305558aeb1f5af42ae9bb23ff39c3252681baa61a714635",
+    "source_pixels": [
+      3506,
+      3459
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Lose/red_tittle 1.png",
+    "sprites": [
+      "red_tittle 1"
+    ],
+    "used_by": [
+      "Lose"
+    ],
+    "sha256": "3160930968dbba7a1f7cc7283d5be15b57d977c52b9085bac1b0766f2da3939a",
+    "source_pixels": [
+      441,
+      100
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Lose/Background.png",
+    "sprites": [
+      "Background"
+    ],
+    "used_by": [
+      "Lose"
+    ],
+    "sha256": "5d7330768012663b26fc036f0e838f3e346b1ba072f94676e512d5cd0a998fe5",
+    "source_pixels": [
+      276,
+      80
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/1c3cb8526bdf89a700ce7471fae9f68a6d75a030.png",
+    "sprites": [
+      "1c3cb8526bdf89a700ce7471fae9f68a6d75a030"
+    ],
+    "used_by": [
+      "Lose"
+    ],
+    "sha256": "c743e2e16163e8b06eebf9a3ab56576de5db211d02e9dbc0ca51af22253c9e88",
+    "source_pixels": [
+      1282,
+      996
+    ]
+  },
+  {
+    "path": "Assets/~fake/Lose.png",
+    "sprites": [
+      "Lose"
+    ],
+    "used_by": [
+      "Lose"
+    ],
+    "sha256": "785d840de394b402f0311fd91bc69eb9fbda2d541d28403c1f4a47bbf73430eb",
+    "source_pixels": [
+      720,
+      1280
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Settings/MoneySort/d2e7fdf51afe98ba9e69cadc9087ecbd00632924.png",
+    "sprites": [
+      "d2e7fdf51afe98ba9e69cadc9087ecbd00632924"
+    ],
+    "used_by": [
+      "NotificationPermission",
+      "OutOfLives",
+      "RentSlot"
+    ],
+    "sha256": "59d4c8b339bb5d07928295c79889ab31996fa2a72dabb77e57d84a6f2fc379e9",
+    "source_pixels": [
+      3335,
+      4068
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/RestartBooster/Popup-RedTitleRibbonCompact.png",
+    "sprites": [
+      "Popup-RedTitleRibbonCompact"
+    ],
+    "used_by": [
+      "OutOfLives",
+      "RestartBooster",
+      "SkipLevel"
+    ],
+    "sha256": "fb204335b05621da630b4a59181f18be76ecca60cf794b0b8a91ee5661d069cb",
+    "source_pixels": [
+      409,
+      94
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/OutOfLives/Background1.png",
+    "sprites": [
+      "Background1"
+    ],
+    "used_by": [
+      "ElementUnlock",
+      "OutOfLives",
+      "OutOfSpace"
+    ],
+    "sha256": "53eff8ae9c5d6fc1ec04bc6341f0d4ec334da9b9f9b08b2fa71fe8e0f524f8e2",
+    "source_pixels": [
+      227,
+      66
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/OutOfLives/icn_broke_heart 1 3.png",
+    "sprites": [
+      "icn_broke_heart 1 3"
+    ],
+    "used_by": [
+      "OutOfLives"
+    ],
+    "sha256": "0311eda2827a956e463016b3238b1d86eec33827814e536b9f3b5371c1fe59fe",
+    "source_pixels": [
+      185,
+      149
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/OutOfLives/Background.png",
+    "sprites": [
+      "Background"
+    ],
+    "used_by": [
+      "OutOfLives",
+      "OutOfSpace"
+    ],
+    "sha256": "cb66d3cde2f31c4dbe0db3ca46bc84eb58b7e526f321b8b7d2eaa062587f7d2e",
+    "source_pixels": [
+      233,
+      67
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Continue/Group 47.png",
+    "sprites": [
+      "Group 47"
+    ],
+    "used_by": [
+      "OutOfSpace"
+    ],
+    "sha256": "ae5b8bcd53b482b080a54e4925ec383ef69f7ad167675ad2e6e5b140ebc8fbe8",
+    "source_pixels": [
+      1100,
+      1466
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/Rectangle 39.png",
+    "sprites": [
+      "Rectangle 39"
+    ],
+    "used_by": [
+      "BoosterPurchase",
+      "BoosterUnlock",
+      "OutOfSpace"
+    ],
+    "sha256": "68c540c7b37a0955137c92d258c7cbc5e2d590706a22122ae30fff6fadc9ab23",
+    "source_pixels": [
+      506,
+      334
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/eb6d287b66a7e575cf931874e6170ddd49479102.png",
+    "sprites": [
+      "eb6d287b66a7e575cf931874e6170ddd49479102"
+    ],
+    "used_by": [
+      "OutOfSpace",
+      "RentSlot"
+    ],
+    "sha256": "635313567f0596cc6899a45160b4f89dbc8fe45c7a84b40bd79f89fef506e4f9",
+    "source_pixels": [
+      1012,
+      953
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Settings/MoneySort/41d244d6ddb8afe0fa02cc469d49cbeffde607a2.png",
+    "sprites": [
+      "41d244d6ddb8afe0fa02cc469d49cbeffde607a2"
+    ],
+    "used_by": [
+      "OutOfSpace"
+    ],
+    "sha256": "3b160a209241aaa0b787c7257fe4c9a81834881359f19b99782c0c86e6d625a9",
+    "source_pixels": [
+      2152,
+      731
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Continue/Rectangle 30.png",
+    "sprites": [
+      "Rectangle 30"
+    ],
+    "used_by": [
+      "OutOfSpace"
+    ],
+    "sha256": "72b8088138fd4736de3d259ffcd6f5401eb1b78c6237e9537c80f00626bca88e",
+    "source_pixels": [
+      211,
+      281
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Continue/mockup1 3.png",
+    "sprites": [
+      "mockup1 3"
+    ],
+    "used_by": [
+      "OutOfSpace"
+    ],
+    "sha256": "ea8f283386c815807989ba89ae7045124644d047b2a1722eeb51bfcaf21b564d",
+    "source_pixels": [
+      153,
+      259
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Continue/f57105c2-c4d6-48cb-b1d9-8bd84d4df900 1.png",
+    "sprites": [
+      "f57105c2-c4d6-48cb-b1d9-8bd84d4df900 1"
+    ],
+    "used_by": [
+      "OutOfSpace"
+    ],
+    "sha256": "6930283085a8de9ff994dc1ac45299d4d438f1a8f4a7b93fab44a1e49d4268f3",
+    "source_pixels": [
+      178,
+      233
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Continue/image 32 1.png",
+    "sprites": [
+      "image 32 1"
+    ],
+    "used_by": [
+      "ElementUnlock",
+      "OutOfSpace"
+    ],
+    "sha256": "e873b3b8c31c9451e58a1ea4a3b93e05b5b59035d9a2f42f488007a1c5b0355c",
+    "source_pixels": [
+      74,
+      63
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Lose/Group 223.png",
+    "sprites": [
+      "Group 223"
+    ],
+    "used_by": [
+      "OutOfSpace"
+    ],
+    "sha256": "b486b8f695a72cc9e888eb2ebafe315851c74f797527d32ebdf8a2973e69838f",
+    "source_pixels": [
+      1192,
+      542
+    ]
+  },
+  {
+    "path": "Assets/~fake/GameOver 1.png",
+    "sprites": [
+      "GameOver 1"
+    ],
+    "used_by": [
+      "OutOfSpace"
+    ],
+    "sha256": "ef76b2595c7893c7ebeede1509e8a5b0b4c67ec12734fd41d72932193d74a289",
+    "source_pixels": [
+      720,
+      1280
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/BoosterUnlock/popup_1 7.png",
+    "sprites": [
+      "popup_1 7"
+    ],
+    "used_by": [
+      "BoosterPurchase",
+      "BoosterUnlock"
+    ],
+    "sha256": "ae5b8bcd53b482b080a54e4925ec383ef69f7ad167675ad2e6e5b140ebc8fbe8",
+    "source_pixels": [
+      1100,
+      1466
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/OutOfLives/image 143.png",
+    "sprites": [
+      "image 143"
+    ],
+    "used_by": [
+      "BoosterPurchase"
+    ],
+    "sha256": "bedf28accbb3b276ed88a13bd5f95ed6f6a5ed7a87c332c8a275b815bea22260",
+    "source_pixels": [
+      532,
+      186
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/OutOfLives/yellow_button_2 1.png",
+    "sprites": [
+      "yellow_button_2 1"
+    ],
+    "used_by": [
+      "BoosterPurchase"
+    ],
+    "sha256": "98e9d841f9ec55be2564232c1d259dc387c9a6dc851fe28d30b0a2773c3cfcf2",
+    "source_pixels": [
+      536,
+      182
+    ]
+  },
+  {
+    "path": "Assets/~fake/Popup-Booster2 2.png",
+    "sprites": [
+      "Popup-Booster2 2"
+    ],
+    "used_by": [
+      "BoosterPurchase"
+    ],
+    "sha256": "a2fde826ac8b4ded5035181989901493ca2f4970f66a193ae974596ce72734d0",
+    "source_pixels": [
+      720,
+      1280
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/BoosterUnlock/Popup-BlueTitleRibbon.png",
+    "sprites": [
+      "Popup-BlueTitleRibbon"
+    ],
+    "used_by": [
+      "BoosterUnlock",
+      "ElementUnlock"
+    ],
+    "sha256": "ad4caaa00ca02bea99e8da46195d509758bde4db18917b383f7d27a6dfad278c",
+    "source_pixels": [
+      346,
+      109
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/Rectangle 38.png",
+    "sprites": [
+      "Rectangle 38"
+    ],
+    "used_by": [
+      "BoosterUnlock",
+      "ElementUnlock"
+    ],
+    "sha256": "e51993135edcd6cac6f0de59bd44e169c7cadf35851b90eba0f81e8a6c2bd006",
+    "source_pixels": [
+      518,
+      131
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/Sprites/shop/shop_btn_green.png",
+    "sprites": [
+      "shop_btn_green"
+    ],
+    "used_by": [
+      "BoosterUnlock",
+      "NoInternet",
+      "PurchaseFailed",
+      "PurchaseReward",
+      "RemoveAds",
+      "RestorePurchase",
+      "StarterBundle"
+    ],
+    "sha256": "1985aef9008824ee541c0b389a2953474b0c1c1ad47e9f96a9d084df1eb77672",
+    "source_pixels": [
+      212,
+      70
+    ]
+  },
+  {
+    "path": "Assets/~fake/Popup-Booster2.png",
+    "sprites": [
+      "Popup-Booster2"
+    ],
+    "used_by": [
+      "BoosterUnlock"
+    ],
+    "sha256": "4facc0d981db1fba72238bfd5e1ccfcafdf9d5c4fe60e2b8c2611c68adf07235",
+    "source_pixels": [
+      720,
+      1280
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/ElementUnlock/popup_1 6.png",
+    "sprites": [
+      "popup_1 6"
+    ],
+    "used_by": [
+      "ElementUnlock"
+    ],
+    "sha256": "5a860b939495b30fe97ce034e0189903cfdad39cd3c5daa38b77a6bb73647ee9",
+    "source_pixels": [
+      550,
+      733
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/ElementUnlock/Rectangle 29.png",
+    "sprites": [
+      "Rectangle 29"
+    ],
+    "used_by": [
+      "ElementUnlock"
+    ],
+    "sha256": "74951e795bac7134f8cd858af107d2826a138b4eec65fcbeb320d399c09763dc",
+    "source_pixels": [
+      442,
+      199
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/ElementUnlock/c5ad8c32-eaf5-4659-bfba-43998b7304fc 1.png",
+    "sprites": [
+      "c5ad8c32-eaf5-4659-bfba-43998b7304fc 1"
+    ],
+    "used_by": [
+      "ElementUnlock"
+    ],
+    "sha256": "75a8c8aaad29712ab145fad55c7c51d81b939d0a1211fa7ea35c3b2177381b69",
+    "source_pixels": [
+      183,
+      170
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/ElementUnlock/mockup2 1.png",
+    "sprites": [
+      "mockup2 1"
+    ],
+    "used_by": [
+      "ElementUnlock"
+    ],
+    "sha256": "fc52a124a951fa3d7f9adfb1366a1e750c1e88119804c52f18b6d4238c14183a",
+    "source_pixels": [
+      205,
+      190
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/ElementUnlock/mockup3 1.png",
+    "sprites": [
+      "mockup3 1"
+    ],
+    "used_by": [
+      "ElementUnlock"
+    ],
+    "sha256": "4a3efa54b98ec61e083a054af95f9bfa6963b12a1c80fae278ff19e421d81b3b",
+    "source_pixels": [
+      108,
+      210
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/ElementUnlock/mockup4 1.png",
+    "sprites": [
+      "mockup4 1"
+    ],
+    "used_by": [
+      "ElementUnlock"
+    ],
+    "sha256": "158950a3be1094943675d61701cbf7db62595f4525d0b8cf539f6bb7f3c3abe8",
+    "source_pixels": [
+      114,
+      157
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/ElementUnlock/mockup5 1.png",
+    "sprites": [
+      "mockup5 1"
+    ],
+    "used_by": [
+      "ElementUnlock"
+    ],
+    "sha256": "f67015c84238db766f64d540f0eb66464d0b351f46e15b2eabdec7a21a6c780c",
+    "source_pixels": [
+      175,
+      132
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/ElementUnlock/mockup6 1.png",
+    "sprites": [
+      "mockup6 1"
+    ],
+    "used_by": [
+      "ElementUnlock"
+    ],
+    "sha256": "46c1c9a282e768f8ab185117d7de269b975be1a4c1baa740f50cacccff556f1c",
+    "source_pixels": [
+      212,
+      141
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/6912889d689a77c979223e33ff11f1dfb2a07bb3.png",
+    "sprites": [
+      "6912889d689a77c979223e33ff11f1dfb2a07bb3"
+    ],
+    "used_by": [
+      "PurchaseFailed",
+      "PurchaseReward",
+      "RemoveAds",
+      "StarterBundle"
+    ],
+    "sha256": "a4b616529086d8971e51f9b164810e3bedd08584c5c4ecf8f6b1592842808323",
+    "source_pixels": [
+      3335,
+      2991
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/StarterPack/popup3 3.png",
+    "sprites": [
+      "popup3 3"
+    ],
+    "used_by": [
+      "StarterBundle"
+    ],
+    "sha256": "1c784e8e5bc68634f135e20d7ab483d877d08bf17c2e21c5bd8801d76e35e601",
+    "source_pixels": [
+      1036,
+      1222
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/StarterPack/title 1.png",
+    "sprites": [
+      "title 1"
+    ],
+    "used_by": [
+      "StarterBundle"
+    ],
+    "sha256": "a316c5a8877dc7332e9bcf0169dd4b89689f58961c87054222aa7c9cb63cf1cc",
+    "source_pixels": [
+      1084,
+      360
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/Shop/starter_popup_close.png",
+    "sprites": [
+      "starter_popup_close"
+    ],
+    "used_by": [
+      "PurchaseFailed",
+      "PurchaseReward",
+      "RemoveAds",
+      "StarterBundle"
+    ],
+    "sha256": "8e6d66aebad0abb0e89aa2c2bbb211bf855f08a4cf2f1754a100d08d1c1cf3aa",
+    "source_pixels": [
+      74,
+      76
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/Shop/starter_popup_timer_pill.png",
+    "sprites": [
+      "starter_popup_timer_pill"
+    ],
+    "used_by": [
+      "StarterBundle"
+    ],
+    "sha256": "f36a2df296a04144a73c6998c1104ad59b216427f6cf61be11edcefd7d0a00ef",
+    "source_pixels": [
+      338,
+      34
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/StarterPack/image 68.png",
+    "sprites": [
+      "image 68"
+    ],
+    "used_by": [
+      "StarterBundle"
+    ],
+    "sha256": "06bdf4693cfccbb9bbfec19a8aadcacf8427eb5433e919643e5d08b9cdf1dc59",
+    "source_pixels": [
+      52,
+      59
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/Shop/starter_popup_panel.png",
+    "sprites": [
+      "starter_popup_panel"
+    ],
+    "used_by": [
+      "PurchaseReward",
+      "StarterBundle"
+    ],
+    "sha256": "e5a0f8ad5b62481a080306e50a801fc2df8bb4859ed3268448e14f8b4ae0aa5e",
+    "source_pixels": [
+      430,
+      347
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/StarterPack/CoinStack.png",
+    "sprites": [
+      "CoinStack"
+    ],
+    "used_by": [
+      "StarterBundle"
+    ],
+    "sha256": "fbc880f3da058a44a6c634d76c217d56babb9544db3af03f6e3580b66db18a98",
+    "source_pixels": [
+      178,
+      167
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/StarterPack/image 19.png",
+    "sprites": [
+      "image 19"
+    ],
+    "used_by": [
+      "StarterBundle"
+    ],
+    "sha256": "4d3a389ccc4a6ae433c3b6310cf4134bc7e5fc9e0fc49e9c852c9e5e4ba0af01",
+    "source_pixels": [
+      119,
+      101
+    ]
+  },
+  {
+    "path": "Assets/~fake/Home1.png",
+    "sprites": [
+      "Home1"
+    ],
+    "used_by": [
+      "StarterBundle"
+    ],
+    "sha256": "e0968e8f46e2c533cb41ebf8c8a7990d26a17c52a521d448f8590e38b371a31d",
+    "source_pixels": [
+      720,
+      1280
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/Shop/remove_ads_popup_glow.png",
+    "sprites": [
+      "remove_ads_popup_glow"
+    ],
+    "used_by": [
+      "RemoveAds"
+    ],
+    "sha256": "e97bc051a1b7de73190ddac7a7a73e0076412efb2c1d8da2aa8c61aef74f494d",
+    "source_pixels": [
+      472,
+      176
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/RemoveAds/popup4_2 1.png",
+    "sprites": [
+      "popup4_2 1"
+    ],
+    "used_by": [
+      "RemoveAds"
+    ],
+    "sha256": "204c2ab8858b5355e5819a9036ced148070d9954121f974c2f7104125253cbf7",
+    "source_pixels": [
+      1040,
+      1488
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/RemoveAds/image 26.png",
+    "sprites": [
+      "image 26"
+    ],
+    "used_by": [
+      "RemoveAds"
+    ],
+    "sha256": "8e5f442d7aa346bcb09c553e883502c4fda22cdd95de2956aa26d4ba22bfeb49",
+    "source_pixels": [
+      172,
+      172
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/RemoveAds/Group 267.png",
+    "sprites": [
+      "Group 267"
+    ],
+    "used_by": [
+      "RemoveAds"
+    ],
+    "sha256": "c181e2c71e479e577ad37fff77ede64a9211cafaee7c7198820896b573a2cbaa",
+    "source_pixels": [
+      431,
+      96
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/Shop/remove_ads_popup_title.png",
+    "sprites": [
+      "remove_ads_popup_title"
+    ],
+    "used_by": [
+      "RemoveAds"
+    ],
+    "sha256": "c5cde857a647e8248decb4303b1606b7c8a279096cee54e6d5ea85a5d1021c7a",
+    "source_pixels": [
+      335,
+      57
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/GarageGift/CoinStack.png",
+    "sprites": [
+      "CoinStack"
+    ],
+    "used_by": [
+      "GarageGift",
+      "RemoveAds"
+    ],
+    "sha256": "dc8469c318ee133f1e911366189610b46ac19522a41ec91bbc57c06ea0b157f8",
+    "source_pixels": [
+      178,
+      167
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/RemoveAds/icon star 4.png",
+    "sprites": [
+      "icon star 4"
+    ],
+    "used_by": [
+      "RemoveAds"
+    ],
+    "sha256": "c1684149f1d1d5f469389d1f48d649f88e5db39a5cc56cfb5e0a7f4063919250",
+    "source_pixels": [
+      40,
+      42
+    ]
+  },
+  {
+    "path": "Assets/~fake/Home.png",
+    "sprites": [
+      "Home"
+    ],
+    "used_by": [
+      "RemoveAds"
+    ],
+    "sha256": "fc75e69ae706df4cddc856cff7340c9fd2ce82d1a151ea6da42f5e98d0dd3787",
+    "source_pixels": [
+      720,
+      1280
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/GarageGift/popup5 2.png",
+    "sprites": [
+      "popup5 2"
+    ],
+    "used_by": [
+      "GarageGift"
+    ],
+    "sha256": "f50dc4fec6ab68d82eac89f53f90c6e50df4ce098b1e7ee6c16e01a5f3617bff",
+    "source_pixels": [
+      1198,
+      1598
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/GarageGift/Rectangle 49.png",
+    "sprites": [
+      "Rectangle 49"
+    ],
+    "used_by": [
+      "GarageGift"
+    ],
+    "sha256": "e6f7bb4de78dc7a2c83348705b6a35320963216f12e2957f0cb91da1e1234a89",
+    "source_pixels": [
+      162,
+      52
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/GarageGift/Assets-Image81.png",
+    "sprites": [
+      "Assets-Image81"
+    ],
+    "used_by": [
+      "GarageGift"
+    ],
+    "sha256": "a9cfcab733d8f9997af9393e0baa021261844f67cbeeaad0121f4acc2e27d1e5",
+    "source_pixels": [
+      37,
+      43
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/SkipLevel/Background.png",
+    "sprites": [
+      "Background"
+    ],
+    "used_by": [
+      "GarageGift"
+    ],
+    "sha256": "7b87f55c201abb30b8fea6a0ce1e0123b510b8fd4a5e0d295ab8a4f63424b99b",
+    "source_pixels": [
+      335,
+      88
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/SkipLevel/prompt_close.png",
+    "sprites": [
+      "prompt_close"
+    ],
+    "used_by": [
+      "GarageGift"
+    ],
+    "sha256": "a13efef2fa65310a7c414bed2159b9055712bff33a85d92806895346cf6b5403",
+    "source_pixels": [
+      156,
+      156
+    ]
+  },
+  {
+    "path": "Assets/~fake/Gameplay 1.png",
+    "sprites": [
+      "Gameplay 1"
+    ],
+    "used_by": [
+      "GarageGift"
+    ],
+    "sha256": "816ccee4e34553946e1644f94d2e608aac0c2ae0cdcb7029f08bf12ce4f4167a",
+    "source_pixels": [
+      720,
+      1280
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/RestartBooster/popup_3 3.png",
+    "sprites": [
+      "popup_3 3"
+    ],
+    "used_by": [
+      "RestartBooster",
+      "SkipLevel"
+    ],
+    "sha256": "b6234df5c7e84eb293e9c3b9bee076b9aa5e48b31d1b4a5d234140829523c80a",
+    "source_pixels": [
+      1228,
+      1410
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/SkipLevel/image 82 2.png",
+    "sprites": [
+      "image 82 2"
+    ],
+    "used_by": [
+      "SkipLevel"
+    ],
+    "sha256": "06cb87e89b43dbf3161e352261fc66bf41a3875049e1dc4ba79d0984dcbde2e5",
+    "source_pixels": [
+      165,
+      172
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/SkipLevel/button_red_1 1.png",
+    "sprites": [
+      "button_red_1 1"
+    ],
+    "used_by": [
+      "RestartBooster",
+      "SkipLevel"
+    ],
+    "sha256": "e09a93ebd97178a463b6241d2f9b3e5ce0f2fe23d9e344c6d03dc2470368f210",
+    "source_pixels": [
+      224,
+      79
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/RestartBooster/yellow_button 3.png",
+    "sprites": [
+      "yellow_button 3"
+    ],
+    "used_by": [
+      "RestartBooster",
+      "SkipLevel"
+    ],
+    "sha256": "0715de9371b1f9a38335186c1fa479c385f86d4a3a70b7f1c1695967c1696a44",
+    "source_pixels": [
+      281,
+      79
+    ]
+  },
+  {
+    "path": "Assets/~fake/Lose 2.png",
+    "sprites": [
+      "Lose 2"
+    ],
+    "used_by": [
+      "RestartBooster"
+    ],
+    "sha256": "0af78f4303080ebb31e9ae753c94c8ba58e8e285d5198f9e885c1941dcadd2e6",
+    "source_pixels": [
+      720,
+      1280
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/effect_screen 1 2.png",
+    "sprites": [
+      "effect_screen 1 2"
+    ],
+    "used_by": [
+      "NotificationPermission",
+      "RentSlot"
+    ],
+    "sha256": "a7e16bfbeb382d2636ef862868b2d8d1126199bfed061e9e907c097e231f04f9",
+    "source_pixels": [
+      345,
+      391
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/rent_panel 1.png",
+    "sprites": [
+      "rent_panel 1"
+    ],
+    "used_by": [
+      "RentSlot"
+    ],
+    "sha256": "74e674f33cd71ae50fdb04ea25ef4788e60bd46de563bce2ab575c6fe75b0d84",
+    "source_pixels": [
+      200,
+      354
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/Group 264.png",
+    "sprites": [
+      "Group 264"
+    ],
+    "used_by": [
+      "RentSlot"
+    ],
+    "sha256": "da6843c0b21efc4731dd429e6f4cb43c456a3dedcef0c5a683043e3f6a319983",
+    "source_pixels": [
+      152,
+      55
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/image 98.png",
+    "sprites": [
+      "image 98"
+    ],
+    "used_by": [
+      "RentSlot"
+    ],
+    "sha256": "a4d29711872eef09e71c5247dc1b2fd4c8b66387d7d35c39941decc23523b62d",
+    "source_pixels": [
+      90,
+      88
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/image 72.png",
+    "sprites": [
+      "image 72"
+    ],
+    "used_by": [
+      "NotificationPermission",
+      "RentSlot"
+    ],
+    "sha256": "57592bc0d2271e079f123bafe38fe99d44bfdf18ebf2736109d817e8b9e564a2",
+    "source_pixels": [
+      371,
+      103
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Reward/Property 1=Variant2 1.png",
+    "sprites": [
+      "Property 1=Variant2 1"
+    ],
+    "used_by": [
+      "PurchaseReward"
+    ],
+    "sha256": "6a17baed7d5e2a6fb8270c6f5078dbf0deb03ec17d136914bce59617fda9b6e7",
+    "source_pixels": [
+      705,
+      705
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/Shop/starter_popup_card.png",
+    "sprites": [
+      "starter_popup_card"
+    ],
+    "used_by": [
+      "PurchaseReward"
+    ],
+    "sha256": "151d22433b0f9a98f27c7bea2192da049565b0227450c86a06fe017bce2e2f6f",
+    "source_pixels": [
+      552,
+      673
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/Shop/starter_popup_ribbon.png",
+    "sprites": [
+      "starter_popup_ribbon"
+    ],
+    "used_by": [
+      "PurchaseReward"
+    ],
+    "sha256": "08ab78fc82b578d9b197bed31f85eed80804bffc1daecfb629bbfac17420c9f7",
+    "source_pixels": [
+      368,
+      103
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/icn_coin_stacks.png",
+    "sprites": [
+      "icn_coin_stacks"
+    ],
+    "used_by": [
+      "PurchaseReward"
+    ],
+    "sha256": "fc56ca3ed9d94393f4e8c128894a089030244c10d569a3e38add9e094ee5f42b",
+    "source_pixels": [
+      516,
+      340
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/Shop/starter_popup_coins.png",
+    "sprites": [
+      "starter_popup_coins"
+    ],
+    "used_by": [
+      "PurchaseReward"
+    ],
+    "sha256": "3348833186cee8a99027f9d90521cfa3625bedbda10df91068b917594dd3f839",
+    "source_pixels": [
+      163,
+      115
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/~Fake/Home screen (2).png",
+    "sprites": [
+      "Home screen (2)"
+    ],
+    "used_by": [
+      "PurchaseReward"
+    ],
+    "sha256": "04c507f7e668289c6f06001da8d4611d111c24e5c9158562653ae02b61b966f0",
+    "source_pixels": [
+      720,
+      1280
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/PurchaseFailed/popup_2 4.png",
+    "sprites": [
+      "popup_2 4"
+    ],
+    "used_by": [
+      "PurchaseFailed"
+    ],
+    "sha256": "27d2da1ce82197aac4246ddcaf4fda64eaac01d30f9b85022eb4d32bb7dd0a9d",
+    "source_pixels": [
+      1256,
+      1236
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/Shop/purchase_failed_ribbon.png",
+    "sprites": [
+      "purchase_failed_ribbon"
+    ],
+    "used_by": [
+      "PurchaseFailed"
+    ],
+    "sha256": "b52a70234c5cecab85613654cc53868ad74d6cedd028556290d37be70d39c853",
+    "source_pixels": [
+      441,
+      100
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/PurchaseFailed/image 65.png",
+    "sprites": [
+      "image 65"
+    ],
+    "used_by": [
+      "PurchaseFailed"
+    ],
+    "sha256": "1842403d86119dfeeee62e2a35a5b392f953d75b37d9c846c65b8949b54f7433",
+    "source_pixels": [
+      133,
+      133
+    ]
+  },
+  {
+    "path": "Assets/~fake/Popup-PurchaseFailed.png",
+    "sprites": [
+      "Popup-PurchaseFailed"
+    ],
+    "used_by": [
+      "PurchaseFailed"
+    ],
+    "sha256": "eab0d1d0b7ced29bad30ce3dd94f06a103a8f27f1c9eb88560a7f85509233c92",
+    "source_pixels": [
+      720,
+      1280
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/NoInternet/popup_3 1.png",
+    "sprites": [
+      "popup_3 1"
+    ],
+    "used_by": [
+      "NoInternet"
+    ],
+    "sha256": "b6234df5c7e84eb293e9c3b9bee076b9aa5e48b31d1b4a5d234140829523c80a",
+    "source_pixels": [
+      1228,
+      1410
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/NoInternet/no_internet_card.png",
+    "sprites": [
+      "no_internet_card"
+    ],
+    "used_by": [
+      "NoInternet"
+    ],
+    "sha256": "02ff5248c4a9ac42629325cda78d3ba51db7a8e34ba468fda6a71054e43ddbd7",
+    "source_pixels": [
+      1104,
+      1346
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/NoInternet/reconnect_spinner.png",
+    "sprites": [
+      "reconnect_spinner"
+    ],
+    "used_by": [
+      "NoInternet"
+    ],
+    "sha256": "f88a58f28f84c6f4ac36e4617fb1b85c1ed0c62fa2ade9eff8834a0e17c549aa",
+    "source_pixels": [
+      256,
+      256
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/NoInternet/image 133.png",
+    "sprites": [
+      "image 133"
+    ],
+    "used_by": [
+      "NoInternet"
+    ],
+    "sha256": "52c9ce16b122023838d12eddbef17b7b248f2dc28e71102a0b71e9da2d62ee27",
+    "source_pixels": [
+      246,
+      246
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/image 101.png",
+    "sprites": [
+      "image 101"
+    ],
+    "used_by": [
+      "NotificationPermission"
+    ],
+    "sha256": "3fdbbe21de1ee641fe1218d86a514055115576210da2fd64789881048d4122e9",
+    "source_pixels": [
+      225,
+      233
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Rating/popup_2 6.png",
+    "sprites": [
+      "popup_2 6"
+    ],
+    "used_by": [
+      "Rating"
+    ],
+    "sha256": "27d2da1ce82197aac4246ddcaf4fda64eaac01d30f9b85022eb4d32bb7dd0a9d",
+    "source_pixels": [
+      1256,
+      1236
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Rating/red_tittle 1.png",
+    "sprites": [
+      "red_tittle 1"
+    ],
+    "used_by": [
+      "Rating"
+    ],
+    "sha256": "3160930968dbba7a1f7cc7283d5be15b57d977c52b9085bac1b0766f2da3939a",
+    "source_pixels": [
+      441,
+      100
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Rating/WF.png",
+    "sprites": [
+      "WF"
+    ],
+    "used_by": [
+      "Rating"
+    ],
+    "sha256": "b9e4d71495d6ff9bff891ca03c4376f7dbe596cc8dbd4e4635218cc4ca3052e0",
+    "source_pixels": [
+      93,
+      90
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Rating/icon 1.png",
+    "sprites": [
+      "icon 1"
+    ],
+    "used_by": [
+      "Rating"
+    ],
+    "sha256": "8d1fb151eed0da259e96a25c7852bf3929a411351e140f7c014ecad8711cdc1d",
+    "source_pixels": [
+      212,
+      231
+    ]
+  },
+  {
+    "path": "Assets/~fake/Gameplay1.png",
+    "sprites": [
+      "Gameplay1"
+    ],
+    "used_by": [
+      "Rating"
+    ],
+    "sha256": "f8bebceab22f3c97639e33f450a47882a89cd6ac1e7aaa4c55d436193c41d600",
+    "source_pixels": [
+      720,
+      1280
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Loading/background 1.png",
+    "sprites": [
+      "background 1"
+    ],
+    "used_by": [
+      "Loading"
+    ],
+    "sha256": "c646a9ec83075b3791d2de261f296e2af2400c9c02f393f8d32615465d01671c",
+    "source_pixels": [
+      1440,
+      2558
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/Loading/progress_bar 3.png",
+    "sprites": [
+      "progress_bar 3"
+    ],
+    "used_by": [
+      "Loading"
+    ],
+    "sha256": "cd43d9b7f356272f0af45488ea8912f0740b971ed977a34e5c54135ba3ace524",
+    "source_pixels": [
+      607,
+      94
+    ]
+  },
+  {
+    "path": "Assets/~fake/Loading.png",
+    "sprites": [
+      "Loading"
+    ],
+    "used_by": [
+      "Loading"
+    ],
+    "sha256": "df391821a85b303b998d3f14e5f03ddf06518380e7bd6760da2321d3a912b06c",
+    "source_pixels": [
+      720,
+      1280
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/type_three_one 1.png",
+    "sprites": [
+      "type_three_one 1"
+    ],
+    "used_by": [
+      "Error"
+    ],
+    "sha256": "e0416e7bd6a880c2aad83960a17feb4377929403eb26b34ce59b55e54c2624f2",
+    "source_pixels": [
+      616,
+      471
+    ]
+  },
+  {
+    "path": "Assets/Vendor/MoneySort/Source/Game/Sprite/FlicksortSprite/7d7ba46021612e81ba838adfa048cd4b92044eb9.png",
+    "sprites": [
+      "7d7ba46021612e81ba838adfa048cd4b92044eb9"
+    ],
+    "used_by": [
+      "Error"
+    ],
+    "sha256": "eb70f955c581d984546ed2fc714d3514fe390edf1390c2a471f03d5c98a4c128",
+    "source_pixels": [
+      3194,
+      660
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/RestorePurchase/popup6 2.png",
+    "sprites": [
+      "popup6 2"
+    ],
+    "used_by": [
+      "RestorePurchase"
+    ],
+    "sha256": "41eb305164f00a17e68cc05f2b416be85866580e4f4dad329c302887d67217fe",
+    "source_pixels": [
+      1176,
+      1342
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/RestorePurchase/effect_screen 3.png",
+    "sprites": [
+      "effect_screen 3"
+    ],
+    "used_by": [
+      "RestorePurchase"
+    ],
+    "sha256": "f928c8ddd8ce12c9d569aa77688cb0fae1276aef15d15972ac29076273aae86d",
+    "source_pixels": [
+      369,
+      245
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/RestorePurchase/image 86.png",
+    "sprites": [
+      "image 86"
+    ],
+    "used_by": [
+      "RestorePurchase"
+    ],
+    "sha256": "0535bf357876a8dc4c33ee866d69506e6d21f87e68cfefe96f2c9807325e6b00",
+    "source_pixels": [
+      218,
+      201
+    ]
+  },
+  {
+    "path": "Assets/SqadSort/Content/UI/RestorePurchase/image 87.png",
+    "sprites": [
+      "image 87"
+    ],
+    "used_by": [
+      "RestorePurchase"
+    ],
+    "sha256": "6576d3e34a87b9eaa7849788446d01b8cf7c18ddf473ac2ed2848f7ac2925775",
+    "source_pixels": [
+      184,
+      153
+    ]
+  },
+  {
+    "path": "Assets/~fake/Popup-PurchaseRestored.png",
+    "sprites": [
+      "Popup-PurchaseRestored"
+    ],
+    "used_by": [
+      "RestorePurchase"
+    ],
+    "sha256": "c3f0e10309f2d734d0edf95ba4ed289b485229057dfc2e9fb13ed528c2421eff",
+    "source_pixels": [
+      720,
+      1280
+    ]
+  }
+]

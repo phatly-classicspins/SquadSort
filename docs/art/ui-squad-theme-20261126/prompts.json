@@ -1,0 +1,46 @@
+{
+  "common": "Use case ui-mockup. Render ONE review board of FOUR full portrait mobile screens, 2 columns by 2 rows, equal 9:16 panels, narrow ivory gutters, no phone hardware. Reference1 is style only, references2-5 are EXACT layout/content targets in reading order. Preserve each target's relative panel bounds, icon positions, button sizes, all control counts and text hierarchy. Change only art theme from Chip Away to SQUAD SORT. Match reference1 glossy finished casual puzzle UI: thick milk-white rounded tray rims, extruded pink sidewalls, cream interior, lavender header plaques, green/blue/yellow/red dimensional buttons with white-pink rims, bold legible lettering, upper-left highlights. Blue cube buddy with glasses, red cube buddy, green flower cube replace poker chip piles above modal headers. Garden plaza gameplay dimmed behind popups. No poker chips, casino motifs, felt, wood or gold-brown borders. Real coins stay gold currency. All texts and buttons visible, preserve target wording except chip-specific words replaced with buddy/tray. Do not invent extra actions or controls. ",
+  "jobs": [
+    {
+      "key": "01-booster-slot",
+      "names": [
+        "BoosterUnlock",
+        "RestartBooster",
+        "SkipLevel",
+        "RentSlot"
+      ],
+      "extra": "Panel1 HAND: glove holding a BLUE CUBE rather than chip, description Pick up any buddy group, OK. Panel2 Need a help?: magnet1, Retry the level with a Magnet booster., No thanks and Get Booster ad. Panel3 Skip this level?: skip icon, original two line description, No thanks and Skip level ad. Panel4 RENT: replace LEGO-like rental piece with white-pink EMPTY WAITING TRAY plus blue clock badge 60 Sec and green plus; Get Rent Slots; vertically stacked coin200 and Free ad buttons. Keep original rent modal tall proportions."
+    },
+    {
+      "key": "02-offers-space",
+      "names": [
+        "OutOfSpace",
+        "RemoveAds",
+        "StarterBundle",
+        "GarageGift"
+      ],
+      "extra": "Panel1 Play on: illustration of full waiting slots with colored cube buddies, arrow to cleared slots; You are out of space. Clear some slots to keep playing; green coin200, yellow Free ad. Panel2 Remove Ads: exact source narrow tall layout, TV no-ads plus 3000 coins upper reward panel; three separate feature rows same wording; green $9.99 bottom. Panel3 Starter Pack: exact source composition and widths, Limited time offer70:30:30; 2500coins and infinityheart2h; lower tools hand withcube, shuffle,magnet counts2; green $1.99. Panel4 Limited Time Reward: replace slot machine777 topper with a cheerful three-buddy GIFT BOX in same footprint; timer9:59, hand booster1 and coin200; original reward message; blue No thanks, yellow Get Reward ad. Keep all offers explicit and prices unchanged."
+    },
+    {
+      "key": "03-purchase-network",
+      "names": [
+        "PurchaseReward",
+        "PurchaseFailed",
+        "RestorePurchase",
+        "NoInternet"
+      ],
+      "extra": "Panel1 REWARDS!: same fullscreen radial reward layout with 3000 coins and infinityheart1H upper row, magnet shuffle hand-with-cube count3 each lower row, green Continue near bottom. Tiny celebrating cube buddies only in peripheral space. Panel2 Purchase Failed: same red cross icon, Your account wasn't charged!, green Continue. Panel3 Restore Purchase: same checkmark above header, shoppingbag icon, Your purchase has been successfully restored., green OK. Panel4 No Internet: same globe warning icon, No Internet, please check and try again!, green Retry. Keep source layouts rather than imposing a single identical modal size."
+    },
+    {
+      "key": "04-system-loading",
+      "names": [
+        "Error",
+        "NotificationPermission",
+        "Rating",
+        "Loading"
+      ],
+      "extra": "Panel1 ERROR!: exact source compact broad blue-white panel with pink sidewall and red header, red close X, ONLY text No ads available at this time. Please try again later. No extra button. Panel2 Stay Updated!: bell illustration, Get a reminder when it's time to play., green No thanks and yellow Yes, exact source positions. Panel3 We'd like to hear from you: original question, five unselected sculpted stars in same horizontal row, blue Submit button. Panel4 Loading: FULLSCREEN, preserve logo upper-third footprint, illustration near bottom and long progressbar at same position as source. SQUAD SORT logo, subtle lavender gradient with tiny cube/tray outlines instead of gambling patterns, 3D cube buddies gathering in white-pink tray, milk-white pink-rim progressbar green fill30% text. No modal or close button on Loading."
+    }
+  ],
+  "shopPrompt": "Use case ui-mockup. EDIT reference2 Shop screenshot to reskin its art to SQUAD SORT approved style reference1. Deliver ONE full 9:16 portrait screen. CRITICAL preserve original reference2 layout, every element's relative size/location, all information and all purchase controls exactly. Do not turn Shop into popup, do not add Shop title/header or close X, do not shrink cards, do not omit pack footers. Reference1 is theme only. Milk-white thick rims with pink extruded sides, cream/mint contents, lavender shadows, polished dimensional glossy art. Background warm pale pink garden themed; top solid lavender band with same settings left, heart4 timer00:00 center-left, coin100 top-right positions. Original awning at y150-210 of720x1280, pink/cream. FIRST large offer card exact x23 y248 w674 h350: Hot badge upperleft, left coinpile and Plus 2,500 coins; middle inset handholdingblueCUBE count2 top-left, shufflecount2 top-right, magnetcount2 below; RIGHT separate noADS TV inset with Remove Ads label. Lower card FOOTER strip at y485-587: Remove Ads Pack label left, actual GREEN BUY BUTTON $7.99 right. SECOND offer card exact x23 y635 w660 h334: 60% off badge; coin2500 left; SAME 3tools counts2 in center inset; infinity heart2h right inset. FOOTER strip y863-957: Starter Pack label left, middle Limited Time Offer stopwatch70:30:30, actual GREEN BUY BUTTON $1.99 right. Both footer strips mandatory. Special Pack section header at x49 y1008 w623 h73, partial next card below original. BOTTOM fullwidth nav y1145-1280, Shop selected left, Home middle, lock right EXACT source geometry. Replace chipstore icon with tiny cube buddies display, replace chiplock motif with ordinary pink lock, no casino chips anywhere. Original source object positions and button dimensions are hard constraints. Retain prices, counts, feature text. Do not remove TV noADS block, do not swap tools for heart, do not use generic compressed shop list. All text crisp and legible."
+}
