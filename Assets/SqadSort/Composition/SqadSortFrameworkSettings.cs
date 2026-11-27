@@ -40,12 +40,26 @@ namespace Game.Composition
             // Mobile defaults to 30 FPS when targetFrameRate is -1; request 60 from startup (CardSlot does the same).
             UnityEngine.Application.targetFrameRate = 60;
 
-            // The real FirstSceneConfig (the framework registered FirstSceneConfig.None; this wins by
-            // later registration): boot lands on the scaffolded Main screen with its typed MainParam.
-            builder.RegisterInstance(new FirstSceneConfig(
+            // Choose after UserDataLoaded, inside the loader: resolving this config during boot
+            // construction must not inspect the save before the framework has loaded it.
+            builder.Register(resolver => new FirstSceneConfig(
                 SceneKeys.Main,
-                (sceneService, ct) => sceneService.LoadAsync(
-                    SceneKeys.Main, new MainParam(ColdBoot: true), SceneTransition.Replace, null, ct)));
+                (sceneService, ct) =>
+                {
+                    var progress = resolver.Resolve<LevelProgressService>();
+                    if (progress.HighestCleared == 0 && progress.CurrentLevel == 1
+                        && progress.Lives(resolver.Resolve<IClock>().UtcNow) > 0)
+                    {
+                        // Main normally owns these; the first-player route never loads Main.
+                        resolver.Resolve<IGameTracking>().SessionStarted();
+                        progress.EnsureStartCoins();
+                        return sceneService.LoadAsync(SceneKeys.Gameplay, new GameplayParam(1),
+                            SceneTransition.Replace, null, ct);
+                    }
+
+                    return sceneService.LoadAsync(SceneKeys.Main, new MainParam(ColdBoot: true),
+                        SceneTransition.Replace, null, ct);
+                }), Lifetime.Singleton);
 
             // The SKU owns the single ConfigDefaults registration (the framework registers none —
             // zero registrants means every Get falls back to 0; two is a VContainer duplicate conflict).
@@ -136,7 +150,7 @@ namespace Game.Composition
 
         /// <summary>
         /// The SKU's own boot graph additions: show the Loading scene, hold boot on a test node, then let
-        /// the (unchanged) first-scene load put Main up and take the Loading scene back down.
+        /// the first-scene load put Gameplay or Main up and take the Loading scene back down.
         /// </summary>
         /// <remarks>
         /// Boot nodes are collected by the framework's <c>BootRunInstaller</c> from every registered
