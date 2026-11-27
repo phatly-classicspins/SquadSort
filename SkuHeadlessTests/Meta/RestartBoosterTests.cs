@@ -52,7 +52,7 @@ namespace SqadSort.SkuHeadlessTests.Meta
         }
         [Test] public void Reward_is_exactly_one_magnet_regardless_of_normal_ad_amount()
         {
-            service = new LevelProgressService(store, new TestWallet(), new EconomyTuning { AddContainerAdAmount = 9 }, new TestFacts());
+            service = new LevelProgressService(store, new TestWallet(), new EconomyTuning { RemoveAdAmount = 9 }, new TestFacts());
             Assert.That(service.GrantRestartBoosterFromAd(), Is.True);
             Assert.That(service.Boosters(Booster.Remove), Is.EqualTo(1));
             Assert.That(service.Boosters(Booster.Undo), Is.Zero);
